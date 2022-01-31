@@ -130,7 +130,7 @@ export class NodeInfo {
     this.total = json["NodeTotal"];
     this.diamond = json["DiamondNodeTotal"];
     this.carbon = json["CarbonNodeTotal"];
-    this.diamondRemaining = json["TotalDiamonNodesLeft"];
+    this.diamondRemaining = json["TotalDiamondNodesLeft"];
     this.carbonRemaining = json["TotalCarbonNodesLeft"];
     this.totalRemaining = json["TotalNodesLeft"];
   }

@@ -1,0 +1,31 @@
+{
+    "AssetId": "8edd7ed1-f6fb-4a86-9a0e-2918921811fc",
+    "Assets": {
+        "Name": "ETH",
+        "Description": "Ethereum",
+        "MaxConfirmsRequired": 20,
+        "ImageName": "eth.png",
+        "CanDeposit": true,
+        "Id": "8edd7ed1-f6fb-4a86-9a0e-2918921811fc",
+        "CreateDateTimeUtc": "2022-01-24T02:49:12.8478352",
+        "ModifiedDateTimeUtc": "2022-01-24T02:49:12.8478352",
+        "Active": true
+    },
+    "Amount": 0.00100000,
+    "CompleteDate": "2022-01-25T22:35:32.5206938",
+    "InsertDate": "2022-01-25T22:28:32.5206938",
+    "TxId": "0xb83ec5d188059818b30c381e106ce027582e853a97fddc01be9559f9bba65ba3",
+    "Confirmations": 20,
+    "IsProcessed": true,
+    "TimeReceived": 1643146841.0,
+    "Address": "0x1797f77405e1F86EA5e096Ea2A0508D3fE3885b0",
+    "UniqueIdentifier": "testid1234",
+    "PriceUSD": 2.42,
+    "CurrentPriceInUSD": 2416.84,
+    "Id": "6da77858-fc79-4cbc-837b-08d9e051174e",
+    "CreateDateTimeUtc": "2022-01-25T22:28:34.0875307",
+    "ModifiedDateTimeUtc": "2022-01-25T22:28:34.0875328",
+    "Active": true,
+    "AssetName": "ETH",
+    "Success": true
+}

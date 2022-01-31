@@ -8,6 +8,7 @@ import { hideLoader, showLoader } from "../store/loader";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Currency, currencyToString } from "../enums";
+import { DetailCardComponent } from "./DetailCardComponent";
 
 interface Props {
   priceDetail?: PriceDetail;
@@ -34,6 +35,12 @@ export function CheckoutComponent(props: Props) {
 
   const currencyTypes = [Currency.Btc, Currency.Eth, Currency.Ltc];
   const [currencyType, setCurrencyType] = useState(currencyTypes[0]);
+
+  const initialTotalNodes = props.priceDetailFromUsd
+    ? props.priceDetailFromUsd.totalNodesPossible
+    : props.priceDetail!.nodeAmount;
+
+  const [totalNodes, setTotalNodes] = useState<number>(initialTotalNodes);
 
   const { addToast } = useToasts();
 
@@ -86,7 +93,7 @@ export function CheckoutComponent(props: Props) {
         ip,
         id,
         addressValue,
-        p.totalNodesPossible
+        totalNodes
       );
     } else {
       return;
@@ -112,24 +119,49 @@ export function CheckoutComponent(props: Props) {
       <h4 className="text-center text-md-start">Checkout</h4>
 
       {!props.priceDetail && props.priceDetailFromUsd && !checkoutDetails ? (
-        <div className="form-group py-1">
-          <div className="btn-group" role="group" aria-label="Currency">
-            {currencyTypes.map((c) => {
-              return (
-                <button
-                  key={c}
-                  type="button"
-                  className={`btn ${
-                    currencyType === c ? "btn-primary" : "btn-outline-primary"
-                  }`}
-                  onClick={() => setCurrencyType(c)}
-                >
-                  {currencyToString(c)}
-                </button>
-              );
-            })}
+        <>
+          <div className="form-group py-1">
+            <div className="btn-group" role="group" aria-label="Currency">
+              {currencyTypes.map((c) => {
+                return (
+                  <button
+                    key={c}
+                    type="button"
+                    className={`btn ${
+                      currencyType === c ? "btn-primary" : "btn-outline-primary"
+                    }`}
+                    onClick={() => setCurrencyType(c)}
+                  >
+                    {currencyToString(c)}
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
+          <div className="form-group">
+            <label>Total Nodes</label>
+            <input
+              type="number"
+              className="form-control"
+              value={totalNodes}
+              onFocus={(e) => e.target.select()}
+              onChange={(e) => {
+                if (!e.target.value) {
+                  return;
+                }
+                let v = parseInt(e.target.value);
+                if (v > props.priceDetailFromUsd!.totalNodesPossible) {
+                  v = props.priceDetailFromUsd!.totalNodesPossible;
+                } else if (v < 1) {
+                  v = 1;
+                }
+                setTotalNodes(v);
+              }}
+              min={1}
+              max={props.priceDetailFromUsd.totalNodesPossible}
+            />
+          </div>
+        </>
       ) : null}
 
       <div className="row">
@@ -189,13 +221,21 @@ export function CheckoutComponent(props: Props) {
               </div>
               <div className="card-body">
                 <div className="form-group pb-2">
-                  <p>
-                    Total Due:
-                    <br />
-                    <strong>
-                      {checkoutDetails.amountOwed} {checkoutDetails.asset}
-                    </strong>
-                  </p>
+                  <div className="row">
+                    <div className="col">
+                      <DetailCardComponent
+                        label="Total Due"
+                        value={`${checkoutDetails.amountOwed} ${checkoutDetails.asset}`}
+                      ></DetailCardComponent>
+                    </div>
+                    <div className="col">
+                      <DetailCardComponent
+                        label="Total Nodes"
+                        value={`${totalNodes}`}
+                      ></DetailCardComponent>
+                    </div>
+                  </div>
+                  <div className="py-2"></div>
                   <label>Transaction ID:</label>
                   <div className="input-group">
                     <input

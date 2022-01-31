@@ -60,16 +60,16 @@ export const StatusScreen = () => {
     }, interval);
   };
 
-  if (!transaction?.success || error) {
+  if (!transaction) {
+    return null;
+  }
+
+  if (!transaction.success || error) {
     return (
       <p className="text-center text-danger">
         No transaction found with identifier {id}.
       </p>
     );
-  }
-
-  if (!transaction) {
-    return null;
   }
 
   return (

@@ -8,8 +8,9 @@ interface NavItem {
 
 const Header = styled.header`
   nav {
-    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 3px 15px rgba(255, 255, 255, 0.15);
     /* border-bottom: 1px solid red; */
+    background-color: #020a21 !important;
   }
 `;
 

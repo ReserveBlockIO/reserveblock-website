@@ -77,12 +77,22 @@ const BottomFade = styled.div`
   );
 `;
 
+const ContentContainer = styled.div`
+  opacity: 0;
+  transition: all 1.3s;
+  transform: translateY(100px);
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 export const HomeScreen = () => {
   // const introVideo =
   //   "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/bg-curvedxx.mp4?alt=media";
   const introVideo =
     "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/rbx-animation-scaled-v5x.mp4?alt=media";
-  const [contentVisible, setContentVisible] = useState<boolean>(true);
+  const [contentVisible, setContentVisible] = useState<boolean>(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -95,7 +105,7 @@ export const HomeScreen = () => {
 
     v.addEventListener("timeupdate", (event) => {
       if (!contentVisible) {
-        if (event.timeStamp >= 3500) {
+        if (event.timeStamp >= 4500) {
           setContentVisible(true);
         }
       }
@@ -126,60 +136,56 @@ export const HomeScreen = () => {
           playsInline={true}
         ></IntroVideo>
 
-        {contentVisible ? (
-          <>
-            <IntroTextContainer>
-              <h2 className="democratize">Democratizing NFTs for Everyone</h2>
-              <h3>
-                Your Block
-                <br />
-                Your Data
-                <br />
-                Your NFT Reserved
-              </h3>
-              <SectionContent>
-                <div className="row align-items-center">
-                  <div className="col">
-                    <SectionHeading4>
-                      <strong>Node Presale</strong>
-                    </SectionHeading4>
-                    <SectionHeading4
-                      className="text-center pb-1 mb-0 text-lowercase"
-                      style={{ color: ThemeColors.bright }}
-                    >
-                      12d 3h 5m 12s
-                    </SectionHeading4>
-                  </div>
+        <ContentContainer className={contentVisible ? "visible" : ""}>
+          <IntroTextContainer>
+            <h2 className="democratize">Democratizing NFTs for Everyone</h2>
+            <h3>
+              Your Block
+              <br />
+              Your Data
+              <br />
+              Your NFT Reserved
+            </h3>
+            <SectionContent>
+              <div className="row align-items-center">
+                <div className="col">
+                  <SectionHeading4>
+                    <strong>Node Presale</strong>
+                  </SectionHeading4>
+                  <SectionHeading4
+                    className="text-center pb-1 mb-0 text-lowercase"
+                    style={{ color: ThemeColors.bright }}
+                  >
+                    12d 3h 5m 12s
+                  </SectionHeading4>
+                </div>
 
-                  <div className="col">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <button className="btn btn-light btn-lg text-uppercase">
-                        Notify&nbsp;me
-                      </button>
-                      {/* <button className="btn btn-light text-uppercase">
+                <div className="col">
+                  <div className="d-flex justify-content-center align-items-center">
+                    <button className="btn btn-light btn-lg text-uppercase">
+                      Notify&nbsp;me
+                    </button>
+                    {/* <button className="btn btn-light text-uppercase">
                         Learn&nbsp;More
                       </button> */}
-                    </div>
                   </div>
                 </div>
-              </SectionContent>
-            </IntroTextContainer>
-            {/* <div>
-              <AboutTextComponent />
-            </div> */}
-            <div
-              style={{
-                position: "absolute",
-                bottom: 80,
-                left: "50%",
-                transform: "translateX(-50%)",
-                zIndex: 10,
-              }}
-            >
-              <SocialLinks />
-            </div>
-          </>
-        ) : null}
+              </div>
+            </SectionContent>
+          </IntroTextContainer>
+        </ContentContainer>
+        <ContentContainer
+          className={contentVisible ? "visible" : ""}
+          style={{
+            position: "absolute",
+            bottom: 80,
+            left: "50%",
+            transform: "translateX(-50%)",
+            zIndex: 10,
+          }}
+        >
+          <SocialLinks />
+        </ContentContainer>
         <BottomFade />
         <NextSectionButton sectionId="learn" />
       </Section>

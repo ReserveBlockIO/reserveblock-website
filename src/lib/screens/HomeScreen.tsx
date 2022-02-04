@@ -404,7 +404,7 @@ export const HomeScreen = () => {
             <div className="col-8">
               <SectionContent>
                 <div className="row d-flex align-items-center">
-                  <div className="col-2">
+                  <div className="col-2 text-center">
                     <FontAwesomeIcon
                       icon={faDiscord}
                       size="4x"
@@ -428,7 +428,7 @@ export const HomeScreen = () => {
               </SectionContent>
               <SectionContent>
                 <div className="row d-flex align-items-center">
-                  <div className="col-2">
+                  <div className="col-2 text-center">
                     <FontAwesomeIcon
                       icon={faGithub}
                       size="4x"

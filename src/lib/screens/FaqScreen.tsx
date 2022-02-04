@@ -5,7 +5,7 @@ export const FaqScreen = () => {
   return (
     <Section>
       <div className="container">
-        <SectionHeading1>Frequency Asked Questions</SectionHeading1>
+        <SectionHeading1>Frequently Asked Questions</SectionHeading1>
         <div className="py-2"></div>
         <FaqComponent />
       </div>

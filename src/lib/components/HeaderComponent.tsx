@@ -117,7 +117,8 @@ export const HeaderComponent = () => {
   return (
     <Header>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <div className="container">
+        <div className="container-fluid">
+          <span className="px-2"></span>
           <a className="navbar-brand" href="/">
             <Logo>ReserveBlock</Logo>
           </a>

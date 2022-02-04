@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faChevronRight,
+  faClock,
   faDownload,
   faEnvelope,
   faInfoCircle,
+  faQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faDiscord,
@@ -48,7 +51,7 @@ const IntroTextContainer = styled.div`
   position: relative;
   text-align: center;
 
-  h2 {
+  .democratize {
     font-size: 22px;
     color: ${ThemeColors.bright};
     text-transform: uppercase;
@@ -126,7 +129,7 @@ export const HomeScreen = () => {
         {contentVisible ? (
           <>
             <IntroTextContainer>
-              <h2>Democratizing NFTs for Everyone</h2>
+              <h2 className="democratize">Democratizing NFTs for Everyone</h2>
               <h3>
                 Your Block
                 <br />
@@ -134,8 +137,33 @@ export const HomeScreen = () => {
                 <br />
                 Your NFT Reserved
               </h3>
-            </IntroTextContainer>
+              <SectionContent>
+                <div className="row align-items-center">
+                  <div className="col">
+                    <SectionHeading4>
+                      <strong>Node Presale</strong>
+                    </SectionHeading4>
+                    <SectionHeading4
+                      className="text-center pb-1 mb-0 text-lowercase"
+                      style={{ color: ThemeColors.bright }}
+                    >
+                      12d 3h 5m 12s
+                    </SectionHeading4>
+                  </div>
 
+                  <div className="col">
+                    <div className="d-flex justify-content-center align-items-center">
+                      <button className="btn btn-light btn-lg text-uppercase">
+                        Notify&nbsp;me
+                      </button>
+                      {/* <button className="btn btn-light text-uppercase">
+                        Learn&nbsp;More
+                      </button> */}
+                    </div>
+                  </div>
+                </div>
+              </SectionContent>
+            </IntroTextContainer>
             {/* <div>
               <AboutTextComponent />
             </div> */}

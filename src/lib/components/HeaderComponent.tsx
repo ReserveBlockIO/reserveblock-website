@@ -1,36 +1,97 @@
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
+import { ThemeColors } from "../theme";
 
-interface NavItem {
+interface INavItem {
   name: string;
   path: string;
-  children?: NavItem[];
+  children?: INavItem[];
 }
 
 const Header = styled.header`
   nav {
-    box-shadow: 0px 3px 15px rgba(255, 255, 255, 0.15);
-    /* border-bottom: 1px solid red; */
     background-color: #020a21 !important;
   }
 `;
 
+const Logo = styled.div`
+  width: 196px;
+  height: 24px;
+  background-image: url(/img/header-logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+`;
+
+const PresaleContainer = styled.div`
+  background-color: ${ThemeColors.dark};
+  padding: 4px;
+  color: #fff;
+
+  font-size: 18px;
+  margin-top: 32px;
+  position: absolute;
+  top: 28px;
+  right: 0px;
+  padding: 0px 0 0px 16px;
+  box-shadow: -2px 2px 5px rgba(255, 255, 255, 0.1);
+  .dismiss {
+    cursor: pointer;
+    color: #fff;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  button {
+    &:hover {
+      background-color: ${ThemeColors.dark};
+      color: #fff;
+    }
+  }
+`;
+
+const NavItem = styled.li`
+  a {
+    letter-spacing: 2px;
+  }
+  &:hover {
+    a {
+      color: ${ThemeColors.bright} !important;
+    }
+  }
+`;
+const SubNavItem = styled(NavItem)`
+  font-size: 14px;
+  a {
+    letter-spacing: 1px;
+  }
+`;
+
 export const HeaderComponent = () => {
-  const primaryNavItems: NavItem[] = [
-    // {
-    //   name: "Home",
-    //   path: "/",
-    // },
+  const primaryNavItems: INavItem[] = [
     {
       name: "Learn",
       path: "/#learn",
     },
     {
-      name: "Nodes",
-      path: "/#nodes",
+      name: "Masternodes",
+      path: "/#masternodes",
+    },
+    {
+      name: "Wallet",
+      path: "/#wallet",
     },
     {
       name: "Build",
       path: "/#build",
+    },
+    {
+      name: "Network",
+      path: "/#network",
     },
     {
       name: "Community",
@@ -42,7 +103,7 @@ export const HeaderComponent = () => {
     },
   ];
 
-  const secondaryNavItems: NavItem[] = [
+  const secondaryNavItems: INavItem[] = [
     {
       name: "Litepaper",
       path: "",
@@ -58,7 +119,7 @@ export const HeaderComponent = () => {
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container">
           <a className="navbar-brand" href="/">
-            ReserveBlock
+            <Logo>ReserveBlock</Logo>
           </a>
           <button
             className="navbar-toggler"
@@ -72,9 +133,9 @@ export const HeaderComponent = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 pt-1">
               {primaryNavItems.map((n) => (
-                <li className="nav-item">
+                <NavItem className="nav-item">
                   <a
                     className="nav-link active"
                     aria-current="page"
@@ -82,25 +143,38 @@ export const HeaderComponent = () => {
                   >
                     {n.name}
                   </a>
-                </li>
+                </NavItem>
               ))}
             </ul>
             <div className="d-flex">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 {secondaryNavItems.map((n) => (
-                  <li className="nav-item">
+                  <SubNavItem className="nav-item">
                     <a
                       className="nav-link active"
                       aria-current="page"
                       href={n.path}
                     >
-                      <small>{n.name}</small>
+                      {n.name}
                     </a>
-                  </li>
+                  </SubNavItem>
                 ))}
               </ul>
             </div>
           </div>
+          <PresaleContainer>
+            <div className="d-flex align-items-center justify-content-center">
+              <div className="dismiss">
+                <FontAwesomeIcon icon={faTimes} size="xs" />
+              </div>
+              <span className="px-1"></span>
+              <div>Node Presale Feb 16</div>
+              <span className="px-2"></span>
+              <button className="btn btn-light text-uppercase">
+                Notify me
+              </button>
+            </div>
+          </PresaleContainer>
         </div>
       </nav>
     </Header>

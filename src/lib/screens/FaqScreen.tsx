@@ -5,9 +5,12 @@ export const FaqScreen = () => {
   return (
     <Section>
       <div className="container">
-        <SectionHeading1>Frequently Asked Questions</SectionHeading1>
+        <SectionHeading1>General FAQs</SectionHeading1>
         <div className="py-2"></div>
-        <FaqComponent />
+        <FaqComponent general={true} />
+        <SectionHeading1>Masternode FAQs</SectionHeading1>
+        <div className="py-2"></div>
+        <FaqComponent general={false} />
       </div>
     </Section>
   );

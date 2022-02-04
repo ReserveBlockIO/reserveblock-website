@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeFonts } from "../theme";
 
 interface ISection {
   fill?: boolean;
@@ -18,7 +19,7 @@ export const Section = styled.section<ISection>`
   background-image: url(/img/grid.jpg);
   background-size: cover;
 
-  border-bottom: 5px solid rgba(126, 239, 255, 0.3);
+  border-bottom: 5px solid rgba(126, 239, 255, 0.2);
   overflow: hidden;
 `;
 
@@ -34,7 +35,7 @@ export const SectionHeading1 = styled.h2<ISectionHeading>`
   text-transform: uppercase;
   font-weight: bold;
   color: #84e9fd;
-  font-family: "Oswald", sans-serif;
+  font-family: ${ThemeFonts.heading};
   font-weight: bold;
 
   ${(props) => (props.mt ? `margin-top:${props.mt}px` : null)};

@@ -29,6 +29,7 @@ import { chunkArray } from "../utils";
 import { PressList } from "../components/Home/PressList";
 import { SocialLinks } from "../components/common/SocialLinks";
 import { Footer } from "../components/common/Footer";
+import { ThemeColors, ThemeFonts } from "../theme";
 
 interface IIntroVideo {
   ref: React.Ref<HTMLVideoElement>;
@@ -41,6 +42,22 @@ const IntroVideo = styled.video<IIntroVideo>`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+`;
+
+const IntroTextContainer = styled.div`
+  position: relative;
+  text-align: center;
+
+  h2 {
+    font-size: 22px;
+    color: ${ThemeColors.bright};
+    text-transform: uppercase;
+  }
+  h3 {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 52px;
+  }
 `;
 
 const BottomFade = styled.div`
@@ -108,9 +125,20 @@ export const HomeScreen = () => {
 
         {contentVisible ? (
           <>
-            <div>
+            <IntroTextContainer>
+              <h2>Democratizing NFTs for Everyone</h2>
+              <h3>
+                Your Block
+                <br />
+                Your Data
+                <br />
+                Your NFT Reserved
+              </h3>
+            </IntroTextContainer>
+
+            {/* <div>
               <AboutTextComponent />
-            </div>
+            </div> */}
             <div
               style={{
                 position: "absolute",
@@ -230,7 +258,7 @@ export const HomeScreen = () => {
         <NextSectionButton sectionId="nodes" />
       </Section>
 
-      <Section fill={true} center={true} id="nodes">
+      <Section fill={true} center={true} id="masternodes">
         <PositionedAsset
           url="/img/decor/bg_03.png"
           alt="bg"
@@ -240,7 +268,7 @@ export const HomeScreen = () => {
           opacity={0.5}
         ></PositionedAsset>
         <div className="container">
-          <SectionHeading1>Nodes</SectionHeading1>
+          <SectionHeading1>Masternodes</SectionHeading1>
           <SectionHeading2>Join the Block.</SectionHeading2>
 
           <div className="row">
@@ -343,6 +371,13 @@ export const HomeScreen = () => {
             </div>
           </div>
         </div>
+        <NextSectionButton sectionId="wallet" />
+      </Section>
+      <Section fill={true} center={true} id="wallet">
+        <div className="container">
+          <SectionHeading1>Wallet</SectionHeading1>
+          <SectionHeading2>Lorem Ipsum.</SectionHeading2>
+        </div>
         <NextSectionButton sectionId="build" />
       </Section>
       <Section fill={true} center={true} id="build">
@@ -354,7 +389,7 @@ export const HomeScreen = () => {
         />
         <div className="container">
           <SectionHeading1>Build</SectionHeading1>
-          <SectionHeading2>Making the donuts.</SectionHeading2>
+          <SectionHeading2>Making the doughnuts.</SectionHeading2>
           <SectionContent>
             <SectionHeading4>Lorem:</SectionHeading4>
             <p>
@@ -385,6 +420,14 @@ export const HomeScreen = () => {
               </a>
             </div>
           </SectionContent>
+        </div>
+        <NextSectionButton sectionId="network" />
+      </Section>
+
+      <Section fill={true} center={true} id="network">
+        <div className="container">
+          <SectionHeading1>Network</SectionHeading1>
+          <SectionHeading2>Lorem Ipsum.</SectionHeading2>
         </div>
         <NextSectionButton sectionId="community" />
       </Section>
@@ -470,23 +513,14 @@ export const HomeScreen = () => {
         />
         <div className="container">
           <SectionHeading1>Press</SectionHeading1>
-          <SectionHeading2>What folks are saying.</SectionHeading2>
+          <SectionHeading2>As seen in.</SectionHeading2>
           <div className="py-2"></div>
 
-          <div className=" position-relative">
-            <a
-              href="/pdfs/RBXPresaleReleaseFeb8.pdf"
-              className="btn btn-light btn-lg"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faDownload} />
-              <span className="px-1"></span>
-              Download Latest Press Release
-            </a>
-          </div>
-          <div className="py-3"></div>
-
           <PressList />
+
+          <div className="row">
+            <div className="col"></div>
+          </div>
         </div>
         <NextSectionButton sectionId="support" />
       </Section>
@@ -501,7 +535,7 @@ export const HomeScreen = () => {
         />
         <div className="container">
           <SectionHeading1>Support</SectionHeading1>
-          <SectionHeading2>Need a hand?</SectionHeading2>
+          <SectionHeading2>Connect or Interact</SectionHeading2>
           <div className="row">
             <div className="col text-center">
               <SectionContent>
@@ -514,7 +548,7 @@ export const HomeScreen = () => {
                   Cupiditate, minima voluptatibus.
                 </p>
                 <a href="/faq" className="btn btn-dark w-100">
-                  Read our FAQ
+                  Read our FAQs
                 </a>
               </SectionContent>
             </div>
@@ -535,13 +569,16 @@ export const HomeScreen = () => {
             <div className="col text-center">
               <SectionContent>
                 <FontAwesomeIcon icon={faEnvelope} size="3x" />
-                <SectionHeading4 mt={12}>Contact Us</SectionHeading4>
+                <SectionHeading4 mt={12}>Contact</SectionHeading4>
 
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Cupiditate, minima voluptatibus.
                 </p>
-                <a href="#" className="btn btn-dark w-100">
+                <a
+                  href="mailto:hello@reserveblock.io"
+                  className="btn btn-dark w-100"
+                >
                   Send Email
                 </a>
               </SectionContent>

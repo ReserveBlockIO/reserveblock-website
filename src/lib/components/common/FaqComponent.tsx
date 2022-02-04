@@ -5,8 +5,12 @@ interface FaqItem {
   answer: string;
 }
 
-export const FaqComponent = () => {
-  const items: FaqItem[] = [
+interface Props {
+  general: boolean;
+}
+
+export const FaqComponent = (props: Props) => {
+  const generalItems: FaqItem[] = [
     {
       question: "What is the ReserveBlock RBX Platform?",
       answer:
@@ -26,12 +30,12 @@ export const FaqComponent = () => {
     {
       question: "What fees can I expect on the RBX platform?",
       answer:
-        "a.	RBX have near zero fees for transactions and for media storage, if needed but not required, they are equitable to hard drive space they take up with the Datanode infrastructure on the network but maintain a comparable nominal one-time fee per the public data algo formula. ",
+        "RBX have near zero fees for transactions and for media storage, if needed but not required, they are equitable to hard drive space they take up with the Datanode infrastructure on the network but maintain a comparable nominal one-time fee per the public data algo formula. ",
     },
     {
       question: "How is the ReserveBlock different from other NFT platforms?",
       answer:
-        "a.	RBX is different in that the platform is NFT centric, meaning the blockchain focuses on the delivery and features that allow for an NFTs true utility and are not just a collectible but provides real & relevant functionality. ",
+        "RBX is different in that the platform is NFT centric, meaning the blockchain focuses on the delivery and features that allow for an NFTs true utility and are not just a collectible but provides real & relevant functionality. ",
     },
     {
       question: "Do you need to own crypto to use RBX platform?",
@@ -140,6 +144,8 @@ export const FaqComponent = () => {
         "Yes, there is a provision for airdrop rewards on Testnet and Mainnet for open developer participation.  Additionally, as an open-source network, any developer can choose to make suggestions, create additional smart contracts for the compiler, or proposal changes which can be voted on by the Masternodes who provide governance.  Devs can also decide to build decentralized applications (dApps) on the RBX network should they choose.  ",
     },
   ];
+
+  const items = props.general ? generalItems : []; //todo
   return (
     <div>
       {items.map((item, i) => (

@@ -22,12 +22,20 @@ export const Footer = () => {
       path: "/#learn",
     },
     {
-      name: "Nodes",
-      path: "/#nodes",
+      name: "Masternodes",
+      path: "/#masternodes",
+    },
+    {
+      name: "Wallet",
+      path: "/#wallet",
     },
     {
       name: "Build",
       path: "/#build",
+    },
+    {
+      name: "Network",
+      path: "/#network",
     },
     {
       name: "Community",

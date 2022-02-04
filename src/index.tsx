@@ -3,18 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "bootstrap/dist/css/bootstrap.min.css";
 import store from "./lib/store/index";
 import { Provider } from "react-redux";
 import { ToastProvider } from "react-toast-notifications";
 import { BrowserRouter } from "react-router-dom";
 
+import "./lib/styles/styles.scss";
+
 ReactDOM.render(
   <Provider store={store}>
     <ToastProvider autoDismiss autoDismissTimeout={6000}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ToastProvider>
   </Provider>,
   document.getElementById("root")

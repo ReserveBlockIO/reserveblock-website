@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { NetworkStatusComponent } from "../components/NetworkStatusComponent";
 import { currencyToString } from "../enums";
 import { formatPrice } from "../formatting";
 import { TransactionDetails } from "../models";
@@ -74,44 +75,46 @@ export const StatusScreen = () => {
 
   return (
     <div className="screen screen-status">
-      <h2 className="text-center mb-4">Transaction Status</h2>
-      <table className="table table-striped">
-        <tbody>
-          <tr>
-            <td>Transaction ID:</td>
-            <td>{transaction.id}</td>
-          </tr>
-          <tr>
-            <td>State:</td>
-            <td>{transaction.stateLabel}</td>
-          </tr>
-          <tr>
-            <td>Amount</td>
-            <td>
-              {transaction.amount} {currencyToString(transaction.currency)}
-              &nbsp;({formatPrice(transaction.priceUsd)} USD)
-            </td>
-          </tr>
-          <tr>
-            <td>Confirmations</td>
-            <td>
-              {transaction.confirmations} / {transaction.confirmationsRequired}{" "}
-            </td>
-          </tr>
-          <tr>
-            <td>Received</td>
-            <td>{transaction.receivedDateLabel}</td>
-          </tr>
-          <tr>
-            <td>Inserted</td>
-            <td>{transaction.insertDateLabel}</td>
-          </tr>
-          <tr>
-            <td>Completed</td>
-            <td>{transaction.completedDateLabel}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="container py-2">
+        <NetworkStatusComponent />
+
+        <h2 className="text-center mb-4">Transaction Status</h2>
+        <table className="table table-striped">
+          <tbody>
+            <tr>
+              <td>Transaction ID:</td>
+              <td>{transaction.id}</td>
+            </tr>
+            <tr>
+              <td>State:</td>
+              <td>{transaction.stateLabel}</td>
+            </tr>
+            <tr>
+              <td>Amount</td>
+              <td>
+                {transaction.amount} {currencyToString(transaction.currency)}
+                &nbsp;({formatPrice(transaction.priceUsd)} USD)
+              </td>
+            </tr>
+            <tr>
+              <td>Confirmations</td>
+              <td>
+                {transaction.confirmations} /{" "}
+                {transaction.confirmationsRequired}{" "}
+              </td>
+            </tr>
+            <tr>
+              <td>Received</td>
+              <td>{transaction.receivedDateLabel}</td>
+            </tr>
+
+            <tr>
+              <td>Completed</td>
+              <td>{transaction.completedDateLabel}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

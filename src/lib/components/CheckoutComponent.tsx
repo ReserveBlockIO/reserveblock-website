@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Currency, currencyToString } from "../enums";
 import { DetailCardComponent } from "./DetailCardComponent";
+import { Web3ButtonsComponent } from "./Web3ButtonsComponent";
 
 interface Props {
   priceDetail?: PriceDetail;
@@ -111,7 +112,7 @@ export function CheckoutComponent(props: Props) {
   const redirectToStatusScreen = () => {
     const id = "testid1234"; //TODO: replace with below
     // const id = transactionId;
-    navigate(`/status/${id}`);
+    navigate(`/nodes/status/${id}`);
   };
 
   return (
@@ -261,12 +262,7 @@ export function CheckoutComponent(props: Props) {
                   </div>
                 </div>
                 <h6 className="mt-2 text-center">Transfer Options</h6>
-                <div className="py-1">
-                  <button className="btn btn-secondary w-100">Metamask</button>
-                </div>
-                <div className="py-1">
-                  <button className="btn btn-secondary w-100">Coinbase</button>
-                </div>
+                <Web3ButtonsComponent />
                 <div className="py-1">
                   <button
                     className="btn btn-secondary w-100"

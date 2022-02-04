@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap");
+@font-face {
+  font-family: "Adriatic";
+  src: url("./fonts/hinted-Adriatic-Bold.eot");
+  src: local("Adriatic Bold"), local("Adriatic-Bold"),
+    url("./fonts/hinted-Adriatic-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/hinted-Adriatic-Bold.woff2") format("woff2"),
+    url("./fonts/hinted-Adriatic-Bold.woff") format("woff"),
+    url("./fonts/hinted-Adriatic-Bold.ttf") format("truetype"),
+    url("./fonts/hinted-Adriatic-Bold.svg#Adriatic-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Adriatic";
+  src: url("./fonts/hinted-Adriatic-Medium.eot");
+  src: local("Adriatic Medium"), local("Adriatic-Medium"),
+    url("./fonts/hinted-Adriatic-Medium.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/hinted-Adriatic-Medium.woff2") format("woff2"),
+    url("./fonts/hinted-Adriatic-Medium.woff") format("woff"),
+    url("./fonts/hinted-Adriatic-Medium.ttf") format("truetype"),
+    url("./fonts/hinted-Adriatic-Medium.svg#Adriatic-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Adriatic";
+  src: url("./fonts/hinted-Adriatic-Light.eot");
+  src: local("Adriatic Light"), local("Adriatic-Light"),
+    url("./fonts/hinted-Adriatic-Light.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/hinted-Adriatic-Light.woff2") format("woff2"),
+    url("./fonts/hinted-Adriatic-Light.woff") format("woff"),
+    url("./fonts/hinted-Adriatic-Light.ttf") format("truetype"),
+    url("./fonts/hinted-Adriatic-Light.svg#Adriatic-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: "Adriatic", sans-serif;
+  background-color: $color-dark;
+  color: $color-light;
+}

@@ -69,12 +69,12 @@ export class TransactionDetails {
   }
 
   get stateLabel(): string {
-    if (this.active) {
-      return "Active";
+    if (this.confirmations < this.confirmationsRequired) {
+      return "In Progress...";
     }
 
-    if (!this.isProcessed) {
-      return "Pending Processing...";
+    if (this.completeDate) {
+      return "Completed";
     }
 
     return "Pending...";

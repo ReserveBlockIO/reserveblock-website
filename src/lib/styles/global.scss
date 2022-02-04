@@ -1,0 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: $color-darker;
+  color: $color-light;
+  overflow-x: hidden;
+  letter-spacing: 1px;
+}

@@ -496,7 +496,7 @@ export const HomeScreen = () => {
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Cupiditate, minima voluptatibus.
                 </p>
-                <a href="#" className="btn btn-dark w-100">
+                <a href="/faq" className="btn btn-dark w-100">
                   Read our FAQ
                 </a>
               </SectionContent>

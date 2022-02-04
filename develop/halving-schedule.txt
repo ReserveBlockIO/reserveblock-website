@@ -1,0 +1,134 @@
+Year 0 - No Halving Block Reward: 32.00
+Coins mined at beginning of chain start: 67,500,000
+================================================================
+Halving Number 1) New Block Reward: 16.00 at year 3
+Coins mined at beginning of halving: 218,872,800
+Total percent of coins mined: 58.84%
+================================================================
+Halving Number 2) New Block Reward: 8.00 at year 6
+Coins mined at beginning of halving: 294,559,200
+Total percent of coins mined: 79.18%
+================================================================
+Halving Number 3) New Block Reward: 4.00 at year 9
+Coins mined at beginning of halving: 332,402,400
+Total percent of coins mined: 89.36%
+================================================================
+Halving Number 4) New Block Reward: 2.00 at year 12
+Coins mined at beginning of halving: 351,324,000
+Total percent of coins mined: 94.44%
+================================================================
+Halving Number 5) New Block Reward: 1.00 at year 15
+Coins mined at beginning of halving: 360,784,800
+Total percent of coins mined: 96.99%
+================================================================
+Halving Number 6) New Block Reward: 0.50 at year 18
+Coins mined at beginning of halving: 365,515,200
+Total percent of coins mined: 98.26%
+================================================================
+Halving Number 7) New Block Reward: 0.25 at year 21
+Coins mined at beginning of halving: 367,880,400
+Total percent of coins mined: 98.89%
+================================================================
+Halving Number 8) New Block Reward: 0.125 at year 24
+Coins mined at beginning of halving: 369,063,000
+Total percent of coins mined: 99.21%
+================================================================
+Halving Number 9) New Block Reward: 0.0625 at year 27
+Coins mined at beginning of halving: 369,654,300
+Total percent of coins mined: 99.37%
+================================================================
+Halving Number 10) New Block Reward: 0.03125 at year 30
+Coins mined at beginning of halving: 369,949,950
+Total percent of coins mined: 99.45%
+================================================================
+Halving Number 11) New Block Reward: 0.015625 at year 33
+Coins mined at beginning of halving: 370,097,775
+Total percent of coins mined: 99.49%
+================================================================
+Halving Number 12) New Block Reward: 0.0078125 at year 36
+Coins mined at beginning of halving: 370,171,688
+Total percent of coins mined: 99.51%
+================================================================
+Halving Number 13) New Block Reward: 0.00390625 at year 39
+Coins mined at beginning of halving: 370,208,644
+Total percent of coins mined: 99.52%
+================================================================
+Halving Number 14) New Block Reward: 0.001953125 at year 42
+Coins mined at beginning of halving: 370,227,122
+Total percent of coins mined: 99.52%
+================================================================
+Halving Number 15) New Block Reward: 0.0009765625 at year 45
+Coins mined at beginning of halving: 370,236,361
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 16) New Block Reward: 0.00048828125 at year 48
+Coins mined at beginning of halving: 370,240,980
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 17) New Block Reward: 0.000244140625 at year 51
+Coins mined at beginning of halving: 370,243,290
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 18) New Block Reward: 0.0001220703125 at year 54
+Coins mined at beginning of halving: 370,244,445
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 19) New Block Reward: 0.00006103515625 at year 57
+Coins mined at beginning of halving: 370,245,023
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 20) New Block Reward: 0.000030517578125 at year 60
+Coins mined at beginning of halving: 370,245,311
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 21) New Block Reward: 0.0000152587890625 at year 63
+Coins mined at beginning of halving: 370,245,456
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 22) New Block Reward: 0.00000762939453125 at year 66
+Coins mined at beginning of halving: 370,245,528
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 23) New Block Reward: 0.000003814697265625 at year 69
+Coins mined at beginning of halving: 370,245,564
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 24) New Block Reward: 0.0000019073486328125 at year 72
+Coins mined at beginning of halving: 370,245,582
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 25) New Block Reward: 0.00000095367431640625 at year 75
+Coins mined at beginning of halving: 370,245,591
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 26) New Block Reward: 0.000000476837158203125 at year 78
+Coins mined at beginning of halving: 370,245,595
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 27) New Block Reward: 0.0000002384185791015625 at year 81
+Coins mined at beginning of halving: 370,245,598
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 28) New Block Reward: 0.00000011920928955078125 at year 84
+Coins mined at beginning of halving: 370,245,599
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 29) New Block Reward: 0.000000059604644775390625 at year 87
+Coins mined at beginning of halving: 370,245,599
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 30) New Block Reward: 0.0000000298023223876953125 at year 90
+Coins mined at beginning of halving: 370,245,600
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 31) New Block Reward: 0.00000001490116119384765625 at year 93
+Coins mined at beginning of halving: 370,245,600
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 32) New Block Reward: 0.000000007450580596923828125 at year 96
+Coins mined at beginning of halving: 370,245,600
+Total percent of coins mined: 99.53%
+================================================================
+Halving Number 33) New Block Reward: 0.0000000037252902984619140625 at year 99
+Coins mined at beginning of halving: 370,245,600
+Total percent of coins mined: 99.53%

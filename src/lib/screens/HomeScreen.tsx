@@ -113,6 +113,7 @@ export const HomeScreen = () => {
                 bottom: 80,
                 left: "50%",
                 transform: "translateX(-50%)",
+                zIndex: 10,
               }}
             >
               <SocialLinks />
@@ -395,6 +396,62 @@ export const HomeScreen = () => {
         <div className="container">
           <SectionHeading1>Community</SectionHeading1>
           <SectionHeading2>Play along with our friends.</SectionHeading2>
+
+          <div className="row mt-4 d-flex align-items-center">
+            <div className="col-4">
+              <img src="/img/decor/nodelines.png" className="w-100" />
+            </div>
+            <div className="col-8">
+              <SectionContent>
+                <div className="row d-flex align-items-center">
+                  <div className="col-2">
+                    <FontAwesomeIcon
+                      icon={faDiscord}
+                      size="4x"
+                    ></FontAwesomeIcon>
+                  </div>
+                  <div className="col-10">
+                    <SectionHeading4>Say Hello</SectionHeading4>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Nobis sunt iusto repellat neque. Quod, odio! Eius culpa
+                      hic non, ipsam accusamus, minus vitae fuga praesentium
+                      quis similique cum labore necessitatibus!{" "}
+                      <strong>
+                        <a href="#" className="text-light">
+                          Join now!
+                        </a>
+                      </strong>
+                    </p>
+                  </div>
+                </div>
+              </SectionContent>
+              <SectionContent>
+                <div className="row d-flex align-items-center">
+                  <div className="col-2">
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      size="4x"
+                    ></FontAwesomeIcon>
+                  </div>
+                  <div className="col-10">
+                    <SectionHeading4>Contrubite</SectionHeading4>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Nobis sunt iusto repellat neque. Quod, odio! Eius culpa
+                      hic non, ipsam accusamus, minus vitae fuga praesentium
+                      quis similique cum labore necessitatibus!{" "}
+                      <strong>
+                        <a href="#" className="text-light">
+                          Learn more!
+                        </a>
+                      </strong>
+                    </p>
+                  </div>
+                </div>
+              </SectionContent>
+            </div>
+          </div>
         </div>
         <NextSectionButton sectionId="press" />
       </Section>

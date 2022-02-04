@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import {
+  faDownload,
+  faEnvelope,
+  faInfoCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faDiscord,
   faTwitter,
@@ -467,7 +471,20 @@ export const HomeScreen = () => {
         <div className="container">
           <SectionHeading1>Press</SectionHeading1>
           <SectionHeading2>What folks are saying.</SectionHeading2>
-          <div className="py-5"></div>
+          <div className="py-2"></div>
+
+          <div className=" position-relative">
+            <a
+              href="/pdfs/RBXPresaleReleaseFeb8.pdf"
+              className="btn btn-light btn-lg"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faDownload} />
+              <span className="px-1"></span>
+              Download Latest Press Release
+            </a>
+          </div>
+          <div className="py-3"></div>
 
           <PressList />
         </div>

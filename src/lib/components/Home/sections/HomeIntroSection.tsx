@@ -139,7 +139,7 @@ export const HomeIntroSection = () => {
               inline
             >
               <span>
-                Your Block.<span className="px-3"></span>
+                Your Block.<span className="px-2"></span>
               </span>
             </VisibilityTransition>
             <VisibilityTransition
@@ -169,12 +169,15 @@ export const HomeIntroSection = () => {
               transitionDelay={3000}
               assumeVisible
             >
-              <SectionContent extraGlow={true} outline>
-                <div className="px-5">
+              <SectionContent extraGlow outline>
+                <div className="px-3">
                   <div className="">
                     <SectionHeading4>
-                      <strong>Node Presale</strong>
+                      <strong style={{ fontSize: 38, letterSpacing: 3 }}>
+                        Node Presale
+                      </strong>
                     </SectionHeading4>
+                    <div className="pt-1" />
                     <SectionHeading4
                       className="text-center pb-1 mb-0 text-lowercase"
                       style={{ color: ThemeColors.bright }}

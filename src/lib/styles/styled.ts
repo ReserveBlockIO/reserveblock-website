@@ -102,6 +102,20 @@ interface ISectionContent {
 }
 
 export const SectionContent = styled.div<ISectionContent>`
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 5px 0px rgba(126, 239, 255, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 10px 6px rgba(126, 239, 255, 0.4);
+    }
+
+    100% {
+      box-shadow: 0 0 5px 0px rgba(126, 239, 255, 0.2);
+    }
+  }
+
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(3px);
   padding: 24px;
@@ -109,10 +123,11 @@ export const SectionContent = styled.div<ISectionContent>`
 
   box-shadow: 0 0 15px rgba(126, 239, 255, 0.1);
 
-  ${(props) =>
-    props.extraGlow ? `box-shadow: 0 0 25px rgba(126, 239, 255, 0.5);` : null};
+  ${(props) => (props.extraGlow ? `animation: pulse 1.25s infinite` : ``)};
+
   ${(props) =>
     props.outline ? `border: 1px solid rgba(126, 239, 255, 0.35);` : null};
+
   p {
     font-size: 18px;
   }

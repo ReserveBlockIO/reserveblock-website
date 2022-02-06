@@ -86,7 +86,7 @@ export const HomeMasterNodesSection = () => {
                 <SectionContent inverted>
                   <Download
                     title="Become a Masternode"
-                    url="/pdfs/ReserveBlockMasternodes.pdf"
+                    url={require("../../../../pdfs/ReserveBlockMasternodes.pdf")}
                     openExternal
                     dark
                   />

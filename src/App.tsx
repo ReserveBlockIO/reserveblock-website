@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
-import { Footer } from "./lib/components/common/Footer";
+import { FooterComponent } from "./lib/components/common/Footer";
 import { HeaderComponent } from "./lib/components/HeaderComponent";
 import { LoadingContainer } from "./lib/containers/LoadingContainer";
 import { DisclaimerScreen } from "./lib/screens/DisclaimerScreen";
@@ -38,7 +38,7 @@ function App() {
         <Route path="/nodes/status/:id" element={<StatusScreen />} />
       </Routes>
 
-      <Footer />
+      <FooterComponent />
 
       {isLoading ? (
         <LoadingContainer>

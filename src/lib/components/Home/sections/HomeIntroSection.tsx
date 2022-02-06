@@ -7,6 +7,7 @@ import {
 import { NextSectionButton } from "../../common/NextSectionButton";
 import styled from "styled-components";
 import { ThemeColors } from "../../../theme";
+import { VisibilityTransition } from "../../common/VisibilityTransition";
 
 interface IIntroVideo {
   ref: React.Ref<HTMLVideoElement>;
@@ -19,6 +20,7 @@ const IntroVideo = styled.video<IIntroVideo>`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+  object-position: center top;
 `;
 
 const IntroTextContainer = styled.div`
@@ -37,56 +39,66 @@ const IntroTextContainer = styled.div`
   }
 `;
 
-const BottomFade = styled.div`
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0;
-  height: 100px;
-  background: rgb(3, 23, 69);
-  background: linear-gradient(
-    180deg,
-    rgba(3, 23, 69, 0) 0%,
-    rgba(3, 23, 69, 1) 59%
-  );
-`;
+// const BottomFade = styled.div`
+//   position: absolute;
+//   width: 100%;
+//   left: 0;
+//   bottom: 0;
+//   height: 100px;
+//   background: rgb(3, 23, 69);
+//   background: linear-gradient(
+//     180deg,
+//     rgba(3, 23, 69, 0) 0%,
+//     rgba(3, 23, 69, 1) 59%
+//   );
+// `;
 
-const ContentContainer = styled.div`
-  opacity: 0;
-  transition: all 1.3s;
-  transform: translateY(100px);
-  &.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
+// const ContentContainer = styled.div`
+//   opacity: 0;
+//   transition: all 1.3s;
+//   transform: translateY(100px);
+//   &.visible {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// `;
 
 export const HomeIntroSection = () => {
   const introVideo =
     "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/rbx-animation-scaled-v5x.mp4?alt=media";
-  const [contentVisible, setContentVisible] = useState<boolean>(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
+  const [spacerHeight, setSpacerHeight] = useState(120);
+
+  const handleResize = () => {
+    const sourceW = 1920;
+    const sourceH = 1080;
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+
+    const stretchW = w / sourceW;
+    const stretchH = h / sourceH;
+
+    if (stretchW >= stretchH) {
+      setSpacerHeight(Math.ceil(0.12 * window.innerWidth));
+    } else {
+      setSpacerHeight(Math.ceil(0.23 * window.innerHeight));
+    }
+  };
+
   useEffect(() => {
+    window.addEventListener("resize", handleResize, false);
+    handleResize();
     const v = videoRef.current!;
 
     v.addEventListener("canplay", () => {
       v.play();
     });
 
-    v.addEventListener("timeupdate", (event) => {
-      if (!contentVisible) {
-        if (event.timeStamp >= 4500) {
-          setContentVisible(true);
-        }
-      }
-    });
-
     v.addEventListener(
       "ended",
       (_) => {
-        console.log("ended");
         const videoLoopFrameStart = 5 * 24 + 26;
         const frameRate = 24;
         const videoLoopStart = videoLoopFrameStart / frameRate;
@@ -99,7 +111,7 @@ export const HomeIntroSection = () => {
   }, []);
 
   return (
-    <Section fill={true} center={true}>
+    <Section fill={true}>
       <IntroVideo
         ref={videoRef}
         src={introVideo}
@@ -107,52 +119,84 @@ export const HomeIntroSection = () => {
         playsInline={true}
       ></IntroVideo>
 
-      <ContentContainer className={contentVisible ? "visible" : ""}>
+      <div>
+        <div style={{ height: spacerHeight }} />
         <IntroTextContainer>
-          <h2 className="democratize">Democratizing NFTs for Everyone</h2>
-          <h3>
-            Your Block.<span className="px-3"></span>
-            Your Data.
-            <br />
-            Your NFT Reserved.
-          </h3>
-          <div className="d-flex justify-content-center">
-            <SectionContent extraGlow={true} outline>
-              <div className="px-4">
-                <div className="">
-                  <SectionHeading4>
-                    <strong>Node Presale</strong>
-                  </SectionHeading4>
-                  <SectionHeading4
-                    className="text-center pb-1 mb-0 text-lowercase"
-                    style={{ color: ThemeColors.bright }}
-                  >
-                    12d 3h 5m 12s
-                  </SectionHeading4>
-                </div>
+          <VisibilityTransition
+            transitionDelay={1250}
+            assumeVisible={true}
+            transitionType="blur"
+          >
+            <h2 className="democratize">Democratizing NFTs for Everyone</h2>
+          </VisibilityTransition>
+          <div className="py-4"></div>
 
-                <div className="mt-3">
-                  <div className="d-flex justify-content-center align-items-center">
-                    <button className="btn btn-light btn-lg w-100 text-uppercase">
-                      Notify&nbsp;me
-                    </button>
+          <h3>
+            <VisibilityTransition
+              transitionDelay={1500}
+              assumeVisible={true}
+              transitionType="blur"
+              inline
+            >
+              <span>
+                Your Block.<span className="px-3"></span>
+              </span>
+            </VisibilityTransition>
+            <VisibilityTransition
+              transitionDelay={2000}
+              assumeVisible={true}
+              transitionType="blur"
+              inline
+            >
+              <span>Your Data.</span>
+            </VisibilityTransition>
+            <br />
+            <VisibilityTransition
+              transitionDelay={2500}
+              assumeVisible={true}
+              transitionType="blur"
+              inline
+            >
+              <span>Your NFT Reserved.</span>
+            </VisibilityTransition>
+          </h3>
+          <div className="py-4"></div>
+
+          <div className="d-flex justify-content-center">
+            <VisibilityTransition
+              transitionType="slide"
+              transitionDirection="up"
+              transitionDelay={3000}
+              assumeVisible
+            >
+              <SectionContent extraGlow={true} outline>
+                <div className="px-5">
+                  <div className="">
+                    <SectionHeading4>
+                      <strong>Node Presale</strong>
+                    </SectionHeading4>
+                    <SectionHeading4
+                      className="text-center pb-1 mb-0 text-lowercase"
+                      style={{ color: ThemeColors.bright }}
+                    >
+                      12d 3h 5m 12s
+                    </SectionHeading4>
+                  </div>
+
+                  <div className="mt-3">
+                    <div className="d-flex justify-content-center align-items-center">
+                      <button className="btn btn-light btn-lg w-100 text-uppercase">
+                        Notify&nbsp;me
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SectionContent>
+              </SectionContent>
+            </VisibilityTransition>
           </div>
         </IntroTextContainer>
-      </ContentContainer>
-      <ContentContainer
-        className={contentVisible ? "visible" : ""}
-        style={{
-          position: "absolute",
-          bottom: 80,
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 10,
-        }}
-      ></ContentContainer>
+      </div>
+
       {/* <BottomFade /> */}
       <NextSectionButton sectionId="learn" />
     </Section>

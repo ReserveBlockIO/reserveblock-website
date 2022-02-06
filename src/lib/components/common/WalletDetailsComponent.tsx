@@ -5,6 +5,7 @@ import {
   SectionHeading4,
 } from "../../styles/styled";
 import { ThemeColors } from "../../theme";
+import { VisibilityTransition } from "./VisibilityTransition";
 
 const items: string[][] = [
   [
@@ -37,7 +38,7 @@ const Item = styled.div`
     line-height: 18px;
     color: #fff;
     text-align: center;
-    color: ${ThemeColors.bright};
+    opacity: 0.75;
 
     text-align: left;
     &:first-child {
@@ -46,6 +47,7 @@ const Item = styled.div`
       font-size: 18px;
       line-height: 24px;
       color: #fff;
+      opacity: 1;
     }
 
     &.large {
@@ -60,15 +62,21 @@ export const WalletDetailsComponent = () => {
     <div>
       <SectionHeading4>Wallet Details</SectionHeading4>
       <div className="row" data-masonry='{"percentPosition": true }'>
-        {items.map((item) => (
+        {items.map((item, i: number) => (
           <div className="col-6 col-md-4 col-lg-3">
-            <SectionContent className="my-2">
-              <Item>
-                {item.map((line) => (
-                  <h4>{line}</h4>
-                ))}
-              </Item>
-            </SectionContent>
+            <VisibilityTransition
+              transitionType="slide"
+              transitionDirection="up"
+              transitionDelay={i * 100}
+            >
+              <SectionContent className="my-2">
+                <Item>
+                  {item.map((line) => (
+                    <h4>{line}</h4>
+                  ))}
+                </Item>
+              </SectionContent>
+            </VisibilityTransition>
           </div>
         ))}
       </div>

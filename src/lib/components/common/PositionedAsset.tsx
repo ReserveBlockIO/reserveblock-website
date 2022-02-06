@@ -12,7 +12,7 @@ interface Props {
 }
 
 export const PositionedAsset = (props: Props) => {
-  let containerStyle: any = { position: "absolute" };
+  let containerStyle: any = { position: "absolute", pointerEvents: "none" };
   let imgStyle: any = { objectFit: "contain" };
 
   if (props.top !== null) {
@@ -48,7 +48,6 @@ export const PositionedAsset = (props: Props) => {
       imgStyle = { ...imgStyle, height: props.height };
     }
   }
-
   return (
     <div style={containerStyle}>
       <img src={props.url} style={imgStyle} alt={props.alt} />

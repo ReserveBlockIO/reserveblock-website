@@ -13,6 +13,7 @@ interface Props {
   openExternal?: boolean;
   icon?: IconDefinition;
   disabled?: boolean;
+  dark?: boolean;
 }
 
 const Button = styled.a`
@@ -30,14 +31,18 @@ export const Download = (props: Props) => {
   };
   return (
     <div className="text-center position-relative">
-      <SectionHeading4>{props.title}</SectionHeading4>
-      {props.description ? <p>{props.description}</p> : <p></p>}
+      <SectionHeading4 dark={props.dark}>{props.title}</SectionHeading4>
+      {props.description ? (
+        <p className={props.dark ? "text-dark" : ""}>{props.description}</p>
+      ) : (
+        <p></p>
+      )}
       <Button
         target={props.openExternal ? "_blank" : "_self"}
         rel="noreferrer"
         onClick={handleClick}
-        className={`btn btn-light btn-lg d-block ${
-          props.disabled ? "disabled" : ""
+        className={`btn btn-lg d-block ${props.disabled ? "disabled" : ""} ${
+          props.dark ? "btn-dark" : "btn-light"
         }`}
         href={props.url ? props.url : "#"}
       >

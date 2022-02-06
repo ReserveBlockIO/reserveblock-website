@@ -5,7 +5,9 @@ import {
   SectionHeading2,
 } from "../../../styles/styled";
 import { NextSectionButton } from "../../common/NextSectionButton";
+import { SectionHeaderComponent } from "../../common/OffsetHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
+import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { WalletDetailsComponent } from "../../common/WalletDetailsComponent";
 import { Download } from "../Download";
 
@@ -14,28 +16,46 @@ export const HomeWalletSection = () => {
     <>
       <Section fill={true} center={true} id="wallet">
         <div className="container">
-          <SectionHeading1>RBX Wallet</SectionHeading1>
-          <SectionHeading2>Unlocking Autonomy.</SectionHeading2>
-
-          <SectionContent>
-            <p className="mb-0">
-              Below are the inherent RBX wallet functions. These functions are
-              what are needed to achieve most common transactions. Additional
-              features can be added or unlocked as the network grows over time.
-            </p>
-          </SectionContent>
+          <SectionHeaderComponent
+            title="RBX Wallet"
+            subtitle="Unlocking Autonomy."
+            transitionDuration={500}
+            transitionDirection="left"
+          />
+          <VisibilityTransition>
+            <SectionContent>
+              <p className="mb-0">
+                Below are the inherent RBX wallet functions. These functions are
+                what are needed to achieve most common transactions. Additional
+                features can be added or unlocked as the network grows over
+                time.
+              </p>
+            </SectionContent>
+          </VisibilityTransition>
           <WalletDetailsComponent />
           <div className="py-3" />
           <div className="row">
             <div className="col-6">
-              <Download title="Get Started" />
+              <VisibilityTransition
+                transitionType="slide"
+                transitionDirection="up"
+                transitionDelay={500}
+              >
+                <Download title="Get Started" />
+              </VisibilityTransition>
             </div>
             <div className="col-6">
-              <Download title="Core Wallet" />
+              <VisibilityTransition
+                transitionType="slide"
+                transitionDirection="up"
+                transitionDelay={500}
+              >
+                <Download title="Core Wallet" />
+              </VisibilityTransition>
             </div>
           </div>
         </div>
-        <NextSectionButton sectionId="build" />
+        <NextSectionButton sectionId="network" />
       </Section>
     </>
   );

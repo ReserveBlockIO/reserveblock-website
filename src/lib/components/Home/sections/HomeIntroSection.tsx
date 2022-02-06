@@ -164,9 +164,8 @@ export const HomeIntroSection = () => {
 
           <div className="d-flex justify-content-center">
             <VisibilityTransition
-              transitionType="slide"
-              transitionDirection="up"
-              transitionDelay={3000}
+              transitionType="blur"
+              transitionDelay={3500}
               assumeVisible
             >
               <SectionContent extraGlow outline>

@@ -11,6 +11,10 @@ import { BrowserRouter } from "react-router-dom";
 import "./lib/styles/styles.scss";
 import "masonry-layout";
 
+import SmoothScroll from "smooth-scroll";
+
+new SmoothScroll('a[href*="#"]');
+
 ReactDOM.render(
   <Provider store={store}>
     <ToastProvider autoDismiss autoDismissTimeout={6000}>

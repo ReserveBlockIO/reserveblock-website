@@ -9,6 +9,7 @@ import {
 } from "../data/menus";
 import { ThemeColors } from "../theme";
 import { SocialLinks } from "./common/SocialLinks";
+import { VisibilityTransition } from "./common/VisibilityTransition";
 
 const Header = styled.header`
   nav {

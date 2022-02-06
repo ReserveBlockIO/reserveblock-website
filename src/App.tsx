@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="app">
       <HeaderComponent />
-      <div style={{ height: 50 }}></div>
+      <div style={{ height: 25 }}></div>
 
       <Routes>
         <Route path="/" element={<HomeScreen />} />

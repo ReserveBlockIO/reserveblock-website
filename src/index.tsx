@@ -12,8 +12,14 @@ import "./lib/styles/styles.scss";
 import "masonry-layout";
 
 import SmoothScroll from "smooth-scroll";
-
-new SmoothScroll('a[href*="#"]');
+const isSafari =
+  navigator.vendor.match(/apple/i) &&
+  !navigator.userAgent.match(/crios/i) &&
+  !navigator.userAgent.match(/fxios/i) &&
+  !navigator.userAgent.match(/Opera|OPT\//);
+if (isSafari) {
+  new SmoothScroll('a[href*="#"]');
+}
 
 ReactDOM.render(
   <Provider store={store}>

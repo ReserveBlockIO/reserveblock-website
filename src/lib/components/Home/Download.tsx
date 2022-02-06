@@ -24,8 +24,9 @@ const Button = styled.a`
 `;
 
 export const Download = (props: Props) => {
-  const handleClick = () => {
+  const handleClick = (e: { preventDefault: () => void }) => {
     if (props.onClick) {
+      e.preventDefault();
       props.onClick();
     }
   };

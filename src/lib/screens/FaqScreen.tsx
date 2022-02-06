@@ -10,7 +10,9 @@ export const FaqScreen = () => {
         <FaqComponent general={true} />
         <SectionHeading1>Masternode FAQs</SectionHeading1>
         <div className="py-2"></div>
-        <FaqComponent general={false} />
+        <div id="masternodes">
+          <FaqComponent general={false} />
+        </div>
       </div>
     </Section>
   );

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { primaryNavItems, secondaryNavItems } from "../../data/menus";
 import { SocialLinks } from "./SocialLinks";
 
 const Link = styled.a`
@@ -12,48 +13,7 @@ const Link = styled.a`
 `;
 
 export const Footer = () => {
-  const links = [
-    {
-      name: "Home",
-      path: "/",
-    },
-    {
-      name: "Learn",
-      path: "/#learn",
-    },
-    {
-      name: "Masternodes",
-      path: "/#masternodes",
-    },
-    {
-      name: "Wallet",
-      path: "/#wallet",
-    },
-    {
-      name: "Build",
-      path: "/#build",
-    },
-    {
-      name: "Network",
-      path: "/#network",
-    },
-    {
-      name: "Community",
-      path: "/#community",
-    },
-    {
-      name: "Press",
-      path: "/#press",
-    },
-    {
-      name: "Litepaper",
-      path: "",
-    },
-    {
-      name: "Support",
-      path: "/#support",
-    },
-  ];
+  const links = [...primaryNavItems, ...secondaryNavItems];
   return (
     <div className="text-center py-5">
       <SocialLinks />

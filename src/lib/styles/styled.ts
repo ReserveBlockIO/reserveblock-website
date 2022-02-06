@@ -16,10 +16,10 @@ export const Section = styled.section<ISection>`
       ? `display: flex; justify-content: center; align-items:center;`
       : null};
 
-  background-image: url(/img/grid.jpg);
-  background-size: cover;
+  /* background-image: url(/img/grid.jpg); */
+  /* background-size: cover; */
 
-  border-bottom: 5px solid rgba(126, 239, 255, 0.2);
+  /* border-bottom: 5px solid rgba(126, 239, 255, 0.2); */
   overflow: hidden;
 `;
 
@@ -72,6 +72,8 @@ export const SectionHeading4 = styled(SectionHeading1)`
 
 interface ISectionContent {
   inverted?: boolean;
+  extraGlow?: boolean;
+  outline?: boolean;
 }
 
 export const SectionContent = styled.div<ISectionContent>`
@@ -82,6 +84,10 @@ export const SectionContent = styled.div<ISectionContent>`
 
   box-shadow: 0 0 15px rgba(126, 239, 255, 0.1);
 
+  ${(props) =>
+    props.extraGlow ? `box-shadow: 0 0 25px rgba(126, 239, 255, 0.5);` : null};
+  ${(props) =>
+    props.outline ? `border: 1px solid rgba(126, 239, 255, 0.35);` : null};
   p {
     font-size: 18px;
   }

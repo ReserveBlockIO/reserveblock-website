@@ -16,10 +16,10 @@ export const Section = styled.section<ISection>`
       ? `display: flex; justify-content: center; align-items:center;`
       : null};
 
-  /* background-image: url(/img/grid.jpg); */
-  /* background-size: cover; */
+  background-image: url(/img/grid.jpg);
+  background-size: cover;
 
-  /* border-bottom: 5px solid rgba(126, 239, 255, 0.2); */
+  border-bottom: 5px solid rgba(126, 239, 255, 0.2);
   overflow: hidden;
 `;
 

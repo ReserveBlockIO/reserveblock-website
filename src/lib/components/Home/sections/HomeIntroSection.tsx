@@ -153,7 +153,7 @@ export const HomeIntroSection = () => {
           zIndex: 10,
         }}
       ></ContentContainer>
-      <BottomFade />
+      {/* <BottomFade /> */}
       <NextSectionButton sectionId="learn" />
     </Section>
   );

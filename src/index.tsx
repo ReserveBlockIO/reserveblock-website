@@ -9,6 +9,7 @@ import { ToastProvider } from "react-toast-notifications";
 import { BrowserRouter } from "react-router-dom";
 
 import "./lib/styles/styles.scss";
+import "masonry-layout";
 
 ReactDOM.render(
   <Provider store={store}>

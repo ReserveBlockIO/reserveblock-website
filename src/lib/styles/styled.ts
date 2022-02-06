@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { ThemeFonts } from "../theme";
+import { ThemeColors, ThemeFonts } from "../theme";
 
 interface ISection {
   fill?: boolean;
   center?: boolean;
+  dark?: boolean;
+  light?: boolean;
 }
 
 export const Section = styled.section<ISection>`
@@ -16,16 +18,29 @@ export const Section = styled.section<ISection>`
       ? `display: flex; justify-content: center; align-items:center;`
       : null};
 
-  background-image: url(/img/grid.jpg);
-  background-size: cover;
+  ${(props) =>
+    props.dark
+      ? `background-color: rgba(0,0,0,.8); backdrop-filter: blur(2px);`
+      : null};
 
-  border-bottom: 5px solid rgba(126, 239, 255, 0.2);
-  overflow: hidden;
+  ${(props) =>
+    props.light
+      ? `
+        background-color: rgba(255,255,255,.8); backdrop-filter: blur(2px);`
+      : null};
+
+  /* background-image: url(/img/grid.jpg); */
+  /* background-size: cover; */
+
+  /* border-bottom: 5px solid rgba(126, 239, 255, 0.2); */
+  /* overflow: hidden; */
 `;
 
 interface ISectionHeading {
   mt?: number;
   inverted?: boolean;
+  dark?: boolean;
+  light?: boolean;
 }
 export const SectionHeading1 = styled.h2<ISectionHeading>`
   position: relative;
@@ -42,7 +57,17 @@ export const SectionHeading1 = styled.h2<ISectionHeading>`
   ${(props) =>
     props.inverted
       ? `
-        color: #031745;`
+        color: #031745 !important;`
+      : null};
+  ${(props) =>
+    props.dark
+      ? `
+        color: #000 !important;`
+      : null};
+  ${(props) =>
+    props.light
+      ? `
+        color: #fff !important;`
       : null};
 `;
 
@@ -72,15 +97,36 @@ export const SectionHeading4 = styled(SectionHeading1)`
 
 interface ISectionContent {
   inverted?: boolean;
+  extraGlow?: boolean;
+  outline?: boolean;
 }
 
 export const SectionContent = styled.div<ISectionContent>`
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 5px 0px rgba(126, 239, 255, 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 10px 6px rgba(126, 239, 255, 0.4);
+    }
+
+    100% {
+      box-shadow: 0 0 5px 0px rgba(126, 239, 255, 0.2);
+    }
+  }
+
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(3px);
   padding: 24px;
   margin: 24px 0;
 
   box-shadow: 0 0 15px rgba(126, 239, 255, 0.1);
+
+  ${(props) => (props.extraGlow ? `animation: pulse 1.25s infinite` : ``)};
+
+  ${(props) =>
+    props.outline ? `border: 1px solid rgba(126, 239, 255, 0.35);` : null};
 
   p {
     font-size: 18px;
@@ -99,7 +145,7 @@ export const SectionContent = styled.div<ISectionContent>`
   ${(props) =>
     props.inverted
       ? `
-        background-color: rgba(255,255,255,.20);
+        background-color: rgba(255,255,255,.75);
         color: #000;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
     `

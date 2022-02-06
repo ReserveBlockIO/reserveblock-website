@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { chunkArray } from "../../utils";
 import { IPressCardProps, PressCard } from "../common/PressCard";
+import { VisibilityTransition } from "../common/VisibilityTransition";
 
 interface PressLogo {
   name: string;
@@ -62,12 +63,15 @@ export const PressList = () => {
           <div className="py-3"></div>
 
           <div className="d-flex justify-content-between">
-            {chunk.map((p: PressLogo) => (
-              <div>
+            {chunk.map((p: PressLogo, i: number) => (
+              <VisibilityTransition
+                transitionType="fade"
+                transitionDelay={i * 350}
+              >
                 <PressLink href={p.url} target="_blank" rel="noreferrer">
                   <img src={p.image} alt={p.name} height={60} />
                 </PressLink>
-              </div>
+              </VisibilityTransition>
             ))}
           </div>
           <div className="py-3"></div>
@@ -77,9 +81,15 @@ export const PressList = () => {
       <div className="py-3"></div>
 
       <div className="row">
-        {pressItems.map((p) => (
+        {pressItems.map((p, i: number) => (
           <div className="col-4">
-            <PressCard {...p} />
+            <VisibilityTransition
+              transitionType="slide"
+              transitionDirection={i === 0 ? "right" : i === 1 ? "up" : "left"}
+              transitionDelay={250}
+            >
+              <PressCard {...p} />
+            </VisibilityTransition>
           </div>
         ))}
       </div>

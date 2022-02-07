@@ -39,7 +39,7 @@ export const HomeNetworkSection = () => {
             isInvertedOffset
           />
 
-          <div className="py-5"></div>
+          <div className="py-0 py-md-5"></div>
 
           <div className="row">
             <div className="col-12 col-md-6">
@@ -91,7 +91,7 @@ export const HomeNetworkSection = () => {
               </VisibilityTransition>
             </div>
           </div>
-          <div className="py-5"></div>
+          <div className="py-0 py-md-5"></div>
         </div>
 
         <NextSectionButton sectionId="build" />

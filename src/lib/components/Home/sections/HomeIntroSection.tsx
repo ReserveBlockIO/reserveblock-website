@@ -55,6 +55,8 @@ export const HomeIntroSection = () => {
   const introVideo = isMobile()
     ? "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/FEB2022_mobilex.mp4?alt=media"
     : "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/FEB2022x.mp4?alt=media";
+
+  const introPoster = "/img/poster.jpg";
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const [spacerHeight, setSpacerHeight] = useState<number>(120);
@@ -117,6 +119,7 @@ export const HomeIntroSection = () => {
         src={introVideo}
         muted
         playsInline
+        poster={introPoster}
         // autoPlay
       ></IntroVideo>
 

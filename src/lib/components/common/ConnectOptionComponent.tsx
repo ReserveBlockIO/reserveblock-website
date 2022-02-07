@@ -16,20 +16,19 @@ interface Props {
 const Hitarea = styled.a`
   color: #fff;
   text-decoration: none;
-  .col-2 {
+  .left {
     transition: all 0.4s;
   }
-  .col-10 {
+  .right {
     transition: all 0.4s ease;
   }
   &:hover {
     text-decoration: none;
     color: #fff;
-    .col-2 {
+    .left {
       color: ${ThemeColors.bright};
-      filter: blur(2px);
     }
-    .col-10 {
+    .right {
       padding-left: 10%;
     }
   }
@@ -38,12 +37,12 @@ const Hitarea = styled.a`
 export const ConnectOptionComponent = (props: Props) => {
   return (
     <Hitarea href={props.href} rel="noreferrer" target="_blank">
-      <SectionContent>
+      <SectionContent outline>
         <div className="row d-flex align-items-center">
-          <div className="col-4 col-md-2 text-center">
+          <div className="left col-4 col-md-2 text-center">
             <FontAwesomeIcon icon={props.icon} size="4x"></FontAwesomeIcon>
           </div>
-          <div className="col-8 col-md-10">
+          <div className="right col-8 col-md-10">
             <SectionHeading4>{props.title}</SectionHeading4>
             <p>{props.description}</p>
           </div>

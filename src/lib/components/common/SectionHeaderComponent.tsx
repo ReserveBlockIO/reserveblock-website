@@ -32,7 +32,14 @@ export const Container = styled.div<IContainer>`
       : null};
 
   ${(props) =>
-    props.isOffset ? `background-color: ${ThemeColors.light};` : null};
+    props.isOffset
+      ? `background-color: ${ThemeColors.light}; 
+       border: 1px solid ${ThemeColors.bright}; 
+       box-shadow: 0 0 15px 3px ${ThemeColors.mutedDark};
+       background: linear-gradient(0deg, ${ThemeColors.muted} 0%, rgba(255, 255, 255, 1) 100%);
+       
+       `
+      : null};
   ${(props) =>
     props.isInvertedOffset ? `background-color: ${ThemeColors.dark};` : null};
 `;

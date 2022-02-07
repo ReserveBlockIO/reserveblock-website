@@ -94,11 +94,13 @@ const PresaleContainer = styled.div`
 const NavItem = styled.li`
   a {
     letter-spacing: 2px;
-    /* color: ${ThemeColors.bright} !important; */
+    color: ${ThemeColors.bright} !important;
+    padding-top: 14px;
   }
   &:hover {
     a {
-      color: ${ThemeColors.bright} !important;
+      /* color: ${ThemeColors.bright} !important; */
+      color: #fff !important;
     }
   }
 `;
@@ -107,6 +109,7 @@ const SubNavItem = styled(NavItem)`
   font-size: 14px;
   a {
     letter-spacing: 1px;
+    padding-top: 8px;
   }
 `;
 const SocialNavItem = styled.li`
@@ -226,10 +229,10 @@ export const HeaderComponent = () => {
           }
         >
           <div className="d-flex align-items-center justify-content-center">
-            <div className="dismiss" onClick={() => setNodeSaleDismissed(true)}>
+            {/* <div className="dismiss" onClick={() => setNodeSaleDismissed(true)}>
               <FontAwesomeIcon icon={faTimes} size="xs" />
-            </div>
-            <span className="px-1"></span>
+            </div> */}
+            {/* <span className="px-1"></span> */}
             <div style={{ fontWeight: "bold" }}>Node Presale Feb 22</div>
             <span className="px-2"></span>
             <button className="btn btn-light text-uppercase">Activate</button>

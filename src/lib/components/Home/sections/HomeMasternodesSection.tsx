@@ -10,7 +10,7 @@ import {
 } from "../../../styles/styled";
 import { isMobile } from "../../../utils";
 import { NextSectionButton } from "../../common/NextSectionButton";
-import { SectionHeaderComponent } from "../../common/OffsetHeaderComponent";
+import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
@@ -101,12 +101,13 @@ export const HomeMasterNodesSection = () => {
                 transitionDirection="up"
                 transitionDelay={250}
               >
-                <SectionContent mutedBg>
+                <SectionContent mutedBg outline>
                   <Download
                     title="Become a Masternode"
                     url={require("../../../../pdfs/ReserveBlockMasternodes.pdf")}
                     openExternal
                     horizontalPadding={contentPadding}
+                    altGlow
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -119,10 +120,11 @@ export const HomeMasterNodesSection = () => {
               >
                 <SectionContent mutedBg>
                   <Download
-                    title="Blocking Rewards &amp; Halving"
+                    title="Block Rewards &amp; Halving"
                     url="/halving-schedule"
                     icon={faLink}
                     horizontalPadding={contentPadding}
+                    altGlow
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -142,6 +144,7 @@ export const HomeMasterNodesSection = () => {
                     noIcon
                     buttonText="Activating Soon"
                     horizontalPadding={contentPadding}
+                    altGlow
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -158,13 +161,13 @@ export const HomeMasterNodesSection = () => {
                     url="/faq#masternodes"
                     icon={faLink}
                     horizontalPadding={contentPadding}
+                    altGlow
                   />
                 </SectionContent>
               </VisibilityTransition>
             </div>
           </div>
         </div>
-        <div className="py-5"></div>
         <NextSectionButton sectionId="wallet" />
       </Section>
     </>

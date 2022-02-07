@@ -17,6 +17,8 @@ interface Props {
   noIcon?: boolean;
   smallButton?: boolean;
   horizontalPadding?: number;
+  altGlow?: boolean;
+  noCaps?: boolean;
 }
 
 export const Download = (props: Props) => {
@@ -31,7 +33,9 @@ export const Download = (props: Props) => {
       className="text-center position-relative"
       style={{ padding: `0 ${props.horizontalPadding || 0}px` }}
     >
-      <SectionHeading4 dark={props.dark}>{props.title}</SectionHeading4>
+      <SectionHeading4 noCaps={props.noCaps} dark={props.dark}>
+        {props.title}
+      </SectionHeading4>
       {props.description ? (
         <p className={props.dark ? "text-dark" : ""}>{props.description}</p>
       ) : (
@@ -41,6 +45,7 @@ export const Download = (props: Props) => {
         target={props.openExternal ? "_blank" : "_self"}
         rel="noreferrer"
         onClick={handleClick}
+        altGlow={props.altGlow || false}
         className={`btn btn-lg  ${props.disabled ? "disabled" : ""} ${
           props.dark ? "btn-dark" : "btn-light button-3d-white"
         } ${props.smallButton ? `px-4` : `w-100`}`}

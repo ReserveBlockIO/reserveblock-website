@@ -63,13 +63,16 @@ export const WalletDetailsComponent = () => {
       <SectionHeading4>Wallet Details</SectionHeading4>
       <div className="row" data-masonry='{"percentPosition": true }'>
         {items.map((item, i: number) => (
-          <div className="col-6 col-md-4 col-lg-3">
+          <div
+            className="col-6 col-md-4 col-lg-3"
+            style={{ padding: "0px 4px" }}
+          >
             <VisibilityTransition
               transitionType="slide"
               transitionDirection="up"
               transitionDelay={i * 100}
             >
-              <SectionContent className="my-2">
+              <SectionContent className="my-1" style={{ margin: 0 }} outline>
                 <Item>
                   {item.map((line) => (
                     <h4>{line}</h4>

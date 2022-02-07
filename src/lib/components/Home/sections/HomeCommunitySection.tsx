@@ -8,7 +8,7 @@ import { SocialUrls } from "../../../data/menus";
 import { Section } from "../../../styles/styled";
 import { ConnectOptionComponent } from "../../common/ConnectOptionComponent";
 import { NextSectionButton } from "../../common/NextSectionButton";
-import { SectionHeaderComponent } from "../../common/OffsetHeaderComponent";
+import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 

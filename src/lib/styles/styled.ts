@@ -8,8 +8,8 @@ interface ISection {
   light?: boolean;
 }
 
-const pulseKeyframes = (startColor: string, endColor: string) => {
-  return `@keyframes pulse {
+const pulseKeyframes = (name: string, startColor: string, endColor: string) => {
+  return `@keyframes ${name} {
     0% {
       box-shadow: 0 0 5px 0px ${startColor};
     }
@@ -57,6 +57,7 @@ interface ISectionHeading {
   inverted?: boolean;
   dark?: boolean;
   light?: boolean;
+  noCaps?: boolean;
 }
 export const SectionHeading1 = styled.h2<ISectionHeading>`
   position: relative;
@@ -68,6 +69,8 @@ export const SectionHeading1 = styled.h2<ISectionHeading>`
   color: #84e9fd;
   font-family: ${ThemeFonts.heading};
   font-weight: bold;
+
+  ${(props) => (props.noCaps ? `text-transform:none;` : null)};
 
   ${(props) => (props.mt ? `margin-top:${props.mt}px` : null)};
   ${(props) =>
@@ -119,7 +122,11 @@ interface ISectionContent {
 }
 
 export const SectionContent = styled.div<ISectionContent>`
-  ${pulseKeyframes("rgba(126, 239, 255, 0.2)", "rgba(126, 239, 255, 0.4)")};
+  ${pulseKeyframes(
+    "pulse",
+    "rgba(126, 239, 255, 0.2)",
+    "rgba(126, 239, 255, 0.4)"
+  )};
 
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(3px);
@@ -131,7 +138,7 @@ export const SectionContent = styled.div<ISectionContent>`
   ${(props) => (props.extraGlow ? `animation: pulse 1.75s infinite` : ``)};
 
   ${(props) =>
-    props.outline ? `border: 1px solid rgba(126, 239, 255, 0.35);` : null};
+    props.outline ? `border: 1px solid rgba(126, 239, 255, 0.22);` : null};
 
   p {
     font-size: 20px;
@@ -164,14 +171,31 @@ export const SectionContent = styled.div<ISectionContent>`
       box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
       background-color: ${ThemeColors.muted};
         background: linear-gradient(45deg, ${ThemeColors.mutedDark} 0%, ${ThemeColors.mutedBright} 100%);
+        border-radius: 4px;
     `
       : null};
 `;
 
-export const ButtonLink = styled.a`
-  ${pulseKeyframes("rgba(126, 239, 255, 0.2)", "rgba(126, 239, 255, 0.3)")};
+interface IButtonLink {
+  altGlow?: boolean;
+}
 
-  animation: pulse 1s infinite;
+export const ButtonLink = styled.a<IButtonLink>`
+  ${pulseKeyframes(
+    "whitePulse",
+    "rgba(255, 255, 255, 0.2)",
+    "rgba(255, 255, 255, 0.3)"
+  )};
+  ${pulseKeyframes(
+    "pulse",
+    "rgba(126, 239, 255, 0.2)",
+    "rgba(126, 239, 255, 0.3)"
+  )};
+
+  ${(props) =>
+    props.altGlow
+      ? ` animation: whitePulse 1s infinite;`
+      : ` animation: pulse 1s infinite;`};
 
   &.disabled {
     /* opacity: 0.7; */

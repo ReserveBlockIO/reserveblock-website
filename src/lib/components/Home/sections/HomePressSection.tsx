@@ -3,7 +3,7 @@ import {
   SectionHeading1,
   SectionHeading2,
 } from "../../../styles/styled";
-import { SectionHeaderComponent } from "../../common/OffsetHeaderComponent";
+import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
 import { PressList } from "../PressList";
 

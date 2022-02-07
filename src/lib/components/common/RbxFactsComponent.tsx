@@ -112,7 +112,7 @@ export const RbxFactsComponent = () => {
       <div className="row">
         {items.map((item) => (
           <div className="col-12 col-md-4 col-lg-3">
-            <SectionContent className="my-2">
+            <SectionContent className="my-2" outline>
               <Item>
                 <div>
                   <h2>{item.label}</h2>

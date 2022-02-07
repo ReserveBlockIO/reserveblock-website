@@ -60,7 +60,7 @@ export const FoundationComponent = () => {
           </a>
         </p>
       </SectionContent>
-      <div className="text-center">
+      {/* <div className="text-center">
         <SectionHeading4>For Further Inquiries:</SectionHeading4>
         <p>
           Website:{" "}
@@ -108,7 +108,7 @@ export const FoundationComponent = () => {
             github.com/ReserveBlockIO
           </a>
         </p>
-      </div>
+      </div> */}
     </div>
   );
 };

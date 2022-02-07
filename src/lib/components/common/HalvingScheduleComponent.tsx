@@ -33,7 +33,7 @@ export const HalvingScheduleComponent = () => {
   const items: Item[] = [
     {
       lines: [
-        { label: "Year 0 - No Halving Block Reward", value: "32.00" },
+        { label: "Year 0 - No Halving) Block Reward", value: "32.00" },
         {
           label: "Coins mined at beginning of chain start",
           value: "67,500,000",

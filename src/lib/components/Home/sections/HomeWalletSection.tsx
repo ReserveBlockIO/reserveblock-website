@@ -5,7 +5,7 @@ import {
   SectionHeading2,
 } from "../../../styles/styled";
 import { NextSectionButton } from "../../common/NextSectionButton";
-import { SectionHeaderComponent } from "../../common/OffsetHeaderComponent";
+import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { WalletDetailsComponent } from "../../common/WalletDetailsComponent";
@@ -74,6 +74,7 @@ export const HomeWalletSection = () => {
                   buttonText="Activating in Mainnet"
                   disabled
                   noIcon
+                  noCaps
                 />
               </VisibilityTransition>
             </div>
@@ -105,6 +106,7 @@ export const HomeWalletSection = () => {
                   buttonText="Activating in Mainnet"
                   disabled
                   noIcon
+                  noCaps
                 />
               </VisibilityTransition>
             </div>

@@ -14,7 +14,7 @@ import {
 } from "../../../styles/styled";
 import { FoundationComponent } from "../../common/FoundationComponent";
 import { NextSectionButton } from "../../common/NextSectionButton";
-import { SectionHeaderComponent } from "../../common/OffsetHeaderComponent";
+import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
 import { RbxFactsComponent } from "../../common/RbxFactsComponent";
 import { VisibilityTransition } from "../../common/VisibilityTransition";

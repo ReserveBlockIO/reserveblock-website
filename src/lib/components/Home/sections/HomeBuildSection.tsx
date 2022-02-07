@@ -12,7 +12,7 @@ import {
   SectionHeading2,
 } from "../../../styles/styled";
 import { NextSectionButton } from "../../common/NextSectionButton";
-import { SectionHeaderComponent } from "../../common/OffsetHeaderComponent";
+import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";

@@ -34,7 +34,6 @@ const IntroTextContainer = styled.div`
   .democratize {
     font-size: 28px;
     color: ${ThemeColors.bright};
-    text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 2px;
     ${isMobile() ? `font-size: 20px; letter-spacing: 1px;` : ``}
@@ -132,9 +131,9 @@ export const HomeIntroSection = () => {
               duration={1000}
             >
               <h2 className="democratize">
-                Democratizing NFTs
+                DEMOCRATIZING NFTs<span className="d-none d-md-inline"> </span>
                 <br className="d-block d-md-none" />
-                for Everyone
+                FOR EVERYONE
               </h2>
             </VisibilityTransition>
             <div className="py-4 d-none d-md-block"></div>

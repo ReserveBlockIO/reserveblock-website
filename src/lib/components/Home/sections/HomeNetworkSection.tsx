@@ -1,13 +1,7 @@
 import styled from "styled-components";
-import {
-  Section,
-  SectionContent,
-  SectionHeading1,
-  SectionHeading2,
-} from "../../../styles/styled";
+import { Section, SectionContent } from "../../../styles/styled";
 import { NextSectionButton } from "../../common/NextSectionButton";
 import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
-import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
 

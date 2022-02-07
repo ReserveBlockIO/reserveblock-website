@@ -1,3 +1,5 @@
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import {
   SectionContent,
@@ -75,7 +77,14 @@ export const WalletDetailsComponent = () => {
               <SectionContent className="my-1" style={{ margin: 0 }} outline>
                 <Item>
                   {item.map((line) => (
-                    <h4>{line}</h4>
+                    <h4>
+                      <FontAwesomeIcon
+                        icon={faChevronRight}
+                        color={ThemeColors.bright}
+                        size="xs"
+                      ></FontAwesomeIcon>
+                      &nbsp;{line}
+                    </h4>
                   ))}
                 </Item>
               </SectionContent>

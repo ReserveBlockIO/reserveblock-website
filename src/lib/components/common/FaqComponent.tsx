@@ -9,6 +9,7 @@ interface Props {
   general?: boolean;
   datanode?: boolean;
   masternode?: boolean;
+  developer?: boolean;
 }
 
 export const FaqComponent = (props: Props) => {
@@ -340,6 +341,72 @@ export const FaqComponent = (props: Props) => {
     },
   ];
 
+  const developerItems: FaqItem[] = [
+    {
+      question: "What are the roles and responsibilities of a developer?",
+      answer:
+        "Developers can help further facilitate the creation of smart contracts and integrations of RBX beyond the ones provided.  Devs can also make themselves available through the RBX dev rewards program to engage with users who have more complex smart contract needs that require a coding expertise in exchange for rewards as well.  Devs are also welcome to make proposals and encouraged to build unique applications that continue to help the utility of NFTs and their potential unkown use cases expand into the future.  Again, the network has been built for anyone that wishes to interact &/or utilize it.  ",
+    },
+    {
+      question:
+        "How will the RBX network control gas fees in comparison to current issues on the Ethereum network?",
+      answer:
+        "There are no gas fees on the RBX network.  The network is a near zero fee ecosystem.  Devs will never have to worry about solving a “gas fee” type issue as there are no factors that will affect its rise or decline.",
+    },
+    {
+      question:
+        "What will take the role of the transaction node in the RBX network given there are only validators and storage nodes?",
+      answer: "Validators are the nodes who handle the incoming transactions. ",
+    },
+    {
+      question: "What are “on-chain tools”? ",
+      answer:
+        "On-chain tools are simply the tools built into the RBX source code that allow for the interaction of the RBX ecosystem. ",
+    },
+    {
+      question: "What happens if a block is duplicated on the RBX blockchain?",
+      answer:
+        "If duplicate blocks are submitted the other nodes will see both and choose the block that was submitted first, from there that block will be validated to be authentic. Generally, the first block is the proper one once submitted, however should a false block be submitted to try and trick the nodes more than half the nodes must accept the false block, which in a Masternode system is not theoretically possible. ",
+    },
+    {
+      question:
+        "What is the maximum allowed gap between the time provided by the nodes and the local system clock?",
+      answer:
+        "RBX does not use the local system clock. Instead a leader is in charge of generating a PoH sequence.  The network relies on a Byzantine Fault Tolerance mechanism called Tower Consensus. Any validator node is eligible to be chosen as the PoH leader at any time by the Masternodes on the network .",
+    },
+    {
+      question: "Which clock controls the timestamp server?",
+      answer:
+        "The timestamp server is controlled by the leader chosen by the network. If there is any failure detected with the PoH generator, then the validator node with the next highest voting power will be chosen to replace the original leader.  This has proven to keep transaction times low and the amount of transactions validated possibly increase.  ",
+    },
+    {
+      question: "How will the halving initiate on the RBX blockchain?",
+      answer:
+        "RBX Halving Schedule is a 99-year (occurs every 3 years) halving just like the Bitcoin network. Once a specific block or time is reached the reward will automatically half.  Please also see the halving schedule provided. ",
+    },
+    {
+      question:
+        "How will the 51% attack vulnerability be protected in the beginning of the launch of the RBX blockchain?",
+      answer:
+        "Since more than half the existing RBX within the circulating supply is widely held by RBX early adopters of the Foundation and are bonded / staked to the network for 2 years from initial launch, one can ensure the network will stay secure.",
+    },
+    {
+      question: "How will the stake holder vote for network changes?",
+      answer:
+        "Proposed changes will be announced either over the network or through authentic and real RBX platforms with governance / voting provided by the Masternodes.",
+    },
+    {
+      question: "What is the program language for the RBX network?",
+      answer:
+        "The network is built with a robust program language called Trillium.  Trillium is coded with the RBX Self Executing NFT Architecture Program (SEN) and is written using C# which enables developers to build many types of modern and secure applications.  The language will be immediately familiar to programmers of C, C++, Java and JavaScript.",
+    },
+    {
+      question: "Where can developer docs and resources be found?",
+      answer:
+        "Docs and tutorials will be available (along with current updates) on the RBX site, however most resources can also be found on the RBX GitHub & developer channels on the Discord. ",
+    },
+  ];
+
   let items: FaqItem[] = [];
 
   if (props.general) {
@@ -348,6 +415,8 @@ export const FaqComponent = (props: Props) => {
     items = masterNodeItems;
   } else if (props.datanode) {
     items = dataNodeItems;
+  } else if (props.developer) {
+    items = developerItems;
   }
 
   return (

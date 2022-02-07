@@ -18,6 +18,11 @@ export const FaqScreen = () => {
           <a className="btn btn-light" href="#datanodes">
             Datanodes
           </a>
+          <span className="px-1"></span>
+
+          <a className="btn btn-light" href="#devs">
+            Developers
+          </a>
         </div>
         <SectionHeading1 noCaps>GENERAL FAQs</SectionHeading1>
         <div className="py-2"></div>
@@ -38,6 +43,15 @@ export const FaqScreen = () => {
         <div className="py-2"></div>
         <div>
           <FaqComponent datanode={true} />
+        </div>
+
+        <div className="pb-5 mb-4" id="devs"></div>
+        <SectionHeading1 id="" noCaps>
+          DEVELOPER FAQs
+        </SectionHeading1>
+        <div className="py-2"></div>
+        <div>
+          <FaqComponent developer={true} />
         </div>
       </div>
     </Section>

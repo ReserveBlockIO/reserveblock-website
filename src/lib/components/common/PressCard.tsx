@@ -19,7 +19,7 @@ const PressCardContainer = styled.div`
   position: relative;
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(3px);
-
+  border: 1px solid rgba(126, 239, 255, 0.22);
   .img-container {
     background-color: ${ThemeColors.darker};
     img {

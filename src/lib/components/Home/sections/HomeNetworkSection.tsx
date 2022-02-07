@@ -39,10 +39,10 @@ export const HomeNetworkSection = () => {
             isInvertedOffset
           />
 
-          <div className="py-3"></div>
+          <div className="py-5"></div>
 
           <div className="row">
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-6">
               <VisibilityTransition transitionDelay={0}>
                 <SectionContent mutedBg>
                   <Download
@@ -54,7 +54,7 @@ export const HomeNetworkSection = () => {
                 </SectionContent>
               </VisibilityTransition>
             </div>
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-6">
               <VisibilityTransition transitionDelay={250}>
                 <SectionContent mutedBg>
                   <Download
@@ -66,7 +66,7 @@ export const HomeNetworkSection = () => {
                 </SectionContent>
               </VisibilityTransition>
             </div>
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-6">
               <VisibilityTransition transitionDelay={500}>
                 <SectionContent mutedBg>
                   <Download
@@ -78,7 +78,7 @@ export const HomeNetworkSection = () => {
                 </SectionContent>
               </VisibilityTransition>
             </div>
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-6">
               <VisibilityTransition transitionDelay={750}>
                 <SectionContent mutedBg>
                   <Download
@@ -91,8 +91,8 @@ export const HomeNetworkSection = () => {
               </VisibilityTransition>
             </div>
           </div>
+          <div className="py-5"></div>
         </div>
-        <div className="py-5"></div>
 
         <NextSectionButton sectionId="build" />
       </Section>

@@ -88,11 +88,10 @@ export const NodePresaleCtaComponent = () => {
                   <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
                   &nbsp;&nbsp;Google
                 </Dropdown.Item>
-                {/* <Dropdown.Item href="#/action-3">
-                  <FontAwesomeIcon icon={faMicrosoft}></FontAwesomeIcon>
-                  &nbsp;&nbsp;Microsoft
-                </Dropdown.Item> */}
-                <Dropdown.Item href="#/action-3">
+
+                <Dropdown.Item
+                  onClick={() => addToCalendar(CalendarType.Outlook)}
+                >
                   <FontAwesomeIcon icon={faCalendarAlt}></FontAwesomeIcon>
                   &nbsp;&nbsp;Outlook
                 </Dropdown.Item>

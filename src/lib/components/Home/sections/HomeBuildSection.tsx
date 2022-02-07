@@ -120,7 +120,7 @@ export const HomeBuildSection = () => {
           </div>
         </div>
       </div>
-      <NextSectionButton sectionId="network" />
+      <NextSectionButton sectionId="community" />
     </Section>
   );
 };

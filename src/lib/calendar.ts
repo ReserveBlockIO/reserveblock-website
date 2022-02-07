@@ -29,9 +29,9 @@ END:VCALENDAR`;
 };
 
 export const addToCalendar = (type: CalendarType) => {
-  const name = "Test";
+  const name = "RBX Node Presale";
   const date = "2022-02-22-T23-00-00Z/2022-02-22-T24-00-00Z";
-  const description = "Test 123";
+  const description = "DEMOCRATIZING NFTs FOR EVERYONE";
 
   const _name = encodeURIComponent(name);
   const _date = date.replaceAll("-", "");

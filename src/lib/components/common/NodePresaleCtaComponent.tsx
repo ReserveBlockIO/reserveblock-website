@@ -49,7 +49,7 @@ export const NodePresaleCtaComponent = () => {
 
           <div className="mt-3">
             <div className="d-flex justify-content-center align-items-center">
-              <button className="btn btn-light btn-lg w-100 text-uppercase">
+              <button className="btn btn-light btn-lg w-100 text-uppercase button-3d-white">
                 Activate
                 <span className="px-2"></span>
                 <FontAwesomeIcon icon={faCalendarAlt}></FontAwesomeIcon>

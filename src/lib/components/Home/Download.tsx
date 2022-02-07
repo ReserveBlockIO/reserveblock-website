@@ -42,7 +42,7 @@ export const Download = (props: Props) => {
         rel="noreferrer"
         onClick={handleClick}
         className={`btn btn-lg  ${props.disabled ? "disabled" : ""} ${
-          props.dark ? "btn-dark" : "btn-light"
+          props.dark ? "btn-dark" : "btn-light button-3d-white"
         } ${props.smallButton ? `px-4` : `w-100`}`}
         href={props.url ? props.url : "#"}
       >

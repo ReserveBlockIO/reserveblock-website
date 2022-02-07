@@ -174,7 +174,7 @@ export const ButtonLink = styled.a`
   animation: pulse 1s infinite;
 
   &.disabled {
-    opacity: 0.7;
+    /* opacity: 0.7; */
     pointer-events: none;
     animation: none;
   }

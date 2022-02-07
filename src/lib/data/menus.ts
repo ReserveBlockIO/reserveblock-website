@@ -29,7 +29,7 @@ export const primaryNavItems: INavItem[] = [
     path: "/#masternodes",
   },
   {
-    name: "RBX Wallet",
+    name: "Wallet",
     path: "/#wallet",
   },
   {

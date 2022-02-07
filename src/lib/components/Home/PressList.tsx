@@ -35,21 +35,21 @@ export const PressList = () => {
   const pressItems: IPressCardProps[] = [
     {
       title:
-        "ReserveBlock Foundation announces upcoming release of the first open-source decentralized NFT Centric Blockchain Platform in Q1 '22",
+        "ReserveBlock Foundation announces upcoming release of the first open-source decentralized NFT...",
       date: "12/16/21",
       imageUrl: "/img/press/aliens.png",
       url: "https://aliens.com/read/reserveblock-foundation-announces-upcoming-release-of-the-first-open-source-decentralized-nft-centric-blockchain-platform-in-q1-22",
     },
     {
       title:
-        "ReserveBlock Foundation announces upcoming release of the first open-source decentralized NFT Centric Blockchain Platform in Q1 '22",
+        "ReserveBlock Foundation announces upcoming release of the first open-source decentralized NFT...",
       date: "12/16/21",
       imageUrl: "/img/press/seeking-alpha.png",
       url: "https://seekingalpha.com/pr/18604630-reserveblock-foundation-announces-upcoming-release-of-first-open-source-decentralized-nft",
     },
     {
       title:
-        "ReserveBlock Foundation announces upcoming release of the first open-source decentralized NFT Centric Blockchain Platform in Q1 '22",
+        "ReserveBlock Foundation announces upcoming release of the first open-source decentralized NFT...",
       date: "12/16/21",
       imageUrl: "/img/press/market-watch.png",
       url: "https://www.marketwatch.com/press-release/reserveblock-foundation-announces-upcoming-release-of-the-first-open-source-decentralized-nft-centric-blockchain-platform-in-q1-22-2021-12-16",

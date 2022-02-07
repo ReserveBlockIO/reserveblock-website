@@ -23,14 +23,14 @@ export const FaqScreen = () => {
         <SectionHeading1 id="general">General FAQs</SectionHeading1>
         <div className="py-2"></div>
         <FaqComponent general={true} />
-        <SectionHeading1>Masternode FAQs</SectionHeading1>
+        <SectionHeading1 id="masternodes">Masternode FAQs</SectionHeading1>
         <div className="py-2"></div>
-        <div id="masternodes">
+        <div>
           <FaqComponent masternode={true} />
         </div>
-        <SectionHeading1>Datanode FAQs</SectionHeading1>
+        <SectionHeading1 id="datanodes">Datanode FAQs</SectionHeading1>
         <div className="py-2"></div>
-        <div id="masternodes">
+        <div>
           <FaqComponent datanode={true} />
         </div>
       </div>

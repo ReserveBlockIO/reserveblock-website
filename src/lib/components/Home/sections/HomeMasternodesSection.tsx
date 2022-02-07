@@ -153,8 +153,7 @@ export const HomeMasterNodesSection = () => {
                   <Download
                     title="Masternode FAQs"
                     url="/faq#masternodes"
-                    icon={faExternalLinkAlt}
-                    openExternal
+                    icon={faLink}
                     horizontalPadding={96}
                   />
                 </SectionContent>

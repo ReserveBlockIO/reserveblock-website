@@ -92,3 +92,85 @@ export const socialNavItems: ISocialNavItem[] = [
     name: "Github",
   },
 ];
+
+interface IFooterNavItem {
+  heading: string;
+  items: INavItem[];
+}
+
+export const footerNavItems: IFooterNavItem[] = [
+  {
+    heading: "General",
+    items: [
+      {
+        name: "Learn",
+        path: "/#learn",
+      },
+      {
+        name: "Masternodes",
+        path: "/#masternodes",
+      },
+      {
+        name: "RBX Wallet",
+        path: "/#wallet",
+      },
+    ],
+  },
+  {
+    heading: "Develop",
+    items: [
+      {
+        name: "Network",
+        path: "/#network",
+      },
+      {
+        name: "Build",
+        path: "/#build",
+      },
+
+      {
+        name: "Community",
+        path: "/#community",
+      },
+    ],
+  },
+  {
+    heading: "FAQs",
+    items: [
+      {
+        name: "General",
+        path: "/faq#general",
+      },
+      {
+        name: "Masternodes",
+        path: "/faq#masternodes",
+      },
+      {
+        name: "Datanodes",
+        path: "/faq#datanodes",
+      },
+      // {
+      //   name: "Developer",
+      //   path: "/faq#developer",
+      // },
+    ],
+  },
+  {
+    heading: "About",
+    items: [
+      {
+        name: "Disclaimer",
+        path: "/disclaimer",
+      },
+      {
+        name: "Litepaper",
+        path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
+        openExternal: true,
+      },
+      {
+        name: "Contact",
+        path: "mailto:hello@reserveblock.io",
+      },
+    ],
+  },
+];

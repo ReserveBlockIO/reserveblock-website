@@ -65,14 +65,14 @@ export const HomeLearnSection = () => {
           <VisibilityTransition>
             <SectionContent>
               <div className="row align-items-center">
-                <div className="col-2">
+                <div className="col-2 d-none d-md-block">
                   <img
                     src="/img/rbx_cube_small.png"
                     alt="cube"
                     className="w-100"
                   />
                 </div>
-                <div className="col-10">
+                <div className="col-12 col-md-10">
                   <p>
                     The RBX platform is a next generation blockchain built to
                     operate completely decentralized and autonomous for anyone &
@@ -105,7 +105,7 @@ export const HomeLearnSection = () => {
           <div className="py-2"></div>
 
           <div className="row my-4">
-            <div className="col">
+            <div className="col-12 col-md-4 pb-3">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -120,7 +120,7 @@ export const HomeLearnSection = () => {
                 />
               </VisibilityTransition>
             </div>
-            <div className="col">
+            <div className="col-12 col-md-4 pb-3">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -135,7 +135,7 @@ export const HomeLearnSection = () => {
                 />
               </VisibilityTransition>
             </div>
-            <div className="col">
+            <div className="col-12 col-md-4 pb-3">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"

@@ -40,10 +40,10 @@ export const ConnectOptionComponent = (props: Props) => {
     <Hitarea href={props.href} rel="noreferrer" target="_blank">
       <SectionContent>
         <div className="row d-flex align-items-center">
-          <div className="col-2 text-center">
+          <div className="col-4 col-md-2 text-center">
             <FontAwesomeIcon icon={props.icon} size="4x"></FontAwesomeIcon>
           </div>
-          <div className="col-10">
+          <div className="col-8 col-md-10">
             <SectionHeading4>{props.title}</SectionHeading4>
             <p>{props.description}</p>
           </div>

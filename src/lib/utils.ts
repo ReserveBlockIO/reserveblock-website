@@ -21,3 +21,7 @@ export function chunkArray(myArray: any[], chunk_size: number) {
 
   return results;
 }
+
+export function isMobile() {
+  return window.innerWidth < 600;
+}

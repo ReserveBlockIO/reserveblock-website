@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import reportWebVitals from "../../../reportWebVitals";
 import { SectionContent, SectionHeading4 } from "../../styles/styled";
+import { isMobile } from "../../utils";
 
 interface Line {
   label: string;
@@ -20,9 +21,12 @@ const Row = styled.div`
 `;
 const Label = styled.div`
   font-size: 20px;
+
+  ${isMobile() ? `font-size: 16px` : null};
 `;
 const Value = styled(Label)`
   font-weight: bold;
+  text-align: right;
 `;
 
 export const HalvingScheduleComponent = () => {

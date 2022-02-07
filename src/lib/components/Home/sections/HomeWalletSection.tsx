@@ -35,7 +35,7 @@ export const HomeWalletSection = () => {
           <WalletDetailsComponent />
           <div className="py-3" />
           <div className="row">
-            <div className="col-4">
+            <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -49,7 +49,7 @@ export const HomeWalletSection = () => {
                 />
               </VisibilityTransition>
             </div>
-            <div className="col-4">
+            <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -63,7 +63,7 @@ export const HomeWalletSection = () => {
                 />
               </VisibilityTransition>
             </div>
-            <div className="col-4">
+            <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -78,9 +78,9 @@ export const HomeWalletSection = () => {
               </VisibilityTransition>
             </div>
           </div>
-          <div className="py-3"></div>
+          <div className="py-3 d-none d-md-block"></div>
           <div className="row justify-content-center">
-            <div className="col-4">
+            <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -94,7 +94,7 @@ export const HomeWalletSection = () => {
                 />
               </VisibilityTransition>
             </div>
-            <div className="col-4">
+            <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"

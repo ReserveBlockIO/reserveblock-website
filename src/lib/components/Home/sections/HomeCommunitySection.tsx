@@ -34,7 +34,7 @@ export const HomeCommunitySection = () => {
           />
 
           <div className="row mt-4 d-flex align-items-center">
-            <div className="col-4">
+            <div className="col-4 d-none d-md-block">
               <VisibilityTransition transitionType="fade" transitionDelay={0}>
                 <img
                   src="/img/decor/nodelines.png"
@@ -43,7 +43,7 @@ export const HomeCommunitySection = () => {
                 />
               </VisibilityTransition>
             </div>
-            <div className="col-8">
+            <div className="col-12 col-md-8">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="left"

@@ -1,6 +1,8 @@
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import { Nav, Navbar } from "react-bootstrap";
+import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import styled from "styled-components";
 import {
   primaryNavItems,
@@ -8,6 +10,7 @@ import {
   socialNavItems,
 } from "../data/menus";
 import { ThemeColors } from "../theme";
+import { isMobile } from "../utils";
 import { SocialLinks } from "./common/SocialLinks";
 import { VisibilityTransition } from "./common/VisibilityTransition";
 
@@ -126,7 +129,14 @@ export const HeaderComponent = () => {
 
   return (
     <Header>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-black">
+      <Navbar
+        fixed={"top"}
+        expand="sm"
+        bg="black"
+        variant="dark"
+        className="navbar fixed-top navbar-expand-lg navbar-dark bg-black"
+        collapseOnSelect
+      >
         <div className="container-fluid">
           <span className="px-2"></span>
           <BrandContainer className="navbar-brand" href="/">
@@ -137,83 +147,96 @@ export const HeaderComponent = () => {
             <span style={{ width: 4 }}></span>
             <Logo>ReserveBlock</Logo>
           </BrandContainer>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 pt-1">
+
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav" className="">
+            <Nav>
               {primaryNavItems.map((n) => (
                 <NavItem className="nav-item">
-                  <a
+                  <Nav.Link
                     className="nav-link active"
                     aria-current="page"
                     href={n.path}
                   >
                     {n.name}
-                  </a>
+                  </Nav.Link>
                 </NavItem>
               ))}
+              {isMobile()
+                ? secondaryNavItems.map((n) => (
+                    <NavItem className="nav-item">
+                      <Nav.Link
+                        className="nav-link active"
+                        aria-current="page"
+                        href={n.path}
+                      >
+                        {n.name}
+                      </Nav.Link>
+                    </NavItem>
+                  ))
+                : null}
+            </Nav>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-md-flex ">
+              {socialNavItems.map((s) => (
+                <SocialNavItem>
+                  <a
+                    href={s.url}
+                    className="nav-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FontAwesomeIcon icon={s.icon}></FontAwesomeIcon>
+                  </a>
+                </SocialNavItem>
+              ))}
+              {secondaryNavItems.map((n) => (
+                <SubNavItem className="nav-item">
+                  <Nav.Link
+                    className="nav-link active"
+                    aria-current="page"
+                    href={n.path}
+                    target={n.openExternal ? "_blank" : "_self"}
+                    rel="noreferrer"
+                  >
+                    {n.name}
+                  </Nav.Link>
+                </SubNavItem>
+              ))}
             </ul>
-            <div className="d-flex">
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <div className="d-flex d-md-none">
+              <div>
                 {socialNavItems.map((s) => (
-                  <SocialNavItem>
-                    <a
-                      href={s.url}
-                      className="nav-link"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FontAwesomeIcon icon={s.icon}></FontAwesomeIcon>
-                    </a>
-                  </SocialNavItem>
+                  <a href={s.url} target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon
+                      icon={s.icon}
+                      color="#fff"
+                    ></FontAwesomeIcon>
+                    <span className="px-2"></span>
+                  </a>
                 ))}
-                {secondaryNavItems.map((n) => (
-                  <SubNavItem className="nav-item">
-                    <a
-                      className="nav-link active"
-                      aria-current="page"
-                      href={n.path}
-                      target={n.openExternal ? "_blank" : "_self"}
-                      rel="noreferrer"
-                    >
-                      {n.name}
-                    </a>
-                  </SubNavItem>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <PresaleContainer
-            className={
-              !nodeSaleDismissed && offset > visibilityThreshold
-                ? "visible"
-                : ""
-            }
-          >
-            <div className="d-flex align-items-center justify-content-center">
-              <div
-                className="dismiss"
-                onClick={() => setNodeSaleDismissed(true)}
-              >
-                <FontAwesomeIcon icon={faTimes} size="xs" />
               </div>
-              <span className="px-1"></span>
-              <div style={{ fontWeight: "bold" }}>Node Presale Feb 22</div>
-              <span className="px-2"></span>
-              <button className="btn btn-light text-uppercase">Activate</button>
             </div>
-          </PresaleContainer>
+          </Navbar.Collapse>
         </div>
-      </nav>
+        <PresaleContainer
+          className={
+            !nodeSaleDismissed && !isMobile() && offset > visibilityThreshold
+              ? "visible"
+              : ""
+          }
+        >
+          <div className="d-flex align-items-center justify-content-center">
+            <div className="dismiss" onClick={() => setNodeSaleDismissed(true)}>
+              <FontAwesomeIcon icon={faTimes} size="xs" />
+            </div>
+            <span className="px-1"></span>
+            <div style={{ fontWeight: "bold" }}>Node Presale Feb 22</div>
+            <span className="px-2"></span>
+            <button className="btn btn-light text-uppercase">Activate</button>
+          </div>
+        </PresaleContainer>
+        {/* </div> */}
+      </Navbar>
     </Header>
   );
 };

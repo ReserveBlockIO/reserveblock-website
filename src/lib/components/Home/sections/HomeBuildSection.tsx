@@ -35,7 +35,7 @@ export const HomeBuildSection = () => {
         />
         <div className="py-5"></div>
         <div className="row">
-          <div className="col-6">
+          <div className="col-12 col-md-6 pb-4">
             <VisibilityTransition
               transitionType="slide"
               transitionDirection="right"
@@ -50,7 +50,7 @@ export const HomeBuildSection = () => {
               />
             </VisibilityTransition>
           </div>
-          <div className="col-6">
+          <div className="col-12 col-md-6 pb-4">
             <VisibilityTransition
               transitionType="slide"
               transitionDirection="left"
@@ -65,8 +65,8 @@ export const HomeBuildSection = () => {
               />
             </VisibilityTransition>
           </div>
-          <div className="py-4"></div>
-          <div className="col-6">
+          <div className="py-4 d-none d-md-block"></div>
+          <div className="col-12 col-md-6 pb-4">
             <VisibilityTransition
               transitionType="slide"
               transitionDirection="right"
@@ -82,7 +82,7 @@ export const HomeBuildSection = () => {
               />
             </VisibilityTransition>
           </div>
-          <div className="col-6">
+          <div className="col-12 col-md-6 pb-4">
             <VisibilityTransition
               transitionType="slide"
               transitionDirection="left"
@@ -99,10 +99,10 @@ export const HomeBuildSection = () => {
             </VisibilityTransition>
           </div>
         </div>
-        <div className="py-4"></div>
+        <div className="py-4 d-none d-md-block"></div>
 
         <div className="row justify-content-center">
-          <div className="col-6">
+          <div className="col-12 col-md-6 pb-4">
             <VisibilityTransition
               transitionType="slide"
               transitionDirection="up"

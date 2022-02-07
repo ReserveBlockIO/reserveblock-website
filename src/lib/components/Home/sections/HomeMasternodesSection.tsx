@@ -8,6 +8,7 @@ import {
   SectionHeading3,
   SectionHeading4,
 } from "../../../styles/styled";
+import { isMobile } from "../../../utils";
 import { NextSectionButton } from "../../common/NextSectionButton";
 import { SectionHeaderComponent } from "../../common/OffsetHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
@@ -29,6 +30,8 @@ const Waves = styled.div`
 `;
 
 export const HomeMasterNodesSection = () => {
+  const contentPadding = isMobile() ? 12 : 96;
+
   return (
     <>
       <div className="py-5" id="masternodes"></div>
@@ -92,7 +95,7 @@ export const HomeMasterNodesSection = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -103,12 +106,12 @@ export const HomeMasterNodesSection = () => {
                     title="Become a Masternode"
                     url={require("../../../../pdfs/ReserveBlockMasternodes.pdf")}
                     openExternal
-                    horizontalPadding={96}
+                    horizontalPadding={contentPadding}
                   />
                 </SectionContent>
               </VisibilityTransition>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -119,12 +122,12 @@ export const HomeMasterNodesSection = () => {
                     title="Blocking Rewards &amp; Halving"
                     url="/halving-schedule"
                     icon={faLink}
-                    horizontalPadding={96}
+                    horizontalPadding={contentPadding}
                   />
                 </SectionContent>
               </VisibilityTransition>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -138,12 +141,12 @@ export const HomeMasterNodesSection = () => {
                     disabled
                     noIcon
                     buttonText="Activating Soon"
-                    horizontalPadding={96}
+                    horizontalPadding={contentPadding}
                   />
                 </SectionContent>
               </VisibilityTransition>
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -154,7 +157,7 @@ export const HomeMasterNodesSection = () => {
                     title="Masternode FAQs"
                     url="/faq#masternodes"
                     icon={faLink}
-                    horizontalPadding={96}
+                    horizontalPadding={contentPadding}
                   />
                 </SectionContent>
               </VisibilityTransition>

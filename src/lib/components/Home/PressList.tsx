@@ -60,21 +60,26 @@ export const PressList = () => {
     <div>
       {chunkArray(pressLogos, 4).map((chunk) => (
         <>
-          <div className="py-3"></div>
+          <div className="py-3 d-none d-md-block"></div>
 
-          <div className="d-flex justify-content-between">
+          <div className="d-flex justify-content-between align-items-center flex-column flex-md-row">
             {chunk.map((p: PressLogo, i: number) => (
               <VisibilityTransition
                 transitionType="fade"
                 transitionDelay={i * 350}
               >
                 <PressLink href={p.url} target="_blank" rel="noreferrer">
-                  <img src={p.image} alt={p.name} height={60} />
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    height={60}
+                    className="my-2 my-md-0"
+                  />
                 </PressLink>
               </VisibilityTransition>
             ))}
           </div>
-          <div className="py-3"></div>
+          <div className="py-3  d-none d-md-block"></div>
         </>
       ))}
 
@@ -82,7 +87,7 @@ export const PressList = () => {
 
       <div className="row">
         {pressItems.map((p, i: number) => (
-          <div className="col-4">
+          <div className="col-12 col-md-4 pb-3 pb-md-0">
             <VisibilityTransition
               transitionType="slide"
               transitionDirection={i === 0 ? "right" : i === 1 ? "up" : "left"}

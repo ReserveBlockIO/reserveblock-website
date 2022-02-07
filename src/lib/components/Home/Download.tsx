@@ -2,8 +2,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
 
-import { SectionHeading4 } from "../../styles/styled";
-import styled from "styled-components";
+import { ButtonLink, SectionHeading4 } from "../../styles/styled";
 
 interface Props {
   title: string;
@@ -14,14 +13,11 @@ interface Props {
   icon?: IconDefinition;
   disabled?: boolean;
   dark?: boolean;
+  buttonText?: string;
+  noIcon?: boolean;
+  smallButton?: boolean;
+  horizontalPadding?: number;
 }
-
-const Button = styled.a`
-  &.disabled {
-    opacity: 0.7;
-    pointer-events: none;
-  }
-`;
 
 export const Download = (props: Props) => {
   const handleClick = (e: { preventDefault: () => void }) => {
@@ -31,24 +27,30 @@ export const Download = (props: Props) => {
     }
   };
   return (
-    <div className="text-center position-relative">
+    <div
+      className="text-center position-relative"
+      style={{ padding: `0 ${props.horizontalPadding || 0}px` }}
+    >
       <SectionHeading4 dark={props.dark}>{props.title}</SectionHeading4>
       {props.description ? (
         <p className={props.dark ? "text-dark" : ""}>{props.description}</p>
       ) : (
         <p></p>
       )}
-      <Button
+      <ButtonLink
         target={props.openExternal ? "_blank" : "_self"}
         rel="noreferrer"
         onClick={handleClick}
-        className={`btn btn-lg d-block ${props.disabled ? "disabled" : ""} ${
+        className={`btn btn-lg  ${props.disabled ? "disabled" : ""} ${
           props.dark ? "btn-dark" : "btn-light"
-        }`}
+        } ${props.smallButton ? `px-4` : `w-100`}`}
         href={props.url ? props.url : "#"}
       >
-        <FontAwesomeIcon icon={props.icon ? props.icon : faDownload} />
-      </Button>
+        {!props.noIcon ? (
+          <FontAwesomeIcon icon={props.icon ? props.icon : faDownload} />
+        ) : null}
+        {props.buttonText ? <>&nbsp;{props.buttonText}</> : null}
+      </ButtonLink>
     </div>
   );
 };

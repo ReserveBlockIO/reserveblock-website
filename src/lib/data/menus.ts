@@ -10,6 +10,7 @@ interface INavItem {
   name: string;
   path: string;
   children?: INavItem[];
+  openExternal?: boolean;
 }
 
 interface ISocialNavItem {
@@ -53,7 +54,8 @@ export const primaryNavItems: INavItem[] = [
 export const secondaryNavItems: INavItem[] = [
   {
     name: "Litepaper",
-    path: "",
+    path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
+    openExternal: true,
   },
   {
     name: "Disclaimer",

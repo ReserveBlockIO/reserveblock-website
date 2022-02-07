@@ -1,7 +1,9 @@
 import {
+  faBoxOpen,
   faChevronDown,
   faChevronUp,
   faExternalLinkAlt,
+  faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import {
@@ -110,11 +112,11 @@ export const HomeLearnSection = () => {
                 transitionDelay={250}
               >
                 <Download
-                  title="General FAQs"
+                  title="Frequently Asked Questions"
                   description="A Quick Guide to your NFT Journey"
                   url={"/faq"}
-                  icon={faExternalLinkAlt}
-                  openExternal
+                  icon={faLink}
+                  horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>
@@ -129,6 +131,7 @@ export const HomeLearnSection = () => {
                   description="Get the Details"
                   onClick={toggleFacts}
                   icon={factsRevealed ? faChevronUp : faChevronDown}
+                  horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>
@@ -143,6 +146,7 @@ export const HomeLearnSection = () => {
                   description="From Enthusiasts to Everyone"
                   onClick={toggleFoundation}
                   icon={foundationRevealed ? faChevronUp : faChevronDown}
+                  horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>

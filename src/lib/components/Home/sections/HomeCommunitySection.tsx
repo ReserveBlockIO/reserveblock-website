@@ -1,4 +1,8 @@
-import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faDiscord,
+  faGithub,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { SocialUrls } from "../../../data/menus";
 import { Section } from "../../../styles/styled";
@@ -24,7 +28,7 @@ export const HomeCommunitySection = () => {
         <div className="container">
           <SectionHeaderComponent
             title="Community"
-            subtitle="Play along with our friends."
+            subtitle="Connect & Interact"
             isOffset={true}
             transitionDuration={500}
           />
@@ -76,6 +80,19 @@ export const HomeCommunitySection = () => {
                   icon={faDiscord}
                   href={SocialUrls.discord}
                   ctaText="Join"
+                  description="ReserveBlockIO"
+                />
+              </VisibilityTransition>
+              <VisibilityTransition
+                transitionType="slide"
+                transitionDirection="left"
+                transitionDelay={1000}
+              >
+                <ConnectOptionComponent
+                  title="Github"
+                  icon={faGithub}
+                  href={SocialUrls.github}
+                  ctaText="Contribute"
                   description="ReserveBlockIO"
                 />
               </VisibilityTransition>

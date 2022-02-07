@@ -25,7 +25,7 @@ export const HomePressSection = () => {
       <div className="container">
         <SectionHeaderComponent
           title="Press"
-          subtitle="As seen in."
+          subtitle="As seen in"
           transitionDuration={500}
           transitionDirection="left"
         />

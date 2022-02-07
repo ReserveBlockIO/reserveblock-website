@@ -8,6 +8,22 @@ interface ISection {
   light?: boolean;
 }
 
+const pulseKeyframes = (startColor: string, endColor: string) => {
+  return `@keyframes pulse {
+    0% {
+      box-shadow: 0 0 5px 0px ${startColor};
+    }
+
+    70% {
+      box-shadow: 0 0 10px 10px ${endColor};
+    }
+
+    100% {
+      box-shadow: 0 0 5px 0px ${startColor};
+    }
+  }`;
+};
+
 export const Section = styled.section<ISection>`
   width: 100%;
   position: relative;
@@ -99,22 +115,11 @@ interface ISectionContent {
   inverted?: boolean;
   extraGlow?: boolean;
   outline?: boolean;
+  mutedBg?: boolean;
 }
 
 export const SectionContent = styled.div<ISectionContent>`
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 5px 0px rgba(126, 239, 255, 0.2);
-    }
-
-    50% {
-      box-shadow: 0 0 10px 6px rgba(126, 239, 255, 0.4);
-    }
-
-    100% {
-      box-shadow: 0 0 5px 0px rgba(126, 239, 255, 0.2);
-    }
-  }
+  ${pulseKeyframes("rgba(126, 239, 255, 0.2)", "rgba(126, 239, 255, 0.4)")};
 
   background-color: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(3px);
@@ -123,21 +128,22 @@ export const SectionContent = styled.div<ISectionContent>`
 
   box-shadow: 0 0 15px rgba(126, 239, 255, 0.1);
 
-  ${(props) => (props.extraGlow ? `animation: pulse 1.25s infinite` : ``)};
+  ${(props) => (props.extraGlow ? `animation: pulse 1.75s infinite` : ``)};
 
   ${(props) =>
     props.outline ? `border: 1px solid rgba(126, 239, 255, 0.35);` : null};
 
   p {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 26px;
   }
 
   ul {
     padding: 0 16px;
 
     li {
-      font-size: 14px;
-      line-height: 18px;
+      font-size: 16px;
+      line-height: 20px;
       padding: 4px 0;
     }
   }
@@ -150,4 +156,26 @@ export const SectionContent = styled.div<ISectionContent>`
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
     `
       : null};
+
+  ${(props) =>
+    props.mutedBg
+      ? `
+      color: #fff;
+      box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+      background-color: ${ThemeColors.muted};
+        background: linear-gradient(45deg, ${ThemeColors.mutedDark} 0%, ${ThemeColors.mutedBright} 100%);
+    `
+      : null};
+`;
+
+export const ButtonLink = styled.a`
+  ${pulseKeyframes("rgba(126, 239, 255, 0.2)", "rgba(126, 239, 255, 0.3)")};
+
+  animation: pulse 1s infinite;
+
+  &.disabled {
+    opacity: 0.7;
+    pointer-events: none;
+    animation: none;
+  }
 `;

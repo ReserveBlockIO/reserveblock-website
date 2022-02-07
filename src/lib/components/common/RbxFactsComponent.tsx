@@ -72,7 +72,7 @@ const items: IItem[] = [
   },
   {
     label: "Max Supply",
-    value: "380,000,000",
+    value: "372,000,000",
   },
   {
     label: "Blockchain Size",

@@ -6,7 +6,9 @@ interface FaqItem {
 }
 
 interface Props {
-  general: boolean;
+  general?: boolean;
+  datanode?: boolean;
+  masternode?: boolean;
 }
 
 export const FaqComponent = (props: Props) => {
@@ -262,7 +264,92 @@ export const FaqComponent = (props: Props) => {
     },
   ];
 
-  const items = props.general ? generalItems : masterNodeItems; //todo
+  const dataNodeItems: FaqItem[] = [
+    {
+      question: "How do you become a Datanode?",
+      answer:
+        "To be a Datanode a user simply downloads the wallet or CLI and elects to become a Datanode from within the application and open the firewall to incoming connections. Last choose “X” amount of hard drive space to dedicate per the recommended minimum requirements. ",
+    },
+    {
+      question: "Who will check for errors on a smart contract? ",
+      answer:
+        "The Datanodes are not tasked with this, the smart contract compiler will check for errors before a contract is allowed to be submitted to the blockchain. ",
+    },
+    {
+      question: "What are the hardware requirements to become a Datanode?",
+      answer:
+        "A user mainly needs hard drive space here, so the greater the hard drive space a user has the better. From there most current machines by today standards will be able to handle the rest. ",
+    },
+    {
+      question:
+        "Am I liable for any unintended data loss while being a Datanode?",
+      answer:
+        "No. Data will be stored in multiple locations with redundancy created.  Shutting down a node will also alert the other nodes that the said node has gone offline, which will then cause the nodes to copy the data elsewhere. ",
+    },
+    {
+      question: "Do you need to stake your RBX coin to become a Datanode?",
+      answer: "No, just hard drive space.",
+    },
+    {
+      question:
+        "Is there a backup for the data stored on-chain in case of destruction in initial storage point?",
+      answer: "Yes. Data is always stored in multiple locations. ",
+    },
+    {
+      question: "What is the benefit of on-chain versus off-chain storage?",
+      answer:
+        "On-chain allows for decentralized storage where all points of the item are trustless. ",
+    },
+    {
+      question:
+        "What is the expected time for a typical transaction on the RBX blockchain?",
+      answer:
+        "Transactions will always feel near instant to the user, with finality occurring every 20 seconds. ",
+    },
+    {
+      question:
+        "Can I store my NFT on a cold storage device after minting on the RBX blockchain? ",
+      answer:
+        "Yes, as well as a user local device should they choose to do so.",
+    },
+    {
+      question: "When will compression tools initiate for a Datanode?",
+      answer: "Data is compressed before submission. ",
+    },
+    {
+      question:
+        "As the client runs out of space will their percent of reward increase for providing near full capacity storage?",
+      answer:
+        "No. The reward model stays the same, as a client runs out of space they would need to add more space to continue receiving rewards as a Datanode.  This is the only burden for being a Datanode. ",
+    },
+    {
+      question: "Will all types of storage devices work for Datanode purposes?",
+      answer:
+        "As long as the wallet can run on the device per the minimum requirements and can see the needed space to store NFTs. ",
+    },
+    {
+      question:
+        "What happens to the files if the Datanode goes offline and the file needs to be retrieved?",
+      answer:
+        "Again, the files are stored in multiple node locations. Once nodes that share this data notice a node is offline they will automatically duplicate the data elsewhere. ",
+    },
+    {
+      question: "Can a user run a Masternode & Datanode at the same time?",
+      answer:
+        " Of course.  So long as the user has the minimum requirements for both the Masternode and Datanode, they may operate anytime.",
+    },
+  ];
+
+  let items: FaqItem[] = [];
+
+  if (props.general) {
+    items = generalItems;
+  } else if (props.masternode) {
+    items = masterNodeItems;
+  } else if (props.datanode) {
+    items = dataNodeItems;
+  }
+
   return (
     <div>
       {items.map((item, i) => (

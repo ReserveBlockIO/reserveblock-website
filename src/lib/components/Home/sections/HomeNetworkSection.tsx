@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import {
   Section,
   SectionContent,
@@ -10,16 +11,30 @@ import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
 
+const Decor = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  background-image: url(/img/decor/bg_04.png);
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.4;
+`;
+
 export const HomeNetworkSection = () => {
   return (
     <>
       <div className="py-5" id="network"></div>
 
       <Section light center>
+        <Decor />
         <div className="container">
           <SectionHeaderComponent
             title="Network"
-            subtitle="The Ecosystem."
+            subtitle="The Ecosystem"
             transitionDuration={500}
             isInvertedOffset
           />
@@ -29,11 +44,11 @@ export const HomeNetworkSection = () => {
           <div className="row">
             <div className="col-3">
               <VisibilityTransition transitionDelay={0}>
-                <SectionContent inverted>
+                <SectionContent mutedBg>
                   <Download
-                    dark
                     title="Testnet"
-                    description="Activating Feb 27"
+                    buttonText="Activating Feb 27"
+                    noIcon
                     disabled
                   />
                 </SectionContent>
@@ -41,36 +56,36 @@ export const HomeNetworkSection = () => {
             </div>
             <div className="col-3">
               <VisibilityTransition transitionDelay={250}>
-                <SectionContent inverted>
+                <SectionContent mutedBg>
                   <Download
                     title="Status"
-                    description="Activating Soon"
+                    buttonText="Activating Soon"
                     disabled
-                    dark
+                    noIcon
                   />
                 </SectionContent>
               </VisibilityTransition>
             </div>
             <div className="col-3">
               <VisibilityTransition transitionDelay={500}>
-                <SectionContent inverted>
+                <SectionContent mutedBg>
                   <Download
                     title="Explorer"
-                    description="Activating Soon"
+                    buttonText="Activating Soon"
                     disabled
-                    dark
+                    noIcon
                   />
                 </SectionContent>
               </VisibilityTransition>
             </div>
             <div className="col-3">
               <VisibilityTransition transitionDelay={750}>
-                <SectionContent inverted>
+                <SectionContent mutedBg>
                   <Download
                     title="CLI"
-                    description="Activating Soon"
+                    buttonText="Activating Soon"
                     disabled
-                    dark
+                    noIcon
                   />
                 </SectionContent>
               </VisibilityTransition>

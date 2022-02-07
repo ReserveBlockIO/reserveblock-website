@@ -1,17 +1,37 @@
 import { FaqComponent } from "../components/common/FaqComponent";
-import { Section, SectionHeading1 } from "../styles/styled";
+import { Section, SectionContent, SectionHeading1 } from "../styles/styled";
 
 export const FaqScreen = () => {
   return (
     <Section>
       <div className="container">
-        <SectionHeading1>General FAQs</SectionHeading1>
+        <div className="mb-4">
+          <a className="btn btn-light" href="#general">
+            General
+          </a>
+          <span className="px-1"></span>
+          <a className="btn btn-light" href="#masternodes">
+            Masternodes
+          </a>
+          <span className="px-1"></span>
+
+          <a className="btn btn-light" href="#datanodes">
+            Datanodes
+          </a>
+        </div>
+
+        <SectionHeading1 id="general">General FAQs</SectionHeading1>
         <div className="py-2"></div>
         <FaqComponent general={true} />
         <SectionHeading1>Masternode FAQs</SectionHeading1>
         <div className="py-2"></div>
         <div id="masternodes">
-          <FaqComponent general={false} />
+          <FaqComponent masternode={true} />
+        </div>
+        <SectionHeading1>Datanode FAQs</SectionHeading1>
+        <div className="py-2"></div>
+        <div id="masternodes">
+          <FaqComponent datanode={true} />
         </div>
       </div>
     </Section>

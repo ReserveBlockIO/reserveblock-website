@@ -18,7 +18,7 @@ export const HomeWalletSection = () => {
         <div className="container">
           <SectionHeaderComponent
             title="RBX Wallet"
-            subtitle="Unlocking Autonomy."
+            subtitle="Unlocking Autonomy"
             transitionDuration={500}
             transitionDirection="left"
           />
@@ -35,22 +35,77 @@ export const HomeWalletSection = () => {
           <WalletDetailsComponent />
           <div className="py-3" />
           <div className="row">
-            <div className="col-6">
+            <div className="col-4">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
                 transitionDelay={500}
               >
-                <Download title="Get Started" />
+                <Download
+                  title="Get Started"
+                  buttonText="Activating Soon"
+                  disabled
+                  noIcon
+                />
               </VisibilityTransition>
             </div>
-            <div className="col-6">
+            <div className="col-4">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
                 transitionDelay={500}
               >
-                <Download title="Core Wallet" />
+                <Download
+                  title="Core Wallet"
+                  buttonText="Activating Soon"
+                  disabled
+                  noIcon
+                />
+              </VisibilityTransition>
+            </div>
+            <div className="col-4">
+              <VisibilityTransition
+                transitionType="slide"
+                transitionDirection="up"
+                transitionDelay={500}
+              >
+                <Download
+                  title="NFTs"
+                  buttonText="Activating in Mainnet"
+                  disabled
+                  noIcon
+                />
+              </VisibilityTransition>
+            </div>
+          </div>
+          <div className="py-3"></div>
+          <div className="row justify-content-center">
+            <div className="col-4">
+              <VisibilityTransition
+                transitionType="slide"
+                transitionDirection="up"
+                transitionDelay={500}
+              >
+                <Download
+                  title="Smart Contracts"
+                  buttonText="Activating in Mainnet"
+                  disabled
+                  noIcon
+                />
+              </VisibilityTransition>
+            </div>
+            <div className="col-4">
+              <VisibilityTransition
+                transitionType="slide"
+                transitionDirection="up"
+                transitionDelay={500}
+              >
+                <Download
+                  title="DSTs"
+                  buttonText="Activating in Mainnet"
+                  disabled
+                  noIcon
+                />
               </VisibilityTransition>
             </div>
           </div>

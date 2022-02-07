@@ -6,8 +6,9 @@ import {
 } from "../../../styles/styled";
 import { NextSectionButton } from "../../common/NextSectionButton";
 import styled from "styled-components";
-import { ThemeColors } from "../../../theme";
+import { ThemeColors, ThemeFonts } from "../../../theme";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
+import { NodePresaleCtaComponent } from "../../common/NodePresaleCtaComponent";
 
 interface IIntroVideo {
   ref: React.Ref<HTMLVideoElement>;
@@ -31,42 +32,23 @@ const IntroTextContainer = styled.div`
     font-size: 28px;
     color: ${ThemeColors.bright};
     text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
   }
   h3 {
     margin-top: 20px;
     text-align: center;
     font-size: 52px;
+    font-weight: bold;
+    letter-spacing: 4px;
   }
 `;
 
-// const BottomFade = styled.div`
-//   position: absolute;
-//   width: 100%;
-//   left: 0;
-//   bottom: 0;
-//   height: 100px;
-//   background: rgb(3, 23, 69);
-//   background: linear-gradient(
-//     180deg,
-//     rgba(3, 23, 69, 0) 0%,
-//     rgba(3, 23, 69, 1) 59%
-//   );
-// `;
-
-// const ContentContainer = styled.div`
-//   opacity: 0;
-//   transition: all 1.3s;
-//   transform: translateY(100px);
-//   &.visible {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// `;
-
 export const HomeIntroSection = () => {
+  // const introVideo =
+  //   "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/rbx-animation-scaled-v5x.mp4?alt=media";
   const introVideo =
-    "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/rbx-animation-scaled-v5x.mp4?alt=media";
-
+    "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/FEB2022x.mp4?alt=media";
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const [spacerHeight, setSpacerHeight] = useState(120);
@@ -123,9 +105,9 @@ export const HomeIntroSection = () => {
         <div style={{ height: spacerHeight }} />
         <IntroTextContainer>
           <VisibilityTransition
-            transitionDelay={1250}
+            transitionDelay={5000}
             assumeVisible={true}
-            transitionType="blur"
+            transitionType="fade"
           >
             <h2 className="democratize">Democratizing NFTs for Everyone</h2>
           </VisibilityTransition>
@@ -134,66 +116,46 @@ export const HomeIntroSection = () => {
           <h3>
             <VisibilityTransition
               transitionDelay={1500}
+              duration={1000}
               assumeVisible={true}
               transitionType="blur"
               inline
             >
               <span>
-                Your Block.<span className="px-2"></span>
+                Your Block<span className="bullet px-4"></span>
               </span>
             </VisibilityTransition>
             <VisibilityTransition
-              transitionDelay={2000}
-              assumeVisible={true}
-              transitionType="blur"
-              inline
-            >
-              <span>Your Data.</span>
-            </VisibilityTransition>
-            <br />
-            <VisibilityTransition
               transitionDelay={2500}
+              duration={1000}
               assumeVisible={true}
               transitionType="blur"
               inline
             >
-              <span>Your NFT Reserved.</span>
+              <span>Your Data</span>
+              <span className="bullet px-4"></span>
+            </VisibilityTransition>
+            <VisibilityTransition
+              transitionDelay={3500}
+              duration={1000}
+              assumeVisible={true}
+              transitionType="blur"
+              inline
+            >
+              <span>Your NFT Reserved</span>
             </VisibilityTransition>
           </h3>
           <div className="py-4"></div>
 
           <div className="d-flex justify-content-center">
             <VisibilityTransition
-              transitionType="blur"
-              transitionDelay={3500}
+              transitionType="slide"
+              transitionDirection="up"
+              transitionDelay={6000}
+              duration={500}
               assumeVisible
             >
-              <SectionContent extraGlow outline>
-                <div className="px-3">
-                  <div className="">
-                    <SectionHeading4>
-                      <strong style={{ fontSize: 38, letterSpacing: 3 }}>
-                        Node Presale
-                      </strong>
-                    </SectionHeading4>
-                    <div className="pt-1" />
-                    <SectionHeading4
-                      className="text-center pb-1 mb-0 text-lowercase"
-                      style={{ color: ThemeColors.bright }}
-                    >
-                      12d 3h 5m 12s
-                    </SectionHeading4>
-                  </div>
-
-                  <div className="mt-3">
-                    <div className="d-flex justify-content-center align-items-center">
-                      <button className="btn btn-light btn-lg w-100 text-uppercase">
-                        Notify&nbsp;me
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </SectionContent>
+              <NodePresaleCtaComponent />
             </VisibilityTransition>
           </div>
         </IntroTextContainer>

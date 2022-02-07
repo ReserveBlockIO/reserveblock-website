@@ -182,6 +182,8 @@ export const HeaderComponent = () => {
                       className="nav-link active"
                       aria-current="page"
                       href={n.path}
+                      target={n.openExternal ? "_blank" : "_self"}
+                      rel="noreferrer"
                     >
                       {n.name}
                     </a>
@@ -205,11 +207,9 @@ export const HeaderComponent = () => {
                 <FontAwesomeIcon icon={faTimes} size="xs" />
               </div>
               <span className="px-1"></span>
-              <div>Node Presale Feb 16</div>
+              <div style={{ fontWeight: "bold" }}>Node Presale Feb 22</div>
               <span className="px-2"></span>
-              <button className="btn btn-light text-uppercase">
-                Notify me
-              </button>
+              <button className="btn btn-light text-uppercase">Activate</button>
             </div>
           </PresaleContainer>
         </div>

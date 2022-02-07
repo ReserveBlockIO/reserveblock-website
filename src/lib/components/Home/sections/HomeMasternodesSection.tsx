@@ -1,4 +1,5 @@
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt, faLink } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
 import {
   Section,
   SectionContent,
@@ -14,6 +15,19 @@ import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
 import { NodeType } from "../NodeType";
 
+const Waves = styled.div`
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  background-image: url(/img/decor/bg_01.png);
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.4;
+`;
+
 export const HomeMasterNodesSection = () => {
   return (
     <>
@@ -28,10 +42,11 @@ export const HomeMasterNodesSection = () => {
           height={500}
           opacity={0.5}
         ></PositionedAsset> */}
+        <Waves />
         <div className="container">
           <SectionHeaderComponent
             title="Masternodes"
-            subtitle="Join the Block."
+            subtitle="Join the Block"
             isOffset={true}
             transitionDuration={500}
           />
@@ -49,7 +64,7 @@ export const HomeMasterNodesSection = () => {
                     both.
                   </p>
 
-                  <p className="">
+                  <p className="mb-0">
                     Masternodes simply liquid stake the minimum requirements
                     using their local device such as a laptop, while Datanodes
                     simply contribute hard drive space to the network all
@@ -83,12 +98,12 @@ export const HomeMasterNodesSection = () => {
                 transitionDirection="up"
                 transitionDelay={250}
               >
-                <SectionContent inverted>
+                <SectionContent mutedBg>
                   <Download
                     title="Become a Masternode"
                     url={require("../../../../pdfs/ReserveBlockMasternodes.pdf")}
                     openExternal
-                    dark
+                    horizontalPadding={96}
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -99,13 +114,12 @@ export const HomeMasterNodesSection = () => {
                 transitionDirection="up"
                 transitionDelay={500}
               >
-                <SectionContent inverted>
+                <SectionContent mutedBg>
                   <Download
                     title="Blocking Rewards &amp; Halving"
                     url="/halving-schedule"
-                    icon={faExternalLinkAlt}
-                    openExternal
-                    dark
+                    icon={faLink}
+                    horizontalPadding={96}
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -116,12 +130,15 @@ export const HomeMasterNodesSection = () => {
                 transitionDirection="up"
                 transitionDelay={750}
               >
-                <SectionContent inverted>
+                <SectionContent mutedBg>
                   <Download
                     title="Install &amp; Operating Instructions"
                     url="#"
                     openExternal
-                    dark
+                    disabled
+                    noIcon
+                    buttonText="Activating Soon"
+                    horizontalPadding={96}
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -132,13 +149,13 @@ export const HomeMasterNodesSection = () => {
                 transitionDirection="up"
                 transitionDelay={1000}
               >
-                <SectionContent inverted>
+                <SectionContent mutedBg>
                   <Download
                     title="Masternode FAQs"
                     url="/faq#masternodes"
                     icon={faExternalLinkAlt}
-                    dark
                     openExternal
+                    horizontalPadding={96}
                   />
                 </SectionContent>
               </VisibilityTransition>

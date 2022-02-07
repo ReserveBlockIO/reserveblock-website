@@ -29,7 +29,7 @@ export const HomeBuildSection = () => {
       <div className="container">
         <SectionHeaderComponent
           title="Build"
-          subtitle="A Finite Purpose with Global Capabilities."
+          subtitle="A Finite Purpose with Global Capabilities"
           transitionDuration={500}
           transitionDirection="left"
         />
@@ -43,8 +43,10 @@ export const HomeBuildSection = () => {
             >
               <Download
                 title="Developer Rewards Program"
-                description="Releasing Soon"
+                buttonText="Releasing Soon"
                 disabled
+                noIcon
+                horizontalPadding={64}
               />
             </VisibilityTransition>
           </div>
@@ -56,12 +58,14 @@ export const HomeBuildSection = () => {
             >
               <Download
                 title="Docs & Resources"
-                description="Releasing Soon"
+                buttonText="Releasing Soon"
+                noIcon
                 disabled
+                horizontalPadding={64}
               />
             </VisibilityTransition>
           </div>
-          <div className="py-3"></div>
+          <div className="py-4"></div>
           <div className="col-6">
             <VisibilityTransition
               transitionType="slide"
@@ -74,6 +78,7 @@ export const HomeBuildSection = () => {
                 description="@ReserveBlockIO"
                 icon={faGithub}
                 openExternal
+                horizontalPadding={64}
               />
             </VisibilityTransition>
           </div>
@@ -89,11 +94,12 @@ export const HomeBuildSection = () => {
                 url={SocialUrls.discord}
                 icon={faDiscord}
                 openExternal
+                horizontalPadding={64}
               />
             </VisibilityTransition>
           </div>
         </div>
-        <div className="py-3"></div>
+        <div className="py-4"></div>
 
         <div className="row justify-content-center">
           <div className="col-6">
@@ -108,6 +114,7 @@ export const HomeBuildSection = () => {
                 url={"mailto:dev@reserveblock.io"}
                 icon={faEnvelope}
                 openExternal
+                horizontalPadding={64}
               />
             </VisibilityTransition>
           </div>

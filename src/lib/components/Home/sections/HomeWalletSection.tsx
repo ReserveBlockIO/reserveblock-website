@@ -10,6 +10,7 @@ import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { WalletDetailsComponent } from "../../common/WalletDetailsComponent";
 import { Download } from "../Download";
+import styled from "styled-components";
 
 export const HomeWalletSection = () => {
   return (

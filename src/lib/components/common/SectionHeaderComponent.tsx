@@ -41,7 +41,15 @@ export const Container = styled.div<IContainer>`
        `
       : null};
   ${(props) =>
-    props.isInvertedOffset ? `background-color: ${ThemeColors.dark};` : null};
+    props.isInvertedOffset
+      ? `
+    background-color: ${ThemeColors.dark};
+    border: 1px solid rgba(255,255,255,.4); 
+    background: linear-gradient(180deg, ${ThemeColors.dark} 0%, ${ThemeColors.darker} 100%);
+    box-shadow: 0 0 15px 3px ${ThemeColors.mutedDark};
+
+    `
+      : null};
 `;
 
 export const SectionHeaderComponent = (props: Props) => {

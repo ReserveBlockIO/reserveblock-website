@@ -16,6 +16,34 @@ import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
+import styled from "styled-components";
+
+const Decor = styled.div`
+  @keyframes buildBg {
+    0% {
+      opacity: 0.05;
+    }
+    50% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.05;
+    }
+  }
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  background-image: url(/img/decor/bg_03.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  top: 0;
+  left: 0;
+  opacity: 0.1;
+  animation: buildBg 3s infinite;
+`;
 
 export const HomeBuildSection = () => {
   return (
@@ -26,6 +54,8 @@ export const HomeBuildSection = () => {
         bottom={0}
         left={0}
       /> */}
+      <Decor />
+
       <div className="container">
         <SectionHeaderComponent
           title="Build"

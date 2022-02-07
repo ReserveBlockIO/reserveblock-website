@@ -13,6 +13,7 @@ import {
   faMicrosoft,
 } from "@fortawesome/free-brands-svg-icons";
 import { addToCalendar, CalendarType } from "../../calendar";
+import Countdown from "react-countdown";
 
 export const NodePresaleCtaComponent = () => {
   const event = {
@@ -59,7 +60,12 @@ export const NodePresaleCtaComponent = () => {
                 fontSize: 29,
               }}
             >
-              12d 3h 5m 12s
+              <Countdown
+                date={new Date(2022, 1, 22, 23, 0, 0)}
+                renderer={(props) => {
+                  return `${props.days}d ${props.hours}h ${props.minutes}m ${props.seconds}s`;
+                }}
+              />
             </SectionHeading4>
             <div className="pt-1" />
           </div>

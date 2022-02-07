@@ -15,7 +15,7 @@ import { VisibilityTransition } from "../../common/VisibilityTransition";
 export const HomeCommunitySection = () => {
   return (
     <>
-      <div className="py-5" id="community"></div>
+      <div className="py-5" id="community" style={{ marginTop: -90 }}></div>
 
       <Section dark>
         {/* <PositionedAsset

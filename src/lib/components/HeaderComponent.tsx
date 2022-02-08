@@ -11,6 +11,7 @@ import {
 } from "../data/menus";
 import { ThemeColors } from "../theme";
 import { isIpadPro, isMobile } from "../utils";
+import { AddToCalendarButton } from "./common/AddToCalendarButton";
 import { SocialLinks } from "./common/SocialLinks";
 import { VisibilityTransition } from "./common/VisibilityTransition";
 
@@ -240,7 +241,10 @@ export const HeaderComponent = () => {
             {/* <span className="px-1"></span> */}
             <div style={{ fontWeight: "bold" }}>Node Presale Feb 22</div>
             <span className="px-2"></span>
-            <button className="btn btn-light text-uppercase">Activate</button>
+            <AddToCalendarButton
+              noIcon
+              buttonClass="btn btn-light text-uppercase"
+            />
           </div>
         </PresaleContainer>
         {/* </div> */}

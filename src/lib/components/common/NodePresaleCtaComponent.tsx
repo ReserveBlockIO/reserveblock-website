@@ -4,25 +4,13 @@ import { SectionContent, SectionHeading4 } from "../../styles/styled";
 import { ThemeColors } from "../../theme";
 import { isMobile } from "../../utils";
 
-import AddToCalendar from "react-add-to-calendar";
-import { Dropdown, DropdownButton } from "react-bootstrap";
-import {
-  faApple,
-  faFontAwesome,
-  faGoogle,
-  faMicrosoft,
-} from "@fortawesome/free-brands-svg-icons";
+import { Dropdown } from "react-bootstrap";
+import { faApple, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { addToCalendar, CalendarType } from "../../calendar";
 import Countdown from "react-countdown";
+import { AddToCalendarButton } from "./AddToCalendarButton";
 
 export const NodePresaleCtaComponent = () => {
-  const event = {
-    title: "Sample Event",
-    description: "This is the sample event provided as an example only",
-    location: "Portland, OR",
-    startTime: "2016-09-16T20:15:00-04:00",
-    endTime: "2016-09-16T21:45:00-04:00",
-  };
   return (
     <div
       style={{
@@ -71,38 +59,7 @@ export const NodePresaleCtaComponent = () => {
           </div>
 
           <div className="mt-3">
-            <Dropdown>
-              <Dropdown.Toggle
-                id="dropdown"
-                title="activate"
-                className="btn btn-light btn-lg w-100 text-uppercase button-3d-white"
-              >
-                <FontAwesomeIcon icon={faCalendarAlt}></FontAwesomeIcon>
-                <span className="px-2"></span>
-                Activate
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-                <Dropdown.Item
-                  onClick={() => addToCalendar(CalendarType.Apple)}
-                >
-                  <FontAwesomeIcon icon={faApple}></FontAwesomeIcon>
-                  &nbsp;&nbsp;Apple
-                </Dropdown.Item>
-                <Dropdown.Item
-                  onClick={() => addToCalendar(CalendarType.Google)}
-                >
-                  <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
-                  &nbsp;&nbsp;Google
-                </Dropdown.Item>
-
-                <Dropdown.Item
-                  onClick={() => addToCalendar(CalendarType.Outlook)}
-                >
-                  <FontAwesomeIcon icon={faCalendarAlt}></FontAwesomeIcon>
-                  &nbsp;&nbsp;Outlook
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+            <AddToCalendarButton buttonClass="btn btn-light btn-lg w-100 text-uppercase button-3d-white" />
           </div>
         </div>
       </SectionContent>

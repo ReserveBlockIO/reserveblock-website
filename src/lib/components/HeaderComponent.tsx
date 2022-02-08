@@ -10,7 +10,7 @@ import {
   socialNavItems,
 } from "../data/menus";
 import { ThemeColors } from "../theme";
-import { isMobile } from "../utils";
+import { isIpadPro, isMobile } from "../utils";
 import { SocialLinks } from "./common/SocialLinks";
 import { VisibilityTransition } from "./common/VisibilityTransition";
 
@@ -96,6 +96,8 @@ const NavItem = styled.li`
     letter-spacing: 2px;
     color: ${ThemeColors.bright} !important;
     padding-top: 14px;
+
+    ${isIpadPro() ? `font-size: 14px` : ``};
   }
   &:hover {
     a {
@@ -109,12 +111,15 @@ const SubNavItem = styled(NavItem)`
   font-size: 14px;
   a {
     letter-spacing: 1px;
-    padding-top: 8px;
+    padding-top: 12px;
+    ${isIpadPro() ? `font-size: 12px; padding-top: 18px;` : ``};
   }
 `;
 const SocialNavItem = styled.li`
   a {
     color: #fff;
+    padding-top: 12px;
+    ${isIpadPro() ? `padding-top: 15px;` : ``};
   }
 `;
 

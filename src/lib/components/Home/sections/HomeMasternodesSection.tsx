@@ -8,7 +8,7 @@ import {
   SectionHeading3,
   SectionHeading4,
 } from "../../../styles/styled";
-import { isMobile } from "../../../utils";
+import { isIpadPro, isMobile } from "../../../utils";
 import { NextSectionButton } from "../../common/NextSectionButton";
 import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
 import { PositionedAsset } from "../../common/PositionedAsset";
@@ -30,7 +30,7 @@ const Waves = styled.div`
 `;
 
 export const HomeMasterNodesSection = () => {
-  const contentPadding = isMobile() ? 12 : 96;
+  const contentPadding = isMobile() || isIpadPro() ? 12 : 96;
 
   return (
     <>

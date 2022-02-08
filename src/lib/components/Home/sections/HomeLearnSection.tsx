@@ -112,11 +112,11 @@ export const HomeLearnSection = () => {
                 transitionDelay={250}
               >
                 <Download
-                  title="Frequently Asked Questions"
+                  title="FAQs"
                   description="A Quick Guide to your NFT Journey"
                   url={"/faq"}
                   icon={faLink}
-                  horizontalPadding={32}
+                  // horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>
@@ -131,7 +131,7 @@ export const HomeLearnSection = () => {
                   description="Get the Details"
                   onClick={toggleFacts}
                   icon={factsRevealed ? faChevronUp : faChevronDown}
-                  horizontalPadding={32}
+                  // horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>
@@ -146,7 +146,7 @@ export const HomeLearnSection = () => {
                   description="From Enthusiasts to Everyone"
                   onClick={toggleFoundation}
                   icon={foundationRevealed ? faChevronUp : faChevronDown}
-                  horizontalPadding={32}
+                  // horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>

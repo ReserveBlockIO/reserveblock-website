@@ -25,3 +25,17 @@ export function chunkArray(myArray: any[], chunk_size: number) {
 export function isMobile() {
   return window.innerWidth < 900;
 }
+
+export function isIpadPro() {
+  var ratio = window.devicePixelRatio || 1;
+  var screen = {
+    width: window.screen.width * ratio,
+    height: window.screen.height * ratio,
+  };
+  return (
+    (screen.width === 2048 && screen.height === 2732) ||
+    (screen.width === 2732 && screen.height === 2048) ||
+    (screen.width === 1536 && screen.height === 2048) ||
+    (screen.width === 2048 && screen.height === 1536)
+  );
+}

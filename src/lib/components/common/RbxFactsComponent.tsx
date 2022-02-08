@@ -111,7 +111,7 @@ export const RbxFactsComponent = () => {
       <SectionHeading4>RBX Facts</SectionHeading4>
       <div className="row">
         {items.map((item) => (
-          <div className="col-12 col-md-4 col-lg-3">
+          <div className={`col-12 col-md-4 col-xl-3`}>
             <SectionContent className="my-2" outline>
               <Item>
                 <div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { NodeInfo } from "../models";
 import { getNodeInfo } from "../service";
+import { SectionHeading4 } from "../styles/styled";
 import { DetailCardComponent } from "./DetailCardComponent";
 
 export const NodeInfoComponent = () => {
@@ -23,22 +24,22 @@ export const NodeInfoComponent = () => {
   }
 
   return (
-    <div className="my-3">
-      <h3 className="text-center">Remaining Nodes</h3>
-      <div className="d-flex justify-content-evenly justify-content-md-end">
-        <div className="mx-2">
+    <div className="">
+      <SectionHeading4>Remaining Nodes</SectionHeading4>
+      <div className="d-flex justify-content-between">
+        <div className="">
           <DetailCardComponent
             label="Carbon"
             value={nodeInfo.carbonLabel}
           ></DetailCardComponent>
         </div>
-        <div className="mx-2">
+        <div className="">
           <DetailCardComponent
             label="Diamond"
             value={nodeInfo.diamondLabel}
           ></DetailCardComponent>
         </div>
-        <div className="mx-2">
+        <div className="">
           <DetailCardComponent
             label="Total"
             value={nodeInfo.totalLabel}

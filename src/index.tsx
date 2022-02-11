@@ -23,7 +23,11 @@ if (isSafari) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <ToastProvider autoDismiss autoDismissTimeout={6000}>
+    <ToastProvider
+      autoDismiss
+      autoDismissTimeout={6000}
+      placement={"bottom-center"}
+    >
       <BrowserRouter>
         <App />
       </BrowserRouter>

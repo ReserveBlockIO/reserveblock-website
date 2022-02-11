@@ -37,7 +37,7 @@ const PressCardContainer = styled.div`
 export const PressCard = (props: IPressCardProps) => {
   return (
     <PressCardContainer>
-      <div className="img-container">
+      <div className="img-container p-3">
         <img src={props.imageUrl} alt={props.title} />
       </div>
       <div className="content p-3">

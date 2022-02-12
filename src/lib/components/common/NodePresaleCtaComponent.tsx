@@ -61,6 +61,16 @@ export const NodePresaleCtaComponent = () => {
           <div className="mt-3">
             <AddToCalendarButton buttonClass="btn btn-light btn-lg w-100 text-uppercase button-3d-white" />
           </div>
+          <div className="mt-2">
+            <a
+              href={require("../../../pdfs/NodePresaleInstructions.pdf")}
+              target="_blank"
+              className="btn btn-light btn-lg w-100 text-uppercase button-3d-white"
+              rel="noreferrer"
+            >
+              Instructions
+            </a>
+          </div>
         </div>
       </SectionContent>
     </div>

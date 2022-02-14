@@ -136,15 +136,15 @@ export class NodeInfo {
   }
 
   get totalLabel(): string {
-    return `${this.totalRemaining} / ${this.total}`;
+    return `${this.total - this.totalRemaining}`;
   }
 
   get carbonLabel(): string {
-    return `${this.carbonRemaining} / ${this.carbon}`;
+    return `${this.carbon - this.carbonRemaining}`;
   }
 
   get diamondLabel(): string {
-    return `${this.diamondRemaining} / ${this.diamond}`;
+    return `${this.diamond - this.diamondRemaining}`;
   }
 }
 

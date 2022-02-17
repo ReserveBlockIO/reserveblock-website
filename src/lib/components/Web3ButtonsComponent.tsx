@@ -17,27 +17,36 @@ export const Web3ButtonsComponent = (props: Props) => {
   return (
     <>
       {props.asset.toUpperCase() === "ETH" ? (
-        <div className="py-1">
-          <button
-            className="btn btn-secondary w-100"
-            onClick={() => handleMetaMask()}
-          >
-            Metamask
-          </button>
-        </div>
+        <>
+          <div className="py-1">
+            <button
+              className="btn btn-secondary w-100"
+              onClick={() => handleMetaMask()}
+            >
+              Metamask
+            </button>
+          </div>
+
+          <div className="py-1">
+            <button
+              className="btn btn-secondary w-100"
+              onClick={() => handleMetaMask()}
+            >
+              Coinbase
+            </button>
+          </div>
+        </>
       ) : null}
+
       {metaMaskOpen ? (
         <div>
           <iframe
             className="w-100"
-            src={`/transactions/metamask.html?address=${props.address}&amount=${props.amount}`}
+            src={`/transactions/?address=${props.address}&amount=${props.amount}`}
             title="metamask"
           ></iframe>
         </div>
       ) : null}
-      <div className="py-1">
-        <button className="btn btn-secondary w-100">Coinbase</button>
-      </div>
     </>
   );
 };

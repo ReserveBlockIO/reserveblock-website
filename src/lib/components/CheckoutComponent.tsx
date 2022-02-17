@@ -283,7 +283,11 @@ export function CheckoutComponent(props: Props) {
                 <h6 className="mt-2 text-center" style={{ fontWeight: "bold" }}>
                   Transfer Options
                 </h6>
-                <Web3ButtonsComponent />
+                <Web3ButtonsComponent
+                  asset={checkoutDetails.asset}
+                  amount={checkoutDetails.amountOwed}
+                  address={checkoutDetails.address}
+                />
                 <div className="py-1">
                   <button
                     className="btn btn-secondary w-100"

@@ -27,7 +27,7 @@ export function CheckoutComponent(props: Props) {
 
   const [manualSelected, setManualSelected] = useState(false);
 
-  const [emailValue, setEmailValue] = useState("tyler@tylersavery.com");
+  const [emailValue, setEmailValue] = useState("");
   const [addressValue, setAddressValue] = useState(
     "RKKtgMG3iYJ17CvRcuzeLvr1Ty4BoCdc11"
   );
@@ -176,10 +176,11 @@ export function CheckoutComponent(props: Props) {
         {!checkoutDetails ? (
           <div>
             <div className="form-group py-1">
+              <label>Email Address</label>
               <input
                 type="email"
                 className="form-control bg-dark text-light"
-                placeholder="Email Address"
+                placeholder="email@domain.com"
                 value={emailValue}
                 onChange={(e) => setEmailValue(e.target.value)}
               />
@@ -189,10 +190,11 @@ export function CheckoutComponent(props: Props) {
             </div>
 
             <div className="form-group py-1">
+              <label>RBX Wallet Address</label>
               <input
-                type="email"
+                type="text"
                 className="form-control bg-dark text-light"
-                placeholder="RBX Address"
+                placeholder="Rxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
                 value={addressValue}
                 onChange={(e) => setAddressValue(e.target.value)}
               />

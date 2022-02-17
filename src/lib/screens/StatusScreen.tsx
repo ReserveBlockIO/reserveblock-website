@@ -63,17 +63,17 @@ export const StatusScreen = () => {
     }, interval);
   };
 
-  if (!transaction) {
-    return null;
-  }
+  // if (!transaction) {
+  //   return null;
+  // }
 
-  if (!transaction.success || error) {
-    return (
-      <p className="text-center text-danger">
-        No transaction found with identifier {id}.
-      </p>
-    );
-  }
+  // if (!transaction || !transaction.success || error) {
+  //   return (
+  //     <p className="text-center text-danger">
+  //       No transaction found with identifier {id}.
+  //     </p>
+  //   );
+  // }
 
   return (
     <div className="screen screen-status">
@@ -96,42 +96,48 @@ export const StatusScreen = () => {
             </TipComponent>
           </SectionContent>
           <SectionContent>
-            <table className="table text-light">
-              <tbody>
-                <tr>
-                  <td>Transaction ID:</td>
-                  <td>{transaction.id}</td>
-                </tr>
-                <tr>
-                  <td>State:</td>
-                  <td>{transaction.stateLabel}</td>
-                </tr>
-                <tr>
-                  <td>Amount</td>
-                  <td>
-                    {transaction.amount}{" "}
-                    {currencyToString(transaction.currency)}
-                    &nbsp;({formatPrice(transaction.priceUsd)} USD)
-                  </td>
-                </tr>
-                <tr>
-                  <td>Confirmations</td>
-                  <td>
-                    {transaction.confirmations} /{" "}
-                    {transaction.confirmationsRequired}{" "}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Received</td>
-                  <td>{transaction.receivedDateLabel}</td>
-                </tr>
+            {transaction ? (
+              <table className="table text-light">
+                <tbody>
+                  <tr>
+                    <td>Transaction ID:</td>
+                    <td>{transaction.id}</td>
+                  </tr>
+                  <tr>
+                    <td>State:</td>
+                    <td>{transaction.stateLabel}</td>
+                  </tr>
+                  <tr>
+                    <td>Amount</td>
+                    <td>
+                      {transaction.amount}{" "}
+                      {currencyToString(transaction.currency)}
+                      &nbsp;({formatPrice(transaction.priceUsd)} USD)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Confirmations</td>
+                    <td>
+                      {transaction.confirmations} /{" "}
+                      {transaction.confirmationsRequired}{" "}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Received</td>
+                    <td>{transaction.receivedDateLabel}</td>
+                  </tr>
 
-                <tr>
-                  <td>Completed</td>
-                  <td>{transaction.completedDateLabel}</td>
-                </tr>
-              </tbody>
-            </table>
+                  <tr>
+                    <td>Completed</td>
+                    <td>{transaction.completedDateLabel}</td>
+                  </tr>
+                </tbody>
+              </table>
+            ) : (
+              <p className="mb-0">
+                Transaction not found with identifier: {id}
+              </p>
+            )}
           </SectionContent>
         </div>
       </Section>

@@ -190,6 +190,13 @@ export function NodeSaleScreen() {
                 </span>
               </TipComponent>
 
+              <TipComponent>
+                <span>
+                  Should you need to correct your transaction prior to checkout,
+                  please click the "Edit Details" link in the checkout window.
+                </span>
+              </TipComponent>
+
               <TipComponent subtle>
                 <span>
                   Need help?{" "}

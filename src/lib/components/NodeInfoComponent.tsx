@@ -25,7 +25,7 @@ export const NodeInfoComponent = () => {
 
   return (
     <div className="">
-      <SectionHeading4>Remaining Nodes</SectionHeading4>
+      <SectionHeading4>Current Nodes</SectionHeading4>
       <div className="d-flex justify-content-between">
         <div className="">
           <DetailCardComponent

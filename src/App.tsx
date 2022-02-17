@@ -10,6 +10,7 @@ import { HalvingScheduleScreen } from "./lib/screens/HalvingScheduleScreen";
 import { HomeScreen } from "./lib/screens/HomeScreen";
 import { NodeSaleScreen } from "./lib/screens/NodeSaleScreen";
 import { StatusScreen } from "./lib/screens/StatusScreen";
+import { Web3Screen } from "./lib/screens/Web3Screen";
 
 const Vingette = styled.div`
   position: fixed;
@@ -36,6 +37,7 @@ function App() {
         <Route path="/halving-schedule" element={<HalvingScheduleScreen />} />
         <Route path="/nodes" element={<NodeSaleScreen />} />
         <Route path="/nodes/status/:id" element={<StatusScreen />} />
+        <Route path="/web3" element={<Web3Screen />} />
       </Routes>
 
       <FooterComponent />

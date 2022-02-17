@@ -1,6 +1,7 @@
 import { formatNumber, formatPrice } from "../formatting";
 import { PriceDetail } from "../models";
 import { SectionContent, SectionHeading4 } from "../styles/styled";
+import { ThemeColors } from "../theme";
 
 interface Props {
   priceDetail: PriceDetail;
@@ -43,6 +44,11 @@ export function PriceDetailComponent(props: Props) {
             </tr>
           </tbody>
         </table>
+
+        <div style={{ color: ThemeColors.bright }}>
+          ** Please include any transfer fees from wallet provider additionally
+          or your transaction will not be completed. **
+        </div>
       </SectionContent>
     </>
   );

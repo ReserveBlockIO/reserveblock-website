@@ -1,4 +1,11 @@
-import { faCalculator, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalculator,
+  faCheck,
+  faChevronDown,
+  faDownload,
+  faQuestion,
+  faQuestionCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -50,7 +57,9 @@ export function NodeSaleScreen() {
   const [tipContainerHeight, setTipContainerHeight] = useState(100);
   const tipContainerRef = useRef<HTMLDivElement>(null);
 
-  const [tipStep, setTipStep] = useState(0);
+  const [walletReady, setWalletReady] = useState(false);
+
+  const [tipStep, setTipStep] = useState(-1);
   const [ready, setReady] = useState(false);
 
   const updateTipContainerHeight = () => {
@@ -71,7 +80,7 @@ export function NodeSaleScreen() {
 
     localStorage.setItem("pwd", "doughnuts");
     setReady(true);
-    updateTips(0);
+    updateTips(-1);
   };
 
   useEffect(() => {
@@ -201,155 +210,146 @@ export function NodeSaleScreen() {
           <NetworkStatusComponent />
           <SectionHeading1>Node Presale</SectionHeading1>
 
-          {/* <div className="py-5"></div> */}
-          <div className="row">
-            <div className="col-12 col-md-6 order-0 order-md-1">
-              <SectionContent>
-                <NodeInfoComponent />
-              </SectionContent>
-            </div>
-            <div className="col-12 col-md-6 order-1 order-md-0">
-              <SectionContent>
-                <div className="d-flex justify-content-between align-items-center mb-2">
-                  <SectionHeading4>Price Calculator</SectionHeading4>
-                  {calcType !== "price" ? null : (
-                    <div>
-                      {nodeAmount} Node{nodeAmount === 1 ? "" : "s"} ={" "}
-                      {formatPrice(nodeAmount * 1570)} USD
-                    </div>
-                  )}
-                </div>
-                <div className="text-center">
-                  <div
-                    className="nav nav-tabs"
-                    role="group"
-                    aria-label="Calculator Type"
-                  >
-                    {calcTypes.map((c) => {
-                      return (
-                        <button
-                          key={c}
-                          className={`nav-link ${
-                            calcType === c ? "active" : "text-light"
-                          }`}
-                          onClick={() => {
-                            setCalcType(c);
-                            setPriceDetail(null);
-                            setPriceDetailFromUsd(null);
-                          }}
-                        >
-                          {c === "price" ? "Node to Price" : "Price to Nodes"}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
+          <SectionContent>
+            <SectionHeading4>Wallet</SectionHeading4>
+            <p>
+              Before continuing, make sure you have your RBX wallet setup on
+              your computer.
+            </p>
+            <button className="btn btn-light text-uppercase button-3d-white ps-3">
+              Download Wallet Software
+              <span className="px-2">
+                <FontAwesomeIcon icon={faDownload}></FontAwesomeIcon>
+              </span>
+            </button>
+            <span className="px-1"></span>
+            <button className="btn btn-light text-uppercase button-3d-white ps-3">
+              Installation Instructions
+              <span className="px-2">
+                <FontAwesomeIcon icon={faQuestionCircle}></FontAwesomeIcon>
+              </span>
+            </button>
+            <span className="px-1"></span>
+            <button
+              className="btn btn-light text-uppercase button-3d-white ps-3"
+              onClick={() => {
+                setWalletReady(true);
+                updateTips(0);
+              }}
+            >
+              Already Installed
+              <span className="px-2">
+                <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
+              </span>
+            </button>
+          </SectionContent>
 
-                {calcType === "price" ? (
-                  <div className="mt-3">
-                    <div className="row">
-                      <div className="col">
-                        <div className="form-group">
-                          <div className="input-group mb-2">
-                            <div className="input-group-prepend">
-                              <div
-                                className="input-group-text text-light"
-                                style={{
-                                  backgroundColor: ThemeColors.mutedDark,
-                                }}
-                              >
-                                # of Nodes
-                              </div>
-                            </div>
-                            <input
-                              type="number"
-                              className="form-control bg-dark text-light"
-                              max={4000}
-                              min={1}
-                              value={nodeAmount}
-                              onFocus={(e) => e.target.select()}
-                              onChange={(e) => {
-                                if (e.target.value) {
-                                  setNodeAmount(parseInt(e.target.value));
-                                }
-                              }}
-                            />
-                          </div>
-                        </div>
+          {walletReady ? (
+            <div className="row">
+              <div className="col-12 col-md-6 order-0 order-md-1">
+                <SectionContent>
+                  <NodeInfoComponent />
+                </SectionContent>
+              </div>
+              <div className="col-12 col-md-6 order-1 order-md-0">
+                <SectionContent>
+                  <div className="d-flex justify-content-between align-items-center mb-2">
+                    <SectionHeading4>Price Calculator</SectionHeading4>
+                    {calcType !== "price" ? null : (
+                      <div>
+                        {nodeAmount} Node{nodeAmount === 1 ? "" : "s"} ={" "}
+                        {formatPrice(nodeAmount * 1570)} USD
                       </div>
-                    </div>
-                    <div className="py-2"></div>
-                    <div className="row">
-                      <div className="col">
-                        <div
-                          className="btn-group"
-                          role="group"
-                          aria-label="Currency"
-                        >
-                          {currencyTypes.map((c) => {
-                            return (
-                              <button
-                                key={c}
-                                type="button"
-                                className={`btn btn-lg ${
-                                  currencyType === c
-                                    ? "btn-light"
-                                    : "btn-outline-light"
-                                }`}
-                                onClick={() => setCurrencyType(c)}
-                              >
-                                {currencyToString(c)}
-                              </button>
-                            );
-                          })}
-                        </div>
-                        <span className="px-2"></span>
-                        <button
-                          className="btn btn-light  text-uppercase button-3d-white"
-                          onClick={calculate}
-                        >
-                          Calculate&nbsp;
-                          <FontAwesomeIcon
-                            icon={faCalculator}
-                          ></FontAwesomeIcon>
-                        </button>
-                      </div>
+                    )}
+                  </div>
+                  <div className="text-center">
+                    <div
+                      className="nav nav-tabs"
+                      role="group"
+                      aria-label="Calculator Type"
+                    >
+                      {calcTypes.map((c) => {
+                        return (
+                          <button
+                            key={c}
+                            className={`nav-link ${
+                              calcType === c ? "active" : "text-light"
+                            }`}
+                            onClick={() => {
+                              setCalcType(c);
+                              setPriceDetail(null);
+                              setPriceDetailFromUsd(null);
+                            }}
+                          >
+                            {c === "price" ? "Node to Price" : "Price to Nodes"}
+                          </button>
+                        );
+                      })}
                     </div>
                   </div>
-                ) : (
-                  <div className="mt-3">
-                    <div className="row">
-                      <div className="col">
-                        <div className="form-group">
-                          <div className="input-group ">
-                            <div className="input-group-prepend">
-                              <div
-                                className="input-group-text text-light"
-                                style={{
-                                  backgroundColor: ThemeColors.mutedDark,
-                                }}
-                              >
-                                $USD
+
+                  {calcType === "price" ? (
+                    <div className="mt-3">
+                      <div className="row">
+                        <div className="col">
+                          <div className="form-group">
+                            <div className="input-group mb-2">
+                              <div className="input-group-prepend">
+                                <div
+                                  className="input-group-text text-light"
+                                  style={{
+                                    backgroundColor: ThemeColors.mutedDark,
+                                  }}
+                                >
+                                  # of Nodes
+                                </div>
                               </div>
+                              <input
+                                type="number"
+                                className="form-control bg-dark text-light"
+                                max={4000}
+                                min={1}
+                                value={nodeAmount}
+                                onFocus={(e) => e.target.select()}
+                                onChange={(e) => {
+                                  if (e.target.value) {
+                                    setNodeAmount(parseInt(e.target.value));
+                                  }
+                                }}
+                              />
                             </div>
-                            <input
-                              type="number"
-                              className="form-control bg-dark text-light"
-                              min={0}
-                              value={usdAmount}
-                              onFocus={(e) => e.target.select()}
-                              onChange={(e) => {
-                                if (e.target.value) {
-                                  setUsdAmount(parseInt(e.target.value));
-                                }
-                              }}
-                            />
                           </div>
                         </div>
-                        <div className="mt-4">
+                      </div>
+                      <div className="py-2"></div>
+                      <div className="row">
+                        <div className="col">
+                          <div
+                            className="btn-group"
+                            role="group"
+                            aria-label="Currency"
+                          >
+                            {currencyTypes.map((c) => {
+                              return (
+                                <button
+                                  key={c}
+                                  type="button"
+                                  className={`btn btn-lg ${
+                                    currencyType === c
+                                      ? "btn-light"
+                                      : "btn-outline-light"
+                                  }`}
+                                  onClick={() => setCurrencyType(c)}
+                                >
+                                  {currencyToString(c)}
+                                </button>
+                              );
+                            })}
+                          </div>
+                          <span className="px-2"></span>
                           <button
-                            className="btn btn-light text-uppercase button-3d-white"
-                            onClick={calculateFromUsd}
+                            className="btn btn-light  text-uppercase button-3d-white"
+                            onClick={calculate}
                           >
                             Calculate&nbsp;
                             <FontAwesomeIcon
@@ -359,11 +359,55 @@ export function NodeSaleScreen() {
                         </div>
                       </div>
                     </div>
-                  </div>
-                )}
-              </SectionContent>
+                  ) : (
+                    <div className="mt-3">
+                      <div className="row">
+                        <div className="col">
+                          <div className="form-group">
+                            <div className="input-group ">
+                              <div className="input-group-prepend">
+                                <div
+                                  className="input-group-text text-light"
+                                  style={{
+                                    backgroundColor: ThemeColors.mutedDark,
+                                  }}
+                                >
+                                  $USD
+                                </div>
+                              </div>
+                              <input
+                                type="number"
+                                className="form-control bg-dark text-light"
+                                min={0}
+                                value={usdAmount}
+                                onFocus={(e) => e.target.select()}
+                                onChange={(e) => {
+                                  if (e.target.value) {
+                                    setUsdAmount(parseInt(e.target.value));
+                                  }
+                                }}
+                              />
+                            </div>
+                          </div>
+                          <div className="mt-4">
+                            <button
+                              className="btn btn-light text-uppercase button-3d-white"
+                              onClick={calculateFromUsd}
+                            >
+                              Calculate&nbsp;
+                              <FontAwesomeIcon
+                                icon={faCalculator}
+                              ></FontAwesomeIcon>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </SectionContent>
+              </div>
             </div>
-          </div>
+          ) : null}
 
           {/* <div className="py-3"></div> */}
 

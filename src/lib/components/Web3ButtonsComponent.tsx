@@ -23,10 +23,10 @@ export const Web3ButtonsComponent = (props: Props) => {
               className="btn btn-secondary w-100"
               onClick={() => handleMetaMask()}
             >
-              Metamask
+              Metamask / Coinbase
             </button>
           </div>
-
+          {/* 
           <div className="py-1">
             <button
               className="btn btn-secondary w-100"
@@ -34,7 +34,7 @@ export const Web3ButtonsComponent = (props: Props) => {
             >
               Coinbase
             </button>
-          </div>
+          </div> */}
         </>
       ) : null}
 

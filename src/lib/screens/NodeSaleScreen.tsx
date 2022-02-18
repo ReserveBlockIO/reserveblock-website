@@ -11,6 +11,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { CheckoutComponent } from "../components/CheckoutComponent";
+import { TransferInstructions } from "../components/common/TransferInstruction";
 import { NetworkStatusComponent } from "../components/NetworkStatusComponent";
 import { NodeInfoComponent } from "../components/NodeInfoComponent";
 import { PriceDetailComponent } from "../components/PriceDetailComponent";
@@ -61,6 +62,23 @@ export function NodeSaleScreen() {
 
   const [tipStep, setTipStep] = useState(-1);
   const [ready, setReady] = useState(false);
+
+  const [showingTransferInstructions, setShowingTransferInstructions] =
+    useState(false);
+
+  const [transferInstructionsAsset, setTransferInstructionsAsset] = useState<
+    string | null
+  >(null);
+  const [transferInstructionsAmount, setTransferInstructionsAmount] = useState<
+    number | null
+  >(null);
+  const [transferInstructionAddress, setTransferInstructionsAddress] = useState<
+    string | null
+  >(null);
+
+  const [transferInstructionId, setTransferInstructionsId] = useState<
+    string | null
+  >(null);
 
   const updateTipContainerHeight = () => {
     const h = tipContainerRef.current?.clientHeight || 100;
@@ -427,6 +445,23 @@ export function NodeSaleScreen() {
                 <CheckoutComponent
                   priceDetail={priceDetail}
                   onCheckout={() => updateTips(2)}
+                  onShowTransferInstructions={(
+                    asset: string,
+                    amountOwed: number,
+                    address: string,
+                    id: string
+                  ) => {
+                    if (asset == null) {
+                      setShowingTransferInstructions(false);
+                      return;
+                    }
+                    setTransferInstructionsAsset(asset);
+                    setTransferInstructionsAmount(amountOwed);
+                    setTransferInstructionsAddress(address);
+                    setTransferInstructionsId(id);
+
+                    setShowingTransferInstructions(true);
+                  }}
                 />
               </div>
             </div>
@@ -441,9 +476,34 @@ export function NodeSaleScreen() {
                 <CheckoutComponent
                   priceDetailFromUsd={priceDetailFromUsd}
                   onCheckout={() => updateTips(2)}
+                  onShowTransferInstructions={(
+                    asset: string,
+                    amountOwed: number,
+                    address: string,
+                    id: string
+                  ) => {
+                    if (asset == null) {
+                      setShowingTransferInstructions(false);
+                      return;
+                    }
+                    setTransferInstructionsAsset(asset);
+                    setTransferInstructionsAmount(amountOwed);
+                    setTransferInstructionsAddress(address);
+                    setTransferInstructionsId(id);
+
+                    setShowingTransferInstructions(true);
+                  }}
                 />
               </div>
             </div>
+          ) : null}
+          {showingTransferInstructions ? (
+            <TransferInstructions
+              asset={transferInstructionsAsset!}
+              amount={transferInstructionsAmount!}
+              address={transferInstructionAddress!}
+              id={transferInstructionId!}
+            />
           ) : null}
         </div>
       </Section>

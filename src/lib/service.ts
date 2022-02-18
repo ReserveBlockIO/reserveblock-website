@@ -34,10 +34,21 @@ export function getDetailsFromUsd(amount: number) {
 }
 
 export function getIp() {
-  return fetch("https://ipapi.co/json/").then(async (data) => {
-    const json = await data.json();
-    return json["ip"];
-  });
+  return fetch("https://ipapi.co/json/")
+    .then(async (data) => {
+      const json = await data.json();
+      return json["ip"];
+    })
+    .catch((e) => {
+      return fetch("https://api.ipify.org/")
+        .then(async (data) => {
+          return await data.text();
+        })
+        .catch((e) => {
+          console.log("ERROR", e);
+          return "1.1.1.1";
+        });
+    });
 }
 
 export function allocateAddress(

@@ -39,6 +39,40 @@ const TipContainer = styled.div`
   z-index: 1000;
 `;
 
+const TermsModal = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(3px);
+  }
+
+  .content {
+    width: 100%;
+    max-width: 1000px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  li {
+    margin-top: 20px;
+  }
+`;
+
 export function NodeSaleScreen() {
   const dispatch = useDispatch();
   const networkIsOnline = useSelector((state: any) => state.network.value);
@@ -79,6 +113,8 @@ export function NodeSaleScreen() {
   const [transferInstructionId, setTransferInstructionsId] = useState<
     string | null
   >(null);
+
+  const [termsVisible, setTermsVisible] = useState(false);
 
   const updateTipContainerHeight = () => {
     const h = tipContainerRef.current?.clientHeight || 100;
@@ -444,7 +480,11 @@ export function NodeSaleScreen() {
               <div className="col-12 col-md-6">
                 <CheckoutComponent
                   priceDetail={priceDetail}
-                  onCheckout={() => updateTips(2)}
+                  onCheckout={() => {
+                    setTermsVisible(true);
+
+                    updateTips(2);
+                  }}
                   onShowTransferInstructions={(
                     asset: string,
                     amountOwed: number,
@@ -475,7 +515,11 @@ export function NodeSaleScreen() {
               <div className="col-12 col-md-6">
                 <CheckoutComponent
                   priceDetailFromUsd={priceDetailFromUsd}
-                  onCheckout={() => updateTips(2)}
+                  onCheckout={() => {
+                    setTermsVisible(true);
+
+                    updateTips(2);
+                  }}
                   onShowTransferInstructions={(
                     asset: string,
                     amountOwed: number,
@@ -507,6 +551,121 @@ export function NodeSaleScreen() {
           ) : null}
         </div>
       </Section>
+      {termsVisible ? (
+        <TermsModal>
+          <div className="cover"></div>
+          <div className="content">
+            <SectionContent>
+              <SectionHeading4>
+                Node Sale Purchase Disclosure and Acknowledgement
+              </SectionHeading4>
+              <p>
+                By completing your transaction for RBX Masternode(s) and
+                participating in the Testnet you acknowledge and agree to the
+                following:
+              </p>
+
+              <ol>
+                <li>
+                  The RBX wallet you are downloading today for your node(s)
+                  purchase is a Testnet version of the wallet provided and will
+                  be needed to be updated by you when the network broadcasts
+                  available said updates in a timely manner in order to utilize
+                  all the intended wallet functions and features. The initial
+                  Testnet wallet you are downloading now is strictly for you to
+                  hold your RBX coin (per the minimum requirements) and operate
+                  your node(s) purchased per the instructions provided.
+                </li>
+                <li>
+                  Your node(s) and RBX coin that come with your purchase will
+                  always be guaranteed by the network to be held by your wallet
+                  that you generate on this presale through the duration of the
+                  Testnet unless transferred by you. Should you transfer any
+                  coin to another RBX wallet address that is created by you, you
+                  would then be responsible for maintaining said additional
+                  wallets as well as the initial one generated on your purchase.
+                  Should you transfer any of your initial purchase in part or
+                  whole to a third party, the network cannot be responsible for
+                  any portion of your original purchase that may be misplaced or
+                  stolen by a third party upon a said transfer.
+                </li>
+                <li>
+                  You acknowledge and agree by completing this transaction and
+                  should you choose to operate your Masternode(s), that you will
+                  be participating in the Testnet phase of the RBX network. By
+                  doing so, you will be required to operate your node(s) per the
+                  minimum standards as defined in the “Become a Masternode”
+                  section of the network site upon the activation of your
+                  node(s).{" "}
+                </li>
+                <li>
+                  All node(s) that participate in the Testnet by simply running
+                  the wallet validator program in the background on a device,
+                  per the minimum specifications, will be eligible to receive
+                  block rewards per the block rewards schedule if selected by
+                  the random stochastic ordering system on the network for
+                  validator selection. Any block rewards earned will
+                  automatically appear in your wallet balance that is staked in
+                  conjunction with you operating your node(s).
+                </li>
+                <li>
+                  You acknowledge and agree that being a validator in the
+                  Testnet does not guarantee that block rewards earned and
+                  awarded will be retained in the event a block is required to
+                  roll back due to error or otherwise. This would also include
+                  the possibility of a need to reset the chain as a result of a
+                  major event or unresolvable bug during the Tesnet phase for
+                  the network. It is the developer team's intention to avoid
+                  such events, however, you should expect such events as more
+                  than likely and common amongst most blockchain protocols when
+                  in a Testnet phase. The network cannot make any guarantees as
+                  to how many block rewards will be retained by each validator
+                  at the conclusion of the Testnet, however, the developer team
+                  will make all reasonable efforts to ensure block reward loss
+                  is kept to a minimum as much as possible.
+                </li>
+                <li>
+                  At the conclusion of the Testnet, the developer team will
+                  assess any block reward loss should they occur and make a
+                  reasonable effort to airdrop rewards to those affected. You
+                  acknowledge and agree that any said rewards are given, should
+                  they be provided, will more than likely not equal the amount
+                  of block rewards earned had a transaction(s) be successfully
+                  validated under normal circumstances. Your participation in
+                  the Testnet on that basis is completely optional but
+                  encouraged in order to launch a safe and secure Mainnet that
+                  scales appropriately.
+                </li>
+              </ol>
+              <div className="d-flex justify-content-between">
+                <button
+                  className="btn btn-dark"
+                  onClick={() => {
+                    const confirmed = window.confirm(
+                      "Are you sure you want to cancel this transaction?"
+                    );
+
+                    if (confirmed) {
+                      window.location.href = "/";
+                    }
+                  }}
+                >
+                  Cancel
+                </button>
+
+                <button
+                  className="btn btn-light"
+                  onClick={() => {
+                    setTermsVisible(false);
+                  }}
+                >
+                  I AGREE
+                </button>
+              </div>
+            </SectionContent>
+          </div>
+        </TermsModal>
+      ) : null}
     </div>
   );
 }

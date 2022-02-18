@@ -204,17 +204,16 @@ export function CheckoutComponent(props: Props) {
                 {invalidAddress ? (
                   <small className="text-danger">Invalid Address</small>
                 ) : null}
-                {/* <div>
-                <small
-                  className="badge mt-2"
+                <div
+                  className="badge badge-lg mt-2"
                   style={{
                     backgroundColor: ThemeColors.mutedBright,
                     cursor: "pointer",
+                    fontSize: 16,
                   }}
                 >
-                  What's this?
-                </small>
-              </div> */}
+                  What's my RBX Wallet Address?
+                </div>
               </div>
               <div className="text-end pt-2">
                 <button

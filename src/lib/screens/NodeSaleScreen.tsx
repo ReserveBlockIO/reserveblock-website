@@ -63,7 +63,7 @@ const TermsModal = styled.div`
 
   .content {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1600px;
     max-height: 80vh;
     overflow-y: auto;
   }
@@ -275,7 +275,8 @@ export function NodeSaleScreen() {
             <SectionHeading4>Wallet</SectionHeading4>
             <p>
               Before continuing, make sure you have your RBX wallet setup on
-              your computer.
+              your computer. Please click on the download wallet software button
+              now.
             </p>
             <button className="btn btn-light text-uppercase button-3d-white ps-3">
               Download Wallet Software
@@ -298,7 +299,7 @@ export function NodeSaleScreen() {
                 updateTips(0);
               }}
             >
-              Already Installed
+              I'm Ready
               <span className="px-2">
                 <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
               </span>
@@ -307,12 +308,12 @@ export function NodeSaleScreen() {
 
           {walletReady ? (
             <div className="row">
-              <div className="col-12 col-md-6 order-0 order-md-1">
+              <div className="col-12 col-md-4 order-0 order-md-1">
                 <SectionContent>
                   <NodeInfoComponent />
                 </SectionContent>
               </div>
-              <div className="col-12 col-md-6 order-1 order-md-0">
+              <div className="col-12 col-md-8 order-1 order-md-0">
                 <SectionContent>
                   <div className="d-flex justify-content-between align-items-center mb-2">
                     <SectionHeading4>Price Calculator</SectionHeading4>

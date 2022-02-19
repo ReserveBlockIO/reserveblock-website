@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { NetworkStatusComponent } from "../components/NetworkStatusComponent";
 import { TipComponent } from "../components/TipComponent";
+import { SocialUrls } from "../data/menus";
 import { currencyToString } from "../enums";
 import { formatPrice } from "../formatting";
 import { TransactionDetails } from "../models";
@@ -91,6 +92,15 @@ export const StatusScreen = () => {
                 Having a question?&nbsp;
                 <a href="mailto:hello@reserveblock.io" className="text-light">
                   Contact Support
+                </a>{" "}
+                or connect with us on{" "}
+                <a
+                  href={SocialUrls.discord}
+                  target="_blank"
+                  className="text-light"
+                  rel="noreferrer"
+                >
+                  Discord
                 </a>
               </span>
             </TipComponent>
@@ -135,7 +145,9 @@ export const StatusScreen = () => {
               </table>
             ) : (
               <p className="mb-0">
-                Transaction not found with identifier: {id}
+                Transaction not found with identifier: {id} <br />
+                If you sent this transfer very recently, please refresh this
+                page.
               </p>
             )}
           </SectionContent>

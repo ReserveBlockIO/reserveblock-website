@@ -17,6 +17,7 @@ import { NodeInfoComponent } from "../components/NodeInfoComponent";
 import { PriceDetailComponent } from "../components/PriceDetailComponent";
 import { PriceDetailFromUsdComponent } from "../components/PriceDetailFromUsdComponent";
 import { TipComponent } from "../components/TipComponent";
+import { SocialUrls } from "../data/menus";
 import { Currency, currencyToString } from "../enums";
 import { formatPrice } from "../formatting";
 import { PriceDetail, PriceDetailFromUsd } from "../models";
@@ -224,7 +225,17 @@ export function NodeSaleScreen() {
                   Not sure what your RBX Address is?{" "}
                   <a href="mailto:hello@reserveblock.io" className="text-light">
                     Contact Support
+                  </a>{" "}
+                  or connect with us on{" "}
+                  <a
+                    href={SocialUrls.discord}
+                    target="_blank"
+                    className="text-light"
+                    rel="noreferrer"
+                  >
+                    Discord
                   </a>
+                  .
                 </span>
               </TipComponent>
             </div>
@@ -256,6 +267,15 @@ export function NodeSaleScreen() {
                   Need help?{" "}
                   <a href="mailto:hello@reserveblock.io" className="text-light">
                     Contact Support
+                  </a>{" "}
+                  or connect with us on{" "}
+                  <a
+                    href={SocialUrls.discord}
+                    target="_blank"
+                    className="text-light"
+                    rel="noreferrer"
+                  >
+                    Discord
                   </a>
                 </span>
               </TipComponent>

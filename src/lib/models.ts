@@ -45,7 +45,7 @@ export class TransactionDetails {
   active: boolean;
   success: boolean;
   amount: number;
-  completeDate: Date;
+  completeDate?: Date;
   insertDate: Date;
   confirmations: number;
   currency: Currency;
@@ -58,7 +58,9 @@ export class TransactionDetails {
     this.active = json["Active"];
     this.success = json["Success"];
     this.amount = json["Amount"];
-    this.completeDate = new Date(json["CompleteDate"]);
+    this.completeDate = json["CompleteDate"]
+      ? new Date(json["CompleteDate"].split(".")[0] + ".000Z")
+      : undefined;
     this.insertDate = new Date(json["InsertDate"]);
     this.confirmations = json["Confirmations"];
     this.currency = stringToCurrency(json["AssetName"]);

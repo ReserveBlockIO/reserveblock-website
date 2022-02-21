@@ -38,7 +38,7 @@ import { ThemeColors } from "../theme";
 const TipContainer = styled.div`
   position: fixed;
   width: 100%;
-  top: 40px;
+  top: 38px;
   left: 0;
   z-index: 1000;
 `;
@@ -74,6 +74,7 @@ const TermsModal = styled.div`
 
   li {
     margin-top: 20px;
+    font-size: 12px;
   }
 `;
 
@@ -192,7 +193,7 @@ export function NodeSaleScreen() {
   return (
     <div className="screen screen-node-sale">
       <TipContainer ref={tipContainerRef} id="tipContainer">
-        <SectionContent>
+        <SectionContent style={{ backgroundColor: "rgba(0,0,0,.9)" }}>
           {tipStep === 0 ? (
             <div>
               <TipComponent>

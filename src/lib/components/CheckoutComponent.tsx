@@ -374,6 +374,16 @@ export function CheckoutComponent(props: Props) {
                   >
                     Transfer Options
                   </h6>
+                  <p
+                    className=" text-center"
+                    style={{ fontSize: 13, lineHeight: "12px" }}
+                  >
+                    <small>
+                      Be sure to send the exact amount to the address listed
+                      along with any transaction fees from your provider if
+                      applicable.
+                    </small>
+                  </p>
                   <Web3ButtonsComponent
                     asset={checkoutDetails.asset}
                     amount={checkoutDetails.amountOwed}

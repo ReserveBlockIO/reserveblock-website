@@ -23,6 +23,11 @@ export const FaqScreen = () => {
           <a className="btn btn-light" href="#devs">
             Developers
           </a>
+          <span className="px-1"></span>
+
+          <a className="btn btn-light" href="#wallet">
+            Wallet
+          </a>
         </div>
         <SectionHeading1 noCaps>GENERAL FAQs</SectionHeading1>
         <div className="py-2"></div>
@@ -52,6 +57,15 @@ export const FaqScreen = () => {
         <div className="py-2"></div>
         <div>
           <FaqComponent developer={true} />
+        </div>
+
+        <div className="pb-5 mb-4" id="wallet"></div>
+        <SectionHeading1 id="" noCaps>
+          WALLET FAQs
+        </SectionHeading1>
+        <div className="py-2"></div>
+        <div>
+          <FaqComponent wallet />
         </div>
       </div>
     </Section>

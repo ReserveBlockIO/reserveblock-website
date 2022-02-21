@@ -118,9 +118,7 @@ export function CheckoutComponent(props: Props) {
   };
 
   const redirectToStatusScreen = () => {
-    const id = "testid1234"; //TODO: replace with below
-    // const id = transactionId;
-    navigate(`/nodes/status/${id}`);
+    navigate(`/nodes/status/${transactionId}`);
   };
 
   return (

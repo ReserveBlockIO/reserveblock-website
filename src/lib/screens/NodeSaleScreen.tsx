@@ -23,6 +23,7 @@ import { SocialUrls } from "../data/menus";
 import { Currency, currencyToString } from "../enums";
 import { formatPrice } from "../formatting";
 import { PriceDetail, PriceDetailFromUsd } from "../models";
+import { scrollToElement } from "../scroller";
 import { getDetails, getDetailsFromUsd } from "../service";
 import { hideLoader, showLoader } from "../store/loader";
 import {
@@ -164,6 +165,8 @@ export function NodeSaleScreen() {
     setPriceDetail(details);
 
     updateTips(1);
+
+    scrollToElement("details");
   };
 
   const calculateFromUsd = async () => {
@@ -188,7 +191,7 @@ export function NodeSaleScreen() {
 
   return (
     <div className="screen screen-node-sale">
-      <TipContainer ref={tipContainerRef}>
+      <TipContainer ref={tipContainerRef} id="tipContainer">
         <SectionContent>
           {tipStep === 0 ? (
             <div>
@@ -331,7 +334,8 @@ export function NodeSaleScreen() {
                 setWalletReady(true);
                 setInstructionsVisible(false);
                 updateTips(0);
-                window.scrollTo(0, 0);
+                // window.scrollTo(0, 0);
+                scrollToElement("priceCalculator");
               }}
             >
               I'm Ready
@@ -372,7 +376,7 @@ export function NodeSaleScreen() {
                 </SectionContent>
               </div>
               <div className="col-12 col-md-8 order-1 order-md-0">
-                <SectionContent>
+                <SectionContent id="priceCalculator">
                   <div className="d-flex justify-content-between align-items-center mb-2">
                     <SectionHeading4>Price Calculator</SectionHeading4>
                     {calcType !== "price" ? null : (
@@ -530,7 +534,7 @@ export function NodeSaleScreen() {
           ) : null}
 
           {/* <div className="py-3"></div> */}
-
+          <div id="details"></div>
           {calcType === "price" && priceDetail ? (
             <div className="row">
               <div className="col-12 col-md-6">
@@ -560,6 +564,7 @@ export function NodeSaleScreen() {
                     setTransferInstructionsId(id);
 
                     setShowingTransferInstructions(true);
+                    scrollToElement("transferInstructions");
                   }}
                 />
               </div>
@@ -595,11 +600,13 @@ export function NodeSaleScreen() {
                     setTransferInstructionsId(id);
 
                     setShowingTransferInstructions(true);
+                    scrollToElement("transferInstructions");
                   }}
                 />
               </div>
             </div>
           ) : null}
+          <div id="transferInstructions"></div>
           {showingTransferInstructions ? (
             <TransferInstructions
               asset={transferInstructionsAsset!}

@@ -11,8 +11,13 @@ import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { WalletDetailsComponent } from "../../common/WalletDetailsComponent";
 import { Download } from "../Download";
 import styled from "styled-components";
+import { WalletInstructions } from "../../WalletInstructions";
+import { useState } from "react";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 export const HomeWalletSection = () => {
+  const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
+
   return (
     <>
       <Section fill={true} center={true} id="wallet">
@@ -42,6 +47,14 @@ export const HomeWalletSection = () => {
                 transitionDirection="up"
                 transitionDelay={500}
               >
+                {/* <Download
+                  title="Get Started"
+                  buttonText="Install and Operating Instructions"
+                  onClick={() => {
+                    setGettingStartedVisible(!gettingStartedVisible);
+                  }}
+                  icon={gettingStartedVisible ? faChevronUp : faChevronDown}
+                /> */}
                 <Download
                   title="Get Started"
                   buttonText="Activating Soon"
@@ -81,6 +94,13 @@ export const HomeWalletSection = () => {
             </div>
           </div>
           <div className="py-3 d-none d-md-block"></div>
+
+          {gettingStartedVisible ? (
+            <div className="py-3">
+              <WalletInstructions />
+            </div>
+          ) : null}
+
           <div className="row justify-content-center">
             <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition

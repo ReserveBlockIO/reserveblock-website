@@ -10,6 +10,7 @@ interface Props {
   datanode?: boolean;
   masternode?: boolean;
   developer?: boolean;
+  wallet?: boolean;
 }
 
 export const FaqComponent = (props: Props) => {
@@ -407,6 +408,98 @@ export const FaqComponent = (props: Props) => {
     },
   ];
 
+  const walletItems: FaqItem[] = [
+    {
+      question:
+        "Is it mandatory to stake my coin when you buy a Masternode on the presale or can I stake it later?",
+      answer:
+        "You will need to stake the minimum required coin to become a validator (1,000 RBX) for each wallet, for 1 machine, and per IP address.  Participation is your choice, however, if you do not stake you will not be qualified to receive block rewards.  When staking there are no holding periods, fees, or penalties this means you can stake or unstake as many times as you want.",
+    },
+    {
+      question: "How do I turn my node on or activate my node?",
+      answer:
+        "With the wallet open, you click on the Validator button and select the eligible wallet address and then simply click the Validator button again to begin.  The wallet will handle the rest.  This is a simple process for each machine or VPS.",
+    },
+    {
+      question: "How do I generate an address on my wallet?",
+      answer:
+        "You will generate an address from the receiving screen on your wallet.  Simply click receive and then you may generate your address.",
+    },
+    {
+      question:
+        "Can I use my wallet on different machines with my total RBX balances?",
+      answer:
+        "Yes, you can have your wallet on multiple machines and generate a new address for each machine in your singular wallet, however, it is recommended that you have a main wallet with your RBX balances and generate a new wallet with a unique address for each static IP tied to that machine and send the min RBX requirements (1,000 RBX) from your main wallet to the wallet you have set up for the machine you have designated to validate.",
+    },
+    {
+      question:
+        " How do I generate different addresses for each node using my wallet or will I have to download multiple wallets?",
+      answer:
+        "Again, it is recommended that you download a new wallet per machine with a unique address and send the min RBX requirements (1,000 RBX) from your main wallet where you are holding your funds.  ",
+    },
+    {
+      question: "Can I purchase multiple nodes with one wallet?",
+      answer:
+        "Yes, you can purchase as many nodes as you are willing to purchase in a singular wallet.  You can then assign the RBX required coin to as many additional wallets as you would like with unique addresses to each machine with each static IP address.",
+    },
+    {
+      question:
+        "If I have multiple nodes and multiple wallets, can I send my block rewards to a designated wallet?",
+      answer:
+        "While you can only operate 1 node per wallet, per machine, no matter how much RBX coin you have in that wallet, the block rewards earned for each node/validator in that wallet will be tied to that wallet's address and received there.  However, you are free to then send the block rewards to any other wallet you wish i.e. a master wallet if you wish, etc.",
+    },
+    {
+      question:
+        "How do I know I have successfully activated my node for validation?",
+      answer:
+        "Once you have selected your wallet to validate, you will receive a message once it is added to the network.  Once you solve your first block you will get a transaction showing a block reward from Coinbase_blkrwd (not to be confused by “Coinbase” the exchange).  Your block rewards will show in your balance of the wallet that has successfully validated once received.",
+    },
+    {
+      question:
+        "How will the wallet recognize multiple IP addresses if I have multiple nodes?",
+      answer:
+        "Again, you will have 1 wallet per 1 unique IP and machine.  After that p2p protocols take over and you join the pool of validators.",
+    },
+    {
+      question:
+        "Does the RBX wallet come with a user notification option for alerts?",
+      answer: "No.",
+    },
+    {
+      question: "Will I get a notification if my node goes offline? ",
+      answer:
+        "No, you will have to periodically check each of the nodes you have enabled.  It is recommended to check each day to make sure they are online and running.",
+    },
+    {
+      question: "Can I run a node with a dynamic IP?",
+      answer: "No, you can only run a node with a static IP.",
+    },
+    {
+      question:
+        "What happens to my node if my computer restarts, shuts down or there’s a loss of power?  ",
+      answer:
+        "In these scenarios, your node will shut down as well.  It will either automatically reopen on restart or you will need to double click on the application to reopen again when the machine is back on.  It is advised that you make sure when open that the wallet is back online and validating.  If not, you will need to click the validator button again and restart and connect to the network.",
+    },
+    {
+      question:
+        "What happens to my node/wallet if my ISP changes my IP address?",
+      answer:
+        "You will need to re-establish your connection to your network with a static IP with your machine through your wallet or other nodes will not be able to communicate with your node and you could potentially miss out on block rewards if selected to validate during this period.  Again, you will need to make sure your wallet is open and click on the validator button and the wallet should handle the rest.",
+    },
+    {
+      question:
+        "Can I open my wallet remotely from another computer to check my wallet?",
+      answer:
+        "So long as you have the wallet with the address and private key, you can check the balance from any machine.",
+    },
+    {
+      question:
+        "If I choose to use a VPS(s) to operate my nodes, what steps do I need to take to activate my nodes on the RBX wallet? ",
+      answer:
+        "You will need to assign a wallet and generate an address for each VPS.  Again, you will need to open the wallet, select an eligible address and click start validating.  This is the same process as with a physical machine.  ",
+    },
+  ];
+
   let items: FaqItem[] = [];
 
   if (props.general) {
@@ -417,6 +510,8 @@ export const FaqComponent = (props: Props) => {
     items = dataNodeItems;
   } else if (props.developer) {
     items = developerItems;
+  } else if (props.wallet) {
+    items = walletItems;
   }
 
   return (

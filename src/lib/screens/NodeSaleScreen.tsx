@@ -2,6 +2,7 @@ import {
   faCalculator,
   faCheck,
   faChevronDown,
+  faChevronUp,
   faDownload,
   faQuestion,
   faQuestionCircle,
@@ -17,6 +18,7 @@ import { NodeInfoComponent } from "../components/NodeInfoComponent";
 import { PriceDetailComponent } from "../components/PriceDetailComponent";
 import { PriceDetailFromUsdComponent } from "../components/PriceDetailFromUsdComponent";
 import { TipComponent } from "../components/TipComponent";
+import { WalletInstructions } from "../components/WalletInstructions";
 import { SocialUrls } from "../data/menus";
 import { Currency, currencyToString } from "../enums";
 import { formatPrice } from "../formatting";
@@ -116,6 +118,8 @@ export function NodeSaleScreen() {
   >(null);
 
   const [termsVisible, setTermsVisible] = useState(false);
+
+  const [instructionsVisible, setInstructionsVisible] = useState(false);
 
   const updateTipContainerHeight = () => {
     const h = tipContainerRef.current?.clientHeight || 100;
@@ -305,10 +309,19 @@ export function NodeSaleScreen() {
               </span>
             </button>
             <span className="px-1"></span>
-            <button className="btn btn-light text-uppercase button-3d-white ps-3">
+            <button
+              className="btn btn-light text-uppercase button-3d-white ps-3"
+              onClick={() => {
+                setInstructionsVisible(!instructionsVisible);
+              }}
+            >
               Installation Instructions
               <span className="px-2">
-                <FontAwesomeIcon icon={faQuestionCircle}></FontAwesomeIcon>
+                {instructionsVisible ? (
+                  <FontAwesomeIcon icon={faChevronUp}></FontAwesomeIcon>
+                ) : (
+                  <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
+                )}
               </span>
             </button>
             <span className="px-1"></span>
@@ -316,7 +329,9 @@ export function NodeSaleScreen() {
               className="btn btn-light text-uppercase button-3d-white ps-3"
               onClick={() => {
                 setWalletReady(true);
+                setInstructionsVisible(false);
                 updateTips(0);
+                window.scrollTo(0, 0);
               }}
             >
               I'm Ready
@@ -325,6 +340,29 @@ export function NodeSaleScreen() {
               </span>
             </button>
           </SectionContent>
+
+          {instructionsVisible ? (
+            <div>
+              <WalletInstructions></WalletInstructions>
+              <div className="py-3 text-center">
+                <button
+                  className="btn btn-light text-uppercase button-3d-white ps-3"
+                  onClick={() => {
+                    setWalletReady(true);
+                    setInstructionsVisible(false);
+
+                    updateTips(0);
+                    window.scrollTo(0, 0);
+                  }}
+                >
+                  I'm Ready
+                  <span className="px-2">
+                    <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
+                  </span>
+                </button>
+              </div>
+            </div>
+          ) : null}
 
           {walletReady ? (
             <div className="row">

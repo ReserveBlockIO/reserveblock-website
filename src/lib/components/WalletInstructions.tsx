@@ -1,5 +1,6 @@
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Vimeo from "@u-wave/react-vimeo";
 import { useState } from "react";
 import styled from "styled-components";
 import {
@@ -115,19 +116,30 @@ export const WalletInstructions = () => {
             The ReserveBlock Wallet GUI is a “point and click application” and
             will appear as the following image(s) when opened:
           </li>
-          <img
-            src="https://via.placeholder.com/800x300.jpg"
-            className="w-100"
-          />
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <img
+                src="/img/wallet/wallet-screen-1.png"
+                className="w-100"
+                alt="Wallet GUI"
+              />
+            </div>
+          </div>
+
           <div className="py-2"></div>
           <li>
             The ReserveBlock Core CLI Wallet will appear as the following when
             opened:
           </li>
-          <img
-            src="https://via.placeholder.com/800x300.jpg"
-            className="w-100"
-          />
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <img
+                src="/img/wallet/wallet-cli-1.png"
+                className="w-100"
+                alt="Wallet CLI"
+              />
+            </div>
+          </div>
         </ul>
 
         <p>** Note:</p>
@@ -175,19 +187,14 @@ export const WalletInstructions = () => {
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Windows</SectionHeading4>
-            <img
-              src="https://via.placeholder.com/1600x900.jpg"
-              className="w-100"
-            />
+
+            <Vimeo video="680151855" responsive />
           </SectionContent>
         </div>
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Mac</SectionHeading4>
-            <img
-              src="https://via.placeholder.com/1600x900.jpg"
-              className="w-100"
-            />
+            <Vimeo video="680155835" responsive />
           </SectionContent>
         </div>
       </div>

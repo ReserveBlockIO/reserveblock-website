@@ -119,6 +119,7 @@ export const WalletInstructions = () => {
             src="https://via.placeholder.com/800x300.jpg"
             className="w-100"
           />
+          <div className="py-2"></div>
           <li>
             The ReserveBlock Core CLI Wallet will appear as the following when
             opened:

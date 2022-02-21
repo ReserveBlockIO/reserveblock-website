@@ -259,7 +259,8 @@ export function NodeSaleScreen() {
               <TipComponent>
                 <span>
                   For a manual transaction, be sure to send the exact amount to
-                  the address listed.
+                  the address listed along with any transaction fees from your
+                  provider if applicable.
                 </span>
               </TipComponent>
 
@@ -713,7 +714,7 @@ export function NodeSaleScreen() {
                     );
 
                     if (confirmed) {
-                      window.location.href = "/";
+                      window.location.href = "/nodes";
                     }
                   }}
                 >

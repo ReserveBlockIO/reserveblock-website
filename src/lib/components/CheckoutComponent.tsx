@@ -60,7 +60,8 @@ export function CheckoutComponent(props: Props) {
 
   const [emailValue, setEmailValue] = useState("");
   const [addressValue, setAddressValue] = useState(
-    "RKKtgMG3iYJ17CvRcuzeLvr1Ty4BoCdc11"
+    // "RKKtgMG3iYJ17CvRcuzeLvr1Ty4BoCdc11"
+    ""
   );
 
   const [invalidEmail, setInvalidEmail] = useState(false);
@@ -279,12 +280,26 @@ export function CheckoutComponent(props: Props) {
                 {rbxAddressVisible ? (
                   <div className="pt-2">
                     <img
-                      src="/img/wallet/wallet-screen-1.png"
+                      src="/img/wallet/address-1.png"
                       className="w-100"
                       alt="wallet gui"
                     />
+                    <img
+                      src="/img/wallet/address-2.png"
+                      className="w-100 mt-2"
+                      alt="wallet gui"
+                    />
+
+                    <img
+                      src="/img/wallet/address-3.png"
+                      className="w-100 mt-2"
+                      alt="wallet gui"
+                    />
                     <p className="py-2">
-                      Please review the wallet instructions above or open them{" "}
+                      Don't have your wallet setup?
+                      <br />
+                      Please review the wallet installation instructions above
+                      or open them{" "}
                       <a
                         href="/wallet-instructions"
                         rel="noreferrer"
@@ -342,30 +357,16 @@ export function CheckoutComponent(props: Props) {
                         ></DetailCardComponent>
                       </div>
                     </div>
+                    {/* <label>
+                      Transaction ID: <strong>{transactionId}</strong>
+                    </label> */}
                     <div className="py-2"></div>
-                    <label>Transaction ID:</label>
-                    <div className="input-group">
-                      <input
-                        type="text"
-                        className="form-control bg-dark text-light"
-                        readOnly
-                        value={transactionId}
-                      />
-                      <div className="input-group-append">
-                        <button
-                          className="btn btn-light  text-uppercase button-3d-white"
-                          onClick={() => {
-                            copyToClipboard(transactionId);
-                            addToast(`${transactionId} copied to clipboard`, {
-                              appearance: "success",
-                              autoDismiss: true,
-                            });
-                          }}
-                        >
-                          Copy&nbsp;
-                          <FontAwesomeIcon icon={faCopy}></FontAwesomeIcon>
-                        </button>
-                      </div>
+                    <div className="text-center">
+                      Send:{" "}
+                      <code>
+                        {checkoutDetails.amountOwed} {checkoutDetails.asset}
+                      </code>{" "}
+                      to <code>{checkoutDetails.address}</code>
                     </div>
                   </div>
                   <h6
@@ -391,7 +392,7 @@ export function CheckoutComponent(props: Props) {
                   />
                   <div className="py-1">
                     <button
-                      className="btn btn-secondary w-100"
+                      className="btn btn-light btn-lg w-100 text-uppercase button-3d-white"
                       onClick={() =>
                         props.onShowTransferInstructions(
                           checkoutDetails.asset,
@@ -401,16 +402,16 @@ export function CheckoutComponent(props: Props) {
                         )
                       }
                     >
-                      Transfer Instructions
+                      View Transfer Instructions
                     </button>
                   </div>
 
                   <div className="py-1">
                     <button
-                      className="btn btn-secondary w-100"
+                      className="btn btn-light btn-lg w-100 text-uppercase button-3d-white"
                       onClick={() => setManualSelected(true)}
                     >
-                      Manual
+                      Send Funds Now
                     </button>
                   </div>
                 </div>

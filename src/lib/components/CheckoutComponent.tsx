@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CheckoutDetails, PriceDetail, PriceDetailFromUsd } from "../models";
 import { allocateAddress, getIp } from "../service";
 import { copyToClipboard, generateId } from "../utils";
@@ -15,6 +15,9 @@ import { ThemeColors } from "../theme";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-solid-svg-icons";
 import { TransferInstructions } from "./common/TransferInstruction";
+import { nextSaleWindowStarts, presaleIsLive } from "../presale-windows";
+import Countdown from "react-countdown";
+import { AddToCalendarButton } from "./common/AddToCalendarButton";
 
 interface Props {
   priceDetail?: PriceDetail;
@@ -26,6 +29,32 @@ interface Props {
 export function CheckoutComponent(props: Props) {
   const dispatch = useDispatch();
   let navigate = useNavigate();
+
+  const [isLive, setIsLive] = useState(presaleIsLive());
+  const [nextWindow, setNextWindow] = useState<Date | null>(
+    nextSaleWindowStarts()
+  );
+
+  let timer: ReturnType<typeof setTimeout>;
+
+  useEffect(() => {
+    checkStatus();
+  }, []);
+
+  const checkStatus = async () => {
+    const _isLive = presaleIsLive();
+    setIsLive(_isLive);
+
+    if (!_isLive) {
+      const _nextWindow = nextSaleWindowStarts();
+      setNextWindow(_nextWindow);
+    }
+
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => {
+      checkStatus();
+    }, 5000);
+  };
 
   const [manualSelected, setManualSelected] = useState(false);
 
@@ -51,6 +80,8 @@ export function CheckoutComponent(props: Props) {
   const [totalNodes, setTotalNodes] = useState<number>(initialTotalNodes);
 
   const { addToast } = useToasts();
+
+  const [rbxAddressVisible, setRbxAddressVisible] = useState(false);
 
   const validateForm = (): boolean => {
     setInvalidEmail(false);
@@ -120,6 +151,38 @@ export function CheckoutComponent(props: Props) {
   const redirectToStatusScreen = () => {
     navigate(`/nodes/status/${transactionId}`);
   };
+
+  if (!isLive && nextWindow) {
+    return (
+      <SectionContent>
+        <SectionHeading4>Be Back soon!</SectionHeading4>
+        <p>
+          The presale is currently offline.
+          <br />
+          We'll be back at{" "}
+          <strong>
+            {nextWindow.toLocaleDateString()} {nextWindow.toLocaleTimeString()}
+          </strong>
+          .
+        </p>
+        <SectionHeading4
+          className="pb-1 mb-0"
+          style={{
+            color: ThemeColors.bright,
+            letterSpacing: 5,
+            fontSize: 29,
+          }}
+        >
+          <Countdown
+            date={nextWindow}
+            renderer={(props) => {
+              return `${props.days}d ${props.hours}h ${props.minutes}m ${props.seconds}s`;
+            }}
+          />
+        </SectionHeading4>
+      </SectionContent>
+    );
+  }
 
   return (
     <>
@@ -204,6 +267,7 @@ export function CheckoutComponent(props: Props) {
                 ) : null}
                 <div
                   className="badge badge-lg mt-2"
+                  onClick={() => setRbxAddressVisible(!rbxAddressVisible)}
                   style={{
                     backgroundColor: ThemeColors.mutedBright,
                     cursor: "pointer",
@@ -212,6 +276,27 @@ export function CheckoutComponent(props: Props) {
                 >
                   What's my RBX Wallet Address?
                 </div>
+                {rbxAddressVisible ? (
+                  <div className="pt-2">
+                    <img
+                      src="/img/wallet/wallet-screen-1.png"
+                      className="w-100"
+                      alt="wallet gui"
+                    />
+                    <p className="py-2">
+                      Please review the wallet instructions above or open them{" "}
+                      <a
+                        href="/wallet-instructions"
+                        rel="noreferrer"
+                        target="_blank"
+                        style={{ color: ThemeColors.bright }}
+                      >
+                        here
+                      </a>
+                      .
+                    </p>
+                  </div>
+                ) : null}
               </div>
               <div className="text-end pt-2">
                 <button

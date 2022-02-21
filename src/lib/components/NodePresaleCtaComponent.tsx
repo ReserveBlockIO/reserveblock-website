@@ -1,14 +1,14 @@
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SectionContent, SectionHeading4 } from "../../styles/styled";
-import { ThemeColors } from "../../theme";
-import { isMobile } from "../../utils";
+import { SectionContent, SectionHeading4 } from "../styles/styled";
+import { ThemeColors } from "../theme";
+import { isMobile } from "../utils";
 
 import { Dropdown } from "react-bootstrap";
 import { faApple, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { addToCalendar, CalendarType } from "../../calendar";
+import { addToCalendar, CalendarType } from "../calendar";
 import Countdown from "react-countdown";
-import { AddToCalendarButton } from "./AddToCalendarButton";
+import { AddToCalendarButton } from "./common/AddToCalendarButton";
 
 export const NodePresaleCtaComponent = () => {
   return (
@@ -63,7 +63,7 @@ export const NodePresaleCtaComponent = () => {
           </div>
           <div className="mt-2">
             <a
-              href={require("../../../pdfs/NodePresaleInstructions.pdf")}
+              href={require("../../pdfs/NodePresaleInstructions.pdf")}
               target="_blank"
               className="btn btn-light btn-lg w-100 text-uppercase button-3d-white"
               rel="noreferrer"

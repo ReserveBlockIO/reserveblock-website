@@ -8,8 +8,9 @@ import { NextSectionButton } from "../../common/NextSectionButton";
 import styled from "styled-components";
 import { ThemeColors, ThemeFonts } from "../../../theme";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
-import { NodePresaleCtaComponent } from "../../common/NodePresaleCtaComponent";
+import { NodePresaleCtaComponent } from "../../NodePresaleCtaComponent";
 import { isMobile } from "../../../utils";
+import { NodePresaleLiveCtaComponent } from "../../common/NodePresaleLiveCtaComponent";
 
 interface IIntroVideo {
   ref: React.Ref<HTMLVideoElement>;
@@ -50,6 +51,7 @@ const IntroTextContainer = styled.div`
 `;
 
 export const HomeIntroSection = () => {
+  const HAS_LAUNCHED = false;
   // const introVideo =
   //   "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/rbx-animation-scaled-v5x.mp4?alt=media";
   const introVideo = isMobile()
@@ -187,7 +189,11 @@ export const HomeIntroSection = () => {
                 duration={500}
                 assumeVisible
               >
-                <NodePresaleCtaComponent />
+                {HAS_LAUNCHED ? (
+                  <NodePresaleLiveCtaComponent />
+                ) : (
+                  <NodePresaleCtaComponent />
+                )}
               </VisibilityTransition>
             </div>
           </IntroTextContainer>

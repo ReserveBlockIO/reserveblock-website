@@ -78,7 +78,7 @@ export const StatusScreen = () => {
 
   return (
     <div className="screen screen-status">
-      <Section>
+      <Section fill>
         <div className="container py-2">
           <NetworkStatusComponent />
 

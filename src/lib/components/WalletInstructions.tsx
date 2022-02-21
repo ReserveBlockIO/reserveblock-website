@@ -156,7 +156,7 @@ export const WalletInstructions = () => {
             and click functions. There will be a full Mac version of the wallet
             released during the Mainnet launch.
           </li>
-          <li>
+          {/* <li>
             Both Mac & Windows users: Will need to make sure they open port
             [3338] in their Firewall before running the wallet. This can be done
             in the settings in your router / modem and you will want to set the
@@ -164,7 +164,7 @@ export const WalletInstructions = () => {
             devices will automatically detect this however it is advised to
             check this before running the wallet. This is also covered in the
             video.
-          </li>
+          </li> */}
         </ol>
       </SectionContent>
       <SectionContent>
@@ -180,21 +180,22 @@ export const WalletInstructions = () => {
       </SectionContent>
 
       <SectionHeading2>
-        Video Instructions for Download & Setting up Wallet:
+        Video Instructions for Setting Up & Operating Master Node(s):
       </SectionHeading2>
 
       <div className="row">
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Windows</SectionHeading4>
-
-            <Vimeo video="680151855" responsive />
+            <p className="text-start">Activating 12pm Feb 27 EST</p>
+            {/* <Vimeo video="680151855" responsive /> */}
           </SectionContent>
         </div>
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Mac</SectionHeading4>
-            <Vimeo video="680155835" responsive />
+            <p className="text-start">Activating 12pm Feb 27 EST</p>
+            {/* <Vimeo video="680155835" responsive /> */}
           </SectionContent>
         </div>
       </div>

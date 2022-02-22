@@ -51,7 +51,7 @@ const IntroTextContainer = styled.div`
 `;
 
 export const HomeIntroSection = () => {
-  const HAS_LAUNCHED = false;
+  const HAS_LAUNCHED = true;
   // const introVideo =
   //   "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/rbx-animation-scaled-v5x.mp4?alt=media";
   const introVideo = isMobile()

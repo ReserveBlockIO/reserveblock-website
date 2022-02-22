@@ -129,7 +129,7 @@ export const HeaderComponent = () => {
   const [nodeSaleDismissed, setNodeSaleDismissed] = useState(false);
   const visibilityThreshold = 300;
 
-  const HAS_LAUNCHED = false;
+  const HAS_LAUNCHED = true;
 
   useEffect(() => {
     const onScroll = () => setOffset(window.pageYOffset);

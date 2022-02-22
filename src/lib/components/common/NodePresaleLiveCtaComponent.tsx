@@ -1,10 +1,15 @@
-import { SectionContent, SectionHeading4 } from "../../styles/styled";
+import {
+  ButtonLink,
+  SectionContent,
+  SectionHeading4,
+} from "../../styles/styled";
 import { ThemeColors } from "../../theme";
 import { isMobile } from "../../utils";
 
 import Countdown from "react-countdown";
 import { useEffect, useState } from "react";
 import { nextSaleWindowStarts, presaleIsLive } from "../../presale-windows";
+import { Download } from "../Home/Download";
 
 export const NodePresaleLiveCtaComponent = () => {
   const [isLive, setIsLive] = useState(presaleIsLive());
@@ -96,15 +101,16 @@ export const NodePresaleLiveCtaComponent = () => {
           {isLive ? (
             <div className="mt-3">
               {/* <AddToCalendarButton buttonClass="btn btn-light btn-lg w-100 text-uppercase button-3d-white" /> */}
-              <a
+
+              <ButtonLink
                 href="/nodes"
-                className="btn btn-light btn-lg w-100 text-uppercase button-3d-white"
+                className="btn-light btn-lg button-3d-white w-100"
               >
-                Activate
-              </a>
+                PRESALE LIVE
+              </ButtonLink>
             </div>
           ) : null}
-          <div className="mt-2">
+          {/* <div className="mt-2">
             <a
               href={require("../../../pdfs/NodePresaleInstructions.pdf")}
               target="_blank"
@@ -114,7 +120,7 @@ export const NodePresaleLiveCtaComponent = () => {
             >
               Instructions
             </a>
-          </div>
+          </div> */}
         </div>
       </SectionContent>
     </div>

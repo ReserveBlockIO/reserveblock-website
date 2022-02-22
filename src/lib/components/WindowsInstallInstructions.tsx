@@ -93,11 +93,13 @@ export const WindowsInstallInstructions = () => {
 
       <h5>Edge Cases</h5>
       <p>
-        If you are running a very high resolution monitor, the app may not scale
-        properly. You can fix this by changing your output resolution to
-        1920x1080 (or something close to that) and make sure your zoom is set to
-        100%) Once you’ve generated your address, you can safely change back as
-        we will have this issue patched soon.
+        <small>
+          If you are running a very high resolution monitor, the app may not
+          scale properly. You can fix this by changing your output resolution to
+          1920x1080 (or something close to that) and make sure your zoom is set
+          to 100%) Once you’ve generated your address, you can safely change
+          back as we will have this issue patched soon.
+        </small>
       </p>
     </Instructions>
   );

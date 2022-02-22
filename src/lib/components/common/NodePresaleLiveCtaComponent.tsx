@@ -55,7 +55,16 @@ export const NodePresaleLiveCtaComponent = () => {
               </strong>
             </SectionHeading4>
             <SectionHeading4>
-              <strong style={{ fontSize: 34, letterSpacing: 3, opacity: 0.8 }}>
+              <strong
+                style={{
+                  fontSize: 36,
+                  letterSpacing: 3,
+                  // opacity: 0.8,
+                  ...(isLive
+                    ? { color: ThemeColors.bright }
+                    : { opacity: 0.8 }),
+                }}
+              >
                 {isLive ? "LIVE NOW" : "BACK SOON"}
               </strong>
             </SectionHeading4>

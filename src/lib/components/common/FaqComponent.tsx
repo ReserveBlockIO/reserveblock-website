@@ -490,7 +490,7 @@ export const FaqComponent = (props: Props) => {
       question:
         "Can I open my wallet remotely from another computer to check my wallet?",
       answer:
-        "So long as you have the wallet with the address and private key, you can check the balance from any machine.",
+        "So long as you can remote into the machine that you're looking to check the balance.",
     },
     {
       question:

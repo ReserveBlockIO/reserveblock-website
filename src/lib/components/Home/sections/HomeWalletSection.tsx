@@ -13,10 +13,17 @@ import { Download } from "../Download";
 import styled from "styled-components";
 import { WalletInstructions } from "../../WalletInstructions";
 import { useState } from "react";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faDownload,
+  faLink,
+} from "@fortawesome/free-solid-svg-icons";
+import { cliDownload } from "../../../utils";
 
 export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
+  const [showingWalletDownload, setShowingWalletDownload] = useState(false);
 
   return (
     <>
@@ -47,19 +54,12 @@ export const HomeWalletSection = () => {
                 transitionDirection="up"
                 transitionDelay={500}
               >
-                {/* <Download
-                  title="Get Started"
-                  buttonText="Install and Operating Instructions"
-                  onClick={() => {
-                    setGettingStartedVisible(!gettingStartedVisible);
-                  }}
-                  icon={gettingStartedVisible ? faChevronUp : faChevronDown}
-                /> */}
                 <Download
                   title="Get Started"
-                  buttonText="Activating Soon"
-                  disabled
-                  noIcon
+                  buttonText="Install and Operating Instructions"
+                  openExternal
+                  url="/wallet-instructions"
+                  icon={faLink}
                 />
               </VisibilityTransition>
             </div>
@@ -71,11 +71,36 @@ export const HomeWalletSection = () => {
               >
                 <Download
                   title="Core Wallet"
-                  buttonText="Activating Soon"
-                  disabled
-                  noIcon
+                  buttonText="Download Wallet"
+                  onClick={() => {
+                    setShowingWalletDownload(!showingWalletDownload);
+                  }}
+                  icon={faDownload}
                 />
               </VisibilityTransition>
+              <div
+                className="py-1"
+                style={
+                  showingWalletDownload
+                    ? {}
+                    : { opacity: 0, pointerEvents: "none" }
+                }
+              >
+                <a
+                  className="btn btn-light w-100"
+                  href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Windows/Mac GUI
+                </a>
+                <button
+                  className="btn btn-light w-100 mt-1"
+                  onClick={() => cliDownload()}
+                >
+                  CLI
+                </button>
+              </div>
             </div>
             <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition

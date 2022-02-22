@@ -1,4 +1,9 @@
-import { faExternalLinkAlt, faLink } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronDown,
+  faChevronUp,
+  faExternalLinkAlt,
+  faLink,
+} from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import {
   Section,
@@ -15,6 +20,8 @@ import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
 import { NodeType } from "../NodeType";
+import { useState } from "react";
+import { WalletInstructions } from "../../WalletInstructions";
 
 const Waves = styled.div`
   width: 100%;
@@ -31,6 +38,7 @@ const Waves = styled.div`
 
 export const HomeMasterNodesSection = () => {
   const contentPadding = isMobile() || isIpadPro() ? 12 : 96;
+  const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
 
   return (
     <>
@@ -138,11 +146,10 @@ export const HomeMasterNodesSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="Install &amp; Operating Instructions"
-                    url="#"
+                    url="/wallet-instructions"
                     openExternal
-                    disabled
-                    noIcon
-                    buttonText="Activating Soon"
+                    icon={faLink}
+                    buttonText="View Instructions"
                     horizontalPadding={contentPadding}
                     altGlow
                   />
@@ -159,6 +166,7 @@ export const HomeMasterNodesSection = () => {
                   <Download
                     title="Masternode FAQs"
                     url="/faq#masternodes"
+                    openExternal
                     icon={faLink}
                     horizontalPadding={contentPadding}
                     altGlow

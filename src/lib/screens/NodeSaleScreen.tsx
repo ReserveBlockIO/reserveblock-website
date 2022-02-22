@@ -34,6 +34,7 @@ import {
   SectionHeading4,
 } from "../styles/styled";
 import { ThemeColors } from "../theme";
+import { cliDownload, getOS, walletDownload } from "../utils";
 
 const TipContainer = styled.div`
   position: fixed;
@@ -122,6 +123,7 @@ export function NodeSaleScreen() {
   const [termsVisible, setTermsVisible] = useState(false);
 
   const [instructionsVisible, setInstructionsVisible] = useState(false);
+  const [showingWalletDownload, setShowingWalletDownload] = useState(false);
 
   const updateTipContainerHeight = () => {
     const h = tipContainerRef.current?.clientHeight || 100;
@@ -129,24 +131,11 @@ export function NodeSaleScreen() {
     setTipContainerHeight(h + 12);
   };
 
-  const authenticate = () => {
-    if (localStorage.getItem("pwd") !== "doughnuts") {
-      const p = window.prompt("Launching Soon");
-      if (p !== "doughnuts") {
-        window.location.href = "/";
-
-        return;
-      }
-    }
-
-    localStorage.setItem("pwd", "doughnuts");
-    setReady(true);
-    updateTips(-1);
+  const handleDownload = () => {
+    walletDownload();
   };
 
   useEffect(() => {
-    authenticate();
-
     window.addEventListener("resize", updateTipContainerHeight, false);
     updateTipContainerHeight();
   }, []);
@@ -184,10 +173,6 @@ export function NodeSaleScreen() {
   };
   if (!networkIsOnline) {
     return <p className="text-center">Network connection issue detected.</p>;
-  }
-
-  if (!ready) {
-    return <></>;
   }
 
   return (
@@ -307,44 +292,75 @@ export function NodeSaleScreen() {
               your computer. Please click on the download wallet software button
               now.
             </p>
-            <button className="btn btn-light text-uppercase button-3d-white ps-3">
-              Download Wallet Software
-              <span className="px-2">
-                <FontAwesomeIcon icon={faDownload}></FontAwesomeIcon>
-              </span>
-            </button>
-            <span className="px-1"></span>
-            <button
-              className="btn btn-light text-uppercase button-3d-white ps-3"
-              onClick={() => {
-                setInstructionsVisible(!instructionsVisible);
-              }}
-            >
-              Installation Instructions
-              <span className="px-2">
-                {instructionsVisible ? (
-                  <FontAwesomeIcon icon={faChevronUp}></FontAwesomeIcon>
-                ) : (
-                  <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
-                )}
-              </span>
-            </button>
-            <span className="px-1"></span>
-            <button
-              className="btn btn-light text-uppercase button-3d-white ps-3"
-              onClick={() => {
-                setWalletReady(true);
-                setInstructionsVisible(false);
-                updateTips(0);
-                // window.scrollTo(0, 0);
-                scrollToElement("priceCalculator");
-              }}
-            >
-              I'm Ready
-              <span className="px-2">
-                <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
-              </span>
-            </button>
+
+            <div className="row">
+              <div className="col-12 col-md-3">
+                <button
+                  className="btn btn-light text-uppercase button-3d-white ps-3 w-100"
+                  onClick={() => {
+                    setShowingWalletDownload(!showingWalletDownload);
+                  }}
+                >
+                  Download Wallet Software
+                  <span className="px-2">
+                    <FontAwesomeIcon icon={faDownload}></FontAwesomeIcon>
+                  </span>
+                </button>
+                {showingWalletDownload ? (
+                  <div className="py-1">
+                    <a
+                      className="btn btn-light w-100"
+                      href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Windows/Mac GUI
+                    </a>
+                    <button
+                      className="btn btn-light w-100 mt-1"
+                      onClick={() => cliDownload()}
+                    >
+                      CLI
+                    </button>
+                  </div>
+                ) : null}
+              </div>
+
+              <div className="col-12 col-md-3">
+                <button
+                  className="btn btn-light text-uppercase button-3d-white ps-3 w-100"
+                  onClick={() => {
+                    setInstructionsVisible(!instructionsVisible);
+                  }}
+                >
+                  Installation Instructions
+                  <span className="px-2">
+                    {instructionsVisible ? (
+                      <FontAwesomeIcon icon={faChevronUp}></FontAwesomeIcon>
+                    ) : (
+                      <FontAwesomeIcon icon={faChevronDown}></FontAwesomeIcon>
+                    )}
+                  </span>
+                </button>
+              </div>
+              <div className="col-12 col-md-3">
+                <button
+                  className="btn btn-light text-uppercase button-3d-white ps-3 w-100"
+                  onClick={() => {
+                    setWalletReady(true);
+                    setInstructionsVisible(false);
+                    updateTips(0);
+                    // window.scrollTo(0, 0);
+                    scrollToElement("priceCalculator");
+                  }}
+                >
+                  I'm Ready
+                  <span className="px-2">
+                    <FontAwesomeIcon icon={faCheck}></FontAwesomeIcon>
+                  </span>
+                </button>
+              </div>
+            </div>
           </SectionContent>
 
           {instructionsVisible ? (
@@ -703,6 +719,10 @@ export function NodeSaleScreen() {
                   the Testnet on that basis is completely optional but
                   encouraged in order to launch a safe and secure Mainnet that
                   scales appropriately.
+                </li>
+                <li>
+                  Hard coded Diamond &amp; Carbon Founder NFT badges will be
+                  sent to the appropriate address(es) in Mainnet.
                 </li>
               </ol>
               <div className="d-flex justify-content-between">

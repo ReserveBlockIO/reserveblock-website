@@ -19,7 +19,7 @@ import {
   faDownload,
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
-import { cliDownload } from "../../../utils";
+import { cliDownload, isMobile, isMobileOS } from "../../../utils";
 
 export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
@@ -86,20 +86,30 @@ export const HomeWalletSection = () => {
                     : { opacity: 0, pointerEvents: "none" }
                 }
               >
-                <a
-                  className="btn btn-light w-100"
-                  href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Windows/Mac GUI
-                </a>
-                <button
-                  className="btn btn-light w-100 mt-1"
-                  onClick={() => cliDownload()}
-                >
-                  CLI
-                </button>
+                {isMobileOS() ? (
+                  <p className="text-center" style={{ fontWeight: "bold" }}>
+                    You must download this software
+                    <br />
+                    on your desktop computer.
+                  </p>
+                ) : (
+                  <>
+                    <a
+                      className="btn btn-light w-100"
+                      href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Windows/Mac GUI
+                    </a>
+                    <button
+                      className="btn btn-light w-100 mt-1"
+                      onClick={() => cliDownload()}
+                    >
+                      CLI
+                    </button>
+                  </>
+                )}
               </div>
             </div>
             <div className="col-12 col-md-4 pb-4">

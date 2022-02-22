@@ -34,7 +34,7 @@ import {
   SectionHeading4,
 } from "../styles/styled";
 import { ThemeColors } from "../theme";
-import { cliDownload, getOS, walletDownload } from "../utils";
+import { cliDownload, getOS, walletDownload, isMobileOS } from "../utils";
 
 const TipContainer = styled.div`
   position: fixed;
@@ -294,7 +294,7 @@ export function NodeSaleScreen() {
             </p>
 
             <div className="row">
-              <div className="col-12 col-md-3">
+              <div className="col-12 col-md-3 pb-2">
                 <button
                   className="btn btn-light text-uppercase button-3d-white ps-3 w-100"
                   onClick={() => {
@@ -307,26 +307,41 @@ export function NodeSaleScreen() {
                   </span>
                 </button>
                 {showingWalletDownload ? (
-                  <div className="py-1">
-                    <a
-                      className="btn btn-light w-100"
-                      href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Windows/Mac GUI
-                    </a>
-                    <button
-                      className="btn btn-light w-100 mt-1"
-                      onClick={() => cliDownload()}
-                    >
-                      CLI
-                    </button>
-                  </div>
+                  <>
+                    {isMobileOS() ? (
+                      <p
+                        className="text-center pt-2"
+                        style={{ fontWeight: "bold" }}
+                      >
+                        You must download this software
+                        <br />
+                        on your desktop computer.
+                      </p>
+                    ) : (
+                      <>
+                        <div className="py-1">
+                          <a
+                            className="btn btn-light w-100"
+                            href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Windows/Mac GUI
+                          </a>
+                          <button
+                            className="btn btn-light w-100 mt-1"
+                            onClick={() => cliDownload()}
+                          >
+                            CLI
+                          </button>
+                        </div>
+                      </>
+                    )}
+                  </>
                 ) : null}
               </div>
 
-              <div className="col-12 col-md-3">
+              <div className="col-12 col-md-3  pb-2">
                 <button
                   className="btn btn-light text-uppercase button-3d-white ps-3 w-100"
                   onClick={() => {
@@ -343,7 +358,7 @@ export function NodeSaleScreen() {
                   </span>
                 </button>
               </div>
-              <div className="col-12 col-md-3">
+              <div className="col-12 col-md-3  pb-2">
                 <button
                   className="btn btn-light text-uppercase button-3d-white ps-3 w-100"
                   onClick={() => {

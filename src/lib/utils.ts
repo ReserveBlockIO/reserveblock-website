@@ -63,6 +63,16 @@ export function getOS() {
   return os;
 }
 
+export function isMobileOS() {
+  const os = getOS();
+
+  if (os !== "mac" && os !== "windows" && os !== "linux") {
+    return true;
+  }
+
+  return false;
+}
+
 export function walletDownload() {
   const windows =
     "https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip";

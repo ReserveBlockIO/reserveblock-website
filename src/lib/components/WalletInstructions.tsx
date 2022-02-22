@@ -12,6 +12,7 @@ import {
 import { ThemeColors } from "../theme";
 import { FaqComponent } from "./common/FaqComponent";
 import { Download } from "./Home/Download";
+import { WindowsInstallInstructions } from "./WindowsInstallInstructions";
 
 const Content = styled.div`
   a {
@@ -87,11 +88,11 @@ export const WalletInstructions = () => {
           <li>
             You may also download the wallet from the GitHub release section:{" "}
             <a
-              href="https://github.com/ReserveBlockIO/Core-CLI/releases"
+              href="https://github.com/ReserveBlockIO/Core-CLI/releases/tag/pre2"
               target="_blank"
               rel="noreferrer"
             >
-              https://github.com/ReserveBlockIO/Core-CLI/releases
+              https://github.com/ReserveBlockIO/Core-CLI/releases/tag/pre2
             </a>
           </li>
         </ul>
@@ -104,6 +105,13 @@ export const WalletInstructions = () => {
           occur for you to complete a transaction.{" "}
         </p>
       </SectionContent>
+      <SectionContent>
+        <SectionHeading4>Step 2</SectionHeading4>
+
+        <WindowsInstallInstructions />
+      </SectionContent>
+      {/* 
+
       <SectionContent>
         <SectionHeading4>Step 2</SectionHeading4>
         <ul>
@@ -156,15 +164,7 @@ export const WalletInstructions = () => {
             and click functions. There will be a full Mac version of the wallet
             released during the Mainnet launch.
           </li>
-          {/* <li>
-            Both Mac & Windows users: Will need to make sure they open port
-            [3338] in their Firewall before running the wallet. This can be done
-            in the settings in your router / modem and you will want to set the
-            DHCP to this port and assign a static IP to your device. Some
-            devices will automatically detect this however it is advised to
-            check this before running the wallet. This is also covered in the
-            video.
-          </li> */}
+         
         </ol>
       </SectionContent>
       <SectionContent>
@@ -177,7 +177,7 @@ export const WalletInstructions = () => {
           transaction before that address(es) will time out. Should this occur,
           you may generate another address(es) at any time.
         </p>
-      </SectionContent>
+      </SectionContent> */}
 
       <SectionHeading2>
         Video Instructions for Setting Up & Operating Master Node(s):
@@ -187,14 +187,14 @@ export const WalletInstructions = () => {
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Windows</SectionHeading4>
-            <p className="text-start">Activating 12pm Feb 27 EST</p>
+            <p className="text-start">Activating 6pm Feb 22 EST</p>
             {/* <Vimeo video="680151855" responsive /> */}
           </SectionContent>
         </div>
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Mac</SectionHeading4>
-            <p className="text-start">Activating 12pm Feb 27 EST</p>
+            <p className="text-start">Activating 6pm Feb 22 EST</p>
             {/* <Vimeo video="680155835" responsive /> */}
           </SectionContent>
         </div>

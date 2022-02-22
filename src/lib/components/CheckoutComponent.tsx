@@ -18,6 +18,8 @@ import { TransferInstructions } from "./common/TransferInstruction";
 import { nextSaleWindowStarts, presaleIsLive } from "../presale-windows";
 import Countdown from "react-countdown";
 import { AddToCalendarButton } from "./common/AddToCalendarButton";
+import styled from "styled-components";
+import { WindowsInstallInstructions } from "./WindowsInstallInstructions";
 
 interface Props {
   priceDetail?: PriceDetail;
@@ -279,7 +281,8 @@ export function CheckoutComponent(props: Props) {
                 </div>
                 {rbxAddressVisible ? (
                   <div className="pt-2">
-                    <img
+                    <WindowsInstallInstructions />
+                    {/* <img
                       src="/img/wallet/address-1.png"
                       className="w-100"
                       alt="wallet gui"
@@ -309,7 +312,7 @@ export function CheckoutComponent(props: Props) {
                         here
                       </a>
                       .
-                    </p>
+                    </p> */}
                   </div>
                 ) : null}
               </div>

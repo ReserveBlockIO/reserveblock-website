@@ -87,29 +87,29 @@ export const HomeWalletSection = () => {
                 }
               >
                 {isMobileOS() ? (
-                  <p className="text-center" style={{ fontWeight: "bold" }}>
-                    You must download this software
-                    <br />
-                    on your desktop computer.
+                  <p
+                    className="text-center mb-1"
+                    style={{ fontWeight: "bold", fontSize: 16 }}
+                  >
+                    Wallet downloads are for desktop only.
                   </p>
-                ) : (
-                  <>
-                    <a
-                      className="btn btn-light w-100"
-                      href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Windows/Mac GUI
-                    </a>
-                    <button
-                      className="btn btn-light w-100 mt-1"
-                      onClick={() => cliDownload()}
-                    >
-                      CLI
-                    </button>
-                  </>
-                )}
+                ) : null}
+                <>
+                  <a
+                    className="btn btn-light w-100"
+                    href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Windows/Mac GUI
+                  </a>
+                  <button
+                    className="btn btn-light w-100 mt-1"
+                    onClick={() => cliDownload()}
+                  >
+                    CLI
+                  </button>
+                </>
               </div>
             </div>
             <div className="col-12 col-md-4 pb-4">

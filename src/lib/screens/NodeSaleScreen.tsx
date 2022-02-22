@@ -310,33 +310,30 @@ export function NodeSaleScreen() {
                   <>
                     {isMobileOS() ? (
                       <p
-                        className="text-center pt-2"
-                        style={{ fontWeight: "bold" }}
+                        className="text-center pt-2 mb-0"
+                        style={{ fontWeight: "bold", fontSize: 16 }}
                       >
-                        You must download this software
-                        <br />
-                        on your desktop computer.
+                        Wallet downloads are for desktop only.
                       </p>
-                    ) : (
-                      <>
-                        <div className="py-1">
-                          <a
-                            className="btn btn-light w-100"
-                            href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            Windows/Mac GUI
-                          </a>
-                          <button
-                            className="btn btn-light w-100 mt-1"
-                            onClick={() => cliDownload()}
-                          >
-                            CLI
-                          </button>
-                        </div>
-                      </>
-                    )}
+                    ) : null}
+                    <>
+                      <div className="py-1">
+                        <a
+                          className="btn btn-light w-100"
+                          href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Windows/Mac GUI
+                        </a>
+                        <button
+                          className="btn btn-light w-100 mt-1"
+                          onClick={() => cliDownload()}
+                        >
+                          CLI
+                        </button>
+                      </div>
+                    </>
                   </>
                 ) : null}
               </div>

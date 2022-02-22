@@ -297,11 +297,13 @@ export function NodeSaleScreen() {
               <div className="col-12 col-md-3 pb-2">
                 <button
                   className="btn btn-light text-uppercase button-3d-white ps-3 w-100"
+                  disabled
                   onClick={() => {
-                    setShowingWalletDownload(!showingWalletDownload);
+                    // setShowingWalletDownload(!showingWalletDownload);
                   }}
                 >
-                  Download Wallet Software
+                  {/* Download Wallet Software */}
+                  Activating Soon
                   <span className="px-2">
                     <FontAwesomeIcon icon={faDownload}></FontAwesomeIcon>
                   </span>

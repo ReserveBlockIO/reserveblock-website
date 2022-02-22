@@ -7,7 +7,7 @@ interface PresaleWindow {
 // 11pm EST => 4am UTC
 
 export const presaleWindows: PresaleWindow[] = [
-  // { start: 1645473600000, end: 1645570800000 }, // MONDAY TEST DAY 1 hour
+  { start: 1645473600000, end: 1645570800000 }, // MONDAY TEST DAY 1 hour
   { start: 1645570800000, end: 1645588800000 },
   { start: 1645657200000, end: 1645675200000 },
   { start: 1645743600000, end: 1645761600000 },

@@ -281,7 +281,7 @@ export function CheckoutComponent(props: Props) {
                 </div>
                 {rbxAddressVisible ? (
                   <div className="pt-2">
-                    <WindowsInstallInstructions />
+                    <WindowsInstallInstructions withVideos />
                     {/* <img
                       src="/img/wallet/address-1.png"
                       className="w-100"

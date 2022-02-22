@@ -1,4 +1,5 @@
 import Vimeo from "@u-wave/react-vimeo";
+import { useState } from "react";
 import styled from "styled-components";
 import { ThemeColors } from "../theme";
 
@@ -14,12 +15,15 @@ const Instructions = styled.div`
   }
 `;
 
-export const WindowsInstallInstructions = () => {
+interface Props {
+  withVideos?: boolean;
+}
+
+export const WindowsInstallInstructions = (props: Props) => {
+  const [showingWinVideo, setShowingWinVideo] = useState(false);
+  const [showingMacVideo, setShowingMacVideo] = useState(false);
   return (
     <Instructions>
-      <div className="w-100">
-        {/* <Vimeo video="680151855" responsive /> */}
-      </div>
       <ol>
         <li>
           In order to generate an address, you must have Windows installed on
@@ -105,6 +109,38 @@ export const WindowsInstallInstructions = () => {
           back as we will have this issue patched soon.
         </small>
       </p>
+
+      {props.withVideos ? (
+        <div>
+          <div className="py-2">
+            <button
+              className="btn btn-light w-100"
+              onClick={() => setShowingWinVideo(!showingWinVideo)}
+            >
+              Video Tutorial [WINDOWS]
+            </button>
+          </div>
+          {showingWinVideo ? (
+            <div className="w-100 py-2">
+              <Vimeo video="680151855" responsive />
+            </div>
+          ) : null}
+          <div className="py-2">
+            <button
+              className="btn btn-light w-100"
+              onClick={() => setShowingMacVideo(!showingMacVideo)}
+            >
+              Video Tutorial [MAC]
+            </button>
+          </div>
+
+          {showingMacVideo ? (
+            <div className="w-100 py-2">
+              <Vimeo video="680155835" responsive />
+            </div>
+          ) : null}
+        </div>
+      ) : null}
     </Instructions>
   );
 };

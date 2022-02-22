@@ -187,8 +187,8 @@ export const WalletInstructions = () => {
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Windows</SectionHeading4>
-            <p className="text-start">Activating 6pm Feb 22 EST</p>
-            {/* <Vimeo video="680151855" responsive /> */}
+            {/* <p className="text-start">Activating 6pm Feb 22 EST</p> */}
+            <Vimeo video={"680151855"} responsive />
           </SectionContent>
         </div>
         <div className="col-12 col-md-6">

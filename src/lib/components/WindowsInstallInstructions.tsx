@@ -1,3 +1,4 @@
+import Vimeo from "@u-wave/react-vimeo";
 import styled from "styled-components";
 import { ThemeColors } from "../theme";
 
@@ -16,6 +17,9 @@ const Instructions = styled.div`
 export const WindowsInstallInstructions = () => {
   return (
     <Instructions>
+      <div className="w-100">
+        {/* <Vimeo video="680151855" responsive /> */}
+      </div>
       <ol>
         <li>
           In order to generate an address, you must have Windows installed on

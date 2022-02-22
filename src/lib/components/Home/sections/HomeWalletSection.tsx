@@ -71,11 +71,9 @@ export const HomeWalletSection = () => {
               >
                 <Download
                   title="Core Wallet"
-                  // buttonText="Download Wallet"
-                  buttonText="Activating Soon"
-                  disabled
+                  buttonText="Download Wallet"
                   onClick={() => {
-                    // setShowingWalletDownload(!showingWalletDownload);
+                    setShowingWalletDownload(!showingWalletDownload);
                   }}
                   icon={faDownload}
                 />

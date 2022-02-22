@@ -114,7 +114,7 @@ export const HomeMasterNodesSection = () => {
                     title="Become a Masternode"
                     url={require("../../../../pdfs/ReserveBlockMasternodes.pdf")}
                     openExternal
-                    horizontalPadding={contentPadding}
+                    // horizontalPadding={contentPadding}
                     altGlow
                   />
                 </SectionContent>
@@ -131,7 +131,7 @@ export const HomeMasterNodesSection = () => {
                     title="Block Rewards &amp; Halving"
                     url="/halving-schedule"
                     icon={faLink}
-                    horizontalPadding={contentPadding}
+                    // horizontalPadding={contentPadding}
                     altGlow
                   />
                 </SectionContent>
@@ -150,7 +150,7 @@ export const HomeMasterNodesSection = () => {
                     openExternal
                     icon={faLink}
                     buttonText="View Instructions"
-                    horizontalPadding={contentPadding}
+                    // horizontalPadding={contentPadding}
                     altGlow
                   />
                 </SectionContent>
@@ -168,7 +168,7 @@ export const HomeMasterNodesSection = () => {
                     url="/faq#masternodes"
                     openExternal
                     icon={faLink}
-                    horizontalPadding={contentPadding}
+                    // horizontalPadding={contentPadding}
                     altGlow
                   />
                 </SectionContent>

@@ -93,16 +93,17 @@ export const NodePresaleLiveCtaComponent = () => {
             ) : null}
             <div className="pt-1" />
           </div>
-
-          <div className="mt-3">
-            {/* <AddToCalendarButton buttonClass="btn btn-light btn-lg w-100 text-uppercase button-3d-white" /> */}
-            <a
-              href="/nodes"
-              className="btn btn-light btn-lg w-100 text-uppercase button-3d-white"
-            >
-              Buy Now
-            </a>
-          </div>
+          {isLive ? (
+            <div className="mt-3">
+              {/* <AddToCalendarButton buttonClass="btn btn-light btn-lg w-100 text-uppercase button-3d-white" /> */}
+              <a
+                href="/nodes"
+                className="btn btn-light btn-lg w-100 text-uppercase button-3d-white"
+              >
+                Activate
+              </a>
+            </div>
+          ) : null}
           <div className="mt-2">
             <a
               href={require("../../../pdfs/NodePresaleInstructions.pdf")}

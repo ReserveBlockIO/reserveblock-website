@@ -103,13 +103,25 @@ export const HomeWalletSection = () => {
                     rel="noreferrer"
                   >
                     Windows/Mac GUI
+                    <br />
+                    <small>
+                      <strong>
+                        v.{githubFiles.gui.tag} - {githubFiles.gui.date}
+                      </strong>
+                    </small>
                   </a>
-                  <button
+                  <a
                     className="btn btn-light w-100 mt-1"
-                    onClick={() => cliDownload()}
+                    href={githubFiles.cli.url}
                   >
                     CLI
-                  </button>
+                    <br />
+                    <small>
+                      <strong>
+                        v.{githubFiles.cli.tag} - {githubFiles.cli.date}
+                      </strong>
+                    </small>
+                  </a>
                 </>
               </div>
             </div>

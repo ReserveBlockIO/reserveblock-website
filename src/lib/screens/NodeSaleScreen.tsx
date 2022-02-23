@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { githubFiles } from "../../github-files";
 import { CheckoutComponent } from "../components/CheckoutComponent";
 import { TransferInstructions } from "../components/common/TransferInstruction";
 import { NetworkStatusComponent } from "../components/NetworkStatusComponent";
@@ -313,22 +314,32 @@ export function NodeSaleScreen() {
                       </p>
                     ) : null}
                     <>
-                      <div className="py-1">
-                        <a
-                          className="btn btn-light w-100"
-                          href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Windows/Mac GUI
-                        </a>
-                        <button
-                          className="btn btn-light w-100 mt-1"
-                          onClick={() => cliDownload()}
-                        >
-                          CLI
-                        </button>
-                      </div>
+                      <a
+                        className="btn btn-light w-100"
+                        href={githubFiles.gui.url}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Windows/Mac GUI
+                        <br />
+                        <small>
+                          <strong>
+                            v.{githubFiles.gui.tag} - {githubFiles.gui.date}
+                          </strong>
+                        </small>
+                      </a>
+                      <a
+                        className="btn btn-light w-100 mt-1"
+                        href={githubFiles.cli.url}
+                      >
+                        CLI
+                        <br />
+                        <small>
+                          <strong>
+                            v.{githubFiles.cli.tag} - {githubFiles.cli.date}
+                          </strong>
+                        </small>
+                      </a>
                     </>
                   </>
                 ) : null}

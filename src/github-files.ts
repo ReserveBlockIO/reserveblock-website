@@ -26,3 +26,6 @@ export const githubFiles = {
     url: `${_guiBaseUrl}${_gui.tag}`,
   },
 };
+
+
+console.log('test');

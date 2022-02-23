@@ -195,6 +195,14 @@ export const WalletInstructions = () => {
             <Vimeo video="680155835" responsive />
           </SectionContent>
         </div>
+
+        <div className="col-12 col-md-6">
+          <SectionContent>
+            <SectionHeading4>CLI Intel Mac</SectionHeading4>
+            {/* <p className="text-start">Activating 6pm Feb 22 EST</p> */}
+            <Vimeo video="681049804" responsive />
+          </SectionContent>
+        </div>
       </div>
 
       <div className="pt-5">

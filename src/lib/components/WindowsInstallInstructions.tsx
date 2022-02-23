@@ -1,6 +1,7 @@
 import Vimeo from "@u-wave/react-vimeo";
 import { useState } from "react";
 import styled from "styled-components";
+import { githubFiles } from "../../github-files";
 import { ThemeColors } from "../theme";
 
 const Instructions = styled.div`
@@ -48,22 +49,14 @@ export const WindowsInstallInstructions = (props: Props) => {
             Crossover
           </a>
           . Linux users can download the{" "}
-          <a
-            href="https://github.com/ReserveBlockIO/Core-CLI/releases/tag/pre2"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={githubFiles.cli.url} target="_blank" rel="noreferrer">
             Core CLI
           </a>{" "}
           version instead.
         </li>
         <li>
           Download the zip file at this{" "}
-          <a
-            href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={githubFiles.gui.url} target="_blank" rel="noreferrer">
             link
           </a>
           .

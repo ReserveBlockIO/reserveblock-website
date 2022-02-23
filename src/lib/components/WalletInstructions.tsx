@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Vimeo from "@u-wave/react-vimeo";
 import { useState } from "react";
 import styled from "styled-components";
+import { githubFiles } from "../../github-files";
 import {
   SectionContent,
   SectionHeading2,
@@ -87,12 +88,8 @@ export const WalletInstructions = () => {
         <ul>
           <li>
             You may also download the wallet from the GitHub release section:{" "}
-            <a
-              href="https://github.com/ReserveBlockIO/Core-CLI/releases/tag/pre2"
-              target="_blank"
-              rel="noreferrer"
-            >
-              https://github.com/ReserveBlockIO/Core-CLI/releases/tag/pre2
+            <a href={githubFiles.gui.url} target="_blank" rel="noreferrer">
+              {githubFiles.gui.url}
             </a>
           </li>
         </ul>

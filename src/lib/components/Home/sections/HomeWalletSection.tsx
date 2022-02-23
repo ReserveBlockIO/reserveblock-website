@@ -20,6 +20,7 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import { cliDownload, isMobile, isMobileOS } from "../../../utils";
+import { githubFiles } from "../../../../github-files";
 
 export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
@@ -97,7 +98,7 @@ export const HomeWalletSection = () => {
                 <>
                   <a
                     className="btn btn-light w-100"
-                    href="https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip"
+                    href={githubFiles.gui.url}
                     target="_blank"
                     rel="noreferrer"
                   >

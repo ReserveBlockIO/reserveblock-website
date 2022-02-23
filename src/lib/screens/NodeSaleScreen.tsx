@@ -131,10 +131,6 @@ export function NodeSaleScreen() {
     setTipContainerHeight(h + 12);
   };
 
-  const handleDownload = () => {
-    walletDownload();
-  };
-
   useEffect(() => {
     window.addEventListener("resize", updateTipContainerHeight, false);
     updateTipContainerHeight();

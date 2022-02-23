@@ -1,3 +1,5 @@
+import { githubFiles } from "../github-files";
+
 export function dec2hex(dec: number) {
   return dec.toString(16).padStart(2, "0");
 }
@@ -74,54 +76,56 @@ export function isMobileOS() {
 }
 
 export function walletDownload() {
-  const windows =
-    "https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip";
-  const mac =
-    "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-mac-osx-x64.zip";
-  const linux =
-    "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-linux-x64.zip";
+  // const windows =
+  //   "https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/download/pre2/rbx-winwallet-win-x64.zip";
+  // const mac =
+  //   "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-mac-osx-x64.zip";
+  // const linux =
+  //   "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-linux-x64.zip";
 
-  const other =
-    "https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/tag/pre2";
+  // const other =
+  //   "https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/tag/pre2";
 
-  const os = getOS();
-  let url = other;
-  switch (os) {
-    case "windows":
-    case "mac":
-      url = windows;
-      break;
-    case "linux":
-      url = linux;
-      break;
-  }
+  // const os = getOS();
+  // let url = other;
+  // switch (os) {
+  //   case "windows":
+  //   case "mac":
+  //     url = windows;
+  //     break;
+  //   case "linux":
+  //     url = linux;
+  //     break;
+  // }
 
-  window.open(url);
+  // window.open(url);
+  window.open(githubFiles.gui.url);
 }
 
 export function cliDownload() {
-  const windows =
-    "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-win-x64.zip";
-  const mac =
-    "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-mac-osx-x64.zip";
-  const linux =
-    "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-linux-x64.zip";
+  window.open(githubFiles.cli.url);
+  // const windows =
+  //   "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-win-x64.zip";
+  // const mac =
+  //   "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-mac-osx-x64.zip";
+  // const linux =
+  //   "https://github.com/ReserveBlockIO/Core-CLI/releases/download/pre/rbx-corecli-linux-x64.zip";
 
-  const other = "https://github.com/ReserveBlockIO/Core-CLI/releases/tag/pre";
+  // const other = "https://github.com/ReserveBlockIO/Core-CLI/releases/tag/pre";
 
-  const os = getOS();
-  let url = other;
-  switch (os) {
-    case "mac":
-      url = mac;
-      break;
-    case "windows":
-      url = windows;
-      break;
-    case "linux":
-      url = linux;
-      break;
-  }
+  // const os = getOS();
+  // let url = other;
+  // switch (os) {
+  //   case "mac":
+  //     url = mac;
+  //     break;
+  //   case "windows":
+  //     url = windows;
+  //     break;
+  //   case "linux":
+  //     url = linux;
+  //     break;
+  // }
 
-  window.open(url);
+  // window.open(url);
 }

@@ -62,7 +62,7 @@ export function allocateAddress(
   return fetch(
     `${BASE_API_URL}/GetAddress/${email.replace(
       "@",
-      "13%40"
+      "%40"
     )}/${currency.toLowerCase()}/${ip}/${uuid}/${address}/${amount}/`
   ).then(async (data) => {
     const json = await data.json();

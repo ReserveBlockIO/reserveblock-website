@@ -1,13 +1,13 @@
 // CONFIG STARTS
 
 const _cli = {
-  tag: "pre2",
-  date: "Feb 22, 2022",
+  tag: "pre3",
+  date: "Feb 24, 2022",
 };
 
 const _gui = {
-  tag: "pre2",
-  date: "Feb 22, 2022",
+  tag: "pre3",
+  date: "Feb 24, 2022",
 };
 
 // CONFIG ENDS
@@ -27,5 +27,4 @@ export const githubFiles = {
   },
 };
 
-
-console.log('test');
+console.log("test");

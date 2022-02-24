@@ -184,14 +184,12 @@ export const WalletInstructions = () => {
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Windows</SectionHeading4>
-            {/* <p className="text-start">Activating 6pm Feb 22 EST</p> */}
             <Vimeo video={"680151855"} responsive />
           </SectionContent>
         </div>
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Mac</SectionHeading4>
-            {/* <p className="text-start">Activating 6pm Feb 22 EST</p> */}
             <Vimeo video="680155835" responsive />
           </SectionContent>
         </div>
@@ -199,8 +197,13 @@ export const WalletInstructions = () => {
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>CLI Intel Mac</SectionHeading4>
-            {/* <p className="text-start">Activating 6pm Feb 22 EST</p> */}
             <Vimeo video="681049804" responsive />
+          </SectionContent>
+        </div>
+        <div className="col-12 col-md-6">
+          <SectionContent>
+            <SectionHeading4>Updating Wallet GUI</SectionHeading4>
+            <Vimeo video="681577308" responsive />
           </SectionContent>
         </div>
       </div>

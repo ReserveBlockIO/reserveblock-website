@@ -129,7 +129,7 @@ export const HeaderComponent = () => {
   const [nodeSaleDismissed, setNodeSaleDismissed] = useState(false);
   const visibilityThreshold = 300;
 
-  const HAS_LAUNCHED = true;
+  const HAS_LAUNCHED = false;
 
   useEffect(() => {
     const onScroll = () => setOffset(window.pageYOffset);
@@ -241,10 +241,10 @@ export const HeaderComponent = () => {
               <FontAwesomeIcon icon={faTimes} size="xs" />
             </div> */}
             {/* <span className="px-1"></span> */}
-            <div style={{ fontWeight: "bold" }}>
-              {HAS_LAUNCHED ? "Node Presale LIVE" : "Node Presale Feb 22"}
+            <div className="py-2 pe-3" style={{ fontWeight: "bold" }}>
+              {HAS_LAUNCHED ? "Node Presale LIVE" : "Testnet Begins Feb 27"}
             </div>
-            <span className="px-2"></span>
+            {/* <span className="px-2"></span>
             {HAS_LAUNCHED ? (
               <a className="btn btn-light text-uppercase" href="/nodes">
                 Activate
@@ -254,7 +254,7 @@ export const HeaderComponent = () => {
                 noIcon
                 buttonClass="btn btn-light text-uppercase"
               />
-            )}
+            )} */}
           </div>
         </PresaleContainer>
         {/* </div> */}

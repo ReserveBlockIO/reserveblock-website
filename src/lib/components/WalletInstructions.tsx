@@ -177,7 +177,7 @@ export const WalletInstructions = () => {
       </SectionContent> */}
 
       <SectionHeading2>
-        Video Instructions for Setting Up & Operating Master Node(s):
+        Video Instructions for Setting Up & Operating Masternode(s):
       </SectionHeading2>
 
       <div className="row">
@@ -204,6 +204,13 @@ export const WalletInstructions = () => {
           <SectionContent>
             <SectionHeading4>Updating Wallet GUI</SectionHeading4>
             <Vimeo video="681577308" responsive />
+          </SectionContent>
+        </div>
+
+        <div className="col-12 col-md-6">
+          <SectionContent>
+            <SectionHeading4>Setting up Remote VPS</SectionHeading4>
+            <Vimeo video="682012029" responsive />
           </SectionContent>
         </div>
       </div>

@@ -11,7 +11,7 @@ export const presaleWindows: PresaleWindow[] = [
   { start: 1645570800000, end: 1645588800000 },
   { start: 1645657200000, end: 1645675200000 },
   { start: 1645743600000, end: 1645761600000 },
-  { start: 1645830000000, end: 1645848000000 },
+  // { start: 1645830000000, end: 1645848000000 },
 ];
 
 export const presaleIsLive = (): boolean => {

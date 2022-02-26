@@ -65,9 +65,10 @@ export const HomeNetworkSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="Explorer"
-                    buttonText="Activating Soon"
-                    disabled
+                    buttonText="RBX Block Explorer"
+                    url="https://rbx.network/"
                     noIcon
+                    openExternal={true}
                   />
                 </SectionContent>
               </VisibilityTransition>

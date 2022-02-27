@@ -36,7 +36,7 @@ export const NodePresaleCtaComponent = () => {
             </SectionHeading4>
             <SectionHeading4>
               <strong style={{ fontSize: 30, letterSpacing: 3, opacity: 0.8 }}>
-                Testnet Begins 2/27 6pm
+                Testnet Begins 1/1 6pm
               </strong>
             </SectionHeading4>
             <div className="py-1" />
@@ -49,7 +49,7 @@ export const NodePresaleCtaComponent = () => {
               }}
             >
               <Countdown
-                date={new Date(1646002800000)}
+                date={new Date(1646139600000)}
                 renderer={(props) => {
                   return `${props.days}d ${props.hours}h ${props.minutes}m ${props.seconds}s`;
                 }}

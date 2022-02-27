@@ -49,7 +49,7 @@ export const NodePresaleCtaComponent = () => {
               }}
             >
               <Countdown
-                date={new Date(1646139600000)}
+                date={new Date(1646175600000)}
                 renderer={(props) => {
                   return `${props.days}d ${props.hours}h ${props.minutes}m ${props.seconds}s`;
                 }}

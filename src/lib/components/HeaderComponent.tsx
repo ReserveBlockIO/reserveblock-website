@@ -242,7 +242,7 @@ export const HeaderComponent = () => {
             </div> */}
             {/* <span className="px-1"></span> */}
             <div className="py-2 pe-3" style={{ fontWeight: "bold" }}>
-              {HAS_LAUNCHED ? "Node Presale LIVE" : "Testnet Begins Feb 27"}
+              {HAS_LAUNCHED ? "Node Presale LIVE" : "Testnet Live"}
             </div>
             {/* <span className="px-2"></span>
             {HAS_LAUNCHED ? (

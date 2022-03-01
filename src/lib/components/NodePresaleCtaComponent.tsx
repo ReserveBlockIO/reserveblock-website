@@ -27,14 +27,14 @@ export const NodePresaleCtaComponent = () => {
           borderRadius: 6,
         }}
       >
-        <div className="px-3">
+        <div className="px-3 pt-2">
           <div className="">
             <SectionHeading4>
               <strong style={{ fontSize: 38, letterSpacing: 3 }}>
-                Node Presale Ended
+                Testnet Live
               </strong>
             </SectionHeading4>
-            <SectionHeading4>
+            {/* <SectionHeading4>
               <strong style={{ fontSize: 30, letterSpacing: 3, opacity: 0.8 }}>
                 Testnet Begins 1/1 6pm
               </strong>
@@ -54,8 +54,8 @@ export const NodePresaleCtaComponent = () => {
                   return `${props.days}d ${props.hours}h ${props.minutes}m ${props.seconds}s`;
                 }}
               />
-            </SectionHeading4>
-            <div className="pt-1" />
+            </SectionHeading4> */}
+            {/* <div className="pt-1" /> */}
           </div>
 
           {/* <div className="mt-3">

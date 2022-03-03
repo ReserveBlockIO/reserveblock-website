@@ -93,14 +93,14 @@ export const WalletInstructions = () => {
             </a>
           </li>
         </ul>
-        <p>
+        {/* <p>
           ** NOTE: Wallets will be available for download on the morning of
           Tuesday, Feb 22nd in advance of the sale. Please do not generate an
           address until you are ready to do a transaction on the sale as
           addresses generated will time-out after an hour or so with no
           activity. You will then have to generate a new address should that
           occur for you to complete a transaction.{" "}
-        </p>
+        </p> */}
       </SectionContent>
       <SectionContent>
         <SectionHeading4>Step 2: Setup Wallet</SectionHeading4>

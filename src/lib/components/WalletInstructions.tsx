@@ -74,7 +74,7 @@ export const WalletInstructions = () => {
         </p>
       </SectionContent>
       <SectionContent>
-        <SectionHeading4>Step 1</SectionHeading4>
+        <SectionHeading4>Step 1: Download Files</SectionHeading4>
         <ul className="mb-0">
           <li>
             To get the wallet, you may click on the “Download Wallet” button on
@@ -103,10 +103,83 @@ export const WalletInstructions = () => {
         </p>
       </SectionContent>
       <SectionContent>
-        <SectionHeading4>Step 2</SectionHeading4>
+        <SectionHeading4>Step 2: Setup Wallet</SectionHeading4>
 
         <WindowsInstallInstructions />
       </SectionContent>
+
+      <SectionContent>
+        <SectionHeading4>Step 3: Become a Validator</SectionHeading4>
+
+        <ol>
+          <li>
+            Open your wallet and ensure the block height matches what is on{" "}
+            <a href="https://rbx.network" target={"blank"} rel="noreferrer">
+              https://rbx.network
+            </a>
+          </li>
+          <li>
+            Open up{" "}
+            <a href="https://portchecker.co/" target="_blank" rel="noreferrer">
+              https://portchecker.co
+            </a>{" "}
+            and enter 3338 as the port then click Check.
+          </li>
+          <li>If it says Port 3338 is closed, try the following</li>
+          <ol>
+            <li>
+              Open your windows firewall (from your control panel) and click
+              Advanced settings
+            </li>
+            <li>Select Inbound Rules in the left panel then click New Rule.</li>
+            <li>
+              Choose Port and click Next then enter 3338 into the specified
+              local port field and click Next again.
+            </li>
+            <li>
+              Make sure Allow this connection is selected and click next and
+              keep all three checkboxes selected and choose next again.
+            </li>
+            <li>
+              Then give it a friendly name such as “RBX” and click Finish.
+            </li>
+            <li>
+              Then go back to the port checker website and test again. If it
+              still doesn’t work, double-check to make sure your wallet is open
+              and running. If you still have no luck, you may have to configure
+              your router settings by setting up port forwarding between port
+              3338 to port 3338. All routers are different so you will have to
+              consult the manufacturer’s documentation.
+            </li>
+          </ol>
+          <li>
+            Once your local block height matches the remote height listed on
+            rbx.network, click on the Validate button in your wallet.
+          </li>
+          <li>
+            Ensure that your address is eligible to validate (requires at least
+            1000 RBX) and then click Start Validating.{" "}
+          </li>
+          <li>
+            You will be prompted to create a unique name for your masternode.
+            Think of this like a username where it can’t be the same as any
+            other nodes on the network. Do not use something like “test123”
+          </li>
+          <li>
+            Then click Ok and you should see shortly that Validating has “Yes”
+            under it. If it doesn’t update to say Yes in about 30 min, try
+            closing your wallet and opening it again. Reach out on Discord if
+            you are still experiencing an issue. Keep in mind that once you
+            enable your address to validate, you need to keep it running at all
+            times. If your IP address changes or your computer gets shutdown or
+            your wallet is closed, that address will eventually become banned
+            from the validator pool. This means you will have to transfer your
+            funds to a different wallet and spin up a new validator on a new IP
+            address if you want to become a validator again.
+          </li>
+        </ol>
+      </SectionContent>
+
       {/* 
 
       <SectionContent>

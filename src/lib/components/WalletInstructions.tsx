@@ -216,8 +216,8 @@ export const WalletInstructions = () => {
 
         <div className="col-12 col-md-6">
           <SectionContent>
-            <SectionHeading4>Validating</SectionHeading4>
-            <Vimeo video="683529491" responsive />
+            <SectionHeading4>Validating (UPDATED MAR 3)</SectionHeading4>
+            <Vimeo video="684426732" responsive />
           </SectionContent>
         </div>
       </div>

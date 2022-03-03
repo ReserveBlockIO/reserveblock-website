@@ -181,7 +181,7 @@ export const WalletInstructions = () => {
       </SectionHeading2>
 
       <div className="row">
-        <div className="col-12 col-md-6">
+        {/* <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Windows</SectionHeading4>
             <Vimeo video={"680151855"} responsive />
@@ -205,7 +205,7 @@ export const WalletInstructions = () => {
             <SectionHeading4>Updating Wallet GUI</SectionHeading4>
             <Vimeo video="681577308" responsive />
           </SectionContent>
-        </div>
+        </div> */}
 
         <div className="col-12 col-md-6">
           <SectionContent>
@@ -216,7 +216,7 @@ export const WalletInstructions = () => {
 
         <div className="col-12 col-md-6">
           <SectionContent>
-            <SectionHeading4>Validating (UPDATED MAR 3)</SectionHeading4>
+            <SectionHeading4>Installing Wallet & Validating</SectionHeading4>
             <Vimeo video="684426732" responsive />
           </SectionContent>
         </div>
@@ -226,14 +226,7 @@ export const WalletInstructions = () => {
         <SectionHeading2>
           FAQs for Wallets and Nodes – Operating:
         </SectionHeading2>
-        <p
-          className="mb-0"
-          style={{ fontWeight: "bold", fontSize: 24, lineHeight: 1.4 }}
-        >
-          YOU WILL NOT BE ABLE TO TURN NODES ON UNTIL FEBRUARY 27th @ 6pm!!
-          <br />
-          PLEASE DO NOT ATTEMPT BEFORE HAND.
-        </p>
+
         <FaqComponent wallet></FaqComponent>
       </div>
     </Content>

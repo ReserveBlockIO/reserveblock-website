@@ -10,28 +10,37 @@ For ease of use, we are recommending [iportal.host](https://iportal.host/) as a 
 
 ### iPortal Account Setup
 
-- Go to [https://iportal.host/](https://iportal.host/)
+- Go to [iportal.host](https://iportal.host/)
 - Choose US Windows VPS (or another country of your choice - just make sure it's **Windows**)
+  ![img](https://reserveblock.io/img/instructs/1.jpg)
 - Choose the **Wowbox** and click **Order Now**. Note, you can probably get away with the **Mediumbox** but we have not tested this one in full.
+  ![img](https://reserveblock.io/img/instructs/2.jpg)
 - Provide a root password in the password field
 - Choose **Windows Server 2016**. Note: We will actually be provisioning a Windows 2019 server but choose this option at this stage.
 - Click **Continue**
 - Fill out your billing details on the following page. You can pay via credit card, paypal or BTC.
+  ![img](https://reserveblock.io/img/instructs/3.jpg)
 
 ### iPortal VPS Provision
 
 - After completing the checkout, you will receive multiple emails from iportal. Look for the one with a subject of **Your Windows VPS Information**.
 - Within that email, you will see a control panel link as well as username and password. Click that link and input the username and password respectively.
 - On the Hosting Spaces section, click **HyperV** under VPS and then click **Create VPS**
+  ![img](https://reserveblock.io/img/instructs/4.jpg)
+  ![img](https://reserveblock.io/img/instructs/5.jpg)
 - Check the box that says **Generate hostname automatically**.
 - In the **Operating system** dropdown, choose Windows Server **2019**.
 - Create a secure password - use your password manager if you have one!
 - Click **Next**
+  ![img](https://reserveblock.io/img/instructs/6.jpg)
 - On the Configration screen, you can leave everything in it's default state and click **Next**.
+  ![img](https://reserveblock.io/img/instructs/7.jpg)
 - On external network, ensure that **Randomly select IP address** is selected and then click **Next**.
+  ![img](https://reserveblock.io/img/instructs/8.jpg)
 - Review the summary and make sure that **Windows 2019** is selected and click **Finish**.
 - Wait on the following screen for a couple of minutes until it redirects you to the detail page once it's completed setting up.
 - Click on the **Network** tab and look for your **IP Address**. Copy that somewhere safe for future reference. This will be in the lower left corner above the blue Add IP button.
+  ![img](https://reserveblock.io/img/instructs/9.jpg)
 - Note, if you have misplaced your VPS password you can do a password reset under the **Configuration** tab.
 
 ### Connecting to your VPS
@@ -40,9 +49,11 @@ For ease of use, we are recommending [iportal.host](https://iportal.host/) as a 
 
 - Open up your **App Store** app on your mac and search for **Microsoft Remote Desktop**
 - Click **Install** and once it finishes, click **Open**
+  ![img](https://reserveblock.io/img/instructs/10.jpg)
 - Click the plus button in the menu and choose **Add PC**
 - Under PC name, paste in the IP address from the previous step
 - Under User Account, choose **Add User Account** and then use **Administrator** as the username and the password you created in the previous step in the password field then click **Add**.
+  ![img](https://reserveblock.io/img/instructs/11.jpg)
 - Click **Add** again
 - Then, double click on the new PC you created. This will load up the remote desktop. If there is an account error, double check the username (Administrator) and password is correct.
 
@@ -51,11 +62,13 @@ For ease of use, we are recommending [iportal.host](https://iportal.host/) as a 
 - Click on your start menu and start typing **Remote Desktop**
 - Open the Remote Desktop App
 - Enter the IP address you copied in the previous step
+  ![img](https://reserveblock.io/img/instructs/13.jpg)
 - When prompted, enter "Administrator" as the username and the password from the previous step into the password field
 
 #### After connecting
 
 - Windows should boot up. Please open your file explorer, right click on **This PC**, go to properties, and double check it says Windows Server **2019**.
+  ![img](https://reserveblock.io/img/instructs/14.jpg)
 
 ## Setting up your RBX Wallet
 
@@ -64,12 +77,17 @@ Now that we have our VPS setup, we can install the wallet software. For the rema
 ### Download and Run wallet software
 
 - Go to this [Github link](https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/tag/pre5) and download **rbx-winwallet-win-x64.zip**
+  ![img](https://reserveblock.io/img/instructs/16.jpg)
 - Once downloaded, right click on the zip file and choose **Extract All**
 - The default settings are fine, just make sure the checkbox is checked so the files are revealed once extracted
+  ![img](https://reserveblock.io/img/instructs/17.jpg)
 - Find a safe place in your file system (ie your "Documents" folder) and create a new folder called "RBX"
 - Drag the win-x64 folder into this folder
+  ![img](https://reserveblock.io/img/instructs/18.jpg)
 - Open double click on the win-x64 folder and then find ReserveWinWallet - right click and choose Run as Administrator
+  ![img](https://reserveblock.io/img/instructs/19.jpg)
 - If prompted by your Windows Defender, click **More Info** and then click **Run Anyways**
+  ![img](https://reserveblock.io/img/instructs/20.jpg)
 
 ### Port Settings
 
@@ -80,27 +98,37 @@ To be a validating, port `3338` needs to be open for incoming connections so tha
 
 0. Ensure your wallet is open and running on your VPS
 1. Open your windows firewall (from your control panel) and click Advanced settings
+   ![img](https://reserveblock.io/img/instructs/22.jpg)
 2. Select Inbound Rules in the left panel then click New Rule.
+   ![img](https://reserveblock.io/img/instructs/23.jpg)
 3. Choose Port and click Next then enter `3338` into the specified local port field and click Next again.
+   ![img](https://reserveblock.io/img/instructs/24.jpg)
+   ![img](https://reserveblock.io/img/instructs/25.jpg)
 4. Make sure Allow this connection is selected and click next and keep all three checkboxes selected and choose next again.
 5. Then give it a friendly name such as “RBX” and click Finish.
+   ![img](https://reserveblock.io/img/instructs/26.jpg)
 6. Then go back to the port checker website and test again. If it still doesn’t work, double-check to make sure your wallet is open and running. If you still have no luck, you may have to configure your router settings by setting up port forwarding between port `3338` to port `3338`. All routers are different so you will have to consult the manufacturer’s documentation.
+   ![img](https://reserveblock.io/img/instructs/27.jpg)
 
 ### Block Height
 
 Before you can begin validating, you need to ensure your block height matches the global block height.
-
 You can check the current block height by going to [https://rbx.network/](rbx.network) and seeing what the most recent block's height is.
+![img](https://reserveblock.io/img/instructs/28.jpg)
 
 This process can take a couple hours from a fresh install. As long as you are seeing it climing, it will eventually sync in full.
 
 After a couple of minutes you should see the blocks starting to populate. If not, try restarting your windows within your VPS and then come back and restart the wallet program. If it still says -1 after a few minutes, reach out on Discord for help.
+![img](https://reserveblock.io/img/instructs/32.jpg)
 
 ## Generating/Importing your wallet address
 
 - Click on **Receive** and then click on **New Address**
+  ![img](https://reserveblock.io/img/instructs/29.jpg)
 - Your new private and public key will be displayed
 - Once you close the dialog, your private key will be copied to your clipboard.
+  ![img](https://reserveblock.io/img/instructs/30.jpg)
+
 - Open up notepad (or any text editting program) and paste it there.
 - Be sure to back this up in a secure/private place. **If you lose your private key there is no way to recover it**
 - We recommend using a password manager, or saving it to an encyrpted USB key, or even printing it off and keeping it somewhere safe. It is recommended you do at least two of these things.
@@ -108,8 +136,9 @@ After a couple of minutes you should see the blocks starting to populate. If not
 ### Importing a Private Key
 
 - If you already have a private key, you can choose **Import Private Key** instead in the Receive screen and paste it in there.
+  ![img](https://reserveblock.io/img/instructs/31.jpg)
 
-## Validating
+<!-- ## Validating
 
 Double check the following:
 
@@ -125,4 +154,4 @@ If all is good, continue with:
 - Click **Start Validating**
 - Give your node a unique name - think of this like a username for your node
 - Click **Ok**
-- If an error shows up, it may say that your node name is not unique so try something else.
+- If an error shows up, it may say that your node name is not unique so try something else. -->

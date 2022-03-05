@@ -69,6 +69,17 @@ export const NewWalletInstructions = () => {
       </SectionHeading2>
 
       <SectionContent>
+        <p>
+          This video here covers this topic in full if you prefer to learn that
+          way. Or, you can follow the written instructions below.
+        </p>
+        <div className="row d-flex">
+          <div className="col col-md-6">
+            <Vimeo video={685048570} responsive />
+          </div>
+        </div>
+        <p></p>
+        <p></p>
         <h2 id="setup-vps">Setup VPS</h2>
         <p>
           First we&#39;re going to want to setup a VPS (Virtual Private Server)
@@ -446,13 +457,58 @@ export const NewWalletInstructions = () => {
             <img src="https://reserveblock.io/img/instructs/31.jpg" alt="img" />
           </li>
         </ul>
+
+        <h2 id="validating">Validating</h2>
+        <p>Double check the following:</p>
+        <ul>
+          <li>
+            block height has reached the global block height as per{" "}
+            <a target="_blank" href="https://rbx.network" rel="noreferrer">
+              rbx.network
+            </a>
+          </li>
+          <li>
+            port <code>3338</code> is open for incoming connections (see
+            instructions above)
+          </li>
+          <li>You have an address (private/public key) created / imported</li>
+          <li>
+            You have at least 1000 RBX in the wallet (the minium requirement to
+            be a validator in the proof of stake model)
+          </li>
+        </ul>
+        <p>If all is good, continue with:</p>
+        <ul>
+          <li>
+            Click the <strong>Validator</strong> tab
+          </li>
+          <li>
+            Ensure the correct account is selected and that you are eligable for
+            validating
+          </li>
+          <li>
+            Click <strong>Start Validating</strong>
+          </li>
+          <li>
+            Give your node a unique name - think of this like a username for
+            your node
+          </li>
+          <li>
+            Click <strong>Ok</strong>
+          </li>
+          <li>
+            If an error shows up, please record the message and file a bug
+            report on our Discord channel.
+          </li>
+        </ul>
+        <p>Thanks for supporting the network!</p>
       </SectionContent>
 
-      <SectionHeading2>
+      {/* <SectionHeading2>
         Video Instructions for Setting Up & Operating Masternode(s):
-      </SectionHeading2>
+      </SectionHeading2> */}
 
-      <div className="row">
+      {/* <div className="row">
         <div className="col-12 col-md-6">
           <SectionContent>
             <SectionHeading4>Setting up Remote VPS</SectionHeading4>
@@ -466,7 +522,7 @@ export const NewWalletInstructions = () => {
             <Vimeo video="684426732" responsive />
           </SectionContent>
         </div>
-      </div>
+      </div> */}
 
       <div className="pt-5">
         <SectionHeading2>

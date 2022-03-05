@@ -138,7 +138,7 @@ After a couple of minutes you should see the blocks starting to populate. If not
 - If you already have a private key, you can choose **Import Private Key** instead in the Receive screen and paste it in there.
   ![img](https://reserveblock.io/img/instructs/31.jpg)
 
-<!-- ## Validating
+## Validating
 
 Double check the following:
 
@@ -154,4 +154,4 @@ If all is good, continue with:
 - Click **Start Validating**
 - Give your node a unique name - think of this like a username for your node
 - Click **Ok**
-- If an error shows up, it may say that your node name is not unique so try something else. -->
+- If an error shows up, it may say that your node name is not unique so try something else.

@@ -1,13 +1,13 @@
 // CONFIG STARTS
 
 const _cli = {
-  tag: "pre5",
-  date: "March 3, 2022",
+  tag: "pre6",
+  date: "March 5, 2022",
 };
 
 const _gui = {
-  tag: "pre5",
-  date: "March 3, 2022",
+  tag: "pre6",
+  date: "March 5, 2022",
 };
 
 // CONFIG ENDS

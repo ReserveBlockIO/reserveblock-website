@@ -39,7 +39,7 @@ export const PressList = () => {
       image: "/img/press/insider.png",
     },
     {
-      url: "https://www.marketwatch.com/press-release/reserveblock-foundation-announces-the-rbx-network-masternode-release-presale-for-governance-consensus-and-block-rewards-in-conjunction-with-the-networks-public-testnet-2022-02-08",
+      url: "https://www.marketwatch.com/press-release/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts-2022-03-09?mod=search_headline",
       name: "Market Watch",
       image: "/img/press/market-watch.png",
     },
@@ -54,7 +54,7 @@ export const PressList = () => {
       image: "/img/press/seeking-alpha.png",
     },
     {
-      url: "https://finance.yahoo.com/news/reserveblock-foundation-announces-rbx-network-140000624.html?guccounter=1",
+      url: "https://finance.yahoo.com/news/reserveblock-foundation-rbx-network-venture-153000616.html",
       name: "Yahoo Finance",
       image: "/img/press/yahoo.png",
     },
@@ -66,18 +66,18 @@ export const PressList = () => {
     {
       image: "/img/press/benzinga.png",
       name: "Benzinga",
-      url: "https://www.benzinga.com/pressreleases/22/02/n25477074/reserveblock-foundation-announces-the-rbx-network-masternode-release-presale-for-governance-consen",
+      url: "https://www.benzinga.com/pressreleases/22/03/n26063541/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts",
     },
     {
       image: "/img/press/coinspeaker.png",
       name: "Coinspeaker",
       url: "https://www.coinspeaker.com/reserveblock-foundation-announces-rbx-network-masternode-release/",
     },
-    {
-      image: "/img/press/cointelegraph.png",
-      name: "CoinTelegraph",
-      url: "https://cointelegraph.com/press-releases/reserveblock-announces-rbx-network-masternode-release-public-testnet",
-    },
+    // {
+    //   image: "/img/press/cointelegraph.png",
+    //   name: "CoinTelegraph",
+    //   url: "https://cointelegraph.com/press-releases/reserveblock-announces-rbx-network-masternode-release-public-testnet",
+    // },
     {
       image: "/img/press/cryptobrief.png",
       name: "cryptobriefing",
@@ -98,14 +98,49 @@ export const PressList = () => {
       name: "dailycoin",
       url: "https://dailycoin.com/reserveblock-foundation-announces-the-rbx-network-masternode-release-presale-for-governance-consensus-and-block-rewards-in-conjunction-with-the-networks-public-testnet/",
     },
+    // {
+    //   image: "/img/press/zycrypto.png",
+    //   name: "zycrypto",
+    //   url: "https://zycrypto.com/reserveblock-foundation-to-release-its-rbx-network-masternodes-and-a-presale-in-the-coming-days/",
+    // },
+
     {
-      image: "/img/press/zycrypto.png",
-      name: "zycrypto",
-      url: "https://zycrypto.com/reserveblock-foundation-to-release-its-rbx-network-masternodes-and-a-presale-in-the-coming-days/",
+      image: "/img/press/tdh.png",
+      name: "thedailyhodl",
+      url: "https://dailyhodl.com/2022/03/09/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts/",
+    },
+    {
+      image: "/img/press/blocktelegraph.png",
+      name: "blocktelegraph",
+      url: "https://blocktelegraph.io/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts/",
     },
   ];
 
   const pressItems: IPressCardProps[] = [
+    {
+      title:
+        "ReserveBlock Foundation RBX Network and Venture Miami Team To Collaborate on Miami-Centric NFTs...",
+      date: "03/09/22",
+      imageUrl: "/img/press/tdh.png",
+      url: "https://dailyhodl.com/2022/03/09/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts/",
+    },
+
+    {
+      title:
+        "ReserveBlock Foundation RBX Network and Venture Miami Team To Collaborate on Miami-Centric NFTs...",
+      date: "03/09/22",
+      imageUrl: "/img/press/blocktelegraph.png",
+      url: "https://blocktelegraph.io/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts/",
+    },
+
+    {
+      title:
+        "ReserveBlock Foundation RBX Network and Venture Miami Team To Collaborate on Miami-Centric NFTs...",
+      date: "03/09/22",
+      imageUrl: "/img/press/yahoo.png",
+      url: "https://finance.yahoo.com/news/reserveblock-foundation-rbx-network-venture-153000616.html",
+    },
+
     {
       title:
         "ReserveBlock Foundation Announces the RBX Network Masternode Release & Presale for Governance...",

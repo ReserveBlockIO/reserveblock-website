@@ -65,7 +65,7 @@ export const NewWalletInstructions = () => {
   return (
     <Content>
       <SectionContent>
-        <SectionHeading2>New RBX Wallet GUIs</SectionHeading2>
+        <SectionHeading2>New RBX Wallets</SectionHeading2>
         <p>
           We have some new GUIs. Please watch the following video for your
           preferred platform that will show you how to set it up and give you a

@@ -423,35 +423,25 @@ export const NewWalletInstructions = () => {
           come back and restart the wallet program. If it still says -1 after a
           few minutes, reach out on Discord for help.
           <br />
-          <img src="https://reserveblock.io/img/instructs/32.jpg" alt="img" />
+          <img src="/img/instructs/new/dashboard.jpg" alt="img" />
         </p>
         <h2 id="generating-importing-your-wallet-address">
           Generating/Importing your wallet address
         </h2>
         <ul>
           <li>
-            Click on <strong>Receive</strong> and then click on{" "}
-            <strong>New Address</strong>
+            Click on the wallet selector and then click on{" "}
+            <strong>New Wallet</strong>
             <br />
-            <img src="https://reserveblock.io/img/instructs/29.jpg" alt="img" />
+            <img src="/img/instructs/new/menu.jpg" alt="img" />
           </li>
           <li>Your new private and public key will be displayed</li>
           <li>
             <p>
-              Once you close the dialog, your private key will be copied to your
-              clipboard.
-              <br />
-              <img
-                src="https://reserveblock.io/img/instructs/30.jpg"
-                alt="img"
-              />
+              <img src="/img/instructs/new/create.jpg" alt="img" />
             </p>
           </li>
-          <li>
-            <p>
-              Open up notepad (or any text editting program) and paste it there.
-            </p>
-          </li>
+
           <li>
             Be sure to back this up in a secure/private place.{" "}
             <strong>
@@ -468,10 +458,9 @@ export const NewWalletInstructions = () => {
         <ul>
           <li>
             If you already have a private key, you can choose{" "}
-            <strong>Import Private Key</strong> instead in the Receive screen
-            and paste it in there.
+            <strong>Import Wallet</strong> instead in the wallet selector.
             <br />
-            <img src="https://reserveblock.io/img/instructs/31.jpg" alt="img" />
+            <img src="/img/instructs/new/import.jpg" alt="img" />
           </li>
         </ul>
 
@@ -495,10 +484,13 @@ export const NewWalletInstructions = () => {
           </li>
         </ul>
         <p>If all is good, continue with:</p>
+        <img src="/img/instructs/new/validating.jpg" alt="img" />
+
         <ul>
           <li>
             Click the <strong>Validator</strong> tab
           </li>
+
           <li>
             Ensure the correct account is selected and that you are eligable for
             validating

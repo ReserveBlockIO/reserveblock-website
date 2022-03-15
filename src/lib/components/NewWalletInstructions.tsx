@@ -64,11 +64,28 @@ export const NewWalletInstructions = () => {
 
   return (
     <Content>
-      <SectionHeading2>
-        RBX Wallet Install and Operating Instructions
-      </SectionHeading2>
-
       <SectionContent>
+        <SectionHeading2>New RBX Wallet GUIs</SectionHeading2>
+        <p>
+          We have some new GUIs. Please watch the following video for your
+          preferred platform that will show you how to set it up and give you a
+          tour of what's new!
+        </p>
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <SectionHeading3>Windows</SectionHeading3>
+            <Vimeo video="688597304"></Vimeo>
+          </div>
+
+          <div className="col-12 col-md-6">
+            <SectionHeading3>Mac</SectionHeading3>
+            <Vimeo video="688592697"></Vimeo>
+          </div>
+        </div>
+      </SectionContent>
+      <SectionContent>
+        <SectionHeading2>VPS &amp; Operating Instructions</SectionHeading2>
+
         <p>
           This video here covers this topic in full if you prefer to learn that
           way. Or, you can follow the written instructions below.

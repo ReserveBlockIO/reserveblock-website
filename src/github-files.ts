@@ -1,20 +1,20 @@
 // CONFIG STARTS
 
 const _cli = {
-  tag: "pre8",
-  date: "March 11, 2022",
+  tag: "pre9",
+  date: "March 15, 2022",
 };
 
 const _gui = {
-  tag: "pre8",
-  date: "March 11, 2022",
+  tag: "pre9",
+  date: "March 15, 2022",
 };
 
 // CONFIG ENDS
 
 const _cliBaseUrl = "https://github.com/ReserveBlockIO/Core-CLI/releases/tag/";
 const _guiBaseUrl =
-  "https://github.com/ReserveBlockIO/ReserveBlockWindowsWallet/releases/tag/";
+  "https://github.com/ReserveBlockIO/rbx-wallet-gui/releases/tag/";
 
 export const githubFiles = {
   cli: {

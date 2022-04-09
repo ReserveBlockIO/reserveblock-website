@@ -6,8 +6,8 @@ const _cli = {
 };
 
 const _gui = {
-  tag: "pre18",
-  date: "April 8, 2022",
+  tag: "pre19",
+  date: "April 9, 2022",
 };
 
 // CONFIG ENDS

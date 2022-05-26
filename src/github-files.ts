@@ -2,12 +2,12 @@
 
 const _cli = {
   tag: "pre21",
-  date: "May 25, 2022",
+  date: "May 26, 2022",
 };
 
 const _gui = {
   tag: "pre21",
-  date: "May 25, 2022",
+  date: "May 26, 2022",
 };
 
 // CONFIG ENDS

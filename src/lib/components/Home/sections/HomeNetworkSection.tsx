@@ -52,9 +52,10 @@ export const HomeNetworkSection = () => {
               <VisibilityTransition transitionDelay={250}>
                 <SectionContent mutedBg>
                   <Download
-                    title="Status"
-                    buttonText="Activating Soon"
-                    disabled
+                    title="Trillium IDE"
+                    url="https://trillium.rbx.network/"
+                    openExternal
+                    buttonText="Launch IDE"
                     noIcon
                   />
                 </SectionContent>
@@ -78,8 +79,9 @@ export const HomeNetworkSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="CLI"
-                    buttonText="Activating Soon"
-                    disabled
+                    buttonText="Download CLI"
+                    openExternal={true}
+                    url="https://github.com/ReserveBlockIO/ReserveBlock-Core"
                     noIcon
                   />
                 </SectionContent>

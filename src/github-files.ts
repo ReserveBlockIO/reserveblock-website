@@ -6,7 +6,7 @@ const _cli = {
 };
 
 const _gui = {
-  tag: "beta",
+  tag: "beta0",
   date: "July 17, 2022",
 };
 

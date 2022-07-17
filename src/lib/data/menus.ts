@@ -58,6 +58,11 @@ export const secondaryNavItems: INavItem[] = [
     openExternal: true,
   },
   {
+    name: "Whitepaper",
+    path: require("../../pdfs/RBX_Blockchain_Whitepaper.pdf"),
+    openExternal: true,
+  },
+  {
     name: "Disclaimer",
     path: "/disclaimer",
   },

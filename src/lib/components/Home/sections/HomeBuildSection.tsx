@@ -68,29 +68,32 @@ export const HomeBuildSection = () => {
           <div className="col-12 col-md-6 pb-4">
             <VisibilityTransition
               transitionType="slide"
-              transitionDirection="right"
-              transitionDelay={0}
-            >
-              <Download
-                title="Developer Rewards Program"
-                buttonText="Releasing Soon"
-                disabled
-                noIcon
-                horizontalPadding={64}
-              />
-            </VisibilityTransition>
-          </div>
-          <div className="col-12 col-md-6 pb-4">
-            <VisibilityTransition
-              transitionType="slide"
               transitionDirection="left"
               transitionDelay={0}
             >
               <Download
-                title="Docs & Resources"
-                buttonText="Releasing Soon"
+                title="CLI & API Docs"
+                buttonText="Launch"
                 noIcon
-                disabled
+                url={require("../../../../pdfs/RBX_CLI_API.pdf")}
+                openExternal
+                horizontalPadding={64}
+              />
+            </VisibilityTransition>
+          </div>
+
+          <div className="col-12 col-md-6 pb-4">
+            <VisibilityTransition
+              transitionType="slide"
+              transitionDirection="right"
+              transitionDelay={0}
+            >
+              <Download
+                title="Config Docs"
+                buttonText="Launch"
+                noIcon
+                url={require("../../../../pdfs/RBXConfig.pdf")}
+                openExternal
                 horizontalPadding={64}
               />
             </VisibilityTransition>

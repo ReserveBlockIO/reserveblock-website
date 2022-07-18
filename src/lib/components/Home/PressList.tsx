@@ -24,6 +24,11 @@ const PressLink = styled.a`
 export const PressList = () => {
   const pressLogos: PressLogo[] = [
     {
+      url: "https://www.nasdaq.com/press-release/mlb-all-star-and-ny-yankee-pitcher-nestor-cortes-releasing-personal-nft-collection-on",
+      name: "Nasdaq",
+      image: "/img/press/nasdaq.png",
+    },
+    {
       url: "https://aliens.com/read/reserveblock-foundation-announces-upcoming-release-of-the-first-open-source-decentralized-nft-centric-blockchain-platform-in-q1-22",
       name: "Aliens",
       image: "/img/press/aliens.png",
@@ -57,6 +62,11 @@ export const PressList = () => {
       url: "https://finance.yahoo.com/news/reserveblock-foundation-rbx-network-venture-153000616.html",
       name: "Yahoo Finance",
       image: "/img/press/yahoo.png",
+    },
+    {
+      url: "https://www.merrilledge.com/research/story?strykey=2508-202207121330pr_news_uspr_____ny13428-1",
+      image: "/img/press/merrill.png",
+      name: "Merrill",
     },
     {
       image: "/img/press/thebitcoinnews.png",
@@ -119,6 +129,28 @@ export const PressList = () => {
   const pressItems: IPressCardProps[] = [
     {
       title:
+        "MLB All-Star and NY Yankee Pitcher Nestor Cortes Releasing Personal NFT Collection On The ReserveBlock RBX Network",
+      date: "07/12/22",
+      imageUrl: "/img/press/nasdaq.png",
+      url: "https://www.nasdaq.com/press-release/mlb-all-star-and-ny-yankee-pitcher-nestor-cortes-releasing-personal-nft-collection-on",
+    },
+    {
+      title:
+        "MLB All-Star and NY Yankee Pitcher Nestor Cortes Releasing Personal NFT Collection On The ReserveBlock RBX Network",
+      date: "07/12/22",
+      imageUrl: "img/press/blocktelegraph.png",
+      url: "https://blocktelegraph.io/mlb-all-star-and-ny-yankee-pitcher-nestor-cortes-releasing-personal-nft-collection-on-the-reserveblock-rbx-network/",
+    },
+    {
+      title:
+        "MLB All-Star and NY Yankee Pitcher Nestor Cortes Releasing Personal NFT Collection On The RBX Network",
+      date: "07/12/22",
+      imageUrl: "/img/press/merrill.png",
+      url: "https://www.merrilledge.com/research/story?strykey=2508-202207121330pr_news_uspr_____ny13428-1",
+    },
+
+    {
+      title:
         "ReserveBlock Foundation RBX Network and Venture Miami Team To Collaborate on Miami-Centric NFTs...",
       date: "03/09/22",
       imageUrl: "/img/press/tdh.png",
@@ -129,16 +161,15 @@ export const PressList = () => {
       title:
         "ReserveBlock Foundation RBX Network and Venture Miami Team To Collaborate on Miami-Centric NFTs...",
       date: "03/09/22",
-      imageUrl: "/img/press/blocktelegraph.png",
-      url: "https://blocktelegraph.io/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts/",
+      imageUrl: "/img/press/yahoo.png",
+      url: "https://finance.yahoo.com/news/reserveblock-foundation-rbx-network-venture-153000616.html",
     },
-
     {
       title:
         "ReserveBlock Foundation RBX Network and Venture Miami Team To Collaborate on Miami-Centric NFTs...",
       date: "03/09/22",
-      imageUrl: "/img/press/yahoo.png",
-      url: "https://finance.yahoo.com/news/reserveblock-foundation-rbx-network-venture-153000616.html",
+      imageUrl: "/img/press/blocktelegraph.png",
+      url: "https://blocktelegraph.io/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts/",
     },
 
     {

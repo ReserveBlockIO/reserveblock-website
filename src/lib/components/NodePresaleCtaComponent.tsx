@@ -31,7 +31,7 @@ export const NodePresaleCtaComponent = () => {
           <div className="">
             <SectionHeading4>
               <strong style={{ fontSize: 38, letterSpacing: 3 }}>
-                Public Testnet Live
+                MAINET BETA LIVE
               </strong>
             </SectionHeading4>
             {/* <SectionHeading4>

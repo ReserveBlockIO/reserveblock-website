@@ -53,6 +53,11 @@ export const primaryNavItems: INavItem[] = [
 
 export const secondaryNavItems: INavItem[] = [
   {
+    name: "Web Wallet",
+    path: "https://wallet.rbx.network/",
+    openExternal: true,
+  },
+  {
     name: "Litepaper",
     path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
     openExternal: true,
@@ -62,6 +67,7 @@ export const secondaryNavItems: INavItem[] = [
     path: require("../../pdfs/RBX_Blockchain_Whitepaper.pdf"),
     openExternal: true,
   },
+
   {
     name: "Disclaimer",
     path: "/disclaimer",

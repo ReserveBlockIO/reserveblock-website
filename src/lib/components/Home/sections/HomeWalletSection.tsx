@@ -18,6 +18,7 @@ import {
   faChevronUp,
   faDownload,
   faLink,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 import { cliDownload, isMobile, isMobileOS } from "../../../utils";
 import { githubFiles } from "../../../../github-files";
@@ -132,11 +133,11 @@ export const HomeWalletSection = () => {
                 transitionDelay={500}
               >
                 <Download
-                  title="NFTs"
-                  buttonText="Activating in Mainnet"
-                  disabled
-                  noIcon
-                  noCaps
+                  title="WEB WALLET"
+                  buttonText="Create Web Wallet"
+                  url="https://wallet.rbx.network/"
+                  openExternal
+                  icon={faGlobe}
                 />
               </VisibilityTransition>
             </div>
@@ -157,10 +158,11 @@ export const HomeWalletSection = () => {
                 transitionDelay={500}
               >
                 <Download
-                  title="Smart Contracts"
-                  buttonText="Activating in Mainnet"
-                  disabled
+                  title="SMART CONTRACTS / NFTs"
+                  buttonText="Activated"
                   noIcon
+                  noCaps
+                  url={"#"}
                 />
               </VisibilityTransition>
             </div>
@@ -172,10 +174,10 @@ export const HomeWalletSection = () => {
               >
                 <Download
                   title="DSTs"
-                  buttonText="Activating in Mainnet"
-                  disabled
+                  buttonText="Activated"
                   noIcon
                   noCaps
+                  url={"#"}
                 />
               </VisibilityTransition>
             </div>

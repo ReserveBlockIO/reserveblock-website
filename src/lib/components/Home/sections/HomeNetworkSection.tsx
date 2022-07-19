@@ -40,10 +40,10 @@ export const HomeNetworkSection = () => {
               <VisibilityTransition transitionDelay={0}>
                 <SectionContent mutedBg>
                   <Download
-                    title="Testnet"
-                    buttonText="Activating Feb 27"
+                    title="Mainnet Beta"
+                    buttonText="Activated"
                     noIcon
-                    disabled
+                    url="#"
                   />
                 </SectionContent>
               </VisibilityTransition>

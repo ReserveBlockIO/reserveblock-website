@@ -163,6 +163,7 @@ export const HomeWalletSection = () => {
                   noIcon
                   noCaps
                   url={"#"}
+                  onClick={(_: any) => {}}
                 />
               </VisibilityTransition>
             </div>
@@ -178,6 +179,7 @@ export const HomeWalletSection = () => {
                   noIcon
                   noCaps
                   url={"#"}
+                  onClick={(_: any) => {}}
                 />
               </VisibilityTransition>
             </div>

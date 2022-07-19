@@ -44,6 +44,7 @@ export const HomeNetworkSection = () => {
                     buttonText="Activated"
                     noIcon
                     url="#"
+                    onClick={(_: any) => {}}
                   />
                 </SectionContent>
               </VisibilityTransition>

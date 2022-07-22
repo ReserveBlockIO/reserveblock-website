@@ -23,6 +23,8 @@ const PressLink = styled.a`
 
 export const PressList = () => {
   const pressLogos: PressLogo[] = [
+  
+
     {
       url: "https://www.nasdaq.com/press-release/mlb-all-star-and-ny-yankee-pitcher-nestor-cortes-releasing-personal-nft-collection-on",
       name: "Nasdaq",
@@ -57,6 +59,21 @@ export const PressList = () => {
       url: "https://seekingalpha.com/pr/18662580-reserveblock-foundation-announces-rbx-network-masternode-release-and-presale-for-governance",
       name: "Seeking Alpha",
       image: "/img/press/seeking-alpha.png",
+    },
+    {
+      url: "https://blockchainreporter.net/the-reserveblock-protocol-has-achieved-mainnet-beta-with-over-2300-validators-concurrently-with-a-web-wallet-release-providing-on-chain-tools-and-features-for-the-first-ever-p2p-auction-on-the-networ/",
+      name: "Block Chain Reporter",
+      image: "/img/press/blockchain-reporter.png",
+    },
+    // {
+    //   url: "https://www.streetinsider.com/dr/news.php?id=20352091&gfv=1",
+    //   name: "Street Insider",
+    //   image: "/img/press/street-insider.png",
+    // },
+    {
+      url: "https://coinmarketcap.com/headlines/news/the-reserveblock-protocol-has-achieved-mainnet-beta-with-over-2300-validators-concurrently-with-a-web-wallet-release-providing-on-chain-tools-and-features-for-the-first-ever-p2p-auction-on-the-network/",
+      name: "Coin Marketcap",
+      image: "/img/press/coinmarketcap.png",
     },
     {
       url: "https://finance.yahoo.com/news/reserveblock-foundation-rbx-network-venture-153000616.html",
@@ -127,6 +144,27 @@ export const PressList = () => {
   ];
 
   const pressItems: IPressCardProps[] = [
+    {
+      title:
+        "The ReserveBlock Protocol Has Achieved Mainnet Beta With Over 2,300 Validators",
+      date: "07/21/22",
+      imageUrl: "/img/press/blockchain-reporter.png",
+      url: "https://blockchainreporter.net/the-reserveblock-protocol-has-achieved-mainnet-beta-with-over-2300-validators-concurrently-with-a-web-wallet-release-providing-on-chain-tools-and-features-for-the-first-ever-p2p-auction-on-the-networ/",
+    },
+    {
+      title:
+        "The ReserveBlock Protocol Has Achieved Mainnet Beta With Over 2,300 Validators",
+      date: "07/21/22",
+      imageUrl: "/img/press/street-insider.png",
+      url: "https://www.streetinsider.com/dr/news.php?id=20352091&gfv=1",
+    },
+    {
+      title:
+        "The ReserveBlock Protocol Has Achieved Mainnet Beta With Over 2,300 Validators",
+      date: "07/21/22",
+      imageUrl: "/img/press/coinmarketcap.png",
+      url: "https://coinmarketcap.com/headlines/news/the-reserveblock-protocol-has-achieved-mainnet-beta-with-over-2300-validators-concurrently-with-a-web-wallet-release-providing-on-chain-tools-and-features-for-the-first-ever-p2p-auction-on-the-network/",
+    },
     {
       title:
         "MLB All-Star and NY Yankee Pitcher Nestor Cortes Releasing Personal NFT Collection On The ReserveBlock RBX Network",

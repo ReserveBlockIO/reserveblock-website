@@ -41,14 +41,29 @@ export const HomeNetworkSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="Mainnet Beta"
-                    buttonText="Activated"
+                    buttonText="Explorer API"
                     noIcon
-                    url="#"
-                    onClick={(_: any) => {}}
+                    url="https://data.rbx.network/docs"
+                    openExternal
                   />
                 </SectionContent>
               </VisibilityTransition>
             </div>
+
+            <div className="col-12 col-md-6">
+              <VisibilityTransition transitionDelay={500}>
+                <SectionContent mutedBg>
+                  <Download
+                    title="Block Explorer"
+                    buttonText="Launch Explorer"
+                    url="https://rbx.network/"
+                    noIcon
+                    openExternal={true}
+                  />
+                </SectionContent>
+              </VisibilityTransition>
+            </div>
+
             <div className="col-12 col-md-6">
               <VisibilityTransition transitionDelay={250}>
                 <SectionContent mutedBg>
@@ -62,19 +77,7 @@ export const HomeNetworkSection = () => {
                 </SectionContent>
               </VisibilityTransition>
             </div>
-            <div className="col-12 col-md-6">
-              <VisibilityTransition transitionDelay={500}>
-                <SectionContent mutedBg>
-                  <Download
-                    title="Explorer"
-                    buttonText="RBX Block Explorer"
-                    url="https://rbx.network/"
-                    noIcon
-                    openExternal={true}
-                  />
-                </SectionContent>
-              </VisibilityTransition>
-            </div>
+
             <div className="col-12 col-md-6">
               <VisibilityTransition transitionDelay={750}>
                 <SectionContent mutedBg>

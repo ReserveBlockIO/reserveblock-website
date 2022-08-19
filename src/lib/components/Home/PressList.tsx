@@ -23,7 +23,7 @@ const PressLink = styled.a`
 
 export const PressList = () => {
   const pressLogos: PressLogo[] = [
-  
+
 
     {
       url: "https://www.nasdaq.com/press-release/mlb-all-star-and-ny-yankee-pitcher-nestor-cortes-releasing-personal-nft-collection-on",
@@ -100,11 +100,11 @@ export const PressList = () => {
       name: "Coinspeaker",
       url: "https://www.coinspeaker.com/reserveblock-foundation-announces-rbx-network-masternode-release/",
     },
-    // {
-    //   image: "/img/press/cointelegraph.png",
-    //   name: "CoinTelegraph",
-    //   url: "https://cointelegraph.com/press-releases/reserveblock-announces-rbx-network-masternode-release-public-testnet",
-    // },
+    {
+      image: "/img/press/cointelegraph.png",
+      name: "CoinTelegraph",
+      url: "https://cointelegraph.com/press-releases/reserveblock-announces-rbx-network-masternode-release-public-testnet",
+    },
     {
       image: "/img/press/cryptobrief.png",
       name: "cryptobriefing",
@@ -125,11 +125,11 @@ export const PressList = () => {
       name: "dailycoin",
       url: "https://dailycoin.com/reserveblock-foundation-announces-the-rbx-network-masternode-release-presale-for-governance-consensus-and-block-rewards-in-conjunction-with-the-networks-public-testnet/",
     },
-    // {
-    //   image: "/img/press/zycrypto.png",
-    //   name: "zycrypto",
-    //   url: "https://zycrypto.com/reserveblock-foundation-to-release-its-rbx-network-masternodes-and-a-presale-in-the-coming-days/",
-    // },
+    {
+      image: "/img/press/zycrypto.png",
+      name: "zycrypto",
+      url: "https://zycrypto.com/reserveblock-foundation-to-release-its-rbx-network-masternodes-and-a-presale-in-the-coming-days/",
+    },
 
     {
       image: "/img/press/tdh.png",
@@ -141,9 +141,37 @@ export const PressList = () => {
       name: "blocktelegraph",
       url: "https://blocktelegraph.io/reserveblock-foundation-rbx-network-and-venture-miami-team-to-collaborate-on-miami-centric-nfts/",
     },
+    {
+      image: "/img/press/cryptosaurus.png",
+      name: "Cryptosaurus",
+      url: "https://cryptosaurus.tech/former-navy-seal-and-writer-willard-chesney-joins-cbs-seal-team-actor-justin-melnick-to-leverage-boot-campaign-on-the-reserveblock-rbx-network-to-release-nft-archive/",
+    },
   ];
 
   const pressItems: IPressCardProps[] = [
+    {
+      title:
+        "Former Navy SEAL and Author Willard Chesney to Release NFT Collection On The ReserveBlock RBX Network ",
+      date: "08/16/22",
+      imageUrl: "/img/press/blocktelegraph.png",
+      url: "https://blocktelegraph.io/?p=6419",
+    },
+    {
+      title:
+        "Former Navy SEAL and Author Willard Chesney to Release NFT Collection On The ReserveBlock RBX Network ",
+      date: "08/16/22",
+      imageUrl: "/img/press/tdh.png",
+      url: "https://dailyhodl.com/2022/08/16/former-navy-seal-and-author-willard-chesney-joins-cbs-seal-team-actor-justin-melnick-with-nft-collection-release-on-the-reserveblock-rbx-network-proceeds-to-benefit-the-boot-campaign/",
+    },
+    {
+      title:
+        "Former Navy SEAL and Author Willard Chesney to Release NFT Collection On The ReserveBlock RBX Network ",
+      date: "08/16/22",
+      imageUrl: "/img/press/cryptosaurus.png",
+      url: "https://cryptosaurus.tech/former-navy-seal-and-writer-willard-chesney-joins-cbs-seal-team-actor-justin-melnick-to-leverage-boot-campaign-on-the-reserveblock-rbx-network-to-release-nft-archive/",
+    },
+
+
     {
       title:
         "The ReserveBlock Protocol Has Achieved Mainnet Beta With Over 2,300 Validators",

@@ -149,6 +149,30 @@ export const PressList = () => {
   ];
 
   const pressItems: IPressCardProps[] = [
+
+    {
+      title:
+        "Jencarlos Canela to Launch Lifestyle NFT Series On The RBX Network",
+      date: "08/30/22",
+      imageUrl: "/img/press/seeking-alpha.png",
+      url: "https://seekingalpha.com/pr/18921416-singer-songwriter-and-actor-jencarlos-canela-to-launch-personal-and-professional-lifestyle",
+    },
+
+    {
+      title:
+        "Jencarlos Canela to Launch Lifestyle NFT Series On The RBX Network",
+      date: "08/30/22",
+      imageUrl: "/img/press/insider.png",
+      url: "https://markets.businessinsider.com/news/stocks/singer-songwriter-and-actor-jencarlos-canela-to-launch-personal-and-professional-lifestyle-nft-series-on-the-reserveblock-rbx-network-with-interactive-fan-voting-to-determine-release-direction-an-1031714041",
+    },
+
+    {
+      title:
+        "Jencarlos Canela to Launch Lifestyle NFT Series On The RBX Network",
+      date: "08/30/22",
+      imageUrl: "/img/press/tdh.png",
+      url: "https://dailyhodl.com/2022/08/30/singer-songwriter-and-actor-jencarlos-canela-to-launch-personal-and-professional-lifestyle-nft-series-on-the-reserveblock-rbx-network/",
+    },
     {
       title:
         "Former Navy SEAL and Author Willard Chesney to Release NFT Collection On The ReserveBlock RBX Network ",

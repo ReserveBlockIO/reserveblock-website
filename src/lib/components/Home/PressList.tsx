@@ -152,6 +152,28 @@ export const PressList = () => {
 
     {
       title:
+        "Canes Connection NIL Program for University of Miami To Integrate the RBX Network by Way of Masternode Pool and Interactive NFTs",
+      date: "09/14/22",
+      imageUrl: "/img/press/tdh.png",
+      url: "https://dailyhodl.com/2022/09/14/canes-connection-nil-program-for-university-of-miami-student-athletes-to-integrate-the-reserveblock-rbx-network-by-way-of-masternode-pool-and-interactive-nfts/",
+    },
+    {
+      title:
+        "Canes Connection NIL Program for University of Miami To Integrate the RBX Network by Way of Masternode Pool and Interactive NFTs",
+      date: "09/14/22",
+      imageUrl: "/img/press/bitcoin-insider.png",
+      url: "https://www.bitcoininsider.org/article/184594/canes-connection-nil-program-university-miami-student-athletes-integrate",
+    },
+    {
+      title:
+        "Canes Connection NIL Program for University of Miami To Integrate the RBX Network by Way of Masternode Pool and Interactive NFTs",
+      date: "09/14/22",
+      imageUrl: "/img/press/dailycoin.png",
+      url: "https://dailycoin.com/canes-connection-nil-program-for-university-of-miami-student-athletes-to-integrate-the-reserveblock-rbx-network-by-way-of-masternode-pool-and-interactive-nfts/",
+    },
+
+    {
+      title:
         "Jencarlos Canela to Launch Lifestyle NFT Series On The RBX Network",
       date: "08/30/22",
       imageUrl: "/img/press/seeking-alpha.png",

@@ -175,16 +175,16 @@ export const HeaderComponent = () => {
               ))}
               {isMobile()
                 ? secondaryNavItems.map((n) => (
-                    <NavItem className="nav-item">
-                      <Nav.Link
-                        className="nav-link active"
-                        aria-current="page"
-                        href={n.path}
-                      >
-                        {n.name}
-                      </Nav.Link>
-                    </NavItem>
-                  ))
+                  <NavItem className="nav-item">
+                    <Nav.Link
+                      className="nav-link active"
+                      aria-current="page"
+                      href={n.path}
+                    >
+                      {n.name}
+                    </Nav.Link>
+                  </NavItem>
+                ))
                 : null}
             </Nav>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-md-flex ">
@@ -242,7 +242,7 @@ export const HeaderComponent = () => {
             </div> */}
             {/* <span className="px-1"></span> */}
             <div className="py-2 pe-3" style={{ fontWeight: "bold" }}>
-              {HAS_LAUNCHED ? "Node Presale LIVE" : "Public Testnet Live"}
+              {HAS_LAUNCHED ? "Node Presale LIVE" : "Mainnet Beta Live"}
             </div>
             {/* <span className="px-2"></span>
             {HAS_LAUNCHED ? (

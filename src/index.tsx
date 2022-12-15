@@ -12,6 +12,13 @@ import "./lib/styles/styles.scss";
 import "masonry-layout";
 
 import SmoothScroll from "smooth-scroll";
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
+
+
+
 const isSafari =
   navigator.vendor.match(/apple/i) &&
   !navigator.userAgent.match(/crios/i) &&
@@ -20,6 +27,22 @@ const isSafari =
 if (isSafari) {
   new SmoothScroll('a[href*="#"]');
 }
+
+ i18n
+ .use(initReactI18next)
+.use(LanguageDetector)
+.use(HttpApi)
+.init({
+  debug: true,
+  detection:{
+    order: ['htmlTag', 'cookie', 'localStorage', 'path', 'subdomain'],
+  },
+  backend:{
+    loadPath:'/locales/{{lng}}/translation.json'
+  },
+  react:{useSuspense:false},
+  fallbackLng:'en'
+});
 
 ReactDOM.render(
   <Provider store={store}>

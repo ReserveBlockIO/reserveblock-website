@@ -1,7 +1,8 @@
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faGlobe, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import i18next from "i18next";
 import { useEffect, useState } from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Dropdown, Nav, Navbar } from "react-bootstrap";
 import NavbarToggle from "react-bootstrap/esm/NavbarToggle";
 import styled from "styled-components";
 import {
@@ -14,6 +15,7 @@ import { isIpadPro, isMobile } from "../utils";
 import { AddToCalendarButton } from "./common/AddToCalendarButton";
 import { SocialLinks } from "./common/SocialLinks";
 import { VisibilityTransition } from "./common/VisibilityTransition";
+
 
 const Header = styled.header`
   nav {
@@ -128,6 +130,7 @@ export const HeaderComponent = () => {
   const [offset, setOffset] = useState(0);
   const [nodeSaleDismissed, setNodeSaleDismissed] = useState(false);
   const visibilityThreshold = 300;
+ 
 
   const HAS_LAUNCHED = false;
 
@@ -137,7 +140,17 @@ export const HeaderComponent = () => {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+  const languages = [
+    {
+      code: 'es',
+      name: 'Spanish',
+    },
+    {
+      code: 'en',
+      name: 'English',
+    },
 
+  ]
   return (
     <Header>
       <Navbar
@@ -188,6 +201,24 @@ export const HeaderComponent = () => {
                 : null}
             </Nav>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-none d-md-flex ">
+            <SocialNavItem>
+                    <Dropdown>
+                    <Dropdown.Toggle
+                      id="dropdown"
+                      title="Language"
+                      className="btn btn-dark w-100">
+                        <FontAwesomeIcon icon={faGlobe}></FontAwesomeIcon>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                      {languages.map(({code,name})=>(
+                        <Dropdown.Item onClick={() => i18next.changeLanguage(code)}>
+                            <span>{name}</span>
+                        </Dropdown.Item>
+                      ))}
+                    </Dropdown.Menu>
+                    </Dropdown>
+
+                </SocialNavItem>
               {socialNavItems.map((s) => (
                 <SocialNavItem>
                   <a

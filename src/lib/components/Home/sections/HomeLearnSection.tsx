@@ -19,11 +19,11 @@ import { PositionedAsset } from "../../common/PositionedAsset";
 import { RbxFactsComponent } from "../../common/RbxFactsComponent";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
+import {useTranslation} from 'react-i18next';
 
 export const HomeLearnSection = () => {
   const [factsRevealed, setFactsRevealed] = useState(false);
   const [foundationRevealed, setFoundationRevealed] = useState(false);
-
   const toggleFacts = () => {
     setFoundationRevealed(false);
     if (factsRevealed) {
@@ -32,6 +32,7 @@ export const HomeLearnSection = () => {
       setFactsRevealed(true);
     }
   };
+  const { t } = useTranslation();
 
   const toggleFoundation = () => {
     setFactsRevealed(false);
@@ -56,8 +57,8 @@ export const HomeLearnSection = () => {
         </VisibilityTransition>
         <div className="container">
           <SectionHeaderComponent
-            title="Learn"
-            subtitle="Evolving the Future Today"
+            title={t('home.learn.section.title')}
+            subtitle={t('home.learn.section.subtitle')}
             transitionDuration={500}
             transitionDirection="left"
           />

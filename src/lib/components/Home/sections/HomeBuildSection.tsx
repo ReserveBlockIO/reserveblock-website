@@ -92,7 +92,7 @@ export const HomeBuildSection = () => {
                 title="Config Docs"
                 buttonText="Launch"
                 noIcon
-                url={require("../../../../pdfs/RBXConfig.pdf")}
+                url={"https://github.com/ReserveBlockIO/ReserveBlock-Core/blob/main/ConfigSetup.md"}
                 openExternal
                 horizontalPadding={64}
               />

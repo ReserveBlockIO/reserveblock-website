@@ -182,7 +182,7 @@ export const footerNavItems: IFooterNavItem[] = [
       },
       {
         name: "Contact",
-        path: "mailto:hello@reserveblock.io",
+        path: "mailto:dev@reserveblock.io",
       },
     ],
   },

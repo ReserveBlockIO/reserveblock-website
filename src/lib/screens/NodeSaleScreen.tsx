@@ -213,7 +213,7 @@ export function NodeSaleScreen() {
               <TipComponent subtle>
                 <span>
                   Not sure what your RBX Address is?{" "}
-                  <a href="mailto:hello@reserveblock.io" className="text-light">
+                  <a href="mailto:dev@reserveblock.io" className="text-light">
                     Contact Support
                   </a>{" "}
                   or connect with us on{" "}
@@ -256,7 +256,7 @@ export function NodeSaleScreen() {
               <TipComponent subtle>
                 <span>
                   Need help?{" "}
-                  <a href="mailto:hello@reserveblock.io" className="text-light">
+                  <a href="mailto:dev@reserveblock.io" className="text-light">
                     Contact Support
                   </a>{" "}
                   or connect with us on{" "}
@@ -433,9 +433,8 @@ export function NodeSaleScreen() {
                         return (
                           <button
                             key={c}
-                            className={`nav-link ${
-                              calcType === c ? "active" : "text-light"
-                            }`}
+                            className={`nav-link ${calcType === c ? "active" : "text-light"
+                              }`}
                             onClick={() => {
                               setCalcType(c);
                               setPriceDetail(null);
@@ -495,11 +494,10 @@ export function NodeSaleScreen() {
                                 <button
                                   key={c}
                                   type="button"
-                                  className={`btn btn-lg ${
-                                    currencyType === c
-                                      ? "btn-light"
-                                      : "btn-outline-light"
-                                  }`}
+                                  className={`btn btn-lg ${currencyType === c
+                                    ? "btn-light"
+                                    : "btn-outline-light"
+                                    }`}
                                   onClick={() => setCurrencyType(c)}
                                 >
                                   {currencyToString(c)}

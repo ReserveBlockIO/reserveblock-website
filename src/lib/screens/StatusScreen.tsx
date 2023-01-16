@@ -90,7 +90,7 @@ export const StatusScreen = () => {
             <TipComponent subtle>
               <span>
                 Having a question?&nbsp;
-                <a href="mailto:hello@reserveblock.io" className="text-light">
+                <a href="mailto:dev@reserveblock.io" className="text-light">
                   Contact Support
                 </a>{" "}
                 or connect with us on{" "}

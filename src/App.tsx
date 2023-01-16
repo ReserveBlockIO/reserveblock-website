@@ -8,8 +8,6 @@ import { DisclaimerScreen } from "./lib/screens/DisclaimerScreen";
 import { FaqScreen } from "./lib/screens/FaqScreen";
 import { HalvingScheduleScreen } from "./lib/screens/HalvingScheduleScreen";
 import { HomeScreen } from "./lib/screens/HomeScreen";
-import { NodeSaleScreen } from "./lib/screens/NodeSaleScreen";
-import { StatusScreen } from "./lib/screens/StatusScreen";
 import { WalletInstructionsScreen } from "./lib/screens/WalletInstructionsScreen";
 
 const Vingette = styled.div`
@@ -39,8 +37,6 @@ function App() {
           path="/wallet-instructions"
           element={<WalletInstructionsScreen />}
         />
-        <Route path="/nodes" element={<NodeSaleScreen />} />
-        <Route path="/nodes/status/:id" element={<StatusScreen />} />
       </Routes>
 
       <FooterComponent />

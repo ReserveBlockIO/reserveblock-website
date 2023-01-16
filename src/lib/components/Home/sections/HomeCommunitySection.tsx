@@ -64,6 +64,19 @@ export const HomeCommunitySection = () => {
                 transitionDelay={500}
               >
                 <ConnectOptionComponent
+                  title="Devs"
+                  icon={faEnvelope}
+                  href="mailto:dev@reserveblock.io"
+                  ctaText="Contact"
+                  description="dev@reserveblock.io"
+                />
+              </VisibilityTransition>
+              <VisibilityTransition
+                transitionType="slide"
+                transitionDirection="left"
+                transitionDelay={500}
+              >
+                <ConnectOptionComponent
                   title="Telegram"
                   icon={faTelegram}
                   href="https://t.me/reserveblock"

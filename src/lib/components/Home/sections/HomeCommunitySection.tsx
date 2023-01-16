@@ -1,6 +1,7 @@
 import {
   faDiscord,
   faGithub,
+  faTelegram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -63,11 +64,11 @@ export const HomeCommunitySection = () => {
                 transitionDelay={500}
               >
                 <ConnectOptionComponent
-                  title="Email"
-                  icon={faEnvelope}
-                  href="mailto:hello@reserveblock.io"
+                  title="Telegram"
+                  icon={faTelegram}
+                  href="https://t.me/reserveblock"
                   ctaText="Contact"
-                  description="hello@reserveblock.io"
+                  description="@reserveblock"
                 />
               </VisibilityTransition>
               <VisibilityTransition

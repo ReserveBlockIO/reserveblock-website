@@ -2,7 +2,7 @@ import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import {
   faDiscord,
   faGithub,
-  faInstagram,
+  faTelegram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -77,6 +77,7 @@ export const secondaryNavItems: INavItem[] = [
 export const SocialUrls = {
   twitter: "https://twitter.com/ReserveBlockIO",
   instagram: "https://www.instagram.com/reserveblockio/",
+  telegram: "https://t.me/reserveblock",
   discord: "https://discord.com/invite/PnS2HRETDh",
   github: "https://github.com/ReserveBlockIO",
 };
@@ -87,11 +88,7 @@ export const socialNavItems: ISocialNavItem[] = [
     icon: faTwitter,
     name: "Twitter",
   },
-  {
-    url: SocialUrls.instagram,
-    icon: faInstagram,
-    name: "Instagram",
-  },
+
   {
     url: SocialUrls.discord,
     icon: faDiscord,
@@ -101,6 +98,11 @@ export const socialNavItems: ISocialNavItem[] = [
     url: SocialUrls.github,
     icon: faGithub,
     name: "Github",
+  },
+  {
+    url: SocialUrls.telegram,
+    icon: faTelegram,
+    name: "Telegram",
   },
 ];
 

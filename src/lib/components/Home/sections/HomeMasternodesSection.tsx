@@ -102,8 +102,8 @@ export const HomeMasterNodesSection = () => {
             </SectionContent> */}
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-md-6">
+          <div className="row ">
+            {/* <div className="col-12 col-md-6">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -119,7 +119,7 @@ export const HomeMasterNodesSection = () => {
                   />
                 </SectionContent>
               </VisibilityTransition>
-            </div>
+            </div> */}
             <div className="col-12 col-md-6">
               <VisibilityTransition
                 transitionType="slide"
@@ -131,6 +131,7 @@ export const HomeMasterNodesSection = () => {
                     title="Block Rewards &amp; Halving"
                     url="/halving-schedule"
                     icon={faLink}
+                    buttonText="View Schedule"
                     // horizontalPadding={contentPadding}
                     altGlow
                   />
@@ -156,7 +157,7 @@ export const HomeMasterNodesSection = () => {
                 </SectionContent>
               </VisibilityTransition>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 offset-0 offset-md-3">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -167,6 +168,8 @@ export const HomeMasterNodesSection = () => {
                     title="Masternode FAQs"
                     url="/faq#masternodes"
                     openExternal
+                    buttonText="Read FAQs"
+
                     icon={faLink}
                     // horizontalPadding={contentPadding}
                     altGlow

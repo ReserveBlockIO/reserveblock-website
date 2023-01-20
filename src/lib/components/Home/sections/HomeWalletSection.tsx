@@ -114,6 +114,8 @@ export const HomeWalletSection = () => {
                   <a
                     className="btn btn-light w-100 mt-1"
                     href={githubFiles.cli.url}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     CLI
                     <br />
@@ -163,7 +165,7 @@ export const HomeWalletSection = () => {
                   noIcon
                   noCaps
                   url={"#"}
-                  onClick={(_: any) => {}}
+                  onClick={(_: any) => { }}
                 />
               </VisibilityTransition>
             </div>
@@ -179,7 +181,7 @@ export const HomeWalletSection = () => {
                   noIcon
                   noCaps
                   url={"#"}
-                  onClick={(_: any) => {}}
+                  onClick={(_: any) => { }}
                 />
               </VisibilityTransition>
             </div>

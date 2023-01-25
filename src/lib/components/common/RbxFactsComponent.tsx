@@ -1,82 +1,19 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getCirculation } from "../../service";
 import {
   SectionContent,
   SectionHeading3,
   SectionHeading4,
 } from "../../styles/styled";
 import { ThemeColors } from "../../theme";
+import { formatNumber } from '../../formatting';
 
 interface IItem {
   label: string;
   value: string;
 }
 
-const items: IItem[] = [
-  {
-    label: "Proof of Assurance (PoA)",
-    value:
-      "Hybrid Liquid Proof of Stake & Proof of Capacity",
-  },
-  {
-    label: "Programing Language",
-    value: "C#, Trillium (SEN Self-Executing NFT Architecture Program)",
-  },
-  {
-    label: "Interoperability",
-    value: "Yes",
-  },
-  {
-    label: "Scalability",
-    value: "High",
-  },
-  {
-    label: "Transactions Per Second",
-    value: "500 plus (base estimate)",
-  },
-
-  {
-    label: "Transaction Latency",
-    value: "1-20 seconds",
-  },
-  {
-    label: "Transaction Fee (AVG)",
-    value:
-      ".00001 per KB",
-  },
-  {
-    label: "Transaction Finality",
-    value: "25 seconds average",
-  },
-  {
-    label: "Transaction Governance",
-    value: "Masternode Assurance",
-  },
-  {
-    label: "Governance Supervision",
-    value: "Validators",
-  },
-  {
-    label: "Number of Validators",
-    value: "5516",
-  },
-
-  {
-    label: "Circulating Supply",
-    value: "97,411,744.99372743 RBX",
-  },
-  {
-    label: "Lifetime Supply",
-    value: "371,999,952.89372855 RBX",
-  },
-  {
-    label: "RBX Fees Burned",
-    value: "47.10627143554687  RBX",
-  },
-  {
-    label: "Blockchain Size",
-    value: "1.01GB as of 1/24/23",
-  },
-];
 
 const Item = styled.div`
   min-height: 90px;
@@ -104,6 +41,114 @@ const Item = styled.div`
 `;
 
 export const RbxFactsComponent = () => {
+
+  const [circulatingSupply, setCirculatingSupply] = useState<string>('...');
+  const [lifetimeSupply, setLifetimeSupply] = useState<string>('...');
+  const [feesBurned, setFeesBurned] = useState<string>('...');
+
+  useEffect(() => {
+
+    const poll = () => {
+      getCirculation().then((data) => {
+        if (data) {
+          console.log(data);
+          if (data['balance']) {
+            const b = formatNumber(data['balance']);
+            setCirculatingSupply(b);
+          }
+
+          if (data['lifetime_supply']) {
+            const b = formatNumber(data['lifetime_supply']);
+            setLifetimeSupply(b);
+          }
+
+          if (data['fees_burned_sum']) {
+            const b = formatNumber(data['fees_burned_sum']);
+            setFeesBurned(b);
+          }
+        }
+      });
+    }
+
+    poll();
+
+
+    const interval = setInterval(() => {
+      poll();
+    }, 5000);
+
+    return () => clearInterval(interval);
+
+  }, []);
+
+
+  const items: IItem[] = [
+    {
+      label: "Proof of Assurance (PoA)",
+      value:
+        "Hybrid Liquid Proof of Stake & Proof of Capacity",
+    },
+    {
+      label: "Programing Language",
+      value: "C#, Trillium (SEN Self-Executing NFT Architecture Program)",
+    },
+    {
+      label: "Interoperability",
+      value: "Yes",
+    },
+    {
+      label: "Scalability",
+      value: "High",
+    },
+    {
+      label: "Transactions Per Second",
+      value: "500 plus (base estimate)",
+    },
+
+    {
+      label: "Transaction Latency",
+      value: "1-20 seconds",
+    },
+    {
+      label: "Transaction Fee (AVG)",
+      value:
+        ".00001 per KB",
+    },
+    {
+      label: "Transaction Finality",
+      value: "25 seconds average",
+    },
+    {
+      label: "Transaction Governance",
+      value: "Masternode Assurance",
+    },
+    {
+      label: "Governance Supervision",
+      value: "Validators",
+    },
+    {
+      label: "Number of Validators",
+      value: "5516",
+    },
+
+    {
+      label: "Circulating Supply",
+      value: `${circulatingSupply} RBX`,
+    },
+    {
+      label: "Lifetime Supply",
+      value: `${lifetimeSupply} RBX`,
+    },
+    {
+      label: "RBX Fees Burned",
+      value: `${feesBurned} RBX`,
+    },
+    {
+      label: "Blockchain Size",
+      value: "1.01GB as of 1/24/23",
+    },
+  ];
+
   return (
     <div>
       <SectionHeading4>RBX Facts</SectionHeading4>

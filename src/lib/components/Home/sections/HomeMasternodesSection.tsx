@@ -68,23 +68,11 @@ export const HomeMasterNodesSection = () => {
               <VisibilityTransition>
                 <SectionContent>
                   <p className="">
-                    Validate and earn randomized block rewards like a miner without
-                    the high burden or expense of rigs & excess energy while
-                    providing governance over the network! Any user can become a
-                    validator, with the minimum RBX requirements simply through
-                    the core wallet, and decide to be a Masternode at will.
-                    In other words, YOU decide when to participate or not period!
+                    Validate and earn randomized block rewards like a miner without the high burden or expense of rigs and excess energy while providing governance over the network! Any user can become a validator, with the minimum RBX requirements and decide to be a Masternode at will. In other words, YOU decide when to participate or not, period!
                   </p>
 
                   <p className="mb-0">
-                    Masternodes simply have the RBX and the minimum requirements.
-                    Using their local device, such as a laptop with a unique IP
-                    address, and an RBX native core wallet, they
-                    earn rewards randomly and
-                    maintaining governance. Each user is free to participate
-                    without holding periods, fees or penalties. In other words,
-                    supporting and growing the network at your own free will all
-                    while maintaining carbon neutrality, truly democratizing!
+                    Masternodes just use their local device, such as a laptop with a unique IP address and a non-custodial RBX native core wallet, and start validating, it’s that simple. Each user is free to participate without holding periods, fees or penalties. In other words, supporting and growing the network at your own free will, all while maintaining carbon neutrality, truly democratizing!
                   </p>
                 </SectionContent>
               </VisibilityTransition>

@@ -8,15 +8,33 @@ import { isMobile } from "../utils";
 
 
 const Container = styled.div`
-    min-width: 590px;
-    min-height: 340px;
+    width: 900px;
+    /* min-height: 340px; */
+
+    
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    ${isMobile() ? `transform: scale(0.75); width: 100%; min-height: 280px;` : ``};
     
+    a {
+        color: #84e9fd;
+        text-decoration: none;
+        transition: color .4s; 
+        &:hover{
+            color: #fff;
+        }
+    }
+    
+    font-size: 16px;
+    
+    span {
+        color: rgba(255,255,255,.2);
+        font-weight: bold;
+    }
+    
+    ${isMobile() ? `width: 300px; font-size: 12px;` : ``};
 `;
 
 
@@ -45,42 +63,45 @@ export const SpyGlass = () => {
     }, [])
 
     return <div className=" my-4 py-2 px-3 rounded" style={{ backgroundColor: 'rgba(0,0,0,.5)', boxShadow: "0 0 3px 2px rgba(255,255,255,.15)" }}>
-        <div className="h5" style={{ fontWeight: 500, paddingTop: 8, letterSpacing: 2, }}>Network Spyglass</div>
+        <div className="h5" style={{ fontWeight: 500, paddingTop: 8, letterSpacing: 2, marginBottom: 0, }}>Network Spyglass</div>
+        <div className="text-muted"><small>{block ? block.timestampLabel : ' '}</small></div>
+        <hr style={{ height: 1, color: 'rgba(255,255,255,.4)', marginTop: 2, marginBottom: 2, }} />
+
         <Container>
 
             {block ? (
 
-                <div>
+                <div style={{ width: '100%' }}>
 
-                    <div className="d-flex justify-content-between">
-                        <div>Block {block.height}</div>
-                        <div>{block.timestampLabel}</div>
-                    </div>
-
-                    <div className="pt-2">
-                        <LineItem title="Hash" value={block.hash} fullWidth href={"https://rbx.network/block/" + block.height}></LineItem>
-                    </div>
-
-                    <div className="d-flex justify-content-between">
-                        <LineItem title="Craft Time" value={`${block.craftTime / 1000} seconds`}></LineItem>
-                        <LineItem title="Size" value={block.sizeLabel}></LineItem>
-                    </div>
-                    <div className="d-flex justify-content-between">
-                        <LineItem title="# of Txs" value={block.transactions.length.toString()}></LineItem>
-
-                        <div className="pt-2" style={{ width: '50%' }}>
-                            <div className="text-light"><small><u>Txs</u></small></div>
-                            {block.transactions.map((t, i) => <a key={t.hash} style={{ fontSize: '12px', lineHeight: "10px", textDecoration: "none", color: "#84e9fd" }} href={"https://rbx.network/transaction/" + t.hash} target="_blank" rel="noreferrer">{" "}View Tx {i + 1}{" "}</a>)}
+                    <div className="row text-start">
+                        <div className="col-12 col-md-2 py-1">
+                            Block: <a href={`https://rbx.network/block/${block.height}`} target="_blank" rel="noreferrer">{block.height}</a>
                         </div>
-                    </div>
-                    <div className="d-flex justify-content-between">
-                        <LineItem title="Total Amount" value={`${block.totalAmount} RBX`}></LineItem>
-                        <LineItem title="Total Reward" value={`${block.totalReward} RBX`}></LineItem>
+                        <div className="d-none d-md-block col-12 col-md-10 py-1">
+                            Hash: <a href={`https://rbx.network/block/${block.height}`} target="_blank" rel="noreferrer">{block.hash}</a>
+                        </div>
 
-                    </div>
+                        <div className="col-12 col-md-5 py-1">
+                            Craft Time: {block.craftTime / 1000} seconds <span>|</span> Size: {block.sizeLabel}
+                        </div>
 
-                    <div className="d-flex justify-content-between">
-                        <LineItem title="Validated By" value={block.validator} fullWidth href={'https://rbx.network/validators/' + block.validator}></LineItem>
+                        <div className="d-none d-md-block col-12  col-md-7 py-1">
+                            # of Txs: {block.transactions.length} <span>|</span>  Total Amount: {block.totalAmount} RBX <span>|</span> Total Reward: {block.totalReward} RBX
+                        </div>
+
+                        <div className="d-block d-md-none col-12  col-md-7 py-1">
+                            # of Txs: {block.transactions.length} <span>|</span>  Total Amount: {block.totalAmount} RBX
+                        </div>
+
+                        <div className="col-12 col-md-6 py-1">
+                            Validated By: <a href={`https://rbx.network/validators/${block.validator}`} target="_blank" rel="noreferrer">{block.validator}</a>
+                        </div>
+
+                        <div className="col-12 col-md-6 py-1">
+                            Version: {block.version}
+                        </div>
+
+
                     </div>
                 </div>
 

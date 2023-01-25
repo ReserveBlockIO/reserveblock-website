@@ -104,7 +104,7 @@ export const HomeIntroSection = () => {
 
 
       <div>
-        <div style={{ height: 10 }} />
+        <div style={{ height: 64 }} />
 
         <div className="d-flex justify-content-center align-items-center">
 
@@ -115,7 +115,7 @@ export const HomeIntroSection = () => {
         </div>
 
 
-        <div style={{ height: 10 }} />
+        <div style={{ height: 16 }} />
         <IntroTextContainer>
 
           <VisibilityTransition
@@ -131,6 +131,7 @@ export const HomeIntroSection = () => {
             </h2>
           </VisibilityTransition>
           {/* <div className="py-4 d-none d-md-block"></div> */}
+          <div style={{ height: 16 }} />
 
           <h3>
             <VisibilityTransition
@@ -160,7 +161,7 @@ export const HomeIntroSection = () => {
 
           </h3>
 
-          <div style={{ height: 10 }}></div>
+          <div style={{ height: isMobile() ? 50 : 150 }}></div>
           <div className="d-flex justify-content-center">
             <VisibilityTransition
               transitionType="slide"

@@ -44,13 +44,13 @@ export const RbxFactsComponent = () => {
   const [circulatingSupply, setCirculatingSupply] = useState<string>('...');
   const [lifetimeSupply, setLifetimeSupply] = useState<string>('...');
   const [feesBurned, setFeesBurned] = useState<string>('...');
+  const [validatorCount, setValidatorCount] = useState<string>('...');
 
   useEffect(() => {
 
     const poll = () => {
       getCirculation().then((data) => {
         if (data) {
-          console.log(data);
           if (data['balance']) {
             const b = formatNumber(data['balance']);
             setCirculatingSupply(b);
@@ -65,6 +65,12 @@ export const RbxFactsComponent = () => {
             const b = formatNumber(data['fees_burned_sum']);
             setFeesBurned(b);
           }
+          if (data['fees_burned_sum']) {
+            const b = formatNumber(data['active_master_nodes']);
+            setValidatorCount(b);
+          }
+
+
         }
       });
     }
@@ -74,7 +80,7 @@ export const RbxFactsComponent = () => {
 
     const interval = setInterval(() => {
       poll();
-    }, 5000);
+    }, 30000);
 
     return () => clearInterval(interval);
 
@@ -126,7 +132,7 @@ export const RbxFactsComponent = () => {
     },
     {
       label: "Number of Validators",
-      value: "5516",
+      value: validatorCount,
     },
 
     {

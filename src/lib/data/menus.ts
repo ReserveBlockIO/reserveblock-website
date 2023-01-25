@@ -46,8 +46,8 @@ export const primaryNavItems: INavItem[] = [
     path: "/#community",
   },
   {
-    name: "Press",
-    path: "/#press",
+    name: "Wiki",
+    path: "https://wiki.rbx.network",
   },
 ];
 

@@ -45,7 +45,7 @@ export const SpyGlass = () => {
     }, [])
 
     return <div className=" my-4 py-2 px-3 rounded" style={{ backgroundColor: 'rgba(0,0,0,.5)', boxShadow: "0 0 3px 2px rgba(255,255,255,.15)" }}>
-        <div className="h5" style={{ fontWeight: 500, paddingTop: 8, letterSpacing: 2, }}>Spyglass</div>
+        <div className="h5" style={{ fontWeight: 500, paddingTop: 8, letterSpacing: 2, }}>Network Spyglass</div>
         <Container>
 
             {block ? (

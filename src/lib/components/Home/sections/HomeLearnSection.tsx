@@ -134,8 +134,8 @@ export const HomeLearnSection = () => {
                 transitionDelay={750}
               >
                 <Download
-                  title="The Foundation"
-                  description="Brought to YOU By"
+                  title="Brought to YOU By"
+                  description="From Enthusiasts to Everyone"
                   onClick={toggleFoundation}
                   icon={foundationRevealed ? faChevronUp : faChevronDown}
                 // horizontalPadding={32}

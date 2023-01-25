@@ -57,6 +57,11 @@ const LogoContainer = styled.div`
 
   display: flex;
 
+  margin-left: -182px;
+
+  ${isMobile() ? `margin-left: -87px;` : ``}
+
+
   .rbx-cube {
     position: relative;
     top: -15px;
@@ -68,7 +73,7 @@ const LogoContainer = styled.div`
     background-size: contain;
     background-repeat: no-repeat;
 
-    ${isMobile() ? `width: 75px; height: 75px;` : ``}
+    ${isMobile() ? `width: 75px; height: 75px; top: -7px` : ``}
   }
   
   .rbx-wordmark {

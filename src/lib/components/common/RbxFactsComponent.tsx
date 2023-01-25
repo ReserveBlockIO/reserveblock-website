@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { getCirculation } from "../../service";
 import {
   SectionContent,
-  SectionHeading3,
   SectionHeading4,
 } from "../../styles/styled";
 import { ThemeColors } from "../../theme";
@@ -84,9 +83,9 @@ export const RbxFactsComponent = () => {
 
   const items: IItem[] = [
     {
-      label: "Proof of Assurance (PoA)",
+      label: "Consensus",
       value:
-        "Hybrid Liquid Proof of Stake & Proof of Capacity",
+        "Proof of Assurance (PoA)",
     },
     {
       label: "Programing Language",
@@ -102,9 +101,8 @@ export const RbxFactsComponent = () => {
     },
     {
       label: "Transactions Per Second",
-      value: "500 plus (base estimate)",
+      value: "25,000-30,000 per second minimum",
     },
-
     {
       label: "Transaction Latency",
       value: "1-20 seconds",

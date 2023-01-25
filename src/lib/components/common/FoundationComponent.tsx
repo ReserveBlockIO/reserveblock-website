@@ -4,7 +4,7 @@ import { SectionContent, SectionHeading4 } from "../../styles/styled";
 export const FoundationComponent = () => {
   return (
     <div>
-      <SectionHeading4>About the ReserveBlock Foundation</SectionHeading4>
+      <SectionHeading4>About the ReserveBlock Builders</SectionHeading4>
       <SectionContent>
         <p>
           The RBX network has been created and developed as the result of a

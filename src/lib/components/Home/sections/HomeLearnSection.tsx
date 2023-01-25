@@ -19,10 +19,13 @@ import { PositionedAsset } from "../../common/PositionedAsset";
 import { RbxFactsComponent } from "../../common/RbxFactsComponent";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
+import { WIKI_BASE_URL } from "../../../constants";
+import FactsModal from "../../FactsModal";
 
 export const HomeLearnSection = () => {
   const [factsRevealed, setFactsRevealed] = useState(false);
   const [foundationRevealed, setFoundationRevealed] = useState(false);
+
 
   const toggleFacts = () => {
     setFoundationRevealed(false);
@@ -74,29 +77,18 @@ export const HomeLearnSection = () => {
                 </div>
                 <div className="col-12 col-md-10">
                   <p>
-                    The RBX platform is a next generation blockchain built to
-                    operate completely decentralized and autonomous for anyone &
-                    everyone, with a finite purpose, to help evolve utility,
-                    use-cases, and ownership for any type of NFT.
+                    The RBX platform was built with a simple philosophy and finite purpose in mind; to empower everyone with true self-sovereignty and self-custody through a native core-wallet with simple on-chain tools and features to enable validating like a miner, and to be able to tokenize digital and physical assets through Self-Executing NFTs (SENs) without any technical expertise or without any third-party needed, completely peer-to-peer.
                   </p>
-                  <p className="mb-0">
-                    A first of its kind Self Executing NFT Architecture Program
-                    (SEN), now unlocks an extensive scalable suite of on-chain
-                    features that allow users to customize and control how each
-                    NFT evolves across any digital or physical asset class.
-                  </p>
+
                 </div>
               </div>
               <div className="row mt-4">
                 <div className="col">
                   <p className="">
-                    In other words, programmable smart contracts within each NFT
-                    now empowers each creator the ability to truly transact or
-                    transfer peer to peer, with highly dynamic features without
-                    friction and highly efficient, all through a core wallet
-                    that has yet to be experienced before! Bottom line, true
-                    utility & scalability for NFTs that YOU control, store, and
-                    own period.
+                    By adhering to Bitcoin principles and ethos, RBX removes current barriers and frictions, enabling simple individual adoption of blockchain technology while maintaining autonomy, true decentralization, and governance, with independence and freedom to participate and utilize tools and features completely at-will.
+                  </p>
+                  <p>
+                    So, what does this all really mean?  It means that YOU control what you do with the network and its tools, it means that YOU decide when or how, it means YOU can transact with anyone with or without third parties, it means that YOU own YOUR media / data, it means YOU have a vote, it is simply YOUR voice… the way it should be and the way it’s meant to be.
                   </p>
                 </div>
               </div>
@@ -113,10 +105,10 @@ export const HomeLearnSection = () => {
               >
                 <Download
                   title="FAQs"
-                  description="A Quick Guide to your NFT Journey"
-                  url={"/faq"}
+                  description="A Quick RBX Introduction and Guide"
+                  url={`${WIKI_BASE_URL}/docs/FAQs/general-faq`}
                   icon={faLink}
-                  // horizontalPadding={32}
+                // horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>
@@ -131,7 +123,7 @@ export const HomeLearnSection = () => {
                   description="Get the Details"
                   onClick={toggleFacts}
                   icon={factsRevealed ? faChevronUp : faChevronDown}
-                  // horizontalPadding={32}
+                // horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>
@@ -143,19 +135,19 @@ export const HomeLearnSection = () => {
               >
                 <Download
                   title="The Foundation"
-                  description="From Enthusiasts to Everyone"
+                  description="Brought to YOU By"
                   onClick={toggleFoundation}
                   icon={foundationRevealed ? faChevronUp : faChevronDown}
-                  // horizontalPadding={32}
+                // horizontalPadding={32}
                 />
               </VisibilityTransition>
             </div>
           </div>
-          {factsRevealed ? (
+          {/* {factsRevealed ? (
             <div className="py-2">
               <RbxFactsComponent />
             </div>
-          ) : null}
+          ) : null} */}
           {foundationRevealed ? (
             <div className="py-2">
               <FoundationComponent />
@@ -165,6 +157,9 @@ export const HomeLearnSection = () => {
       </div>
 
       <NextSectionButton sectionId="masternodes" />
+      <FactsModal visible={factsRevealed} onClose={() => {
+        setFactsRevealed(false)
+      }} />
     </Section>
   );
 };

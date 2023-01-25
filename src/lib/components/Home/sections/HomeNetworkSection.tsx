@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { WIKI_BASE_URL } from "../../../constants";
 import { Section, SectionContent } from "../../../styles/styled";
 import { NextSectionButton } from "../../common/NextSectionButton";
 import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
@@ -86,6 +87,35 @@ export const HomeNetworkSection = () => {
                     buttonText="Download CLI"
                     openExternal={true}
                     url="https://github.com/ReserveBlockIO/ReserveBlock-Core"
+                    noIcon
+                  />
+                </SectionContent>
+              </VisibilityTransition>
+            </div>
+
+            <div className="col-12 col-md-6">
+              <VisibilityTransition transitionDelay={750}>
+                <SectionContent mutedBg>
+                  <Download
+                    title="Adjudicators"
+                    buttonText="Learn More"
+                    openExternal={true}
+                    url={`${WIKI_BASE_URL}/docs/CLI/cli-adjudicators`}
+                    noIcon
+                  />
+                </SectionContent>
+              </VisibilityTransition>
+            </div>
+
+            <div className="col-12 col-md-6">
+              <VisibilityTransition transitionDelay={750}>
+                <SectionContent mutedBg>
+                  <Download
+                    title="Beacons"
+                    buttonText="Learn More"
+                    openExternal={true}
+                    url={`${WIKI_BASE_URL}/docs/CLI/cli-beacons`}
+
                     noIcon
                   />
                 </SectionContent>

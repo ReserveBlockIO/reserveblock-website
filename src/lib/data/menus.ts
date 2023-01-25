@@ -5,6 +5,7 @@ import {
   faTelegram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { WIKI_BASE_URL } from "../constants";
 
 interface INavItem {
   name: string;
@@ -47,7 +48,7 @@ export const primaryNavItems: INavItem[] = [
   },
   {
     name: "Wiki",
-    path: "https://wiki.rbx.network",
+    path: WIKI_BASE_URL,
   },
 ];
 
@@ -152,16 +153,20 @@ export const footerNavItems: IFooterNavItem[] = [
     items: [
       {
         name: "General",
-        path: "/faq#general",
+        path: `${WIKI_BASE_URL}/docs/FAQs/general-faq`,
+      },
+      {
+        name: "Core Wallet",
+        path: `${WIKI_BASE_URL}/docs/FAQs/core-wallet-faq`,
       },
       {
         name: "Masternodes",
-        path: "/faq#masternodes",
+        path: `${WIKI_BASE_URL}/docs/FAQs/masternode-faq`,
       },
-      {
-        name: "Datanodes",
-        path: "/faq#datanodes",
-      },
+      // {
+      //   name: "Datanodes",
+      //   path: "/faq#datanodes",
+      // },
       // {
       //   name: "Developer",
       //   path: "/faq#developer",

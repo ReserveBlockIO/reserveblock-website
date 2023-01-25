@@ -15,7 +15,7 @@ const items: string[][] = [
   ],
   [
     "Ability to create transactions (TX):",
-    "a. RXBX transaction – is the type of TX that is sending the RXBX internal cryptocurrency from one address to another.",
+    "a. RBX transaction – is the type of TX that is sending the RXBX internal cryptocurrency from one address to another.",
     "b. Ability to mint, trade and sell NFT through a TX",
   ],
   ["Ability to check users balance of RXBX."],
@@ -27,7 +27,7 @@ const items: string[][] = [
   ["Ability to code smart contracts."],
   ["Capabilities to create human readable addresses."],
   ["Blockchain querying capability. "],
-  ["Automated design generator."],
+  ["Ability to send media / data P2P"],
 ];
 
 const Item = styled.div`

@@ -13,9 +13,9 @@ interface IItem {
 
 const items: IItem[] = [
   {
-    label: "Consensus Mechanism",
+    label: "Proof of Assurance (PoA)",
     value:
-      "Proof of Assurance (Hybrid Liquid Proof of Stake & Proof of Capacity)",
+      "Hybrid Liquid Proof of Stake & Proof of Capacity",
   },
   {
     label: "Programing Language",
@@ -33,22 +33,19 @@ const items: IItem[] = [
     label: "Transactions Per Second",
     value: "500 plus (base estimate)",
   },
-  {
-    label: "Transaction Throughput",
-    value: "2,500 and up (base estimate)",
-  },
+
   {
     label: "Transaction Latency",
-    value: "20 s (processing block times every 20 sec)",
+    value: "1-20 seconds",
   },
   {
     label: "Transaction Fee (AVG)",
     value:
-      ".00001 (one-time data fee of .0000047 RXBX per KB if storing physical media is needed)",
+      ".00001 per KB",
   },
   {
     label: "Transaction Finality",
-    value: "25 s",
+    value: "25 seconds average",
   },
   {
     label: "Transaction Governance",
@@ -60,23 +57,24 @@ const items: IItem[] = [
   },
   {
     label: "Number of Validators",
-    value: "N/A",
+    value: "5516",
+  },
+
+  {
+    label: "Circulating Supply",
+    value: "97,411,744.99372743 RBX",
   },
   {
-    label: "(APY) Per Year",
-    value: "N/A",
+    label: "Lifetime Supply",
+    value: "371,999,952.89372855 RBX",
   },
   {
-    label: "Circulation",
-    value: "67,500,000",
-  },
-  {
-    label: "Max Supply",
-    value: "372,000,000",
+    label: "RBX Fees Burned",
+    value: "47.10627143554687  RBX",
   },
   {
     label: "Blockchain Size",
-    value: "N/A",
+    value: "1.01GB as of 1/24/23",
   },
 ];
 

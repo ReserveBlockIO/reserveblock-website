@@ -1,3 +1,4 @@
+import { SocialUrls } from "../../data/menus";
 import { SectionContent, SectionHeading4 } from "../../styles/styled";
 
 export const FoundationComponent = () => {
@@ -7,7 +8,7 @@ export const FoundationComponent = () => {
       <SectionContent>
         <p>
           The RBX network has been created and developed as the result of a
-          collective of founding sponsors, each with vast expertise in media,
+          collective of founding validators, each with vast expertise in media,
           entertainment, technology, sports, hospitality, banking and finance.
           Led by The Reserve Label, Texoware, and The Young Astronauts
           technology group (
@@ -19,15 +20,15 @@ export const FoundationComponent = () => {
           >
             thereservelabel.com
           </a>
-          ), as the initial founding & development sponsors, the foundation has
+          ), as the initial founding & development validators, the foundation has
           been completely self- funded and devoid of any centralized control
           whatsoever ensuring the most ideal decentralized NFT Layer 1
           ecosystem.
         </p>
         <p>
-          The founding sponsors have produced and created, through media and
+          The founding validators have produced and created, through media and
           technology solutions, a number of high-profile projects & platforms
-          across multiple mediums. Prior foundation sponsor projects include,
+          across multiple mediums. Prior foundation validators projects include,
           but are not limited to, large scale film, television & digital studio
           launches, technology solutions and brand campaigns for and in
           collaboration with{" "}
@@ -38,26 +39,24 @@ export const FoundationComponent = () => {
             Baseball, NFL, NBA, Amazon, Viacom, Universal, Sony, Intel and
             Google.
           </strong>{" "}
-          Additional founding sponsors have held previous positions at Amazon
+          Additional founding validators have held previous positions at Amazon
           and Citigroup, as well as various sports and media agencies.
         </p>
 
         <p>
-          The <strong>ReserveBlock Foundtion</strong> will release its updated
-          whitepaper prior to Mainnet launch. Requests for additional details
-          can be made directly through its community{" "}
+          The Founding Validators and Developers have now released ALL governance of the network to the Masternode community through on-chain voting in the core wallet upon exiting beta and ALL Validators now control all decisions and / or improvements independently of any third-party or authority. Requests and support can be made directly through the RBX community channels on{" "}
           <a
-            href="https://discord.gg/PnS2HRETDh"
+            href={SocialUrls.discord}
             className="text-light"
             target="_blank"
             rel="noreferrer"
           >
             Discord
           </a>{" "}
-          and / or its site at{" "}
-          <a href="https://reserveblock.io" className="text-light">
-            reserveblock.io
-          </a>
+          and{" "}
+          <a href={SocialUrls.telegram} className="text-light">
+            Telegram
+          </a>.
         </p>
       </SectionContent>
       {/* <div className="text-center">

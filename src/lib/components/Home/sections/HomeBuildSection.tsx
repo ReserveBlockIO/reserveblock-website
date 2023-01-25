@@ -17,6 +17,7 @@ import { PositionedAsset } from "../../common/PositionedAsset";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
 import styled from "styled-components";
+import { WIKI_BASE_URL } from "../../../constants";
 
 const Decor = styled.div`
   @keyframes buildBg {
@@ -75,8 +76,28 @@ export const HomeBuildSection = () => {
                 title="CLI & API Docs"
                 buttonText="Launch"
                 noIcon
-                url={require("../../../../pdfs/RBX_CLI_API.pdf")}
-                openExternal
+                url={`${WIKI_BASE_URL}/docs/CLI/`}
+
+                horizontalPadding={64}
+              />
+            </VisibilityTransition>
+          </div>
+
+
+
+          <div className="col-12 col-md-6 pb-4">
+            <VisibilityTransition
+              transitionType="slide"
+              transitionDirection="right"
+              transitionDelay={0}
+            >
+              <Download
+                title="Config Docs"
+                buttonText="Launch"
+                noIcon
+                url={`${WIKI_BASE_URL}/docs/CLI/`}
+
+
                 horizontalPadding={64}
               />
             </VisibilityTransition>
@@ -89,16 +110,16 @@ export const HomeBuildSection = () => {
               transitionDelay={0}
             >
               <Download
-                title="Config Docs"
+                title="Integration Docs"
                 buttonText="Launch"
                 noIcon
-                url={"https://github.com/ReserveBlockIO/ReserveBlock-Core/blob/main/ConfigSetup.md"}
-                openExternal
+                url={`${WIKI_BASE_URL}/docs/integration/`}
+
                 horizontalPadding={64}
               />
             </VisibilityTransition>
           </div>
-          <div className="py-4 d-none d-md-block"></div>
+
           <div className="col-12 col-md-6 pb-4">
             <VisibilityTransition
               transitionType="slide"
@@ -108,31 +129,15 @@ export const HomeBuildSection = () => {
               <Download
                 title="GitHub"
                 url={SocialUrls.github}
-                description="@ReserveBlockIO"
+                // description="@ReserveBlockIO"
                 icon={faGithub}
                 openExternal
                 horizontalPadding={64}
               />
             </VisibilityTransition>
           </div>
-          <div className="col-12 col-md-6 pb-4">
-            <VisibilityTransition
-              transitionType="slide"
-              transitionDirection="left"
-              transitionDelay={250}
-            >
-              <Download
-                title="RBX Discord Support"
-                description="Join our Discord"
-                url={SocialUrls.discord}
-                icon={faDiscord}
-                openExternal
-                horizontalPadding={64}
-              />
-            </VisibilityTransition>
-          </div>
+
         </div>
-        <div className="py-4 d-none d-md-block"></div>
 
         <div className="row justify-content-center">
           <div className="col-12 col-md-6 pb-4">

@@ -22,6 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { cliDownload, isMobile, isMobileOS } from "../../../utils";
 import { githubFiles } from "../../../../github-files";
+import { WIKI_BASE_URL } from "../../../constants";
 
 export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
@@ -60,7 +61,7 @@ export const HomeWalletSection = () => {
                   title="Get Started"
                   buttonText="Install and Operating Instructions"
                   openExternal
-                  url="/wallet-instructions"
+                  url={`${WIKI_BASE_URL}/docs/GUI/`}
                   icon={faLink}
                 />
               </VisibilityTransition>

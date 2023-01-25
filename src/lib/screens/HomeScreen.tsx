@@ -20,7 +20,6 @@ export const HomeScreen = () => {
 
       <HomeCommunitySection />
 
-      <HomePressSection />
     </div>
   );
 };

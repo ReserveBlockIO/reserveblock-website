@@ -67,8 +67,10 @@ export const SpyGlass = () => {
                     </div>
                     <div className="d-flex justify-content-between">
                         <LineItem title="# of Txs" value={block.transactions.length.toString()}></LineItem>
+
                         <div className="pt-2" style={{ width: '50%' }}>
-                            {block.transactions.map((t, i) => <a key={t.hash} style={{ fontSize: '12px', lineHeight: "10px", textDecoration: "none", color: "#84e9fd" }} href={"https://rbx.network//transaction/" + t.hash}>View Tx {i + 1}</a>)}
+                            <div className="text-light"><small><u>Txs</u></small></div>
+                            {block.transactions.map((t, i) => <a key={t.hash} style={{ fontSize: '12px', lineHeight: "10px", textDecoration: "none", color: "#84e9fd" }} href={"https://rbx.network/transaction/" + t.hash} target="_blank" rel="noreferrer">{" "}View Tx {i + 1}{" "}</a>)}
                         </div>
                     </div>
                     <div className="d-flex justify-content-between">
@@ -106,7 +108,7 @@ const LineItem = (props: LineItemProps) => {
         <div className="pt-2" style={{ width: fullWidth ? '100%' : '50%' }}><div className="text-light"><small><u>{title}</u></small></div>
 
             {href ? (<>
-                <a style={{ fontSize: '12px', lineHeight: "10px", wordBreak: 'break-all', textDecoration: "none", color: "#84e9fd" }} href={href}>{value}</a>
+                <a style={{ fontSize: '12px', lineHeight: "10px", wordBreak: 'break-all', textDecoration: "none", color: "#84e9fd" }} href={href} target="_blank" rel="noreferrer">{value}</a>
             </>) : (
                 <span style={{ fontSize: '12px', lineHeight: "10px", wordBreak: 'break-all', color: "#84e9fd" }}>{value}</span>
             )}

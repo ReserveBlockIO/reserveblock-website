@@ -36,13 +36,13 @@ export const Section = styled.section<ISection>`
 
   ${(props) =>
     props.dark
-      ? `background-color: rgba(0,0,0,.8); backdrop-filter: blur(2px);`
+      ? `background-color: rgba(0,0,0,.8); `
       : null};
 
   ${(props) =>
     props.light
       ? `
-        background-color: rgba(255,255,255,.8); backdrop-filter: blur(2px);`
+        background-color: rgba(255,255,255,.8); `
       : null};
 
   /* background-image: url(/img/grid.jpg); */
@@ -123,13 +123,13 @@ interface ISectionContent {
 
 export const SectionContent = styled.div<ISectionContent>`
   ${pulseKeyframes(
-    "pulse",
-    "rgba(126, 239, 255, 0.2)",
-    "rgba(126, 239, 255, 0.4)"
-  )};
+  "pulse",
+  "rgba(126, 239, 255, 0.2)",
+  "rgba(126, 239, 255, 0.4)"
+)};
 
   background-color: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(3px);
+  /* backdrop-filter: blur(3px); */
   padding: 24px;
   margin: 24px 0;
 
@@ -182,15 +182,15 @@ interface IButtonLink {
 
 export const ButtonLink = styled.a<IButtonLink>`
   ${pulseKeyframes(
-    "whitePulse",
-    "rgba(255, 255, 255, 0.2)",
-    "rgba(255, 255, 255, 0.3)"
-  )};
+  "whitePulse",
+  "rgba(255, 255, 255, 0.2)",
+  "rgba(255, 255, 255, 0.3)"
+)};
   ${pulseKeyframes(
-    "pulse",
-    "rgba(126, 239, 255, 0.2)",
-    "rgba(126, 239, 255, 0.3)"
-  )};
+  "pulse",
+  "rgba(126, 239, 255, 0.2)",
+  "rgba(126, 239, 255, 0.3)"
+)};
 
   ${(props) =>
     props.altGlow

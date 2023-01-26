@@ -23,6 +23,8 @@ import { NodeType } from "../NodeType";
 import { useState } from "react";
 import { WalletInstructions } from "../../WalletInstructions";
 import { WIKI_BASE_URL } from "../../../constants";
+import OverlayModal from "../../OverlayModal";
+import { HalvingScheduleComponent } from "../../common/HalvingScheduleComponent";
 
 const Waves = styled.div`
   width: 100%;
@@ -39,7 +41,7 @@ const Waves = styled.div`
 
 export const HomeMasterNodesSection = () => {
   const contentPadding = isMobile() || isIpadPro() ? 12 : 96;
-  const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
+  const [rewardsVisible, setRewardsVisible] = useState(false);
 
   return (
     <>
@@ -118,11 +120,14 @@ export const HomeMasterNodesSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="Block Rewards &amp; Halving"
-                    url="/halving-schedule"
+                    // url="/halving-schedule"
                     icon={faLink}
                     buttonText="View Schedule"
                     // horizontalPadding={contentPadding}
                     altGlow
+                    onClick={() => {
+                      setRewardsVisible(true);
+                    }}
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -167,6 +172,10 @@ export const HomeMasterNodesSection = () => {
           </div>
         </div>
         <NextSectionButton sectionId="wallet" />
+
+        <OverlayModal visible={rewardsVisible} onClose={() => { setRewardsVisible(false) }}>
+          <HalvingScheduleComponent />
+        </OverlayModal>
       </Section>
     </>
   );

@@ -21,6 +21,7 @@ interface IContainer {
 }
 
 const Container = styled.div<IContainer>`
+  transform: translate(0,0,0);
   transition: all ${(props) => props.duration}ms ease-out;
   transition-delay: ${(props) => props.delay}ms;
 
@@ -46,9 +47,9 @@ const Container = styled.div<IContainer>`
     }
   }
 
-  &.transition-blur {
+  /* &.transition-blur {
     filter: blur(50px);
-  }
+  } */
 
   &.visible {
     opacity: 1;
@@ -58,9 +59,9 @@ const Container = styled.div<IContainer>`
       transform: translate(0);
     }
 
-    &.transition-blur {
+    /* &.transition-blur {
       filter: blur(0);
-    }
+    } */
   }
 `;
 
@@ -73,9 +74,8 @@ export const VisibilityTransition = (props: Props) => {
   const assumeVisible = props.assumeVisible || false;
   const inline = props.inline || false;
 
-  let transitionClass = `transition-${transitionType} ${
-    transitionDirection ? `direction-${transitionDirection}` : ""
-  }`;
+  let transitionClass = `transition-${transitionType} ${transitionDirection ? `direction-${transitionDirection}` : ""
+    }`;
 
   const [isVisible, el] = useVisibility(offset);
 
@@ -95,9 +95,8 @@ export const VisibilityTransition = (props: Props) => {
       duration={duration}
       delay={transitionDelay}
       inline={inline}
-      className={`${transitionClass} ${
-        forceVisible || isVisible ? "visible" : ""
-      }`}
+      className={`${transitionClass} ${forceVisible || isVisible ? "visible" : ""
+        }`}
     >
       {props.children}
     </Container>

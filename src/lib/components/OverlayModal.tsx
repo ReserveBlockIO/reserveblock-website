@@ -47,8 +47,11 @@ const OverlayModal = (props: Props) => {
                 props.onClose();
             }}
         >
-            <div className="p-5">
-                {props.children}
+            <div style={{ height: '100vh', overflowY: 'scroll' }}>
+                <div style={{ height: 60 }} />
+                <div className="p-5">
+                    {props.children}
+                </div>
             </div>
         </Container>)
 }

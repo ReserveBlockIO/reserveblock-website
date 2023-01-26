@@ -4,7 +4,6 @@ import { HomeWalletSection } from "../components/Home/sections/HomeWalletSection
 import { HomeBuildSection } from "../components/Home/sections/HomeBuildSection";
 import { HomeNetworkSection } from "../components/Home/sections/HomeNetworkSection";
 import { HomeCommunitySection } from "../components/Home/sections/HomeCommunitySection";
-import { HomePressSection } from "../components/Home/sections/HomePressSection";
 import { HomeIntroSection } from "../components/Home/sections/HomeIntroSection";
 
 export const HomeScreen = () => {

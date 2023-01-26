@@ -41,15 +41,15 @@ export const primaryNavItems: INavItem[] = [
     name: "Build",
     path: "/#build",
   },
-
-  {
-    name: "Community",
-    path: "/#community",
-  },
   {
     name: "Wiki",
     path: WIKI_BASE_URL,
   },
+  {
+    name: "Community",
+    path: "/#community",
+  },
+
 ];
 
 export const secondaryNavItems: INavItem[] = [

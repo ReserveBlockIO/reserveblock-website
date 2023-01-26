@@ -12,6 +12,7 @@ import { NodePresaleCtaComponent } from "../../NodePresaleCtaComponent";
 import { isMobile } from "../../../utils";
 import { NodePresaleLiveCtaComponent } from "../../common/NodePresaleLiveCtaComponent";
 import SpyGlass from "../../SpyGlass";
+import { PositionedAsset } from "../../common/PositionedAsset";
 
 interface IIntroVideo {
   ref: React.Ref<HTMLVideoElement>;
@@ -179,6 +180,15 @@ export const HomeIntroSection = () => {
             </VisibilityTransition>
           </div>
         </IntroTextContainer>
+
+        <PositionedAsset
+          url="/img/decor/bg_02-tr.png"
+          alt="Globe"
+          top={0}
+          right={0}
+          width={600}
+          opacity={0.5}
+        />
       </div>
 
 

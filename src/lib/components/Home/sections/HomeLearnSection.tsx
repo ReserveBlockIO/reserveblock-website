@@ -20,7 +20,7 @@ import { RbxFactsComponent } from "../../common/RbxFactsComponent";
 import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { Download } from "../Download";
 import { WIKI_BASE_URL } from "../../../constants";
-import FactsModal from "../../FactsModal";
+import OverlayModal from "../../OverlayModal";
 
 export const HomeLearnSection = () => {
   const [factsRevealed, setFactsRevealed] = useState(false);
@@ -143,23 +143,21 @@ export const HomeLearnSection = () => {
               </VisibilityTransition>
             </div>
           </div>
-          {/* {factsRevealed ? (
-            <div className="py-2">
-              <RbxFactsComponent />
-            </div>
-          ) : null} */}
-          {foundationRevealed ? (
-            <div className="py-2">
-              <FoundationComponent />
-            </div>
-          ) : null}
+
         </div>
       </div>
 
       <NextSectionButton sectionId="masternodes" />
-      <FactsModal visible={factsRevealed} onClose={() => {
+      <OverlayModal visible={factsRevealed} onClose={() => {
         setFactsRevealed(false)
-      }} />
+      }}>
+        <RbxFactsComponent />
+      </OverlayModal>
+      <OverlayModal visible={foundationRevealed} onClose={() => {
+        setFoundationRevealed(false)
+      }}>
+        <FoundationComponent />
+      </OverlayModal>
     </Section>
   );
 };

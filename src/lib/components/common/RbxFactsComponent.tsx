@@ -45,6 +45,7 @@ export const RbxFactsComponent = () => {
   const [lifetimeSupply, setLifetimeSupply] = useState<string>('...');
   const [feesBurned, setFeesBurned] = useState<string>('...');
   const [validatorCount, setValidatorCount] = useState<string>('...');
+  const [totalAssured, setTotalAssured] = useState<string>('...');
 
   useEffect(() => {
 
@@ -68,6 +69,11 @@ export const RbxFactsComponent = () => {
           if (data['fees_burned_sum']) {
             const b = formatNumber(data['active_master_nodes']);
             setValidatorCount(b);
+          }
+
+          if (data['total_staked']) {
+            const b = formatNumber(data['total_staked']);
+            setTotalAssured(b);
           }
 
 
@@ -142,6 +148,10 @@ export const RbxFactsComponent = () => {
     {
       label: "Lifetime Supply",
       value: `${lifetimeSupply} RBX`,
+    },
+    {
+      label: "Total Assured",
+      value: `${totalAssured} RBX`,
     },
     {
       label: "RBX Fees Burned",

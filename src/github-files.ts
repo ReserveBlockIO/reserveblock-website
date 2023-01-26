@@ -10,11 +10,21 @@ const _gui = {
   date: "Jan 24, 2023",
 };
 
+const _snapshot = {
+  tag: "snap1",
+  date: "Jan 24, 2023",
+  height: 593384
+}
+
 // CONFIG ENDS
 
 const _cliBaseUrl = "https://github.com/ReserveBlockIO/Core-CLI/releases/tag/";
 const _guiBaseUrl =
   "https://github.com/ReserveBlockIO/rbx-wallet-gui/releases/tag/";
+
+
+const _snapshotBaseUrl =
+  "https://github.com/ReserveBlockIO/ReserveBlockSnapshot/releases/tag/";
 
 export const githubFiles = {
   cli: {
@@ -24,6 +34,10 @@ export const githubFiles = {
   gui: {
     ..._gui,
     url: `${_guiBaseUrl}${_gui.tag}`,
+  },
+  snapshot: {
+    ..._snapshot,
+    url: `${_snapshotBaseUrl}${_snapshot.tag}`,
   },
 };
 

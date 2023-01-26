@@ -23,6 +23,7 @@ import {
 import { cliDownload, isMobile, isMobileOS } from "../../../utils";
 import { githubFiles } from "../../../../github-files";
 import { WIKI_BASE_URL } from "../../../constants";
+import { formatNumber } from "../../../formatting";
 
 export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
@@ -126,6 +127,21 @@ export const HomeWalletSection = () => {
                       </strong>
                     </small>
                   </a>
+
+                  <a
+                    className="btn btn-light w-100 mt-1"
+                    href={githubFiles.snapshot.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Snapshot
+                    <br />
+                    <small>
+                      <strong>
+                        Height: {formatNumber(githubFiles.snapshot.height)} - {githubFiles.snapshot.date}
+                      </strong>
+                    </small>
+                  </a>
                 </>
               </div>
             </div>
@@ -165,8 +181,7 @@ export const HomeWalletSection = () => {
                   buttonText="Activated"
                   noIcon
                   noCaps
-                  url={"#"}
-                  onClick={(_: any) => { }}
+                  url={`${WIKI_BASE_URL}/docs/FAQs/smart-contract-faq`}
                 />
               </VisibilityTransition>
             </div>
@@ -177,8 +192,8 @@ export const HomeWalletSection = () => {
                 transitionDelay={500}
               >
                 <Download
-                  title="DSTs"
-                  buttonText="Activated"
+                  title="P2P Auctions"
+                  buttonText="Activating Soon"
                   noIcon
                   noCaps
                   url={"#"}

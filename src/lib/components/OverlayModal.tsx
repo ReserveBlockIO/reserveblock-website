@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { isMobile } from "../utils";
-import { RbxFactsComponent } from "./common/RbxFactsComponent";
 
 
 interface IContainer {
@@ -35,9 +34,11 @@ const Container = styled.div<IContainer>`
 interface Props {
     visible: boolean;
     onClose: () => void;
+    children: JSX.Element | JSX.Element[];
+
 }
 
-const FactsModal = (props: Props) => {
+const OverlayModal = (props: Props) => {
 
     return (
         <Container
@@ -47,9 +48,9 @@ const FactsModal = (props: Props) => {
             }}
         >
             <div className="p-5">
-                <RbxFactsComponent />
+                {props.children}
             </div>
         </Container>)
 }
 
-export default FactsModal;
+export default OverlayModal;

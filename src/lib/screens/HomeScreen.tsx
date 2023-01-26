@@ -13,9 +13,13 @@ export const HomeScreen = () => {
       <HomeIntroSection />
 
       <HomeLearnSection />
+
       <HomeMasterNodesSection />
+
       <HomeWalletSection />
+
       <HomeNetworkSection />
+
       <HomeBuildSection />
 
       <HomeCommunitySection />

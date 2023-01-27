@@ -1,3 +1,3 @@
 
 
-export const WIKI_BASE_URL = 'https://rbx-wiki-reserveblock.vercel.app'
+export const WIKI_BASE_URL = 'https://wiki.reserveblock.io'

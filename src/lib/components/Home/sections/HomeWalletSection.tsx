@@ -52,7 +52,7 @@ export const HomeWalletSection = () => {
           <WalletDetailsComponent />
           <div className="py-3" />
           <div className="row">
-            <div className="col-12 col-md-4 pb-4">
+            <div className="col-12 col-md-4  pb-5">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -61,13 +61,12 @@ export const HomeWalletSection = () => {
                 <Download
                   title="Get Started"
                   buttonText="Install and Operating Instructions"
-                  openExternal
                   url={`${WIKI_BASE_URL}/docs/GUI/`}
                   icon={faLink}
                 />
               </VisibilityTransition>
             </div>
-            <div className="col-12 col-md-4 pb-4">
+            <div className="col-12 col-md-4 pb-5">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -87,7 +86,7 @@ export const HomeWalletSection = () => {
                 style={
                   showingWalletDownload
                     ? {}
-                    : { opacity: 0, pointerEvents: "none" }
+                    : { display: 'none', pointerEvents: "none" }
                 }
               >
                 {isMobileOS() ? (
@@ -145,7 +144,7 @@ export const HomeWalletSection = () => {
                 </>
               </div>
             </div>
-            <div className="col-12 col-md-4 pb-4">
+            <div className="col-12 col-md-4  pb-5">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -161,7 +160,7 @@ export const HomeWalletSection = () => {
               </VisibilityTransition>
             </div>
           </div>
-          <div className="py-3 d-none d-md-block"></div>
+          {/* <div className="py-3 d-none d-md-block"></div> */}
 
           {gettingStartedVisible ? (
             <div className="py-3">
@@ -169,7 +168,7 @@ export const HomeWalletSection = () => {
             </div>
           ) : null}
 
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mt-3">
             <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition
                 transitionType="slide"

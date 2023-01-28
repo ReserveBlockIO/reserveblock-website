@@ -58,14 +58,14 @@ export const secondaryNavItems: INavItem[] = [
     path: "https://wallet.rbx.network/",
     openExternal: true,
   },
+  // {
+  //   name: "Litepaper",
+  //   path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
+  //   openExternal: true,
+  // },
   {
-    name: "Litepaper",
-    path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
-    openExternal: true,
-  },
-  {
-    name: "Whitepaper",
-    path: require("../../pdfs/RBX_Blockchain_Whitepaper.pdf"),
+    name: "Whitepaper v2",
+    path: require("../../pdfs/ReserveBlock-RBX-Blockchain Whitepaper-v2.pdf"),
     openExternal: true,
   },
 

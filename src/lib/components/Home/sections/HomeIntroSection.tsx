@@ -101,9 +101,23 @@ export const HomeIntroSection = () => {
 
   return (
     <Section fill>
-
-
-
+      {isMobile() ? <PositionedAsset
+        url="/img/decor/bg_02-tr.png"
+        alt="Nodes"
+        top={0}
+        right={0}
+        width={240}
+        opacity={0.5}
+      /> :
+        <PositionedAsset
+          url="/img/decor/bg_02-tr.png"
+          alt="Nodes"
+          top={0}
+          right={0}
+          width={600}
+          opacity={0.5}
+        />
+      }
       <div>
         <div style={{ height: 64 }} />
 
@@ -181,14 +195,19 @@ export const HomeIntroSection = () => {
           </div>
         </IntroTextContainer>
 
-        <PositionedAsset
-          url="/img/decor/bg_02-tr.png"
-          alt="Globe"
-          top={0}
+
+
+        {/* <PositionedAsset
+          url="/img/decor/bg_04.png"
+          alt="Decor"
+          bottom={0}
           right={0}
-          width={600}
+          // width={600}
           opacity={0.5}
-        />
+          height={300}
+          width={300}
+
+        /> */}
       </div>
 
 

@@ -16,7 +16,7 @@ const Decor = styled.div`
   background-image: url(/img/decor/bg_04.png);
   background-size: cover;
   background-position: center bottom;
-  opacity: 0.4;
+  opacity: 0.75;
 `;
 
 export const HomeNetworkSection = () => {
@@ -99,7 +99,6 @@ export const HomeNetworkSection = () => {
                   <Download
                     title="Adjudicators"
                     buttonText="Learn More"
-                    openExternal={true}
                     url={`${WIKI_BASE_URL}/docs/CLI/cli-adjudicators`}
                     noIcon
                   />
@@ -113,7 +112,6 @@ export const HomeNetworkSection = () => {
                   <Download
                     title="Beacons"
                     buttonText="Learn More"
-                    openExternal={true}
                     url={`${WIKI_BASE_URL}/docs/CLI/cli-beacons`}
 
                     noIcon

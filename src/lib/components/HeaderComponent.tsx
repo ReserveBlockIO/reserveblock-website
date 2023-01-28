@@ -12,8 +12,10 @@ import {
 import { ThemeColors } from "../theme";
 import { isIpadPro, isMobile } from "../utils";
 import { AddToCalendarButton } from "./common/AddToCalendarButton";
+import { DisclaimerComponent } from "./common/DisclaimerComponent";
 import { SocialLinks } from "./common/SocialLinks";
 import { VisibilityTransition } from "./common/VisibilityTransition";
+import OverlayModal from "./OverlayModal";
 
 const Header = styled.header`
   nav {
@@ -127,6 +129,9 @@ const SocialNavItem = styled.li`
 export const HeaderComponent = () => {
   const [offset, setOffset] = useState(0);
   const [nodeSaleDismissed, setNodeSaleDismissed] = useState(false);
+
+  const [disclaimerVisible, setDisclaimerVisible] = useState(false);
+
   const visibilityThreshold = 300;
 
   const HAS_LAUNCHED = false;
@@ -180,6 +185,13 @@ export const HeaderComponent = () => {
                       className="nav-link active"
                       aria-current="page"
                       href={n.path}
+                      onClick={(e) => {
+                        if (n.path === '/disclaimer') {
+                          e.preventDefault();
+                          setDisclaimerVisible(true);
+
+                        }
+                      }}
                     >
                       {n.name}
                     </Nav.Link>
@@ -208,6 +220,14 @@ export const HeaderComponent = () => {
                     href={n.path}
                     target={n.openExternal ? "_blank" : "_self"}
                     rel="noreferrer"
+                    onClick={(e) => {
+                      if (n.path === '/disclaimer') {
+                        e.preventDefault();
+                        setDisclaimerVisible(true);
+
+
+                      }
+                    }}
                   >
                     {n.name}
                   </Nav.Link>
@@ -259,6 +279,10 @@ export const HeaderComponent = () => {
         </PresaleContainer>
         {/* </div> */}
       </Navbar>
+
+      <OverlayModal visible={disclaimerVisible} onClose={() => setDisclaimerVisible(false)}>
+        <DisclaimerComponent />
+      </OverlayModal>
     </Header>
   );
 };

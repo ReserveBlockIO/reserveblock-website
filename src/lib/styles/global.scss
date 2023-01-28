@@ -8,10 +8,14 @@ body {
   color: $color-light;
   overflow-x: hidden;
   letter-spacing: 1px;
-  background-image: url(../../../public/img/grid.jpg);
+  background-image: url(../../../public/img/grid-curved.jpg);
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+
+  @media only screen and (max-width: 600px) {
+    background: url(../../../public/img/grid-curved-mobile.jpg) center repeat-x fixed;
+  }
 }
 
 /* CSS */

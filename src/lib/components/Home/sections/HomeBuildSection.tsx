@@ -22,13 +22,13 @@ import { WIKI_BASE_URL } from "../../../constants";
 const Decor = styled.div`
   @keyframes buildBg {
     0% {
-      opacity: 0.05;
-    }
-    50% {
       opacity: 0.2;
     }
+    50% {
+      opacity: 0.5;
+    }
     100% {
-      opacity: 0.05;
+      opacity: 0.2;
     }
   }
 

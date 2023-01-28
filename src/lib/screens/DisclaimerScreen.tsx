@@ -5,7 +5,6 @@ export const DisclaimerScreen = () => {
   return (
     <Section>
       <div className="container">
-        <SectionHeading1>Disclaimer</SectionHeading1>
         <DisclaimerComponent />
       </div>
     </Section>

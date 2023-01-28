@@ -1,5 +1,6 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   SectionContent,
@@ -60,10 +61,25 @@ const Item = styled.div`
 `;
 
 export const WalletDetailsComponent = () => {
+
+
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+
+    setTimeout(() => {
+      setVisible(true)
+    }, 100);
+  }, []);
+
+
+
   return (
     <div>
       <SectionHeading4>Wallet Details</SectionHeading4>
       <div className="row" data-masonry='{"percentPosition": true }'>
+
+
         {items.map((item, i: number) => (
           <div
             className="col-6 col-md-4 col-lg-3"

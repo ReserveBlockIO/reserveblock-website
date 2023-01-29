@@ -83,9 +83,9 @@ export const HomeNetworkSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="CLI"
-                    buttonText="Download CLI"
+                    buttonText="Launch CLI Docs"
                     openExternal={true}
-                    url="https://github.com/ReserveBlockIO/ReserveBlock-Core"
+                    url={`${WIKI_BASE_URL}/docs/CLI/`}
                     noIcon
                   />
                 </SectionContent>

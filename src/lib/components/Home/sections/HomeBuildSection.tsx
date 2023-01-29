@@ -73,10 +73,10 @@ export const HomeBuildSection = () => {
               transitionDelay={0}
             >
               <Download
-                title="CLI & API Docs"
+                title="CLI & API Repository"
                 buttonText="Launch"
                 noIcon
-                url={`${WIKI_BASE_URL}/docs/CLI/`}
+                url={`${WIKI_BASE_URL}/docs/integration/swagger/`}
 
                 horizontalPadding={64}
               />

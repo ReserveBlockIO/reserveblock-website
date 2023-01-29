@@ -100,7 +100,7 @@ export const HomeIntroSection = () => {
 
 
   return (
-    <Section fill>
+    <Section fill mobileGrid>
       {isMobile() ? <PositionedAsset
         url="/img/decor/bg_02-tr.png"
         alt="Nodes"

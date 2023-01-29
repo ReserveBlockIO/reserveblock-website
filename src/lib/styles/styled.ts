@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { ThemeColors, ThemeFonts } from "../theme";
+import { isMobile } from "../utils";
 
 interface ISection {
   fill?: boolean;
   center?: boolean;
   dark?: boolean;
   light?: boolean;
+  mobileGrid?: boolean;
 }
 
 const pulseKeyframes = (name: string, startColor: string, endColor: string) => {
@@ -44,6 +46,8 @@ export const Section = styled.section<ISection>`
       ? `
         background-color: rgba(255,255,255,.8); `
       : null};
+  
+  ${(props) => props.mobileGrid && isMobile() ? `background-image: url(/img/grid-curved-mobile.jpg); background-size: cover; background-position: center center;` : ``}
 
   /* background-image: url(/img/grid.jpg); */
   /* background-size: cover; */

@@ -58,14 +58,9 @@ export const secondaryNavItems: INavItem[] = [
     path: "https://wallet.rbx.network/",
     openExternal: true,
   },
-  // {
-  //   name: "Litepaper",
-  //   path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
-  //   openExternal: true,
-  // },
+
   {
     name: "Whitepaper v2",
-    // path: require("../../pdfs/ReserveBlock-RBX-Blockchain Whitepaper-v2.pdf"),
     path: `${WIKI_BASE_URL}/docs/documents/whitepaper-v2/`,
     openExternal: false,
   },
@@ -182,9 +177,9 @@ export const footerNavItems: IFooterNavItem[] = [
         path: "/disclaimer",
       },
       {
-        name: "Litepaper",
-        path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
-        openExternal: true,
+        name: "Whitepaper v2",
+        path: `${WIKI_BASE_URL}/docs/documents/whitepaper-v2/`,
+        openExternal: false,
       },
       {
         name: "Contact",

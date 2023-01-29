@@ -49,7 +49,7 @@ const OverlayModal = (props: Props) => {
         >
             <div style={{ height: '100vh', overflowY: 'scroll' }}>
                 <div style={{ height: 60 }} />
-                <div className="p-5">
+                <div className="p-2 p-md-5">
                     {props.children}
                 </div>
             </div>

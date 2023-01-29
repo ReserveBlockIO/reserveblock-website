@@ -18,7 +18,8 @@ export default function useVisibility(
       return;
     }
     const top = currentElement.current.getBoundingClientRect().top;
-    setIsVisible(top + offset >= 0 && top - offset <= window.innerHeight);
+    // setIsVisible(top + offset >= 0 && top - offset <= window.innerHeight);
+    setIsVisible(top - offset <= window.innerHeight);
   };
 
   useEffect(() => {

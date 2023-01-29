@@ -194,7 +194,7 @@ export const HomeWalletSection = () => {
                   buttonText="Activated"
                   noIcon
                   noCaps
-                  url={`${WIKI_BASE_URL}/docs/FAQs/smart-contract-faq`}
+                  url={`${WIKI_BASE_URL}/docs/FAQs/smart-contract-faq/`}
                 />
               </VisibilityTransition>
             </div>

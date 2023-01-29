@@ -107,7 +107,7 @@ export const HomeLearnSection = () => {
                 <Download
                   title="FAQs"
                   description="A Quick RBX Introduction and Guide"
-                  url={`${WIKI_BASE_URL}/docs/FAQs/general-faq`}
+                  url={`${WIKI_BASE_URL}/docs/FAQs/general-faq/`}
                   icon={faLink}
                 // horizontalPadding={32}
                 />

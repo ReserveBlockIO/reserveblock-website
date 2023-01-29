@@ -44,7 +44,7 @@ export const HomeNetworkSection = () => {
                     title="Mainnet Beta"
                     buttonText="Explorer API"
                     noIcon
-                    url={`${WIKI_BASE_URL}/docs/integration/swagger`}
+                    url={`${WIKI_BASE_URL}/docs/integration/swagger/`}
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -98,7 +98,7 @@ export const HomeNetworkSection = () => {
                   <Download
                     title="Adjudicators"
                     buttonText="Learn More"
-                    url={`${WIKI_BASE_URL}/docs/CLI/cli-adjudicators`}
+                    url={`${WIKI_BASE_URL}/docs/CLI/cli-adjudicators/`}
                     noIcon
                   />
                 </SectionContent>
@@ -112,7 +112,7 @@ export const HomeNetworkSection = () => {
 
                     title="Beacons"
                     buttonText="Learn More"
-                    url={`${WIKI_BASE_URL}/docs/CLI/cli-beacons`}
+                    url={`${WIKI_BASE_URL}/docs/CLI/cli-beacons/`}
 
                     noIcon
                   />

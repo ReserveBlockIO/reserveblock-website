@@ -159,7 +159,7 @@ export const HomeMasterNodesSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="Masternode FAQs"
-                    url={`${WIKI_BASE_URL}/docs/FAQs/masternode-faq`}
+                    url={`${WIKI_BASE_URL}/docs/FAQs/masternode-faq/`}
                     buttonText="Read FAQs"
 
                     icon={faLink}

@@ -95,7 +95,7 @@ export const HomeBuildSection = () => {
                 title="Config Docs"
                 buttonText="Launch"
                 noIcon
-                url={`${WIKI_BASE_URL}/docs/CLI/cli-config`}
+                url={`${WIKI_BASE_URL}/docs/CLI/cli-config/`}
 
 
                 horizontalPadding={64}

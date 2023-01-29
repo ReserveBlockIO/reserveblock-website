@@ -154,15 +154,15 @@ export const footerNavItems: IFooterNavItem[] = [
     items: [
       {
         name: "General",
-        path: `${WIKI_BASE_URL}/docs/FAQs/general-faq`,
+        path: `${WIKI_BASE_URL}/docs/FAQs/general-faq/`,
       },
       {
         name: "Core Wallet",
-        path: `${WIKI_BASE_URL}/docs/FAQs/core-wallet-faq`,
+        path: `${WIKI_BASE_URL}/docs/FAQs/core-wallet-faq/`,
       },
       {
         name: "Masternodes",
-        path: `${WIKI_BASE_URL}/docs/FAQs/masternode-faq`,
+        path: `${WIKI_BASE_URL}/docs/FAQs/masternode-faq/`,
       },
       // {
       //   name: "Datanodes",

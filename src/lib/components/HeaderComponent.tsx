@@ -10,7 +10,7 @@ import {
   socialNavItems,
 } from "../data/menus";
 import { ThemeColors } from "../theme";
-import { isIpadPro, isMobile } from "../utils";
+import { isIpad, isIpadPro, isMobile } from "../utils";
 import { AddToCalendarButton } from "./common/AddToCalendarButton";
 import { DisclaimerComponent } from "./common/DisclaimerComponent";
 import { SocialLinks } from "./common/SocialLinks";
@@ -101,6 +101,7 @@ const NavItem = styled.li`
     padding-top: 14px;
 
     ${isIpadPro() ? `font-size: 14px` : ``};
+    ${isIpad() ? `font-size: 14px` : ``};
   }
   &:hover {
     a {
@@ -116,6 +117,7 @@ const SubNavItem = styled(NavItem)`
     letter-spacing: 1px;
     padding-top: 12px;
     ${isIpadPro() ? `font-size: 12px; padding-top: 18px;` : ``};
+    ${isIpad() ? `font-size: 12px; padding-top: 18px;` : ``};
   }
 `;
 const SocialNavItem = styled.li`
@@ -123,6 +125,7 @@ const SocialNavItem = styled.li`
     color: #fff;
     padding-top: 12px;
     ${isIpadPro() ? `padding-top: 15px;` : ``};
+    ${isIpad() ? `padding-top: 15px;` : ``};
   }
 `;
 

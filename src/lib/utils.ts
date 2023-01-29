@@ -28,6 +28,19 @@ export function isMobile() {
   return window.innerWidth < 900;
 }
 
+export function isIpad() {
+  var ratio = window.devicePixelRatio || 1;
+  var screen = {
+    width: window.screen.width * ratio,
+    height: window.screen.height * ratio,
+  };
+  return (
+    (screen.width === 1640 && screen.height === 2360)
+
+  );
+
+}
+
 export function isIpadPro() {
   var ratio = window.devicePixelRatio || 1;
   var screen = {

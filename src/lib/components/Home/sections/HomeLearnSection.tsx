@@ -46,7 +46,7 @@ export const HomeLearnSection = () => {
   };
 
   return (
-    <Section fill={true} center={true} id="learn">
+    <Section fill={true} center={true} id="learn" mobileGrid>
       <div>
         <VisibilityTransition transitionType="fade" transitionDelay={500}>
           <PositionedAsset

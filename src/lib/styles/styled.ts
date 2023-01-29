@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ThemeColors, ThemeFonts } from "../theme";
-import { isMobile } from "../utils";
+import { isIpad, isIpadPro, isMobile } from "../utils";
 
 interface ISection {
   fill?: boolean;
@@ -48,6 +48,8 @@ export const Section = styled.section<ISection>`
       : null};
   
   ${(props) => props.mobileGrid && isMobile() ? `background-image: url(/img/grid-curved-mobile.jpg); background-size: cover; background-position: center center;` : ``}
+  ${(props) => props.mobileGrid && (isIpadPro() || isIpad()) ? `background-image: url(/img/grid-curved.jpg); background-size: cover; background-position: center center;` : ``}
+
 
   /* background-image: url(/img/grid.jpg); */
   /* background-size: cover; */

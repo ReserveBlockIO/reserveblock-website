@@ -84,7 +84,6 @@ export const HomeNetworkSection = () => {
                   <Download
                     title="CLI"
                     buttonText="Launch CLI Docs"
-                    openExternal={true}
                     url={`${WIKI_BASE_URL}/docs/CLI/`}
                     noIcon
                   />

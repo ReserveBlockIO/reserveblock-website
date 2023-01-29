@@ -107,7 +107,7 @@ export const SpyGlass = (props: Props) => {
 
         const interval = setInterval(() => {
             poll();
-        }, 5000);
+        }, 15000);
 
         return () => clearInterval(interval);
 

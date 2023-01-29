@@ -44,8 +44,7 @@ export const HomeNetworkSection = () => {
                     title="Mainnet Beta"
                     buttonText="Explorer API"
                     noIcon
-                    url="https://data.rbx.network/docs"
-                    openExternal
+                    url={`${WIKI_BASE_URL}/docs/integration/swagger`}
                   />
                 </SectionContent>
               </VisibilityTransition>

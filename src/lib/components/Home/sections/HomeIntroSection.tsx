@@ -102,19 +102,19 @@ export const HomeIntroSection = () => {
   return (
     <Section fill>
       {isMobile() ? <PositionedAsset
-        url="/img/decor/bg_02-trv2.png"
+        url="/img/decor/bg_02-tr.png"
         alt="Nodes"
         top={0}
         right={0}
-        width={200}
+        width={250}
         opacity={0.5}
       /> :
         <PositionedAsset
-          url="/img/decor/bg_02-trv2.png"
+          url="/img/decor/bg_02-tr.png"
           alt="Nodes"
           top={0}
           right={0}
-          width={400}
+          width={500}
           opacity={0.5}
         />
       }

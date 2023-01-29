@@ -1,5 +1,6 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import {
   SectionContent,
@@ -7,6 +8,7 @@ import {
   SectionHeading4,
 } from "../../styles/styled";
 import { ThemeColors } from "../../theme";
+import { isMobile } from "../../utils";
 import { VisibilityTransition } from "./VisibilityTransition";
 
 const items: string[][] = [
@@ -15,10 +17,10 @@ const items: string[][] = [
   ],
   [
     "Ability to create transactions (TX):",
-    "a. RXBX transaction – is the type of TX that is sending the RXBX internal cryptocurrency from one address to another.",
+    "a. RBX transaction – is the type of TX that is sending the RBX internal cryptocurrency from one address to another.",
     "b. Ability to mint, trade and sell NFT through a TX",
   ],
-  ["Ability to check users balance of RXBX."],
+  ["Ability to check users balance of RBX."],
   ["Ability to view and download NFTs."],
   ["Ability to view a history of all transactions."],
   [
@@ -27,7 +29,7 @@ const items: string[][] = [
   ["Ability to code smart contracts."],
   ["Capabilities to create human readable addresses."],
   ["Blockchain querying capability. "],
-  ["Automated design generator."],
+  ["Ability to send media / data P2P"],
 ];
 
 const Item = styled.div`
@@ -60,11 +62,89 @@ const Item = styled.div`
 `;
 
 export const WalletDetailsComponent = () => {
+
+
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+
+    setTimeout(() => {
+      setVisible(true)
+    }, 100);
+  }, []);
+
+  const col1 = [
+    items[0],
+    items[4],
+    items[8],
+  ]
+
+  const col2 = [
+    items[1],
+    items[5],
+  ]
+
+  const col3 = [
+    items[9],
+
+    items[2],
+    items[6],
+  ]
+
+  const col4 = [
+    items[3],
+    items[7],
+  ]
+
+  const columns = [col1, col2, col3, col4];
+
+
   return (
     <div>
       <SectionHeading4>Wallet Details</SectionHeading4>
-      <div className="row" data-masonry='{"percentPosition": true }'>
-        {items.map((item, i: number) => (
+      {/* <div className="row" data-masonry='{"percentPosition": true }'> */}
+      <div className="row">
+
+
+        {[...isMobile() ? [items] : columns].map((col, j: number) => (
+
+          <div key={j} className="col-12 col-md-3">
+
+            {col.map((item, i: number) => (
+              <div
+                key={i}
+                // className="col-6 col-md-4 col-lg-3"
+                style={{ padding: "0px 4px" }}
+              >
+                <VisibilityTransition
+                  transitionType="slide"
+                  transitionDirection="up"
+                  transitionDelay={i * 100}
+                >
+                  <SectionContent className="my-1" style={{ margin: 0 }} outline>
+                    <Item>
+                      {item.map((line, k: number) => (
+                        <h4 key={k}>
+                          <FontAwesomeIcon
+                            icon={faChevronRight}
+                            color={ThemeColors.bright}
+                            size="xs"
+                          ></FontAwesomeIcon>
+                          &nbsp;{line}
+                        </h4>
+                      ))}
+                    </Item>
+                  </SectionContent>
+                </VisibilityTransition>
+              </div>
+            ))}
+          </div>
+
+        )
+        )}
+
+
+        {/* {items.map((item, i: number) => (
           <div
             className="col-6 col-md-4 col-lg-3"
             style={{ padding: "0px 4px" }}
@@ -90,7 +170,7 @@ export const WalletDetailsComponent = () => {
               </SectionContent>
             </VisibilityTransition>
           </div>
-        ))}
+        ))} */}
       </div>
     </div>
   );

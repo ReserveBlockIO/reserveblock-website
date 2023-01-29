@@ -22,6 +22,9 @@ import { Download } from "../Download";
 import { NodeType } from "../NodeType";
 import { useState } from "react";
 import { WalletInstructions } from "../../WalletInstructions";
+import { WIKI_BASE_URL } from "../../../constants";
+import OverlayModal from "../../OverlayModal";
+import { HalvingScheduleComponent } from "../../common/HalvingScheduleComponent";
 
 const Waves = styled.div`
   width: 100%;
@@ -38,7 +41,7 @@ const Waves = styled.div`
 
 export const HomeMasterNodesSection = () => {
   const contentPadding = isMobile() || isIpadPro() ? 12 : 96;
-  const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
+  const [rewardsVisible, setRewardsVisible] = useState(false);
 
   return (
     <>
@@ -67,23 +70,11 @@ export const HomeMasterNodesSection = () => {
               <VisibilityTransition>
                 <SectionContent>
                   <p className="">
-                    Validate and earn robust block rewards like a miner without
-                    the high burden or expense of rigs & excess energy while
-                    providing governance over the network! Any user can become a
-                    validator, with the minimum RBX requirements simply through
-                    the core wallet, and decide to be a Masternode, Datanode, or
-                    both.
+                    Validate and earn randomized block rewards like a miner without the high burden or expense of rigs and excess energy while providing governance over the network! Any user can become a validator, with the minimum RBX requirements and decide to be a Masternode at will. In other words, YOU decide when to participate or not, period!
                   </p>
 
                   <p className="mb-0">
-                    Masternodes simply liquid stake the minimum requirements
-                    using their local device such as a laptop, while Datanodes
-                    simply contribute hard drive space to the network all
-                    through the core wallet. While passively earning rewards and
-                    maintaining governance, each user is free to participate
-                    without holding periods, fees or penalties. In other words,
-                    supporting and growing the network at your own free will all
-                    while maintaining carbon neutrality, truly democratizing!
+                    Masternodes just use their local device, such as a laptop with a unique IP address and a non-custodial RBX native core wallet, and start validating, it’s that simple. Each user is free to participate without holding periods, fees or penalties. In other words, supporting and growing the network at your own free will, all while maintaining carbon neutrality, truly democratizing!
                   </p>
                 </SectionContent>
               </VisibilityTransition>
@@ -129,11 +120,14 @@ export const HomeMasterNodesSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="Block Rewards &amp; Halving"
-                    url="/halving-schedule"
+                    // url="/halving-schedule"
                     icon={faLink}
                     buttonText="View Schedule"
                     // horizontalPadding={contentPadding}
                     altGlow
+                    onClick={() => {
+                      setRewardsVisible(true);
+                    }}
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -147,8 +141,7 @@ export const HomeMasterNodesSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="Install &amp; Operating Instructions"
-                    url="/wallet-instructions"
-                    openExternal
+                    url={`${WIKI_BASE_URL}/docs/GUI/`}
                     icon={faLink}
                     buttonText="View Instructions"
                     // horizontalPadding={contentPadding}
@@ -166,8 +159,7 @@ export const HomeMasterNodesSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="Masternode FAQs"
-                    url="/faq#masternodes"
-                    openExternal
+                    url={`${WIKI_BASE_URL}/docs/FAQs/masternode-faq/`}
                     buttonText="Read FAQs"
 
                     icon={faLink}
@@ -180,6 +172,10 @@ export const HomeMasterNodesSection = () => {
           </div>
         </div>
         <NextSectionButton sectionId="wallet" />
+
+        <OverlayModal visible={rewardsVisible} onClose={() => { setRewardsVisible(false) }}>
+          <HalvingScheduleComponent />
+        </OverlayModal>
       </Section>
     </>
   );

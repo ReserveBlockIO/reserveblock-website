@@ -1,16 +1,46 @@
 import { Currency, currencyToString } from "./enums";
 import {
+  Block,
   CheckoutDetails,
   NodeInfo,
+  PaginatedResponse,
   PriceDetail,
   PriceDetailFromUsd,
   TransactionDetails,
 } from "./models";
 
 const BASE_API_URL = "https://api.magi.computer/api/V1";
+const NETWORK_API_URL = 'https://data.rbx.network/api';
 
 export function healthCheck() {
   return fetch(`${BASE_API_URL}/`).then((data) => data.json());
+}
+
+export function getCirculation() {
+  return fetch(`${NETWORK_API_URL}/circulation`).then((data) => data.json());
+}
+
+export function listBlocks(page: number = 1, params: any = {},) {
+  return fetch(`${NETWORK_API_URL}/blocks/`, {
+    page: page,
+    ...params,
+  }).then(async (response) => {
+    const data: any = await response.json();
+
+    const results = [];
+
+    for (let result of data["results"]) {
+      results.push(new Block(result));
+    }
+
+    return new PaginatedResponse<Block>(
+      data["count"],
+      data["page"],
+      data["num_pages"],
+      results
+    );
+  });
+
 }
 
 export function getDetails(amount: number, currency: Currency) {

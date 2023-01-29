@@ -22,6 +22,21 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { cliDownload, isMobile, isMobileOS } from "../../../utils";
 import { githubFiles } from "../../../../github-files";
+import { WIKI_BASE_URL } from "../../../constants";
+import { formatNumber } from "../../../formatting";
+
+const Decor = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  background-image: url(/img/decor/bg_04.png);
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.6;
+`;
 
 export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
@@ -30,6 +45,7 @@ export const HomeWalletSection = () => {
   return (
     <>
       <Section fill={true} center={true} id="wallet">
+        <Decor />
         <div className="container">
           <SectionHeaderComponent
             title="RBX Wallet"
@@ -50,7 +66,7 @@ export const HomeWalletSection = () => {
           <WalletDetailsComponent />
           <div className="py-3" />
           <div className="row">
-            <div className="col-12 col-md-4 pb-4">
+            <div className="col-12 col-md-4  pb-5">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -59,13 +75,12 @@ export const HomeWalletSection = () => {
                 <Download
                   title="Get Started"
                   buttonText="Install and Operating Instructions"
-                  openExternal
-                  url="/wallet-instructions"
+                  url={`${WIKI_BASE_URL}/docs/GUI/`}
                   icon={faLink}
                 />
               </VisibilityTransition>
             </div>
-            <div className="col-12 col-md-4 pb-4">
+            <div className="col-12 col-md-4 pb-5">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -85,7 +100,7 @@ export const HomeWalletSection = () => {
                 style={
                   showingWalletDownload
                     ? {}
-                    : { opacity: 0, pointerEvents: "none" }
+                    : { display: 'none', pointerEvents: "none" }
                 }
               >
                 {isMobileOS() ? (
@@ -125,10 +140,25 @@ export const HomeWalletSection = () => {
                       </strong>
                     </small>
                   </a>
+
+                  <a
+                    className="btn btn-light w-100 mt-1"
+                    href={githubFiles.snapshot.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Snapshot
+                    <br />
+                    <small>
+                      <strong>
+                        Height: {formatNumber(githubFiles.snapshot.height)} - {githubFiles.snapshot.date}
+                      </strong>
+                    </small>
+                  </a>
                 </>
               </div>
             </div>
-            <div className="col-12 col-md-4 pb-4">
+            <div className="col-12 col-md-4  pb-5">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
@@ -144,7 +174,7 @@ export const HomeWalletSection = () => {
               </VisibilityTransition>
             </div>
           </div>
-          <div className="py-3 d-none d-md-block"></div>
+          {/* <div className="py-3 d-none d-md-block"></div> */}
 
           {gettingStartedVisible ? (
             <div className="py-3">
@@ -152,7 +182,7 @@ export const HomeWalletSection = () => {
             </div>
           ) : null}
 
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mt-3">
             <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition
                 transitionType="slide"
@@ -164,8 +194,7 @@ export const HomeWalletSection = () => {
                   buttonText="Activated"
                   noIcon
                   noCaps
-                  url={"#"}
-                  onClick={(_: any) => { }}
+                  url={`${WIKI_BASE_URL}/docs/FAQs/smart-contract-faq/`}
                 />
               </VisibilityTransition>
             </div>
@@ -176,8 +205,8 @@ export const HomeWalletSection = () => {
                 transitionDelay={500}
               >
                 <Download
-                  title="DSTs"
-                  buttonText="Activated"
+                  title="P2P Auctions"
+                  buttonText="Activating Soon"
                   noIcon
                   noCaps
                   url={"#"}

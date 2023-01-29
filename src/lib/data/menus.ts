@@ -5,6 +5,7 @@ import {
   faTelegram,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { WIKI_BASE_URL } from "../constants";
 
 interface INavItem {
   name: string;
@@ -40,15 +41,15 @@ export const primaryNavItems: INavItem[] = [
     name: "Build",
     path: "/#build",
   },
-
+  {
+    name: "Wiki",
+    path: WIKI_BASE_URL,
+  },
   {
     name: "Community",
     path: "/#community",
   },
-  {
-    name: "Press",
-    path: "/#press",
-  },
+
 ];
 
 export const secondaryNavItems: INavItem[] = [
@@ -57,15 +58,16 @@ export const secondaryNavItems: INavItem[] = [
     path: "https://wallet.rbx.network/",
     openExternal: true,
   },
+  // {
+  //   name: "Litepaper",
+  //   path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
+  //   openExternal: true,
+  // },
   {
-    name: "Litepaper",
-    path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
-    openExternal: true,
-  },
-  {
-    name: "Whitepaper",
-    path: require("../../pdfs/RBX_Blockchain_Whitepaper.pdf"),
-    openExternal: true,
+    name: "Whitepaper v2",
+    // path: require("../../pdfs/ReserveBlock-RBX-Blockchain Whitepaper-v2.pdf"),
+    path: `${WIKI_BASE_URL}/docs/documents/whitepaper-v2/`,
+    openExternal: false,
   },
 
   {
@@ -152,16 +154,20 @@ export const footerNavItems: IFooterNavItem[] = [
     items: [
       {
         name: "General",
-        path: "/faq#general",
+        path: `${WIKI_BASE_URL}/docs/FAQs/general-faq/`,
+      },
+      {
+        name: "Core Wallet",
+        path: `${WIKI_BASE_URL}/docs/FAQs/core-wallet-faq/`,
       },
       {
         name: "Masternodes",
-        path: "/faq#masternodes",
+        path: `${WIKI_BASE_URL}/docs/FAQs/masternode-faq/`,
       },
-      {
-        name: "Datanodes",
-        path: "/faq#datanodes",
-      },
+      // {
+      //   name: "Datanodes",
+      //   path: "/faq#datanodes",
+      // },
       // {
       //   name: "Developer",
       //   path: "/faq#developer",

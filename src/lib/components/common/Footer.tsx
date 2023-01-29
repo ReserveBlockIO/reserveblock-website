@@ -62,7 +62,7 @@ export const FooterComponent = () => {
           </div>
           <SocialLinks />
 
-          <div className="text-muted mt-3">&copy; 2022 ReserveBlock</div>
+          <div className="text-muted mt-3">&copy; 2023 ReserveBlock</div>
         </div>
       </VisibilityTransition>
     </Footer>

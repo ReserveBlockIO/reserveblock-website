@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { WIKI_BASE_URL } from "../../../constants";
 import { Section, SectionContent } from "../../../styles/styled";
 import { NextSectionButton } from "../../common/NextSectionButton";
 import { SectionHeaderComponent } from "../../common/SectionHeaderComponent";
@@ -12,18 +13,18 @@ const Decor = styled.div`
   pointer-events: none;
   bottom: 0;
   left: 0;
-  background-image: url(/img/decor/bg_04.png);
+  background-image: url(/img/decor/bg_04-flipped.png);
   background-size: cover;
   background-position: center bottom;
-  opacity: 0.4;
+  opacity: 0.5;
 `;
 
 export const HomeNetworkSection = () => {
   return (
     <>
-      <div className="py-5" id="network"></div>
 
       <Section light center>
+        <div id="network"></div>
         <Decor />
         <div className="container">
           <SectionHeaderComponent
@@ -33,7 +34,7 @@ export const HomeNetworkSection = () => {
             isInvertedOffset
           />
 
-          <div className="py-0 py-md-5"></div>
+          {/* <div className="py-0 py-md-5"></div> */}
 
           <div className="row">
             <div className="col-12 col-md-6">
@@ -43,8 +44,7 @@ export const HomeNetworkSection = () => {
                     title="Mainnet Beta"
                     buttonText="Explorer API"
                     noIcon
-                    url="https://data.rbx.network/docs"
-                    openExternal
+                    url={`${WIKI_BASE_URL}/docs/integration/swagger/`}
                   />
                 </SectionContent>
               </VisibilityTransition>
@@ -83,16 +83,43 @@ export const HomeNetworkSection = () => {
                 <SectionContent mutedBg>
                   <Download
                     title="CLI"
-                    buttonText="Download CLI"
-                    openExternal={true}
-                    url="https://github.com/ReserveBlockIO/ReserveBlock-Core"
+                    buttonText="Launch CLI Docs"
+                    url={`${WIKI_BASE_URL}/docs/CLI/`}
+                    noIcon
+                  />
+                </SectionContent>
+              </VisibilityTransition>
+            </div>
+
+            <div className="col-12 col-md-6">
+              <VisibilityTransition transitionDelay={750}>
+                <SectionContent mutedBg>
+                  <Download
+                    title="Adjudicators"
+                    buttonText="Learn More"
+                    url={`${WIKI_BASE_URL}/docs/CLI/cli-adjudicators/`}
+                    noIcon
+                  />
+                </SectionContent>
+              </VisibilityTransition>
+            </div>
+
+            <div className="col-12 col-md-6">
+              <VisibilityTransition transitionDelay={750}>
+                <SectionContent mutedBg>
+                  <Download
+
+                    title="Beacons"
+                    buttonText="Learn More"
+                    url={`${WIKI_BASE_URL}/docs/CLI/cli-beacons/`}
+
                     noIcon
                   />
                 </SectionContent>
               </VisibilityTransition>
             </div>
           </div>
-          <div className="py-0 py-md-5"></div>
+          {/* <div className="py-0 py-md-5"></div> */}
         </div>
 
         <NextSectionButton sectionId="build" />

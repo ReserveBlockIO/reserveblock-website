@@ -11,6 +11,8 @@ import { VisibilityTransition } from "../../common/VisibilityTransition";
 import { NodePresaleCtaComponent } from "../../NodePresaleCtaComponent";
 import { isMobile } from "../../../utils";
 import { NodePresaleLiveCtaComponent } from "../../common/NodePresaleLiveCtaComponent";
+import SpyGlass from "../../SpyGlass";
+import { PositionedAsset } from "../../common/PositionedAsset";
 
 interface IIntroVideo {
   ref: React.Ref<HTMLVideoElement>;
@@ -37,7 +39,8 @@ const IntroTextContainer = styled.div`
     color: ${ThemeColors.bright};
     font-weight: bold;
     letter-spacing: 2px;
-    ${isMobile() ? `font-size: 20px; letter-spacing: 1px;` : ``}
+    line-height: 36px;
+    ${isMobile() ? `font-size: 20px; letter-spacing: 1px; line-height: 28px;` : ``}
   }
   h3 {
     margin-top: 20px;
@@ -50,155 +53,163 @@ const IntroTextContainer = styled.div`
   }
 `;
 
+const LogoContainer = styled.div`
+
+
+  display: flex;
+
+  margin-left: -182px;
+
+  ${isMobile() ? `margin-left: -87px;` : ``}
+
+
+  .rbx-cube {
+    position: relative;
+    top: -15px;
+    width:170px;
+    height: 170px;
+    /* background-image:url(/img/rbx_cube_small.png); */
+    background-image:url(/img/cube.gif);
+    mix-blend-mode: screen;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    ${isMobile() ? `width: 75px; height: 75px; top: -7px` : ``}
+  }
+  
+  .rbx-wordmark {
+    display: block;
+    margin-left: 12px;
+    width: 300px;
+    height: 128px;
+    background-image:url(/img/rbx-metallic.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    ${isMobile() ? `width: 150px; height: 64px;` : ``}
+
+  }
+
+  
+`;
+
+
+const WITH_DELAYS = false;
+
 export const HomeIntroSection = () => {
-  const HAS_LAUNCHED = false;
-  // const introVideo =
-  //   "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/rbx-animation-scaled-v5x.mp4?alt=media";
-  const introVideo = isMobile()
-    ? "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/FEB2022_mobilex.mp4?alt=media"
-    : "https://firebasestorage.googleapis.com/v0/b/rbx-storage.appspot.com/o/FEB2022x.mp4?alt=media";
 
-  const introPoster = "/img/poster.jpg";
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const [spacerHeight, setSpacerHeight] = useState<number>(120);
-  const [showContent, setShowContent] = useState<boolean>(false);
-
-  const handleResize = () => {
-    const sourceW = 1920;
-    const sourceH = 1080;
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-
-    const stretchW = w / sourceW;
-    const stretchH = h / sourceH;
-
-    let sH = 0;
-    if (stretchW >= stretchH) {
-      sH = Math.ceil(0.12 * window.innerWidth);
-    } else {
-      sH = Math.ceil(0.23 * window.innerHeight);
-    }
-    if (isMobile()) {
-      sH -= 20;
-    }
-    setSpacerHeight(sH);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize, false);
-    handleResize();
-    const v = videoRef.current!;
-
-    v.addEventListener("canplay", () => {
-      v.play();
-      setShowContent(true);
-    });
-
-    v.addEventListener("loadedmetadata", () => {
-      v.play();
-      setShowContent(true);
-    });
-
-    v.addEventListener(
-      "ended",
-      (_) => {
-        const videoLoopFrameStart = 5 * 24 + 26;
-        const frameRate = 24;
-        const videoLoopStart = videoLoopFrameStart / frameRate;
-
-        v.currentTime = videoLoopStart;
-        v.play();
-      },
-      false
-    );
-  }, []);
 
   return (
-    <Section fill>
-      <IntroVideo
-        ref={videoRef}
-        src={introVideo}
-        muted
-        playsInline
-        poster={introPoster}
-        // autoPlay
-      ></IntroVideo>
+    <Section fill mobileGrid>
+      {isMobile() ? <PositionedAsset
+        url="/img/decor/bg_02-tr.png"
+        alt="Nodes"
+        top={0}
+        right={0}
+        width={250}
+        opacity={0.5}
+      /> :
+        <PositionedAsset
+          url="/img/decor/bg_02-tr.png"
+          alt="Nodes"
+          top={0}
+          right={0}
+          width={500}
+          opacity={0.5}
+        />
+      }
+      <div>
+        <div style={{ height: 64 }} />
 
-      {showContent ? (
-        <div>
-          <div style={{ height: spacerHeight }} />
-          <IntroTextContainer>
-            <VisibilityTransition
-              transitionDelay={5000}
-              assumeVisible={true}
-              transitionType="fade"
-              duration={1000}
-            >
-              <h2 className="democratize">
-                DEMOCRATIZING NFTs<span className="d-none d-md-inline"> </span>
-                <br className="d-block d-md-none" />
-                FOR EVERYONE
-              </h2>
-            </VisibilityTransition>
-            <div className="py-4 d-none d-md-block"></div>
+        <div className="d-flex justify-content-center align-items-center">
 
-            <h3>
-              <VisibilityTransition
-                transitionDelay={1500}
-                duration={1000}
-                assumeVisible={true}
-                transitionType="blur"
-                inline
-              >
-                <span>
-                  Your Block
-                  <span className="bullet px-4 d-none d-md-inline"></span>
-                </span>
-              </VisibilityTransition>
-              <div className="d-block d-md-none py-1" />
-              <VisibilityTransition
-                transitionDelay={2500}
-                duration={1000}
-                assumeVisible={true}
-                transitionType="blur"
-                inline
-              >
-                <span>Your Data</span>
-                <span className="bullet px-4 d-none d-md-inline"></span>
-              </VisibilityTransition>
-              <div className="d-block d-md-none py-1" />
-
-              <VisibilityTransition
-                transitionDelay={3500}
-                duration={1000}
-                assumeVisible={true}
-                transitionType="blur"
-                inline
-              >
-                <span>YOUR NFT</span>
-              </VisibilityTransition>
-            </h3>
-            <div className="py-4 d-none d-md-bloc"></div>
-
-            <div className="d-flex justify-content-center">
-              <VisibilityTransition
-                transitionType="slide"
-                transitionDirection="up"
-                transitionDelay={6000}
-                duration={500}
-                assumeVisible
-              >
-                {HAS_LAUNCHED ? (
-                  <NodePresaleLiveCtaComponent />
-                ) : (
-                  <NodePresaleCtaComponent />
-                )}
-              </VisibilityTransition>
-            </div>
-          </IntroTextContainer>
+          <LogoContainer>
+            <div className="rbx-cube"></div>
+            <h1 className="rbx-wordmark">RBX</h1>
+          </LogoContainer>
         </div>
-      ) : null}
+
+
+        <div style={{ height: 16 }} />
+        <IntroTextContainer>
+
+          <VisibilityTransition
+            transitionDelay={WITH_DELAYS ? 1000 : 0}
+            assumeVisible={true}
+            transitionType="fade"
+            duration={1000}
+          >
+            <h2 className="democratize">
+              Democratizing Tokenization<span className="d-none d-md-inline"> </span>
+              <br className="d-block d-md-none" />
+              For Everyone
+            </h2>
+          </VisibilityTransition>
+          {/* <div className="py-4 d-none d-md-block"></div> */}
+          <div style={{ height: 16 }} />
+
+          <h3>
+            <VisibilityTransition
+              transitionDelay={WITH_DELAYS ? 2000 : 0}
+              duration={1000}
+              assumeVisible={true}
+              transitionType="blur"
+              inline
+            >
+              <span>
+                YOUR Block
+                <span className="bullet px-4 d-none d-md-inline"></span>
+              </span>
+            </VisibilityTransition>
+            <div className="d-block d-md-none py-1" />
+            <VisibilityTransition
+              transitionDelay={WITH_DELAYS ? 3000 : 0}
+              duration={1000}
+              assumeVisible={true}
+              transitionType="blur"
+              inline
+            >
+              <span>YOUR Data</span>
+            </VisibilityTransition>
+            <div className="d-block d-md-none py-1" />
+
+
+          </h3>
+
+          <div style={{ height: isMobile() ? 50 : 150 }}></div>
+          <div className="d-flex justify-content-center">
+            <VisibilityTransition
+              transitionType="slide"
+              transitionDirection="up"
+              // transitionDelay={WITH_DELAYS ? 3000 : 0}
+              transitionDelay={500}
+              duration={750}
+              assumeVisible
+            >
+
+              <div><SpyGlass fullWidth={false} /></div>
+
+
+
+            </VisibilityTransition>
+          </div>
+        </IntroTextContainer>
+
+
+
+        {/* <PositionedAsset
+          url="/img/decor/bg_04.png"
+          alt="Decor"
+          bottom={0}
+          right={0}
+          // width={600}
+          opacity={0.5}
+          height={300}
+          width={300}
+
+        /> */}
+      </div>
+
 
       {/* <BottomFade /> */}
       <NextSectionButton sectionId="learn" />

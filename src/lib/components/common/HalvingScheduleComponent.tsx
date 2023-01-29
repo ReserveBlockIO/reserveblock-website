@@ -472,6 +472,7 @@ export const HalvingScheduleComponent = () => {
   ];
   return (
     <div>
+      <SectionHeading4>Block Rewards & Halving</SectionHeading4>
       {items.map((item, i) => (
         <div>
           <SectionContent>

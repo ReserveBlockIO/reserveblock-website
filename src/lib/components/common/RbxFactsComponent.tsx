@@ -1,84 +1,19 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { getCirculation } from "../../service";
 import {
   SectionContent,
-  SectionHeading3,
   SectionHeading4,
 } from "../../styles/styled";
 import { ThemeColors } from "../../theme";
+import { formatNumber } from '../../formatting';
+import SpyGlass from "../SpyGlass";
 
 interface IItem {
   label: string;
   value: string;
 }
 
-const items: IItem[] = [
-  {
-    label: "Consensus Mechanism",
-    value:
-      "Proof of Assurance (Hybrid Liquid Proof of Stake & Proof of Capacity)",
-  },
-  {
-    label: "Programing Language",
-    value: "C#, Trillium (SEN Self-Executing NFT Architecture Program)",
-  },
-  {
-    label: "Interoperability",
-    value: "Yes",
-  },
-  {
-    label: "Scalability",
-    value: "High",
-  },
-  {
-    label: "Transactions Per Second",
-    value: "500 plus (base estimate)",
-  },
-  {
-    label: "Transaction Throughput",
-    value: "2,500 and up (base estimate)",
-  },
-  {
-    label: "Transaction Latency",
-    value: "20 s (processing block times every 20 sec)",
-  },
-  {
-    label: "Transaction Fee (AVG)",
-    value:
-      ".00001 (one-time data fee of .0000047 RXBX per KB if storing physical media is needed)",
-  },
-  {
-    label: "Transaction Finality",
-    value: "25 s",
-  },
-  {
-    label: "Transaction Governance",
-    value: "Masternode Assurance",
-  },
-  {
-    label: "Governance Supervision",
-    value: "Validators",
-  },
-  {
-    label: "Number of Validators",
-    value: "N/A",
-  },
-  {
-    label: "(APY) Per Year",
-    value: "N/A",
-  },
-  {
-    label: "Circulation",
-    value: "67,500,000",
-  },
-  {
-    label: "Max Supply",
-    value: "372,000,000",
-  },
-  {
-    label: "Blockchain Size",
-    value: "N/A",
-  },
-];
 
 const Item = styled.div`
   min-height: 90px;
@@ -106,6 +41,129 @@ const Item = styled.div`
 `;
 
 export const RbxFactsComponent = () => {
+
+  const [circulatingSupply, setCirculatingSupply] = useState<string>('...');
+  const [lifetimeSupply, setLifetimeSupply] = useState<string>('...');
+  const [feesBurned, setFeesBurned] = useState<string>('...');
+  const [validatorCount, setValidatorCount] = useState<string>('...');
+  const [totalAssured, setTotalAssured] = useState<string>('...');
+
+  useEffect(() => {
+
+    const poll = () => {
+      getCirculation().then((data) => {
+        if (data) {
+          if (data['balance']) {
+            const b = formatNumber(data['balance']);
+            setCirculatingSupply(b);
+          }
+
+          if (data['lifetime_supply']) {
+            const b = formatNumber(data['lifetime_supply']);
+            setLifetimeSupply(b);
+          }
+
+          if (data['fees_burned_sum']) {
+            const b = formatNumber(data['fees_burned_sum']);
+            setFeesBurned(b);
+          }
+          if (data['fees_burned_sum']) {
+            const b = formatNumber(data['active_master_nodes']);
+            setValidatorCount(b);
+          }
+
+          if (data['total_staked']) {
+            const b = formatNumber(data['total_staked']);
+            setTotalAssured(b);
+          }
+
+
+        }
+      });
+    }
+
+    poll();
+
+
+    const interval = setInterval(() => {
+      poll();
+    }, 30000);
+
+    return () => clearInterval(interval);
+
+  }, []);
+
+
+  const items: IItem[] = [
+    {
+      label: "Consensus",
+      value:
+        "Proof of Assurance (PoA)",
+    },
+    {
+      label: "Programing Language",
+      value: "C#, Trillium (SEN Self-Executing NFT Architecture Program)",
+    },
+    {
+      label: "Interoperability",
+      value: "Yes",
+    },
+    {
+      label: "Scalability",
+      value: "High",
+    },
+    {
+      label: "Transactions Per Second",
+      value: "25,000-30,000 per second minimum",
+    },
+    {
+      label: "Transaction Latency",
+      value: "1-20 seconds",
+    },
+    {
+      label: "Transaction Fee (AVG)",
+      value:
+        ".00001 per KB",
+    },
+    {
+      label: "Transaction Finality",
+      value: "25 seconds average",
+    },
+    {
+      label: "Transaction Governance",
+      value: "Masternode Assurance",
+    },
+    {
+      label: "Governance Supervision",
+      value: "Validators",
+    },
+    {
+      label: "Number of Validators",
+      value: validatorCount,
+    },
+
+    {
+      label: "Circulating Supply",
+      value: `${circulatingSupply} RBX`,
+    },
+    {
+      label: "Lifetime Supply",
+      value: `${lifetimeSupply} RBX`,
+    },
+    {
+      label: "Total Assured",
+      value: `${totalAssured} RBX`,
+    },
+    {
+      label: "RBX Fees Burned",
+      value: `${feesBurned} RBX`,
+    },
+    // {
+    //   label: "Blockchain Size",
+    //   value: "1.01GB as of 1/24/23",
+    // },
+  ];
+
   return (
     <div>
       <SectionHeading4>RBX Facts</SectionHeading4>
@@ -124,6 +182,11 @@ export const RbxFactsComponent = () => {
             </SectionContent>
           </div>
         ))}
+        <div className={`col-12 col-md-4 col-xl-3`}>
+
+
+          <SpyGlass mini={true} fullWidth={false} />
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown, faDownload } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import { isMobile } from "../../utils";
 
 interface Props {
   sectionId: string;
@@ -29,6 +30,7 @@ const Container = styled.a`
 `;
 
 export const NextSectionButton = (props: Props) => {
+  if (isMobile()) return <></>
   return (
     <Container href={`#${props.sectionId}`}>
       <img src="/img/arrow-down.png" alt="Next Section" />

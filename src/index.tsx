@@ -18,7 +18,7 @@ const isSafari =
   !navigator.userAgent.match(/fxios/i) &&
   !navigator.userAgent.match(/Opera|OPT\//);
 if (isSafari) {
-  new SmoothScroll('a[href*="#"]');
+  new SmoothScroll('a[href*="#"]', { easing: "Linear", speedAsDuration: true, speed: 750 });
 }
 
 ReactDOM.render(

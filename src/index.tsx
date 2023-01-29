@@ -17,9 +17,9 @@ const isSafari =
   !navigator.userAgent.match(/crios/i) &&
   !navigator.userAgent.match(/fxios/i) &&
   !navigator.userAgent.match(/Opera|OPT\//);
-// if (isSafari) {
-//   new SmoothScroll('a[href*="#"]');
-// }
+if (isSafari) {
+  new SmoothScroll('a[href*="#"]');
+}
 
 ReactDOM.render(
   <Provider store={store}>

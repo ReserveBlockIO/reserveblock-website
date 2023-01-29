@@ -1,10 +1,10 @@
 import { SocialUrls } from "../../data/menus";
-import { SectionContent, SectionHeading4 } from "../../styles/styled";
+import { SectionContent, SectionHeading3 } from "../../styles/styled";
 
 export const FoundationComponent = () => {
   return (
     <div>
-      <SectionHeading4>About the ReserveBlock Builders</SectionHeading4>
+      <SectionHeading3>About the ReserveBlock Builders</SectionHeading3>
       <SectionContent>
         <p>
           The RBX network has been created and developed as the result of a
@@ -20,8 +20,8 @@ export const FoundationComponent = () => {
           >
             thereservelabel.com
           </a>
-          ), as the initial founding & development validators, the foundation has
-          been completely self- funded and devoid of any centralized control
+          ), as the initial founding & development validators, and has
+          been completely self-funded devoid of any centralized control
           whatsoever ensuring the most ideal decentralized NFT Layer 1
           ecosystem.
         </p>

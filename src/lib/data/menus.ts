@@ -65,8 +65,9 @@ export const secondaryNavItems: INavItem[] = [
   // },
   {
     name: "Whitepaper v2",
-    path: require("../../pdfs/ReserveBlock-RBX-Blockchain Whitepaper-v2.pdf"),
-    openExternal: true,
+    // path: require("../../pdfs/ReserveBlock-RBX-Blockchain Whitepaper-v2.pdf"),
+    path: `${WIKI_BASE_URL}/docs/documents/whitepaper-v2/`,
+    openExternal: false,
   },
 
   {

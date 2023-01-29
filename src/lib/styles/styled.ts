@@ -124,8 +124,8 @@ interface ISectionContent {
 export const SectionContent = styled.div<ISectionContent>`
   ${pulseKeyframes(
   "pulse",
-  "rgba(126, 239, 255, 0.2)",
-  "rgba(126, 239, 255, 0.4)"
+  "rgba(126, 239, 255, 0.4)",
+  "rgba(126, 239, 255, 0.8)"
 )};
 
   background-color: rgba(0, 0, 0, 0.45);

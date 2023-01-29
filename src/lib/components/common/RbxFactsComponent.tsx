@@ -7,6 +7,7 @@ import {
 } from "../../styles/styled";
 import { ThemeColors } from "../../theme";
 import { formatNumber } from '../../formatting';
+import SpyGlass from "../SpyGlass";
 
 interface IItem {
   label: string;
@@ -181,6 +182,10 @@ export const RbxFactsComponent = () => {
             </SectionContent>
           </div>
         ))}
+        <div className="col-12 text-center">
+
+          <SpyGlass fullWidth={true} />
+        </div>
       </div>
     </div>
   );

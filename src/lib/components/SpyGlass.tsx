@@ -7,8 +7,12 @@ import styled from 'styled-components';
 import { isMobile } from "../utils";
 
 
-const Container = styled.div`
-    width: 900px;
+interface IContainer {
+    fullWidth: boolean;
+}
+
+const Container = styled.div<IContainer>`
+    width: ${(props) => props.fullWidth ? `100%;` : `900px;`};
     /* min-height: 340px; */
 
     
@@ -38,8 +42,11 @@ const Container = styled.div`
 `;
 
 
+interface Props {
+    fullWidth: boolean;
+}
 
-export const SpyGlass = () => {
+export const SpyGlass = (props: Props) => {
     const [block, setBlock] = useState<Block | undefined>(undefined);
 
     useEffect(() => {
@@ -67,7 +74,7 @@ export const SpyGlass = () => {
         <div className="text-muted"><small>{block ? block.timestampLabel : ' '}</small></div>
         <hr style={{ height: 1, color: 'rgba(255,255,255,.4)', marginTop: 2, marginBottom: 2, }} />
 
-        <Container>
+        <Container fullWidth={props.fullWidth}>
 
             {block ? (
 

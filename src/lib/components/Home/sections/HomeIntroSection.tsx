@@ -102,19 +102,19 @@ export const HomeIntroSection = () => {
   return (
     <Section fill>
       {isMobile() ? <PositionedAsset
-        url="/img/decor/bg_02-tr.png"
+        url="/img/decor/bg_02-trv2.png"
         alt="Nodes"
         top={0}
         right={0}
-        width={240}
+        width={200}
         opacity={0.5}
       /> :
         <PositionedAsset
-          url="/img/decor/bg_02-tr.png"
+          url="/img/decor/bg_02-trv2.png"
           alt="Nodes"
           top={0}
           right={0}
-          width={600}
+          width={400}
           opacity={0.5}
         />
       }
@@ -187,7 +187,7 @@ export const HomeIntroSection = () => {
               assumeVisible
             >
 
-              <div><SpyGlass /></div>
+              <div><SpyGlass fullWidth={false} /></div>
 
 
 

@@ -16,7 +16,7 @@ const Decor = styled.div`
   background-image: url(/img/decor/bg_04.png);
   background-size: cover;
   background-position: center bottom;
-  opacity: 0.75;
+  opacity: 0.8;
 `;
 
 export const HomeNetworkSection = () => {
@@ -24,7 +24,7 @@ export const HomeNetworkSection = () => {
     <>
       <div className="py-5" id="network"></div>
 
-      <Section light center>
+      <Section dark center>
         <Decor />
         <div className="container">
           <SectionHeaderComponent
@@ -110,6 +110,7 @@ export const HomeNetworkSection = () => {
               <VisibilityTransition transitionDelay={750}>
                 <SectionContent mutedBg>
                   <Download
+
                     title="Beacons"
                     buttonText="Learn More"
                     url={`${WIKI_BASE_URL}/docs/CLI/cli-beacons`}

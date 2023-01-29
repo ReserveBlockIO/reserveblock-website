@@ -54,6 +54,7 @@ export const HomeLearnSection = () => {
             alt="Globe"
             top={0}
             right={0}
+            opacity={0.7}
             width={600}
           />
         </VisibilityTransition>

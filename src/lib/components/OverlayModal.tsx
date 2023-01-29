@@ -28,6 +28,8 @@ const Container = styled.div<IContainer>`
 
     ${(props) => (props.visible ? `opacity:1;` : `pointer-events:none; opacity:0;`)};
 
+    
+    ${(isMobile() ? `padding-bottom: 60px;` : ``)}
 
 `;
 

@@ -25,6 +25,19 @@ import { githubFiles } from "../../../../github-files";
 import { WIKI_BASE_URL } from "../../../constants";
 import { formatNumber } from "../../../formatting";
 
+const Decor = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  background-image: url(/img/decor/bg_04.png);
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.6;
+`;
+
 export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
   const [showingWalletDownload, setShowingWalletDownload] = useState(false);
@@ -32,6 +45,7 @@ export const HomeWalletSection = () => {
   return (
     <>
       <Section fill={true} center={true} id="wallet">
+        <Decor />
         <div className="container">
           <SectionHeaderComponent
             title="RBX Wallet"

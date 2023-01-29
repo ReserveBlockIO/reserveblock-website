@@ -5,6 +5,8 @@ import * as timeago from 'timeago.js';
 
 import styled from 'styled-components';
 import { isMobile } from "../utils";
+import { SectionContent } from "../styles/styled";
+import { ThemeColors } from "../theme";
 
 
 interface IContainer {
@@ -42,8 +44,50 @@ const Container = styled.div<IContainer>`
 `;
 
 
+const MiniContainer = styled.div`
+  min-height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: ${ThemeColors.bright};
+    text-align: center;
+  }
+  h3 {
+    padding-top: 4px;
+    font-size: 16px;
+    margin-bottom: 0;
+    text-align: center;
+
+   
+  }
+  h4 {
+    padding-top: 4px;
+    font-size: 12px;
+    margin-bottom: 0;
+    text-align: center;
+
+   
+  }
+
+  a {
+    color: ${ThemeColors.light};
+    text-decoration: underline;
+    
+    &:hover {
+    color: ${ThemeColors.bright};
+
+    }
+  }
+`;
+
+
 interface Props {
     fullWidth: boolean;
+    mini?: boolean;
 }
 
 export const SpyGlass = (props: Props) => {
@@ -68,6 +112,30 @@ export const SpyGlass = (props: Props) => {
         return () => clearInterval(interval);
 
     }, [])
+
+    if (props.mini) {
+        return (
+            <SectionContent className="my-2" outline>
+                <MiniContainer>
+                    {block ? (
+                        <div>
+                            <h2>Network Spyglass</h2>
+                            <h3>Block <a href={`https://rbx.network/block/${block.height}`} target="_blank" rel="noreferrer">{block.height}</a> | Craft Time: {block.craftTime}s </h3>
+                            <h4>Validated By:</h4>
+                            <h4><a href={`https://rbx.network/validators/${block.validator}`} target="_blank" rel="noreferrer">{block.validator}</a></h4>
+                            {/* <h2>{item.label}</h2>
+                <h3 className={item.value.length < 10 ? "large" : ""}>
+                  {item.value}
+                </h3> */}
+                        </div>) : (
+                        <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    )}
+                </MiniContainer>
+            </SectionContent>
+        )
+    }
 
     return <div className=" my-4 py-2 px-3 rounded" style={{ backgroundColor: 'rgba(0,0,0,.5)', boxShadow: "0 0 3px 2px rgba(255,255,255,.15)" }}>
         <div className="h5" style={{ fontWeight: 500, paddingTop: 8, letterSpacing: 2, marginBottom: 0, }}>Network Spyglass</div>

@@ -13,18 +13,18 @@ const Decor = styled.div`
   pointer-events: none;
   bottom: 0;
   left: 0;
-  background-image: url(/img/decor/bg_04.png);
+  background-image: url(/img/decor/bg_04-flipped.png);
   background-size: cover;
   background-position: center bottom;
-  opacity: 0.8;
+  opacity: 0.5;
 `;
 
 export const HomeNetworkSection = () => {
   return (
     <>
-      <div className="py-5" id="network"></div>
 
-      <Section dark center>
+      <Section light center>
+        <div id="network"></div>
         <Decor />
         <div className="container">
           <SectionHeaderComponent
@@ -34,7 +34,7 @@ export const HomeNetworkSection = () => {
             isInvertedOffset
           />
 
-          <div className="py-0 py-md-5"></div>
+          {/* <div className="py-0 py-md-5"></div> */}
 
           <div className="row">
             <div className="col-12 col-md-6">
@@ -121,7 +121,7 @@ export const HomeNetworkSection = () => {
               </VisibilityTransition>
             </div>
           </div>
-          <div className="py-0 py-md-5"></div>
+          {/* <div className="py-0 py-md-5"></div> */}
         </div>
 
         <NextSectionButton sectionId="build" />

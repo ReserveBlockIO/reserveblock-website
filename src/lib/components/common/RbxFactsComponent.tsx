@@ -158,10 +158,10 @@ export const RbxFactsComponent = () => {
       label: "RBX Fees Burned",
       value: `${feesBurned} RBX`,
     },
-    {
-      label: "Blockchain Size",
-      value: "1.01GB as of 1/24/23",
-    },
+    // {
+    //   label: "Blockchain Size",
+    //   value: "1.01GB as of 1/24/23",
+    // },
   ];
 
   return (
@@ -182,9 +182,10 @@ export const RbxFactsComponent = () => {
             </SectionContent>
           </div>
         ))}
-        <div className="col-12 text-center">
+        <div className={`col-12 col-md-4 col-xl-3`}>
 
-          <SpyGlass fullWidth={true} />
+
+          <SpyGlass mini={true} fullWidth={false} />
         </div>
       </div>
     </div>

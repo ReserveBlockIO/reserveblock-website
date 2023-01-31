@@ -120,7 +120,7 @@ export const SpyGlass = (props: Props) => {
                     {block ? (
                         <div>
                             <h2>Network Spyglass</h2>
-                            <h3>Block <a href={`https://rbx.network/block/${block.height}`} target="_blank" rel="noreferrer">{block.height}</a> | Craft Time: {block.craftTime}s </h3>
+                            <h3>Block <a href={`https://rbx.network/block/${block.height}`} target="_blank" rel="noreferrer">{block.height}</a> | Craft Time: {block.craftTime}ms </h3>
                             <h4>Validated By:</h4>
                             <h4><a href={`https://rbx.network/validators/${block.validator}`} target="_blank" rel="noreferrer">{block.validator}</a></h4>
                             {/* <h2>{item.label}</h2>
@@ -157,7 +157,7 @@ export const SpyGlass = (props: Props) => {
                         </div>
 
                         <div className="col-12 col-md-5 py-1">
-                            Craft Time: {block.craftTime / 1000} seconds <span>|</span> Size: {block.sizeLabel}
+                            Craft Time: {block.craftTime} ms <span>|</span> Size: {block.sizeLabel}
                         </div>
 
                         <div className="d-none d-md-block col-12  col-md-7 py-1">

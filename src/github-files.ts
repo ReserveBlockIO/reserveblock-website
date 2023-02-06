@@ -1,12 +1,12 @@
 // CONFIG STARTS
 
 const _cli = {
-  tag: "beta2.3",
-  date: "Jan 24, 2023",
+  tag: "beta3.2",
+  date: "Feb 6, 2023",
 };
 
 const _gui = {
-  tag: "beta3.1",
+  tag: "beta3.2",
   date: "Feb 6, 2023",
 };
 

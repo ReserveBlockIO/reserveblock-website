@@ -81,7 +81,7 @@ export const HomeCommunitySection = () => {
                   icon={faTelegram}
                   href="https://t.me/reserveblockofficial"
                   ctaText="Contact"
-                  description="@reserveblock"
+                  description="@reserveblockofficial"
                 />
               </VisibilityTransition>
               <VisibilityTransition

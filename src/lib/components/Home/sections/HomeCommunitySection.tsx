@@ -79,7 +79,7 @@ export const HomeCommunitySection = () => {
                 <ConnectOptionComponent
                   title="Telegram"
                   icon={faTelegram}
-                  href="https://t.me/reserveblock"
+                  href="https://t.me/reserveblockofficial"
                   ctaText="Contact"
                   description="@reserveblock"
                 />

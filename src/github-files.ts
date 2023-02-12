@@ -41,4 +41,3 @@ export const githubFiles = {
   },
 };
 
-console.log("test");

@@ -74,7 +74,7 @@ export const secondaryNavItems: INavItem[] = [
 export const SocialUrls = {
   twitter: "https://twitter.com/ReserveBlockIO",
   instagram: "https://www.instagram.com/reserveblockio/",
-  telegram: "https://t.me/reserveblock",
+  telegram: "https://t.me/reserveblockofficial",
   discord: "https://discord.com/invite/PnS2HRETDh",
   github: "https://github.com/ReserveBlockIO",
 };

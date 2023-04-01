@@ -145,7 +145,7 @@ Double check the following:
 - block height has reached the global block height as per [https://rbx.network/](rbx.network)
 - port `3338` is open for incoming connections (see instructions above)
 - You have an address (private/public key) created / imported
-- You have at least 1000 RBX in the wallet (the minium requirement to be a validator in the proof of stake model)
+- You have at least 12,000 RBX in the wallet (the minium requirement to be a validator in the proof of stake model)
 
 If all is good, continue with:
 

@@ -153,7 +153,7 @@ export const FaqComponent = (props: Props) => {
     {
       question: "How do I become a Masternode? ",
       answer:
-        "To become a Masternode you download either a desktop wallet or the CLI and allow incoming connections through firewall and elect from the application to become a masternode. You will also need to have the minimum amount of 1,000 RBX coins in the wallet to qualify to be a Masternode and earn block rewards.  The staked collateral to the network is not taken and a user can elect to unstake anytime without any holding period, penalty, or fee.  This is called liquid staking.",
+        "To become a Masternode you download either a desktop wallet or the CLI and allow incoming connections through firewall and elect from the application to become a masternode. You will also need to have the minimum amount of 12,000 RBX coins in the wallet to qualify to be a Masternode and earn block rewards.  The staked collateral to the network is not taken and a user can elect to unstake anytime without any holding period, penalty, or fee.  This is called liquid staking.",
     },
     {
       question: "What is the difference between a Full node and a Masternode?",
@@ -204,7 +204,7 @@ export const FaqComponent = (props: Props) => {
     {
       question: "How much RBX coin can you stake?",
       answer:
-        "A user only needs to stake the minimum required amount per node operating. Staking more than the required amount does not give a user any advantage over others.  Simply, if a user would like to operate 5 nodes and has 5 unique IP addresses, they would simply stake 1,000 RBX coin for each node. ",
+        "A user only needs to stake the minimum required amount per node operating. Staking more than the required amount does not give a user any advantage over others.  Simply, if a user would like to operate 5 nodes and has 5 unique IP addresses, they would simply stake 12,000 RBX coin for each node. ",
     },
 
     {
@@ -413,7 +413,7 @@ export const FaqComponent = (props: Props) => {
       question:
         "Is it mandatory to stake my coin when you buy a Masternode on the presale or can I stake it later?",
       answer:
-        "You will need to stake the minimum required coin to become a validator (1,000 RBX) for each wallet, for 1 machine, and per IP address.  Participation is your choice, however, if you do not stake you will not be qualified to receive block rewards.  When staking there are no holding periods, fees, or penalties this means you can stake or unstake as many times as you want.",
+        "You will need to stake the minimum required coin to become a validator (12,000 RBX) for each wallet, for 1 machine, and per IP address.  Participation is your choice, however, if you do not stake you will not be qualified to receive block rewards.  When staking there are no holding periods, fees, or penalties this means you can stake or unstake as many times as you want.",
     },
     {
       question: "How do I turn my node on or activate my node?",
@@ -429,13 +429,13 @@ export const FaqComponent = (props: Props) => {
       question:
         "Can I use my wallet on different machines with my total RBX balances?",
       answer:
-        "Yes, you can have your wallet on multiple machines and generate a new address for each machine in your singular wallet, however, it is recommended that you have a main wallet with your RBX balances and generate a new wallet with a unique address for each static IP tied to that machine and send the min RBX requirements (1,000 RBX) from your main wallet to the wallet you have set up for the machine you have designated to validate.",
+        "Yes, you can have your wallet on multiple machines and generate a new address for each machine in your singular wallet, however, it is recommended that you have a main wallet with your RBX balances and generate a new wallet with a unique address for each static IP tied to that machine and send the min RBX requirements (12,000 RBX) from your main wallet to the wallet you have set up for the machine you have designated to validate.",
     },
     {
       question:
         " How do I generate different addresses for each node using my wallet or will I have to download multiple wallets?",
       answer:
-        "Again, it is recommended that you download a new wallet per machine with a unique address and send the min RBX requirements (1,000 RBX) from your main wallet where you are holding your funds.  ",
+        "Again, it is recommended that you download a new wallet per machine with a unique address and send the min RBX requirements (12,000 RBX) from your main wallet where you are holding your funds.  ",
     },
     {
       question: "Can I purchase multiple nodes with one wallet?",

@@ -11,9 +11,9 @@ const _gui = {
 };
 
 const _snapshot = {
-  tag: "snap6",
-  date: "Mar 31, 2023",
-  height: 824367
+  tag: "snap7",
+  date: "Apr 20, 2023",
+  height: 892447
 }
 
 

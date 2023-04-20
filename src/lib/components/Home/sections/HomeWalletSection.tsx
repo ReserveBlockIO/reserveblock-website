@@ -206,11 +206,10 @@ export const HomeWalletSection = () => {
               >
                 <Download
                   title="P2P Auctions"
-                  buttonText="Activating Soon"
+                  buttonText="Activated"
                   noIcon
                   noCaps
-                  url={"#"}
-                  onClick={(_: any) => { }}
+                  url={"https://wiki.reserveblock.io/docs/GUI/p2p-auctions"}
                 />
               </VisibilityTransition>
             </div>

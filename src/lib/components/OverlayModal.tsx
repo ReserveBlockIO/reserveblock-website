@@ -37,6 +37,7 @@ interface Props {
     visible: boolean;
     onClose: () => void;
     children: JSX.Element | JSX.Element[];
+    noScroll?: boolean;
 
 }
 
@@ -49,7 +50,7 @@ const OverlayModal = (props: Props) => {
                 props.onClose();
             }}
         >
-            <div style={{ height: '100vh', overflowY: 'scroll' }}>
+            <div style={{ height: '100vh', overflowY: props.noScroll ? 'hidden' : 'scroll' }}>
                 <div style={{ height: 60 }} />
                 <div className="p-2 p-md-5">
                     {props.children}

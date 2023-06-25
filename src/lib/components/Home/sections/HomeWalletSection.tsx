@@ -25,6 +25,7 @@ import { githubFiles } from "../../../../github-files";
 import { WIKI_BASE_URL } from "../../../constants";
 import { formatNumber } from "../../../formatting";
 import OverlayModal from "../../OverlayModal";
+import PaymentTermsCopy from "../../PaymentTermsCopy";
 
 const Decor = styled.div`
   width: 100%;
@@ -49,11 +50,13 @@ export const HomeWalletSection = () => {
   const [iframeWidth, setIframeWidth] = useState(MAX_IFRAME_WIDTH);
   const [iframeHeight, setIframeHeight] = useState(MAX_IFRAME_HEIGHT);
 
+  const [paymentTermsVisible, setPaymentTermsVisible] = useState(false);
   const [paymentRevealed, setPaymentRevealed] = useState(false);
+  const [hasAgreed, setHasAgreed] = useState(false);
 
   const coinType = "RBX";
   const fiatType = "USD";
-  const amount = 500;
+  const amount = 1000;
 
   const paymentUrl = `https://rbx.banxa-sandbox.com/?coinType=${coinType}&fiatType=${fiatType}&coinAmount=${amount}&blockchain=${coinType}`
 
@@ -248,23 +251,24 @@ export const HomeWalletSection = () => {
               </VisibilityTransition>
             </div>
 
-            {/* <div className="col-12 col-md-4 pb-4">
+            <div className="col-12 col-md-4 pb-4">
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="up"
                 transitionDelay={500}
               >
                 <Download
-                  title="Purchase RBX"
+                  title="Buy RBX"
                   buttonText="Launch On-Ramp"
                   noIcon
                   noCaps
                   onClick={() => {
-                    setPaymentRevealed(true);
+                    // setPaymentRevealed(true);
+                    setPaymentTermsVisible(true);
                   }}
                 />
               </VisibilityTransition>
-            </div> */}
+            </div>
           </div>
         </div>
         <NextSectionButton sectionId="network" />
@@ -277,8 +281,47 @@ export const HomeWalletSection = () => {
 
             <iframe width={`${iframeWidth}`} height={`${iframeHeight}`} src={paymentUrl} title="banxa" frameBorder={"0"}></iframe>
             <div style={{ width: iframeWidth }}>
+              <div style={{ backgroundColor: 'rgba(0,0,0,.7)', padding: "4px 8px", }}>
+                <PaymentTermsCopy />
+              </div>
+            </div>
+          </div>
 
-              <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</small></p>
+        </OverlayModal>
+
+        <OverlayModal noScroll visible={paymentTermsVisible} onClose={() => {
+          // setPaymentTermsVisible(false);
+        }}>
+          <div className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
+
+            <div style={{ backgroundColor: "black", padding: "12px 24px", maxWidth: 800 }}>
+              <h3>Disclaimer</h3>
+              <PaymentTermsCopy />
+              <div className="form-check">
+                <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked={hasAgreed} onChange={() => {
+                  setHasAgreed(!hasAgreed);
+                }} />
+                <label className="form-check-label" htmlFor="flexCheckChecked" >
+                  I have read and agree to the disclaimer.
+                </label>
+              </div>
+
+              <div className="text-end">
+                <button className="btn btn-dark me-3" onClick={() => {
+                  setPaymentTermsVisible(false);
+                }}>Cancel</button>
+                <button className="btn btn-light"
+                  onClick={() => {
+                    if (!hasAgreed) {
+                      alert("You must agree to the disclaimer before proceeding.");
+                      return;
+                    }
+                    setPaymentTermsVisible(false);
+                    setPaymentRevealed(true);
+                  }}
+                >Agree</button>
+              </div>
+
             </div>
           </div>
 

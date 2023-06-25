@@ -1,44 +1,34 @@
 // CONFIG STARTS
 
 const _cli = {
-  tag: "beta2.3",
-  date: "Jan 24, 2023",
+  tag: "beta4.0.0",
+  date: "June 9, 2023",
 };
 
 const _gui = {
-  tag: "beta2.3",
-  date: "Jan 24, 2023",
+  tag: "beta4.0.0",
+  date: "June 9, 2023",
 };
 
 const _snapshot = {
-  tag: "snap1",
-  date: "Jan 24, 2023",
-  height: 593384
+  tag: "snap9",
+  date: "June 11, 2023",
+  height: 1072215
 }
 
-// CONFIG ENDS
-
-const _cliBaseUrl = "https://github.com/ReserveBlockIO/Core-CLI/releases/tag/";
-const _guiBaseUrl =
-  "https://github.com/ReserveBlockIO/rbx-wallet-gui/releases/tag/";
-
-
-const _snapshotBaseUrl =
-  "https://github.com/ReserveBlockIO/ReserveBlockSnapshot/releases/tag/";
 
 export const githubFiles = {
   cli: {
     ..._cli,
-    url: `${_cliBaseUrl}${_cli.tag}`,
+    url: `https://github.com/ReserveBlockIO/ReserveBlock-Core/releases/latest`,
   },
   gui: {
     ..._gui,
-    url: `${_guiBaseUrl}${_gui.tag}`,
+    url: `https://github.com/ReserveBlockIO/rbx-wallet-gui/releases/latest`,
   },
   snapshot: {
     ..._snapshot,
-    url: `${_snapshotBaseUrl}${_snapshot.tag}`,
+    url: `https://github.com/ReserveBlockIO/ReserveBlockSnapshot/releases/latest`,
   },
 };
 
-console.log("test");

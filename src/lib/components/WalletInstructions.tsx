@@ -158,7 +158,7 @@ export const WalletInstructions = () => {
           </li>
           <li>
             Ensure that your address is eligible to validate (requires at least
-            1000 RBX) and then click Start Validating.{" "}
+            12,000 RBX) and then click Start Validating.{" "}
           </li>
           <li>
             You will be prompted to create a unique name for your masternode.

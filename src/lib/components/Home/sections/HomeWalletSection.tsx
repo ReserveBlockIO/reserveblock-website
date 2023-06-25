@@ -12,7 +12,7 @@ import { WalletDetailsComponent } from "../../common/WalletDetailsComponent";
 import { Download } from "../Download";
 import styled from "styled-components";
 import { WalletInstructions } from "../../WalletInstructions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   faChevronDown,
   faChevronUp,
@@ -24,6 +24,7 @@ import { cliDownload, isMobile, isMobileOS } from "../../../utils";
 import { githubFiles } from "../../../../github-files";
 import { WIKI_BASE_URL } from "../../../constants";
 import { formatNumber } from "../../../formatting";
+import OverlayModal from "../../OverlayModal";
 
 const Decor = styled.div`
   width: 100%;
@@ -41,6 +42,39 @@ const Decor = styled.div`
 export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
   const [showingWalletDownload, setShowingWalletDownload] = useState(false);
+
+  const MAX_IFRAME_WIDTH = 1000;
+  const MAX_IFRAME_HEIGHT = 700
+
+  const [iframeWidth, setIframeWidth] = useState(MAX_IFRAME_WIDTH);
+  const [iframeHeight, setIframeHeight] = useState(MAX_IFRAME_HEIGHT);
+
+  const [paymentRevealed, setPaymentRevealed] = useState(false);
+
+  const coinType = "RBX";
+  const fiatType = "USD";
+  const amount = 500;
+
+  const paymentUrl = `https://rbx.banxa-sandbox.com/?coinType=${coinType}&fiatType=${fiatType}&coinAmount=${amount}&blockchain=${coinType}`
+
+
+  useEffect(() => {
+    function handleResize() {
+
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+
+      const targetW = w * 0.75;
+      const targetH = h * 0.75;
+
+      setIframeWidth(targetW > MAX_IFRAME_WIDTH ? MAX_IFRAME_WIDTH : targetW);
+      setIframeHeight(targetH > MAX_IFRAME_HEIGHT ? MAX_IFRAME_HEIGHT : targetH);
+
+    }
+    window.addEventListener('resize', handleResize)
+
+    handleResize();
+  }, [])
 
   return (
     <>
@@ -206,17 +240,51 @@ export const HomeWalletSection = () => {
               >
                 <Download
                   title="P2P Auctions"
-                  buttonText="Activating Soon"
+                  buttonText="Activated"
                   noIcon
                   noCaps
-                  url={"#"}
-                  onClick={(_: any) => { }}
+                  url={"https://wiki.reserveblock.io/docs/GUI/p2p-auctions"}
                 />
               </VisibilityTransition>
             </div>
+
+            {/* <div className="col-12 col-md-4 pb-4">
+              <VisibilityTransition
+                transitionType="slide"
+                transitionDirection="up"
+                transitionDelay={500}
+              >
+                <Download
+                  title="Purchase RBX"
+                  buttonText="Launch On-Ramp"
+                  noIcon
+                  noCaps
+                  onClick={() => {
+                    setPaymentRevealed(true);
+                  }}
+                />
+              </VisibilityTransition>
+            </div> */}
           </div>
         </div>
         <NextSectionButton sectionId="network" />
+
+
+        <OverlayModal noScroll visible={paymentRevealed} onClose={() => {
+          setPaymentRevealed(false)
+        }}>
+          <div>
+
+            <iframe width={`${iframeWidth}`} height={`${iframeHeight}`} src={paymentUrl} title="banxa" frameBorder={"0"}></iframe>
+            <div style={{ width: iframeWidth }}>
+
+              <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est.</small></p>
+            </div>
+          </div>
+
+        </OverlayModal>
+
+
       </Section>
     </>
   );

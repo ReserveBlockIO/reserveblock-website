@@ -58,14 +58,9 @@ export const secondaryNavItems: INavItem[] = [
     path: "https://wallet.rbx.network/",
     openExternal: true,
   },
-  // {
-  //   name: "Litepaper",
-  //   path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
-  //   openExternal: true,
-  // },
+
   {
     name: "Whitepaper v2",
-    // path: require("../../pdfs/ReserveBlock-RBX-Blockchain Whitepaper-v2.pdf"),
     path: `${WIKI_BASE_URL}/docs/documents/whitepaper-v2/`,
     openExternal: false,
   },
@@ -79,7 +74,7 @@ export const secondaryNavItems: INavItem[] = [
 export const SocialUrls = {
   twitter: "https://twitter.com/ReserveBlockIO",
   instagram: "https://www.instagram.com/reserveblockio/",
-  telegram: "https://t.me/reserveblock",
+  telegram: "https://t.me/reserveblockofficial",
   discord: "https://discord.com/invite/PnS2HRETDh",
   github: "https://github.com/ReserveBlockIO",
 };
@@ -182,9 +177,9 @@ export const footerNavItems: IFooterNavItem[] = [
         path: "/disclaimer",
       },
       {
-        name: "Litepaper",
-        path: require("../../pdfs/ReserveBlockLitePaper.pdf"),
-        openExternal: true,
+        name: "Whitepaper v2",
+        path: `${WIKI_BASE_URL}/docs/documents/whitepaper-v2/`,
+        openExternal: false,
       },
       {
         name: "Contact",

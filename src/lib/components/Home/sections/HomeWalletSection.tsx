@@ -319,7 +319,7 @@ export const HomeWalletSection = () => {
                     setPaymentTermsVisible(false);
                     setPaymentRevealed(true);
                   }}
-                >Agree</button>
+                >Confirm</button>
               </div>
 
             </div>

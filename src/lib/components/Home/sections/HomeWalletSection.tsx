@@ -258,7 +258,7 @@ export const HomeWalletSection = () => {
                 transitionDelay={500}
               >
                 <Download
-                  title="Buy RBX"
+                  title="Get $RBX Now"
                   buttonText="Launch On-Ramp"
                   noIcon
                   noCaps

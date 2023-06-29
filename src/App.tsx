@@ -9,6 +9,7 @@ import { FaqScreen } from "./lib/screens/FaqScreen";
 import { HalvingScheduleScreen } from "./lib/screens/HalvingScheduleScreen";
 import { HomeScreen } from "./lib/screens/HomeScreen";
 import { WalletInstructionsScreen } from "./lib/screens/WalletInstructionsScreen";
+import { PaymentCompleteScreen } from "./lib/screens/PaymentCompleteScreen";
 
 const Vingette = styled.div`
   position: fixed;
@@ -37,6 +38,8 @@ function App() {
           path="/wallet-instructions"
           element={<WalletInstructionsScreen />}
         />
+        <Route path="/payment-complete" element={<PaymentCompleteScreen />} />
+
       </Routes>
 
       <FooterComponent />

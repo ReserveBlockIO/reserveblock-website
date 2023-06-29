@@ -30,9 +30,6 @@ export const PaymentCompleteScreen = () => {
 
                         <Heading>Transaction Complete</Heading>
 
-                        <p className="text-center mt-3">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corrupti asperiores! Iure iste repellat inventore quaerat possimus corporis nulla. Officia voluptate recusandae illo magni iusto atque amet vero earum repudiandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, corrupti asperiores! Iure iste repellat inventore quaerat possimus corporis nulla. Officia voluptate recusandae illo magni iusto atque amet vero earum repudiandae.
-                        </p>
 
                         <div className="row">
                             <div className="col-12 col-md-4">

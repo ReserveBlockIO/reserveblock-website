@@ -6,8 +6,8 @@ const _cli = {
 };
 
 const _gui = {
-  tag: "beta4.0.0",
-  date: "June 9, 2023",
+  tag: "beta4.0.2",
+  date: "June 29, 2023",
 };
 
 const _snapshot = {

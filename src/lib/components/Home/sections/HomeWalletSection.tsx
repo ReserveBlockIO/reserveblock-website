@@ -58,7 +58,7 @@ export const HomeWalletSection = () => {
   const fiatType = "USD";
   const amount = 1000;
 
-  const paymentUrl = `https://rbx.banxa-sandbox.com/?coinType=${coinType}&fiatType=${fiatType}&coinAmount=${amount}&blockchain=${coinType}`
+  const paymentUrl = `https://rbx.banxa.com/?coinType=${coinType}&fiatType=${fiatType}&coinAmount=${amount}&blockchain=${coinType}`
 
 
   useEffect(() => {

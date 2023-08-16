@@ -52,10 +52,6 @@ export const FoundationComponent = () => {
             rel="noreferrer"
           >
             Discord
-          </a>{" "}
-          and{" "}
-          <a href={SocialUrls.telegram} className="text-light">
-            Telegram
           </a>.
         </p>
       </SectionContent>

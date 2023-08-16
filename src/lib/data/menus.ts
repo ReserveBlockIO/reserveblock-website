@@ -74,7 +74,7 @@ export const secondaryNavItems: INavItem[] = [
 export const SocialUrls = {
   twitter: "https://twitter.com/ReserveBlockIO",
   instagram: "https://www.instagram.com/reserveblockio/",
-  telegram: "https://t.me/reserveblockofficial",
+  // telegram: "https://t.me/reserveblockofficial",
   discord: "https://discord.com/invite/PnS2HRETDh",
   github: "https://github.com/ReserveBlockIO",
 };
@@ -96,11 +96,11 @@ export const socialNavItems: ISocialNavItem[] = [
     icon: faGithub,
     name: "Github",
   },
-  {
-    url: SocialUrls.telegram,
-    icon: faTelegram,
-    name: "Telegram",
-  },
+  // {
+  //   url: SocialUrls.telegram,
+  //   icon: faTelegram,
+  //   name: "Telegram",
+  // },
 ];
 
 interface IFooterNavItem {

@@ -71,7 +71,7 @@ export const HomeCommunitySection = () => {
                   description="dev@reserveblock.io"
                 />
               </VisibilityTransition>
-              <VisibilityTransition
+              {/* <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="left"
                 transitionDelay={500}
@@ -83,7 +83,7 @@ export const HomeCommunitySection = () => {
                   ctaText="Contact"
                   description="@reserveblockofficial"
                 />
-              </VisibilityTransition>
+              </VisibilityTransition> */}
               <VisibilityTransition
                 transitionType="slide"
                 transitionDirection="left"

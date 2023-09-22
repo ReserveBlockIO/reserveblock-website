@@ -44,7 +44,7 @@ export const HomeWalletSection = () => {
   const [gettingStartedVisible, setGettingStartedVisible] = useState(false);
   const [showingWalletDownload, setShowingWalletDownload] = useState(false);
 
-  const MAX_IFRAME_WIDTH = 1000;
+  const MAX_IFRAME_WIDTH = 800;
   const MAX_IFRAME_HEIGHT = 700
 
   const [iframeWidth, setIframeWidth] = useState(MAX_IFRAME_WIDTH);

@@ -1,19 +1,19 @@
 // CONFIG STARTS
 
 const _cli = {
-  tag: "beta4.0.0",
-  date: "June 9, 2023",
+  tag: "beta4.0.1",
+  date: "Nov 25, 2023",
 };
 
 const _gui = {
-  tag: "beta4.0.2",
-  date: "June 29, 2023",
+  tag: "beta4.0.3",
+  date: "Nov 25, 2023",
 };
 
 const _snapshot = {
-  tag: "snap9",
-  date: "June 11, 2023",
-  height: 1072215
+  tag: "snap12",
+  date: "Nov 25, 2023",
+  height: 1649720
 }
 
 
